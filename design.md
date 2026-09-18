@@ -209,67 +209,16 @@ Shapes are geometric, clean, and futuristic.
 
 The system features several highly refined interactive components that must be replicated identically across all pages.
 
-### 1. The Unified Quick-Nav Glassmorphic Dock
-A floating responsive navigation dock fixed to the bottom of the viewport. It dynamically adapts its styling layout across screen sizes.
+### 1. Floating Header + Glass Drawer Menu
+Every page (home and case studies) shares the same navigation: a fixed top bar with the `MV.` logo on the left and a hamburger button on the right. Clicking the button opens a compact glassmorphic drawer anchored to the top-right corner (`#mobile-menu-drawer`), with the language toggle, section links (scrollspy-highlighted in lime) and social links.
 
-#### Layout Behavior:
-* **Mobile / Tablet (`< md`):**
-  * Items stack vertically with stacked Lucide icons and small text (`flex flex-col items-center gap-1 text-[8px]`).
-  * The **Voltar (Back)** button is separated from the navigation dock and positioned directly to the left, styled as an independent, floating circular glassmorphic action button:
-    ```html
-    <!-- Floating Back Button (Mobile only) -->
-    <a href="https://marcodsvinicius.com" class="pointer-events-auto md:hidden flex items-center justify-center w-12 h-12 bg-black/80 backdrop-blur-xl border border-white/10 rounded-full text-white/50 hover:text-[#ccff00] transition-colors shadow-[0_15px_40px_rgba(0,0,0,0.6),0_0_30px_rgba(204,255,0,0.03)] hover:border-[#ccff00]/50 active:scale-95">
-      <i data-lucide="arrow-left" width="20" height="20"></i>
-    </a>
-    ```
-* **Desktop (`>= md`):**
-  * Dock switches to a horizontal layout (`md:flex-row gap-2 px-4 py-2`).
-  * Navigation items arrange horizontally with icons alongside text (`md:flex-row md:text-[10px]`).
-  * The **Voltar** action is moved to a fixed, clean top-left header bar (`fixed top-0 left-0 w-full px-6 py-6`).
+> The bottom "Quick-Nav Dock" described in earlier versions of this document was removed from all pages. Do not reintroduce it: the drawer is the single navigation pattern.
 
-#### HTML Code Structure:
-```html
-<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex items-center gap-3 pointer-events-none select-none">
-  <!-- Circular Back Button for Mobile (< md) -->
-  <a href="https://marcodsvinicius.com" class="pointer-events-auto md:hidden flex items-center justify-center w-12 h-12 bg-black/80 backdrop-blur-xl border border-white/10 rounded-full text-white/50 hover:text-[#ccff00] transition-all hover:border-[#ccff00]/50 active:scale-95">
-    <i data-lucide="arrow-left" width="20" height="20"></i>
-  </a>
-
-  <!-- The Dock -->
-  <div class="pointer-events-auto relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-full p-1.5 md:p-2 flex items-center gap-1 md:gap-2 shadow-[0_15px_40px_rgba(0,0,0,0.6),0_0_30px_rgba(204,255,0,0.03)]">
-    <a href="#cenario" class="relative flex flex-col md:flex-row items-center gap-1 md:gap-2 px-2.5 py-1.5 md:px-4 md:py-2 rounded-xl md:rounded-full text-gray-400 hover:text-[#ccff00] hover:bg-white/5 transition-all duration-300 group active:scale-95" data-mobile-section="cenario">
-      <i data-lucide="compass" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
-      <span class="text-[8px] md:text-[10px] font-bold uppercase tracking-wider">Cenário</span>
-    </a>
-    <!-- Repeat navigation items with data-mobile-section mapping -->
-  </div>
-</div>
-```
-
-#### Scrollspy active highlight logic:
-```javascript
-const observerOptions = {
-  root: null,
-  rootMargin: '-30% 0px -60% 0px', // Triggers exactly when section spans the central window segment
-  threshold: 0
-};
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const activeId = entry.target.id;
-      dockNavItems.forEach((item) => {
-        if (item.getAttribute('href') === `#${activeId}`) {
-          item.classList.remove('text-gray-400');
-          item.classList.add('text-[#ccff00]', 'bg-white/10');
-        } else {
-          item.classList.add('text-gray-400');
-          item.classList.remove('text-[#ccff00]', 'bg-white/10');
-        }
-      });
-    }
-  });
-}, observerOptions);
-```
+* Trigger: `#mobile-menu-btn` (carries `aria-expanded` / `aria-controls`).
+* Panel: `bg-[#050505]/95 backdrop-blur-2xl border border-white/10 rounded-2xl`, opens with `scale-95 → scale-100` + opacity.
+* Backdrop: `#mobile-menu-backdrop` closes the drawer on click; `Esc` also closes it.
+* Scrollspy: `IntersectionObserver` with `rootMargin: '-30% 0px -60% 0px'` over `section[id]`, toggling `text-lime bg-white/10` on the matching `[data-mobile-section]` link.
+* Logic lives in `assets/js/site.js`; no page carries its own copy.
 
 ### 2. Solutions Carousel with Dynamic Image Synchronization
 An interactive carousel that maps textual features to visual screen outputs on a synchronized canvas.
@@ -302,3 +251,27 @@ A smooth overlay window allowing users to examine case mockups in detailed full-
 * **DON'T** add scroll progress lines or horizontal trackers at the top of case study pages; these have been intentionally removed to prevent visual clutter and maintain design simplicity.
 * **DON'T** clip capital letter accents. Always ensure page headers use a combination of `py-2` and `leading-[1.0]` or appropriate line-height metrics.
 * **DON'T** hardcode values that drift from the central design tokens. Always map colors to the glassmorphic spec (`bg-black/80 backdrop-blur-xl border border-white/10`).
+
+---
+
+## Implementation Notes (code)
+
+### Files
+* `assets/js/tailwind.config.js` — the tokens above as Tailwind theme extensions. Use `bg-brand`, `text-lime`, `border-brand/40`, `bg-ink`, `bg-surface`, `font-montserrat`, `font-jakarta`, `animate-fadeIn`, `animate-morph` instead of arbitrary values like `bg-[#B7E500]`.
+* `assets/css/site.css` — shared base styles plus the motion components below.
+* `assets/js/site.js` — menu, header glass-on-scroll, scrollspy, scroll reveal, back-to-top, page transitions.
+* `assets/js/home.js` — home-only interactions.
+
+### Motion components (home)
+* **Scroll reveal:** add `class="reveal"` (+ `style="--d:n"` for stagger, `--stagger` to change the step). Elements fade/slide in once when 8% visible.
+* **Page transitions:** cross-document View Transitions (`@view-transition { navigation: auto }`) with a fade/slide; browsers without support get a 200 ms fade-out on internal link clicks.
+* **Hero:** `#hero-canvas` draws a lime dot grid that brightens and pushes away from the pointer; `.hero-spot` is a radial light following the cursor. `[data-decode]` on the `h1` runs the character-decoding intro. `.scroll-cue` is the animated scroll hint (hidden after 80 px).
+* **Project cards:** `.tilt-card` gets a 3D tilt (±6°) and a `.tilt-glow` sheen following the pointer; `.card-preview` slides a screenshot in on hover (always visible on touch devices).
+* **Skills:** `#skills-filter` chips filter `#skills-grid` items by `data-cat` (`design`, `research`, `dev`, `ai`) with a FLIP reposition animation.
+* **Timelines:** `.timeline` containers draw a lime `.timeline-line` as the page scrolls; `.tl-dot` markers light up (`is-lit`) when the line passes them.
+* **Expandable text:** `[data-expandable]` blocks clamp long descriptions and add a "Ler mais / Read more" toggle only when the text overflows.
+* **Contact:** `.status-dot` availability pulse + `#local-time` (America/Sao_Paulo); `.copy-email` copies the address with a 2 s "Copiado!" state; `#contact-orb-shape` tilts toward the pointer.
+
+### Accessibility & motion safety
+* Everything above respects `prefers-reduced-motion: reduce` (static grid, no decode, no tilt, instant reveal).
+* Focus is trapped inside the Hub de Obras password modal; `Esc` closes it and focus returns to the card.

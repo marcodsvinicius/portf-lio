@@ -1,45 +1,22 @@
-<!-- Dependências: Fontes, Tailwind CSS e Ícones -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Guided Tour | Marco Vinicius</title>
 
-<!-- Estilos Globais -->
-<style>
-    html {
-      background-color: #050505;
-    }
-    body {
-      opacity: 0;
-      transition: opacity 0.25s ease-in-out;
-    }
-    /* Previne o flash de conteúdo sem estilo (FOUC) no menu lateral */
-    #mobile-menu-drawer:not(.opacity-100) {
-      opacity: 0 !important;
-      pointer-events: none !important;
-      display: none !important;
-    }
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #050505;
-    color: white;
-  }
-  .text-lime-glow {
-    text-shadow: 0 0 20px rgba(204, 255, 0, 0.3);
-  }
-  /* Scrollbar customizada */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #050505; 
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #333; 
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ccff00; 
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="../assets/js/tailwind.config.js"></script>
+  <script src="https://unpkg.com/lucide@1.47.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/site.js" defer></script>
+
+  <!-- Estilos específicos deste case -->
+  <style>
   /* Hero Green Glow Circle */
   .bg-hero-glow {
     position: relative;
@@ -58,9 +35,10 @@
     pointer-events: none;
     z-index: -1;
   }
-</style>
-
-<div class="min-h-screen relative overflow-x-hidden selection:bg-[#ccff00] selection:text-black">
+  </style>
+</head>
+<body class="font-montserrat">
+<div class="min-h-screen relative overflow-x-hidden selection:bg-lime selection:text-black">
 
   <!-- Menu e Logo Flutuantes (Widescreen Limiter) -->
   <div class="fixed top-0 left-0 right-0 z-50 pointer-events-none w-full px-6 md:px-12">
@@ -68,14 +46,14 @@
       <div class="py-6 flex justify-between items-center relative pointer-events-none w-full">
       <!-- Logo MV. -->
       <div class="pointer-events-auto">
-        <a id="logo-box" href="https://marcodsvinicius.com/en/" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-[#ccff00]/40 font-montserrat font-black text-lg tracking-tighter text-[#B7E500] hover:text-[#CCFF00]" aria-label="Home">
+        <a id="logo-box" href="./" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-lime/40 font-montserrat font-black text-lg tracking-tighter text-brand hover:text-lime" aria-label="Home">
           MV.
         </a>
       </div>
       
       <!-- Botão do Menu Hambúrguer -->
       <div class="pointer-events-auto">
-        <button id="mobile-menu-btn" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-[#ccff00]/40 [-webkit-tap-highlight-color:transparent] outline-none" aria-label="Navigation Menu">
+        <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu-drawer" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-lime/40 [-webkit-tap-highlight-color:transparent] outline-none" aria-label="Navigation Menu">
           <i data-lucide="menu" class="w-6 h-6 text-white transition-transform duration-300"></i>
         </button>
       </div>
@@ -86,27 +64,27 @@
           
           <!-- Links de Navegação -->
           <nav class="flex flex-col gap-3 pt-2">
-            <a href="#cenario" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-[#ccff00] hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="cenario">
+            <a href="#cenario" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="cenario">
               <i data-lucide="compass" class="w-4 h-4"></i>
               Scenario
             </a>
-            <a href="#estrategia" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-[#ccff00] hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="estrategia">
+            <a href="#estrategia" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="estrategia">
               <i data-lucide="target" class="w-4 h-4"></i>
               Strategy
             </a>
-            <a href="#solucao" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-[#ccff00] hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="solucao">
+            <a href="#solucao" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="solucao">
               <i data-lucide="layers" class="w-4 h-4"></i>
               Solution
             </a>
-            <a href="#valor-gerado" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-[#ccff00] hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="valor-gerado">
+            <a href="#valor-gerado" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="valor-gerado">
               <i data-lucide="trending-up" class="w-4 h-4"></i>
               Impact
             </a>
-            <a href="#aprendizados" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-[#ccff00] hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="aprendizados">
+            <a href="#aprendizados" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="aprendizados">
               <i data-lucide="award" class="w-4 h-4"></i>
               Takeaways
             </a>
-            <a href="https://marcodsvinicius.com/en/#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-[#ccff00] hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider">
+            <a href="./#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider">
               <i data-lucide="mail" class="w-4 h-4"></i>
               Contact
             </a>
@@ -117,19 +95,19 @@
         <div class="flex flex-col gap-6 mt-6 pt-6 border-t border-white/10">
           <!-- Redes Sociais com Espaçamento Premium e Separadores -->
           <div class="flex justify-center items-center gap-5">
-            <a href="https://www.linkedin.com/in/marcodsvinicius/" target="_blank" class="text-gray-400 hover:text-[#CCFF00] hover:scale-110 active:scale-95 transition-all duration-300" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/marcodsvinicius/" target="_blank" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="LinkedIn">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
             </a>
             <div class="w-px h-4 bg-white/10"></div>
-            <a href="https://medium.com/@marcodsvinicius" target="_blank" class="text-gray-400 hover:text-[#CCFF00] hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Medium">
+            <a href="https://medium.com/@marcodsvinicius" target="_blank" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Medium">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12a6.8 6.8 0 01-3.46 5.86 6.8 6.8 0 010-11.72A6.8 6.8 0 0120.96 12zM24 12a6.8 6.8 0 01-1.3 2.91 6.8 6.8 0 010-5.82A6.8 6.8 0 0124 12z"/>
               </svg>
             </a>
             <div class="w-px h-4 bg-white/10"></div>
-            <a href="https://github.com/marcodsvinicius?tab=repositories" target="_blank" class="text-gray-400 hover:text-[#CCFF00] hover:scale-110 active:scale-95 transition-all duration-300" aria-label="GitHub">
+            <a href="https://github.com/marcodsvinicius?tab=repositories" target="_blank" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="GitHub">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
@@ -137,7 +115,7 @@
           </div>
           
           <!-- Link para Back to Projects no rodapé da gaveta mobile -->
-          <a href="https://marcodsvinicius.com/en/" class="flex items-center justify-center gap-2 px-2 py-3 rounded-xl text-white/60 hover:text-[#ccff00] hover:bg-white/5 border border-white/10 transition-all font-montserrat font-bold text-[11px] uppercase tracking-wide whitespace-nowrap">
+          <a href="./" class="flex items-center justify-center gap-2 px-2 py-3 rounded-xl text-white/60 hover:text-lime hover:bg-white/5 border border-white/10 transition-all font-montserrat font-bold text-[11px] uppercase tracking-wide whitespace-nowrap">
             <i data-lucide="arrow-left" class="w-4 h-4 shrink-0"></i>
             Back to Projects
           </a>
@@ -155,7 +133,7 @@
 
     <div class="max-w-7xl mx-auto">
       <div class="mb-6 animate-fade-in-up">
-        <a href="https://marcodsvinicius.com/en/" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-xs font-mono text-gray-400 hover:text-[#ccff00] hover:border-[#ccff00] transition-colors bg-black/50 backdrop-blur-md">
+        <a href="./" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-xs font-mono text-gray-400 hover:text-lime hover:border-lime transition-colors bg-black/50 backdrop-blur-md">
           <i data-lucide="arrow-left" class="w-4 h-4"></i>
           Back to Projects
         </a>
@@ -188,8 +166,8 @@
         </div>
         <div class="md:col-span-2">
           <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Impact Summary</h3>
-          <p class="text-sm md:text-base font-medium text-gray-300 leading-relaxed border-l-2 border-[#ccff00]/50 pl-4">
-            Increased new user engagement and reduced the learning curve through a complete restructuring of the Information Architecture: breaking down <strong class="text-[#ccff00]">6 long and complex tutorials into 13 short, focused guided tours.</strong>
+          <p class="text-sm md:text-base font-medium text-gray-300 leading-relaxed border-l-2 border-lime/50 pl-4">
+            Increased new user engagement and reduced the learning curve through a complete restructuring of the Information Architecture: breaking down <strong class="text-lime">6 long and complex tutorials into 13 short, focused guided tours.</strong>
           </p>
         </div>
       </div>
@@ -203,7 +181,7 @@
     <section id="cenario" class="py-24 px-6 md:px-12 border-b border-white/5 bg-white/[0.02]">
       <div class="max-w-4xl mx-auto grid md:grid-cols-12 gap-12">
         <div class="md:col-span-4">
-          <span class="text-[#ccff00] font-mono text-sm font-bold mb-2 block">01 / SCENARIO</span>
+          <span class="text-lime font-mono text-sm font-bold mb-2 block">01 / SCENARIO</span>
           <h2 class="text-3xl font-bold uppercase tracking-tight">Context and Challenge</h2>
         </div>
         <div class="md:col-span-8 space-y-6 text-gray-300 text-lg leading-relaxed">
@@ -229,10 +207,10 @@
             <img src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-2.png?resize=768%2C365&ssl=1" alt="Old Process 2" loading="lazy" class="w-full shrink-0 h-auto object-cover hover:opacity-90 transition-opacity zoomable-image cursor-pointer">
           </div>
           <!-- Controles do Carrossel Antigo -->
-          <button id="antigo-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-black hover:text-[#ccff00] transition-colors disabled:opacity-30 disabled:hover:bg-black/50 disabled:hover:text-white">
+          <button id="antigo-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-black/50 disabled:hover:text-white">
             <i data-lucide="arrow-left" width="18"></i>
           </button>
-          <button id="antigo-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-black hover:text-[#ccff00] transition-colors disabled:opacity-30 disabled:hover:bg-black/50 disabled:hover:text-white">
+          <button id="antigo-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-black/50 disabled:hover:text-white">
             <i data-lucide="arrow-right" width="18"></i>
           </button>
           <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" id="antigo-dots">
@@ -251,34 +229,34 @@
       <div class="max-w-4xl mx-auto">
         <div class="flex flex-col md:flex-row gap-12 mb-16">
            <div class="w-full md:w-1/3">
-             <span class="text-[#ccff00] font-mono text-sm font-bold mb-2 block">02 / STRATEGY</span>
+             <span class="text-lime font-mono text-sm font-bold mb-2 block">02 / STRATEGY</span>
              <h2 class="text-3xl font-bold uppercase tracking-tight">My Role and Processes</h2>
            </div>
            <div class="w-full md:w-2/3 text-gray-300 text-lg leading-relaxed">
              <ul class="list-none space-y-6">
                <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-[#ccff00] mt-1 shrink-0" width="24"></i>
+                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
                  <div>
                    <strong class="text-white block mb-1">Usability Audit</strong>
                    <span class="text-gray-400 text-base">I used the Double Diamond framework to structure the process. My first action was to dive into the current interface, mapping out reading friction, navigation issues, and heuristic flaws step by step.</span>
                  </div>
                </li>
                <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-[#ccff00] mt-1 shrink-0" width="24"></i>
+                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
                  <div>
                    <strong class="text-white block mb-1">Onboarding Benchmarking</strong>
                     <span class="text-gray-400 text-base">I looked at the market to analyze how top software handled user education. I validated that the gold standard consisted of: clear division of steps, a clean look, short texts (focused UX Writing), and tutorials with a maximum of 5 steps to avoid fatiguing the reader.</span>
                  </div>
                </li>
                <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-[#ccff00] mt-1 shrink-0" width="24"></i>
+                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
                  <div>
                    <strong class="text-white block mb-1">Information Architecture (IA) Restructuring</strong>
                    <span class="text-gray-400 text-base">The major challenge wasn't just visual, but content-related. I analyzed every line of text from the old system and restructured the journey. I divided the content into two clear mental categories: "First Steps" (the basics) and "Market Tools" (advanced).</span>
                  </div>
                </li>
                <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-[#ccff00] mt-1 shrink-0" width="24"></i>
+                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
                  <div>
                    <strong class="text-white block mb-1">Agile Prototyping</strong>
                    <span class="text-gray-400 text-base">Since the project's main constraint was the text layout and the slicing of steps, I chose to skip low-fidelity wireframes and design directly in high-fidelity, accelerating the testing and approval cycles.</span>
@@ -291,7 +269,7 @@
     </section>
 
     <!-- 03. SOLUÇÃO -->
-    <section id="solucao" class="py-24 px-6 md:px-12 bg-[#ccff00] text-black">
+    <section id="solucao" class="py-24 px-6 md:px-12 bg-lime text-black">
       <div class="max-w-6xl mx-auto">
         
         <!-- Título Mobile (Visível apenas em telas menores) -->
@@ -332,7 +310,7 @@
               
               <!-- Navigation Controls -->
               <div class="flex items-center gap-4 mt-8">
-                <button id="solucao-prev" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-[#ccff00] transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
+                <button id="solucao-prev" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
                   <i data-lucide="arrow-left" width="18"></i>
                 </button>
                 <div class="flex gap-2" id="solucao-dots">
@@ -340,7 +318,7 @@
                   <div class="w-2 h-2 rounded-full bg-black/20"></div>
                   <div class="w-2 h-2 rounded-full bg-black/20"></div>
                 </div>
-                <button id="solucao-next" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-[#ccff00] transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
+                <button id="solucao-next" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
                   <i data-lucide="arrow-right" width="18"></i>
                 </button>
               </div>
@@ -363,24 +341,24 @@
     <!-- 04. VALOR GERADO -->
     <section id="valor-gerado" class="py-24 px-6 md:px-12 border-b border-white/5 relative overflow-hidden">
       <!-- Glow Background -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-[#ccff00]/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-lime/5 blur-[120px] rounded-full pointer-events-none"></div>
       
       <div class="max-w-6xl mx-auto relative z-10">
         <div class="text-center mb-16">
-          <span class="text-[#ccff00] font-mono text-sm font-bold mb-2 block">04 / VALUE GENERATED</span>
+          <span class="text-lime font-mono text-sm font-bold mb-2 block">04 / VALUE GENERATED</span>
           <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">Business Impact</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           
           <!-- Card 1: Redução -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-[#ccff00]/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
+          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-full bg-[#ccff00]/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:bg-[#ccff00] group-hover:text-black transition-colors">
+              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
                 <i data-lucide="trending-up" width="24"></i>
               </div>
               <div class="mb-4">
-                <h3 class="text-xl md:text-2xl font-black uppercase leading-tight tracking-tight text-white group-hover:text-[#ccff00] transition-colors">
+                <h3 class="text-xl md:text-2xl font-black uppercase leading-tight tracking-tight text-white group-hover:text-lime transition-colors">
                   Learning<br/>Curve
                 </h3>
               </div>
@@ -391,13 +369,13 @@
           </div>
 
           <!-- Card 2: Engajamento -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-[#ccff00]/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
+          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-full bg-[#ccff00]/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:bg-[#ccff00] group-hover:text-black transition-colors">
+              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
                 <i data-lucide="activity" width="24"></i>
               </div>
               <div class="mb-4">
-                <h3 class="text-xl md:text-2xl font-black uppercase leading-tight tracking-tight text-white group-hover:text-[#ccff00] transition-colors">
+                <h3 class="text-xl md:text-2xl font-black uppercase leading-tight tracking-tight text-white group-hover:text-lime transition-colors">
                   Increased<br/>Engagement
                 </h3>
               </div>
@@ -416,14 +394,14 @@
       <div class="max-w-4xl mx-auto">
         <div class="flex flex-col md:flex-row gap-12">
            <div class="w-full md:w-1/3">
-             <span class="text-[#ccff00] font-mono text-sm font-bold mb-2 block">05 / TAKEAWAYS</span>
+             <span class="text-lime font-mono text-sm font-bold mb-2 block">05 / TAKEAWAYS</span>
              <h2 class="text-3xl font-bold uppercase tracking-tight">Project Lessons</h2>
            </div>
            <div class="w-full md:w-2/3 space-y-6">
              <!-- Card 1 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-[#ccff00]/40">
+             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
                <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-[#ccff00]">01 / </span>COGNITIVE LOAD REDUCTION
+                 <span class="text-lime">01 / </span>COGNITIVE LOAD REDUCTION
                </h3>
                <p class="text-gray-400 text-sm leading-relaxed">
                  The best feature is useless if the user doesn't know how to use it. Simplifying and focusing on reducing cognitive load is key to retaining customers.
@@ -431,9 +409,9 @@
              </div>
 
              <!-- Card 2 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-[#ccff00]/40">
+             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
                <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-[#ccff00]">02 / </span>MICRO-LEARNING AND SHORT FLOWS
+                 <span class="text-lime">02 / </span>MICRO-LEARNING AND SHORT FLOWS
                </h3>
                <p class="text-gray-400 text-sm leading-relaxed">
                  Replacing long tutorials with small blocks focused on a single action prevents abandonment and improves learning absorption.
@@ -441,9 +419,9 @@
              </div>
 
              <!-- Card 3 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-[#ccff00]/40">
+             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
                <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-[#ccff00]">03 / </span>GAMIFICATION FOR RETENTION
+                 <span class="text-lime">03 / </span>GAMIFICATION FOR RETENTION
                </h3>
                <p class="text-gray-400 text-sm leading-relaxed">
                  Celebrating achievements generates peaks of satisfaction that keep users engaged and motivated to continue exploring new product features.
@@ -451,9 +429,9 @@
              </div>
 
              <!-- Card 4 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-[#ccff00]/40">
+             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
                <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-[#ccff00]">04 / </span>CONTINUOUS DELIVERY
+                 <span class="text-lime">04 / </span>CONTINUOUS DELIVERY
                </h3>
                <p class="text-gray-400 text-sm leading-relaxed">
                  Weekly design deliverables. A continuous implementation flow with no technical bottlenecks and highly positive feedback from the team.
@@ -467,19 +445,19 @@
     <!-- NAVEGAÇÃO ENTRE CASES -->
     <section class="py-16 px-6 md:px-12 border-b border-white/5">
       <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <a href="https://marcodsvinicius.com/portfolio-rebalancing" class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-[#ccff00]/40 bg-white/[0.02] transition-all">
-          <i data-lucide="arrow-left" class="text-gray-500 group-hover:text-[#ccff00] group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
+        <a href="Case-Rebalanceamento-Carteira.html" class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all">
+          <i data-lucide="arrow-left" class="text-gray-500 group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
           <div>
             <span class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">Previous Case</span>
-            <span class="font-montserrat font-bold text-white group-hover:text-[#ccff00] transition-colors">Investment Portfolio Rebalancing</span>
+            <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Investment Portfolio Rebalancing</span>
           </div>
         </a>
-        <a href="https://marcodsvinicius.com/en-hub-obras/" class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-[#ccff00]/40 bg-white/[0.02] transition-all text-right">
+        <a href="Case-Hub-de-Obras.html" class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right">
           <div>
             <span class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">Next Case</span>
-            <span class="font-montserrat font-bold text-white group-hover:text-[#ccff00] transition-colors">Hub de Obras</span>
+            <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Hub de Obras</span>
           </div>
-          <i data-lucide="arrow-right" class="text-gray-500 group-hover:text-[#ccff00] group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
+          <i data-lucide="arrow-right" class="text-gray-500 group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
         </a>
       </div>
     </section>
@@ -492,10 +470,10 @@
           I'm available for new challenges and collaborations. Let's build incredible experiences together.
         </p>
         <div class="flex flex-col sm:flex-row-reverse justify-center gap-4 w-full max-w-2xl mx-auto">
-          <a href="mailto:contato@marcodsvinicius.com" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm bg-[#ccff00] text-black font-bold uppercase tracking-widest hover:bg-white transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center">
+          <a href="mailto:contato@marcodsvinicius.com" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm bg-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center">
             Get in Touch
           </a>
-          <a href="https://marcodsvinicius.com/en/" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm border border-white/20 hover:border-[#ccff00] hover:text-[#ccff00] font-bold uppercase tracking-widest transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center gap-2">
+          <a href="./" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm border border-white/20 hover:border-lime hover:text-lime font-bold uppercase tracking-widest transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center gap-2">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
             Back to Projects
           </a>
@@ -518,7 +496,7 @@
 
 <!-- Modal de Imagem -->
 <div id="image-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300 p-4">
-  <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-[#ccff00] transition-colors z-50">
+  <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-lime transition-colors z-50">
     <i data-lucide="x" width="32" height="32"></i>
   </button>
   <img id="modal-image" src="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300" alt="Enlarged image">
@@ -689,181 +667,12 @@
     img.addEventListener('click', () => openModal(img.src));
   });
 
-  // Lógica do Scrollspy para a Barra Flutuante (Quick-Nav Dock)
-  const scrollSections = document.querySelectorAll('main > section');
-  const dockNavItems = document.querySelectorAll('[data-mobile-section]');
-  const dockProgressLine = document.getElementById('mobile-scroll-progress');
-
-  if (scrollSections.length > 0 && dockNavItems.length > 0) {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-30% 0px -60% 0px',
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const activeId = entry.target.id;
-          
-          dockNavItems.forEach((item, index) => {
-            if (item.getAttribute('href') === `#${activeId}`) {
-              item.classList.remove('text-gray-400');
-              item.classList.add('text-[#ccff00]', 'bg-white/10');
-              
-              if (dockProgressLine) {
-                const totalItems = dockNavItems.length;
-                const percent = (index / (totalItems - 1)) * 100;
-                dockProgressLine.style.width = `${percent}%`;
-              }
-            } else {
-              item.classList.add('text-gray-400');
-              item.classList.remove('text-[#ccff00]', 'bg-white/10');
-            }
-          });
-        }
-      });
-    }, observerOptions);
-
-    scrollSections.forEach(section => observer.observe(section));
-
-    // Suporte a scroll suave
-    dockNavItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = item.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  }
-
-  // Lógica do Menu Hambúrguer (Mobile e Desktop)
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
-  const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-  function openMobileMenu() {
-    if (!mobileMenuDrawer || !mobileMenuBackdrop || !mobileMenuBtn) return;
-    
-    mobileMenuDrawer.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
-    mobileMenuDrawer.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-    
-    mobileMenuBackdrop.classList.remove('opacity-0', 'pointer-events-none');
-    mobileMenuBackdrop.classList.add('opacity-100');
-    
-    mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6 text-white transition-transform duration-300"></i>';
-    lucide.createIcons();
-    
-    if (window.innerWidth < 768) {
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-
-
-  function closeMobileMenu() {
-    if (!mobileMenuDrawer || !mobileMenuBackdrop || !mobileMenuBtn) return;
-    
-    mobileMenuDrawer.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-    mobileMenuDrawer.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-    
-    mobileMenuBackdrop.classList.remove('opacity-100');
-    mobileMenuBackdrop.classList.add('opacity-0', 'pointer-events-none');
-    
-    mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6 text-white transition-transform duration-300"></i>';
-    lucide.createIcons();
-    document.body.style.overflow = '';
-  }
-
-
-
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-            const isOpen = mobileMenuDrawer.classList.contains('opacity-100');
-      
-      if (isOpen) {
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
-    });
-  }
-
-  if (mobileMenuBackdrop) {
-    mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
-  }
-
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      closeMobileMenu();
-    });
-  });
-
-  const q=s=>document.querySelector(s),lB=q('#logo-box'),mB=q('#mobile-menu-btn'),hS=q('#hero')||q('header'),toggleH=()=>{const scr=window.scrollY>((hS?hS.offsetHeight:100)-80);[lB,mB].forEach(el=>{if(!el)return;const t=(c1,c2)=>{el.classList.toggle(c1,scr);el.classList.toggle(c2,!scr);};el.classList.toggle('backdrop-blur-xl',scr);t('bg-black/60','bg-transparent');t('border-white/10','border-transparent');t('shadow-lg','shadow-none');});};window.addEventListener('scroll',toggleH);toggleH();
 </script>
 
   <!-- Botão Flutuante Voltar ao Topo -->
-  <button id="back-to-top" aria-label="Back to top" style="position:fixed;bottom:24px;z-index:9999;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(0,0,0,0.6);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.4);color:white;cursor:pointer;opacity:0;transition:opacity 0.3s ease,transform 0.3s ease,border-color 0.3s ease,color 0.3s ease;pointer-events:none;outline:none;" onmouseenter="this.style.borderColor='rgba(204,255,0,0.4)';this.style.color='#ccff00'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='white'">
-    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  <button id="back-to-top" type="button" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
   </button>
-  <script>
-    (function() {
-      var btn = document.getElementById('back-to-top');
-      var menuBtn = document.getElementById('mobile-menu-btn');
-      if (!btn) return;
-
-      function alignWithMenu() {
-        if (menuBtn) {
-          var rect = menuBtn.getBoundingClientRect();
-          btn.style.right = (window.innerWidth - rect.right) + 'px';
-        } else {
-          btn.style.right = '24px';
-        }
-      }
-
-      function updateVisibility() {
-        if (window.scrollY > 300) {
-          btn.style.opacity = '1';
-          btn.style.pointerEvents = 'auto';
-          btn.style.transform = 'translateY(0)';
-        } else {
-          btn.style.opacity = '0';
-          btn.style.pointerEvents = 'none';
-          btn.style.transform = 'translateY(8px)';
-        }
-      }
-
-      alignWithMenu();
-      window.addEventListener('scroll', updateVisibility, { passive: true });
-      window.addEventListener('resize', alignWithMenu);
-      btn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    })();
-  </script>
-
-
-  <!-- Script para prevenir o Flash of Unstyled Content (FOUC) -->
-  <script>
-    (function() {
-      var reveal = function() {
-        document.body.style.opacity = '1';
-      };
-      if (window.tailwind || document.readyState === 'complete') {
-        reveal();
-      } else {
-        window.addEventListener('load', reveal);
-        setTimeout(reveal, 300);
-      }
-    })();
-  </script>
 
 </body>
 </html>

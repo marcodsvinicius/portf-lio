@@ -1,0 +1,14 @@
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependências e saídas de build locais
+node_modules/
+dist/
+
+# Rascunhos e material de trabalho (não publicar)
+scratch/
+*.docx
+*.jhtml
