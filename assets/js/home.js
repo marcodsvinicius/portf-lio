@@ -278,6 +278,15 @@
     try {
       fmt = new Intl.DateTimeFormat(lang === 'en' ? 'en-US' : 'pt-BR', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz });
     } catch (e) { return; }
+    // fuso do Brasil calculado na hora (UTC-3; muda sozinho se voltar a ter horário de verão)
+    var utc = document.getElementById('local-utc');
+    if (utc) {
+      try {
+        var part = new Intl.DateTimeFormat('en-US', { timeZone: tz, timeZoneName: 'shortOffset' })
+          .formatToParts(new Date()).filter(function (x) { return x.type === 'timeZoneName'; })[0];
+        if (part && /GMT/.test(part.value)) utc.textContent = '(' + part.value.replace('GMT', 'UTC') + ')';
+      } catch (e) { /* mantém o (UTC-3) do HTML */ }
+    }
     function tick() { clock.textContent = fmt.format(new Date()); }
     tick();
     setInterval(tick, 20000);
