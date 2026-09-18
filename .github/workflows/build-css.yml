@@ -1,0 +1,41 @@
+name: Build CSS
+
+# Recompila assets/css/tailwind.css sempre que HTML, JS ou o config mudarem,
+# e faz o commit do resultado. Assim dá para editar e publicar sem rodar nada localmente.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'assets/js/**'
+      - 'assets/css/tailwind.src.css'
+      - 'tailwind.config.js'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build:css
+      - name: Commit do CSS recompilado
+        run: |
+          if git diff --quiet -- assets/css/tailwind.css; then
+            echo "CSS já estava atualizado"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/css/tailwind.css
+          git commit -m "chore: recompila tailwind.css"
+          git push

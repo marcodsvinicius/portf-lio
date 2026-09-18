@@ -257,10 +257,11 @@ A smooth overlay window allowing users to examine case mockups in detailed full-
 ## Implementation Notes (code)
 
 ### Files
-* `assets/js/tailwind.config.js` — the tokens above as Tailwind theme extensions. Use `bg-brand`, `text-lime`, `border-brand/40`, `bg-ink`, `bg-surface`, `font-montserrat`, `font-jakarta`, `animate-fadeIn`, `animate-morph` instead of arbitrary values like `bg-[#B7E500]`.
+* `tailwind.config.js` (repo root) — the tokens above as Tailwind theme extensions, compiled to `assets/css/tailwind.css` by `npm run build:css` or the GitHub Action. Use `bg-brand`, `text-lime`, `border-brand/40`, `bg-ink`, `bg-surface`, `font-montserrat`, `font-jakarta`, `animate-fadeIn` instead of arbitrary values like `bg-[#B7E500]`.
 * `assets/css/site.css` — shared base styles plus the motion components below.
 * `assets/js/site.js` — menu, header glass-on-scroll, scrollspy, scroll reveal, back-to-top, page transitions.
 * `assets/js/home.js` — home-only interactions.
+* `assets/js/case.js` — case-study carousels (slides from `#solucao-data` JSON), lightbox and password gate.
 
 ### Motion components (home)
 * **Scroll reveal:** add `class="reveal"` (+ `style="--d:n"` for stagger, `--stagger` to change the step). Elements fade/slide in once when 8% visible.

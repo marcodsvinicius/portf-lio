@@ -1,6 +1,8 @@
 /* Tokens do Design System "Cyberpunk Glass & Neon Lime" (ver design.md).
-   Carregado logo após o Tailwind Play CDN, antes de qualquer markup. */
-tailwind.config = {
+   O CSS final é compilado para assets/css/tailwind.css com `npm run build:css`
+   (o GitHub Action .github/workflows/build-css.yml faz isso sozinho a cada push). */
+module.exports = {
+  content: ['./index.html', './pt/*.html', './en/*.html', './assets/js/*.js'],
   theme: {
     extend: {
       colors: {
@@ -18,12 +20,6 @@ tailwind.config = {
           from: { opacity: '0', transform: 'translateY(10px)' },
           to: { opacity: '1', transform: 'none' }
         },
-        morph: {
-          '0%, 100%': { borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' },
-          '25%': { borderRadius: '58% 42% 75% 25% / 76% 46% 54% 24%' },
-          '50%': { borderRadius: '50% 50% 33% 67% / 55% 27% 73% 45%' },
-          '75%': { borderRadius: '33% 67% 58% 42% / 63% 68% 32% 37%' }
-        },
         'gate-shake': {
           '10%, 90%': { transform: 'translateX(-1px)' },
           '20%, 80%': { transform: 'translateX(2px)' },
@@ -32,10 +28,9 @@ tailwind.config = {
         }
       },
       animation: {
-        fadeIn: 'fadeIn 0.8s ease-out both',
-        morph: 'morph 8s ease-in-out infinite',
-        'morph-reverse': 'morph 8s ease-in-out infinite reverse'
+        fadeIn: 'fadeIn 0.8s ease-out both'
       }
     }
-  }
+  },
+  plugins: []
 };

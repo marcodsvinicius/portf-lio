@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marcodsvinicius.com/sitemap.xml

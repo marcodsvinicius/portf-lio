@@ -1,0 +1,45 @@
+# Hostinger / Apache — cabeçalhos de segurança, cache e redirecionamentos.
+# (O GitHub Pages ignora este arquivo.)
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+  # Ative depois de confirmar que o HTTPS está estável no domínio:
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Força HTTPS e domínio sem www
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://marcodsvinicius.com%{REQUEST_URI} [L,R=301]
+  # Compatibilidade com os endereços antigos do WordPress
+  RewriteRule ^pt/?$ / [L,R=301]
+  RewriteRule ^ds-3-0/?$ /pt/Case-Design-System.html [L,R=301]
+  RewriteRule ^reb-carteira-3-0/?$ /pt/Case-Rebalanceamento-Carteira.html [L,R=301]
+  RewriteRule ^tour-guiado-3-0/?$ /pt/Case-Tour-Guiado.html [L,R=301]
+  RewriteRule ^hub-de-obras-3-0/?$ /pt/Case-Hub-de-Obras.html [L,R=301]
+  RewriteRule ^en-ds/?$ /en/Case-Design-System.html [L,R=301]
+  RewriteRule ^portfolio-rebalancing/?$ /en/Case-Rebalanceamento-Carteira.html [L,R=301]
+  RewriteRule ^en-guided-tour/?$ /en/Case-Tour-Guiado.html [L,R=301]
+  RewriteRule ^en-hub-obras/?$ /en/Case-Hub-de-Obras.html [L,R=301]
+</IfModule>
+
+# Bloqueia acesso a arquivos de projeto que não são páginas
+<FilesMatch "^(package\.json|package-lock\.json|tailwind\.config\.js|README\.md|design\.md|\.gitignore)$">
+  Require all denied
+</FilesMatch>

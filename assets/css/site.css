@@ -17,15 +17,33 @@ html { overflow-x: hidden; }
 body {
   overflow-x: clip;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  opacity: 0;
-  transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
-body.is-ready { opacity: 1; }
-body.is-leaving { opacity: 0; transition-duration: 0.2s; }
+body.is-leaving { opacity: 0; }
+
+/* Link "pular para o conteúdo": invisível até receber foco pelo teclado */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  background: #B7E500;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus { transform: none; outline: 2px solid #fff; }
 .font-montserrat { font-family: 'Montserrat', sans-serif; }
 .text-lime-glow { text-shadow: 0 0 20px rgba(204, 255, 0, 0.3); }
 
-/* Evita flash da gaveta de menu antes do Tailwind processar as classes */
+/* Gaveta de menu fica fora do fluxo enquanto fechada */
 #mobile-menu-drawer:not(.opacity-100) {
   opacity: 0 !important;
   pointer-events: none !important;

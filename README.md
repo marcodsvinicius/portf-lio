@@ -10,22 +10,41 @@ en/index.html              Home em inglês
 pt/Case-*.html             Cases em português
 en/Case-*.html             Cases em inglês
 pt/index.html              Redireciona para a raiz (compatibilidade com /pt/)
+assets/css/tailwind.css    CSS do Tailwind compilado (gerado, não edite à mão)
+assets/css/tailwind.src.css  Entrada do Tailwind
 assets/css/site.css        Estilos compartilhados (reveal, tilt, timeline, contato, reduced-motion)
-assets/js/tailwind.config.js  Tokens do design system (cores, fontes, keyframes)
 assets/js/site.js          Comportamentos comuns: menu, cabeçalho, scrollspy, reveal, transições
 assets/js/home.js          Interações exclusivas da home
+assets/js/case.js          Carrosséis, lightbox e trava de senha dos cases
+assets/js/vendor/          Lucide (ícones) servido localmente
+assets/img/                Favicon e, no futuro, as imagens dos cases
+tailwind.config.js         Tokens do design system (cores, fontes, keyframes)
+scripts/baixar-imagens.py  Traz as imagens do WordPress para assets/img
 design.md                  Design system "Cyberpunk Glass & Neon Lime"
+.htaccess                  Cabeçalhos de segurança, cache e redirecionamentos (Hostinger)
 ```
 
-Toda página carrega, nesta ordem: Tailwind (versão fixa) → `tailwind.config.js` → Lucide (versão fixa) → `site.css` → `site.js` (defer).
+Toda página carrega `tailwind.css` → `site.css` → Lucide → `site.js` (defer) → `home.js` ou `case.js` (defer).
+Não há script de terceiros em tempo de execução: tudo é servido do próprio domínio, e cada página declara uma
+Content Security Policy que bloqueia scripts inline e de outras origens.
 As classes de cor usam os tokens `brand` (`#B7E500`), `lime` (`#CCFF00`), `ink` e `surface` em vez de valores arbitrários.
+
+## Editando
+
+O CSS do Tailwind é compilado. Depois de mudar classes no HTML ou no JS, rode:
+
+```bash
+npm install          # só na primeira vez
+npm run build:css    # gera assets/css/tailwind.css
+```
+
+Se você editar direto no GitHub (pelo celular, por exemplo), não precisa rodar nada: o Action
+`build-css.yml` recompila o CSS a cada push na `main` e faz o commit sozinho.
 
 ## Rodando localmente
 
-Qualquer servidor estático funciona. Exemplo com Python:
-
 ```bash
-python3 -m http.server 8080
+npm run serve
 # abra http://localhost:8080/
 ```
 

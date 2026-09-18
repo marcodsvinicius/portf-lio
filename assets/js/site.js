@@ -15,11 +15,6 @@
   function icons() { if (window.lucide) window.lucide.createIcons(); }
   icons();
 
-  /* --- Revela a página (evita flash sem estilo do Tailwind CDN) ----------- */
-  function ready() { document.body.classList.add('is-ready'); }
-  if (window.tailwind || document.readyState === 'complete') ready();
-  else { window.addEventListener('load', ready); setTimeout(ready, 400); }
-
   /* --- Menu lateral (gaveta) --------------------------------------------- */
   var menuBtn = document.getElementById('mobile-menu-btn');
   var drawer = document.getElementById('mobile-menu-drawer');
