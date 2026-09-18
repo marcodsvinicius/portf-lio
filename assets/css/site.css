@@ -135,6 +135,7 @@ body.is-leaving { opacity: 0; transition-duration: 0.2s; }
 }
 .scroll-cue:hover { color: #CCFF00; }
 .scroll-cue.is-hidden { opacity: 0; pointer-events: none; }
+@media (max-width: 767px) { .scroll-cue { display: none; } }
 .scroll-cue__line {
   width: 1px;
   height: 44px;
@@ -148,9 +149,19 @@ body.is-leaving { opacity: 0; transition-duration: 0.2s; }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* Título com efeito de decodificação */
-[data-decode] .dc { display: inline-block; }
-[data-decode] .dc-pending { color: #B7E500; opacity: 0.55; }
+/* Frase-chave do título: lima com brilho e sublinhado que se desenha */
+.hero-highlight {
+  color: #CCFF00;
+  text-shadow: 0 0 28px rgba(204, 255, 0, 0.35);
+  background-image: linear-gradient(90deg, #B7E500, #CCFF00);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: hl-draw 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+@keyframes hl-draw { to { background-size: 100% 0.08em; } }
 
 /* --- Projetos: tilt 3D, brilho e preview ---------------------------------- */
 .tilt-card { transform-style: preserve-3d; }
@@ -220,33 +231,51 @@ body.is-leaving { opacity: 0; transition-duration: 0.2s; }
   .card-preview { opacity: 0.95; transform: rotate(5deg); }
 }
 @media (max-width: 1023px) {
-  .card-preview { width: 42%; right: -12%; top: -22px; }
+  .tilt-card { height: auto; min-height: 480px; }
+  .card-preview {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    opacity: 1;
+    transform: none;
+    border-radius: 10px;
+    box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.5);
+  }
 }
 
-/* --- Skills: filtro por categoria ---------------------------------------- */
-.skill-chip {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 10px 18px;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #9ca3af;
-  background: rgba(255, 255, 255, 0.02);
-  cursor: pointer;
-  transition: color 0.25s, border-color 0.25s, background-color 0.25s, transform 0.2s;
+/* --- Skills: brilho que segue o cursor pelas bordas ------------------- */
+#skills-grid > div { position: relative; overflow: hidden; }
+.skill-card::before,
+.skill-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
 }
-.skill-chip:hover { color: #fff; border-color: rgba(255, 255, 255, 0.35); }
-.skill-chip:active { transform: scale(0.96); }
-.skill-chip.is-active {
-  color: #111;
-  background: #B7E500;
-  border-color: #B7E500;
-  box-shadow: 0 0 24px rgba(204, 255, 0, 0.25);
+/* borda iluminada */
+.skill-card::before {
+  inset: -1px;
+  padding: 1px;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(204, 255, 0, 0.7), transparent 55%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
 }
-#skills-grid > .is-filtered-out { display: none; }
+/* preenchimento suave */
+.skill-card::after {
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(204, 255, 0, 0.08), transparent 60%);
+}
+#skills-grid.is-lit .skill-card::before,
+#skills-grid.is-lit .skill-card::after { opacity: 1; }
+.skill-card > * { position: relative; z-index: 1; }
 
 /* --- Timeline que se desenha ---------------------------------------------- */
 .timeline { position: relative; }
@@ -342,6 +371,7 @@ body.is-leaving { opacity: 0; transition-duration: 0.2s; }
 .copy-email.is-copied .copy-email__icon { color: #111; }
 #contact-orb { perspective: 900px; }
 #contact-orb-shape { will-change: transform; }
+#contact-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 
 /* --- Movimento reduzido ---------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {

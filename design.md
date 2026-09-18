@@ -265,13 +265,13 @@ A smooth overlay window allowing users to examine case mockups in detailed full-
 ### Motion components (home)
 * **Scroll reveal:** add `class="reveal"` (+ `style="--d:n"` for stagger, `--stagger` to change the step). Elements fade/slide in once when 8% visible.
 * **Page transitions:** cross-document View Transitions (`@view-transition { navigation: auto }`) with a fade/slide; browsers without support get a 200 ms fade-out on internal link clicks.
-* **Hero:** `#hero-canvas` draws a lime dot grid that brightens and pushes away from the pointer; `.hero-spot` is a radial light following the cursor. `[data-decode]` on the `h1` runs the character-decoding intro. `.scroll-cue` is the animated scroll hint (hidden after 80 px).
-* **Project cards:** `.tilt-card` gets a 3D tilt (±6°) and a `.tilt-glow` sheen following the pointer; `.card-preview` slides a screenshot in on hover (always visible on touch devices).
-* **Skills:** `#skills-filter` chips filter `#skills-grid` items by `data-cat` (`design`, `research`, `dev`, `ai`) with a FLIP reposition animation.
+* **Hero:** `#hero-canvas` draws a lime dot grid that brightens and pushes away from the pointer; `.hero-spot` is a radial light following the cursor. `.hero-highlight` wraps the key phrase of the `h1` (lime, glow, underline that draws itself). `.scroll-cue` is the animated scroll hint (hidden after 80 px, not shown on phones).
+* **Project cards:** `.tilt-card` gets a 3D tilt (±6°) and a `.tilt-glow` sheen following the pointer; `.card-preview` slides a screenshot in on hover; below 1024 px it becomes a static block between the card header and the title.
+* **Skills:** `.skill-card` items get a lime border glow and soft fill that follow the pointer across `#skills-grid` (desktop only).
 * **Timelines:** `.timeline` containers draw a lime `.timeline-line` as the page scrolls; `.tl-dot` markers light up (`is-lit`) when the line passes them.
 * **Expandable text:** `[data-expandable]` blocks clamp long descriptions and add a "Ler mais / Read more" toggle only when the text overflows.
-* **Contact:** `.status-dot` availability pulse + `#local-time` (America/Sao_Paulo); `.copy-email` copies the address with a 2 s "Copiado!" state; `#contact-orb-shape` tilts toward the pointer.
+* **Contact:** `.status-dot` availability pulse + `#local-time` (America/Sao_Paulo); `.copy-email` copies the address with a 2 s "Copiado!" state; `#contact-canvas` draws a signal radar (sweep, blips that light up when the beam passes, a blip that follows the pointer) and `#contact-orb-shape` tilts toward the pointer.
 
 ### Accessibility & motion safety
-* Everything above respects `prefers-reduced-motion: reduce` (static grid, no decode, no tilt, instant reveal).
+* Everything above respects `prefers-reduced-motion: reduce` (static grid and radar, no tilt, instant reveal).
 * Focus is trapped inside the Hub de Obras password modal; `Esc` closes it and focus returns to the card.

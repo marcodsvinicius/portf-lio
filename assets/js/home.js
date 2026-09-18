@@ -128,62 +128,6 @@
   })();
 
   /* ======================================================================
-     HERO — efeito de decodificação do título
-     ====================================================================== */
-  (function decodeTitle() {
-    var el = document.querySelector('[data-decode]');
-    if (!el || reduced()) return;
-    var original = el.textContent.replace(/\s+/g, ' ').trim();
-    var CHARS = '01<>/\\|[]{}=+*#_-';
-    var STEP = 18, START = 350, FLIP = 40;
-
-    var h = el.getBoundingClientRect().height;
-    el.style.minHeight = h + 'px';
-    el.setAttribute('aria-label', original);
-
-    var spans = [];
-    el.textContent = '';
-    for (var i = 0; i < original.length; i++) {
-      var ch = original[i];
-      if (ch === ' ') { el.appendChild(document.createTextNode(' ')); spans.push(null); continue; }
-      var s = document.createElement('span');
-      s.className = 'dc dc-pending';
-      s.setAttribute('aria-hidden', 'true');
-      s.textContent = CHARS[Math.floor(Math.random() * CHARS.length)];
-      el.appendChild(s);
-      spans.push(s);
-    }
-
-    var t0 = performance.now(), lastFlip = 0;
-    function tick(now) {
-      var elapsed = now - t0;
-      var front = Math.floor((elapsed - START) / STEP);
-      var doFlip = now - lastFlip > FLIP;
-      if (doFlip) lastFlip = now;
-      var done = true;
-      for (var k = 0; k < spans.length; k++) {
-        var s = spans[k];
-        if (!s || s.dataset.done) continue;
-        if (k <= front) {
-          s.textContent = original[k];
-          s.classList.remove('dc-pending');
-          s.dataset.done = '1';
-        } else {
-          done = false;
-          if (doFlip && k < front + 14) s.textContent = CHARS[Math.floor(Math.random() * CHARS.length)];
-        }
-      }
-      if (!done) requestAnimationFrame(tick);
-      else {
-        el.textContent = original;
-        el.removeAttribute('aria-label');
-        el.style.minHeight = '';
-      }
-    }
-    requestAnimationFrame(tick);
-  })();
-
-  /* ======================================================================
      HERO — indicador de scroll some após rolar
      ====================================================================== */
   var cue = document.querySelector('.scroll-cue');
@@ -229,82 +173,27 @@
   })();
 
   /* ======================================================================
-     SKILLS — filtro por categoria com animação de reposicionamento (FLIP)
+     SKILLS — brilho que acompanha o cursor pelas bordas dos cards
      ====================================================================== */
-  (function skillsFilter() {
-    var bar = document.getElementById('skills-filter');
+  (function skillsSpotlight() {
     var grid = document.getElementById('skills-grid');
-    if (!bar || !grid) return;
-    var chips = bar.querySelectorAll('.skill-chip');
-    var items = Array.prototype.slice.call(grid.children);
-    var busy = false;
-
-    function setFilter(cat) {
-      if (busy) return;
-      busy = true;
-      chips.forEach(function (c) {
-        var on = c.dataset.filter === cat;
-        c.classList.toggle('is-active', on);
-        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (!grid || !canHover || reduced()) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.skill-card'));
+    var raf = null, lx = 0, ly = 0;
+    function paint() {
+      raf = null;
+      cards.forEach(function (card) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (lx - r.left) + 'px');
+        card.style.setProperty('--my', (ly - r.top) + 'px');
       });
-
-      var first = {};
-      items.forEach(function (el) { first[el.dataset.key] = el.getBoundingClientRect(); });
-
-      var toHide = [], toShow = [];
-      items.forEach(function (el) {
-        var match = cat === 'all' || el.dataset.cat === cat;
-        var hidden = el.classList.contains('is-filtered-out');
-        if (!match && !hidden) toHide.push(el);
-        if (match && hidden) toShow.push(el);
-      });
-
-      var instant = reduced();
-      var D = instant ? 0 : 220;
-      toHide.forEach(function (el) {
-        el.style.transition = 'opacity ' + D + 'ms ease, transform ' + D + 'ms ease';
-        el.style.opacity = '0';
-        el.style.transform = 'scale(0.9)';
-      });
-
-      setTimeout(function () {
-        toHide.forEach(function (el) { el.classList.add('is-filtered-out'); el.style.transition = ''; el.style.opacity = ''; el.style.transform = ''; });
-        toShow.forEach(function (el) { el.classList.remove('is-filtered-out'); el.style.opacity = '0'; el.style.transform = 'scale(0.9)'; });
-
-        var last = {};
-        items.forEach(function (el) { last[el.dataset.key] = el.getBoundingClientRect(); });
-
-        items.forEach(function (el, i) {
-          if (el.classList.contains('is-filtered-out')) return;
-          var f = first[el.dataset.key], l = last[el.dataset.key];
-          var isNew = toShow.indexOf(el) !== -1;
-          if (isNew) {
-            el.style.transition = 'none';
-            void el.offsetWidth;
-            el.style.transition = 'opacity 320ms ease ' + (i * 18) + 'ms, transform 320ms cubic-bezier(.22,1,.36,1) ' + (i * 18) + 'ms';
-            el.style.opacity = '1';
-            el.style.transform = '';
-            return;
-          }
-          var dx = f.left - l.left, dy = f.top - l.top;
-          if (!dx && !dy) return;
-          el.style.transition = 'none';
-          el.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
-          void el.offsetWidth;
-          el.style.transition = 'transform 380ms cubic-bezier(.22,1,.36,1)';
-          el.style.transform = '';
-        });
-        setTimeout(function () {
-          items.forEach(function (el) { el.style.transition = ''; el.style.opacity = ''; el.style.transform = ''; });
-          busy = false;
-        }, instant ? 0 : 420);
-      }, D);
     }
-
-    items.forEach(function (el, i) { el.dataset.key = String(i); });
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () { setFilter(chip.dataset.filter); });
+    grid.addEventListener('pointermove', function (e) {
+      lx = e.clientX; ly = e.clientY;
+      grid.classList.add('is-lit');
+      if (!raf) raf = requestAnimationFrame(paint);
     });
+    grid.addEventListener('pointerleave', function () { grid.classList.remove('is-lit'); });
   })();
 
   /* ======================================================================
@@ -432,39 +321,139 @@
   })();
 
   /* ======================================================================
-     CONTATO — espiral que inclina em direção ao cursor
+     CONTATO — radar de sinal: varredura contínua, pontos que acendem
+     quando o feixe passa e um ponto extra onde o cursor está
      ====================================================================== */
-  (function orb() {
+  (function radar() {
     var section = document.getElementById('contact');
-    var shape = document.getElementById('contact-orb-shape');
-    if (!section || !shape || !canHover || reduced()) return;
-    var cur = { rx: 0, ry: 0, tx: 0, ty: 0 };
-    var goal = { rx: 0, ry: 0, tx: 0, ty: 0 };
-    var raf = null;
-    function step() {
-      var k = 0.08, moving = false;
-      ['rx', 'ry', 'tx', 'ty'].forEach(function (p) {
-        var diff = goal[p] - cur[p];
-        if (Math.abs(diff) > 0.02) moving = true;
-        cur[p] += diff * k;
-      });
-      shape.style.transform = 'rotateX(' + cur.rx.toFixed(2) + 'deg) rotateY(' + cur.ry.toFixed(2) + 'deg) translate3d(' + cur.tx.toFixed(1) + 'px,' + cur.ty.toFixed(1) + 'px,0)';
-      raf = moving ? requestAnimationFrame(step) : null;
+    var wrap = document.getElementById('contact-orb-shape');
+    var canvas = document.getElementById('contact-canvas');
+    if (!section || !wrap || !canvas) return;
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var S = 0, C = 0, R = 0;
+    var angle = -Math.PI / 2, raf = null, visible = false;
+    var staticMode = reduced();
+    var pointer = null;
+    var blips = [];
+    var LIME = '204,255,0';
+
+    function resize() {
+      var r = wrap.getBoundingClientRect();
+      S = r.width; C = S / 2; R = C - 6;
+      canvas.width = Math.round(S * dpr); canvas.height = Math.round(S * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (!blips.length) seed();
+      draw();
     }
-    function kick() { if (!raf) raf = requestAnimationFrame(step); }
-    section.addEventListener('pointermove', function (e) {
-      var r = shape.getBoundingClientRect();
-      var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-      var nx = Math.max(-1, Math.min(1, (e.clientX - cx) / (window.innerWidth / 2)));
-      var ny = Math.max(-1, Math.min(1, (e.clientY - cy) / (window.innerHeight / 2)));
-      goal.ry = nx * 16; goal.rx = -ny * 16;
-      goal.tx = nx * 18; goal.ty = ny * 18;
-      kick();
-    });
-    section.addEventListener('pointerleave', function () {
-      goal.rx = goal.ry = goal.tx = goal.ty = 0;
-      kick();
-    });
+    function seed() {
+      blips = [];
+      for (var i = 0; i < 7; i++) blips.push(newBlip());
+    }
+    function newBlip() {
+      var a = Math.random() * Math.PI * 2, d = R * (0.25 + Math.random() * 0.68);
+      return { x: C + Math.cos(a) * d, y: C + Math.sin(a) * d, a: a, lit: 0, life: 6 + Math.random() * 8 };
+    }
+    function angleDiff(a, b) { var d = (a - b) % (Math.PI * 2); if (d < 0) d += Math.PI * 2; return d; }
+
+    function draw() {
+      ctx.clearRect(0, 0, S, S);
+      // fundo translúcido
+      ctx.beginPath(); ctx.arc(C, C, R, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(0,0,0,0.35)'; ctx.fill();
+      // anéis
+      for (var i = 1; i <= 4; i++) {
+        ctx.beginPath(); ctx.arc(C, C, (R / 4) * i, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(' + LIME + ',' + (i === 4 ? 0.55 : 0.14) + ')';
+        ctx.lineWidth = i === 4 ? 1.5 : 1; ctx.stroke();
+      }
+      // cruz
+      ctx.strokeStyle = 'rgba(' + LIME + ',0.12)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(C - R, C); ctx.lineTo(C + R, C); ctx.moveTo(C, C - R); ctx.lineTo(C, C + R); ctx.stroke();
+      // feixe de varredura
+      var g = ctx.createConicGradient ? ctx.createConicGradient(angle, C, C) : null;
+      ctx.save(); ctx.beginPath(); ctx.arc(C, C, R, 0, Math.PI * 2); ctx.clip();
+      if (g) {
+        g.addColorStop(0, 'rgba(' + LIME + ',0)');
+        g.addColorStop(0.78, 'rgba(' + LIME + ',0)');
+        g.addColorStop(0.97, 'rgba(' + LIME + ',0.22)');
+        g.addColorStop(1, 'rgba(' + LIME + ',0.4)');
+        ctx.fillStyle = g; ctx.fillRect(0, 0, S, S);
+      }
+      // linha do feixe
+      ctx.beginPath(); ctx.moveTo(C, C); ctx.lineTo(C + Math.cos(angle) * R, C + Math.sin(angle) * R);
+      ctx.strokeStyle = 'rgba(' + LIME + ',0.9)'; ctx.lineWidth = 1.5; ctx.stroke();
+      // pontos
+      blips.concat(pointer ? [pointer] : []).forEach(function (b) {
+        var glow = b.lit;
+        if (glow <= 0.02) return;
+        ctx.beginPath(); ctx.arc(b.x, b.y, 3 + glow * 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + LIME + ',' + (0.25 + glow * 0.75) + ')'; ctx.fill();
+        ctx.beginPath(); ctx.arc(b.x, b.y, 6 + (1 - glow) * 14, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(' + LIME + ',' + (glow * 0.5) + ')'; ctx.lineWidth = 1; ctx.stroke();
+      });
+      ctx.restore();
+    }
+
+    function frame() {
+      raf = null;
+      if (!visible || staticMode) return;
+      angle += 0.022;
+      blips.forEach(function (b, i) {
+        var d = angleDiff(angle, b.a);
+        if (d < 0.08) b.lit = 1;
+        b.lit = Math.max(0, b.lit - 0.012);
+        b.life -= 1 / 60;
+        if (b.life <= 0) blips[i] = newBlip();
+      });
+      if (pointer) {
+        var d2 = angleDiff(angle, pointer.a);
+        if (d2 < 0.08) pointer.lit = 1;
+        pointer.lit = Math.max(0.35, pointer.lit - 0.012);
+      }
+      draw();
+      raf = requestAnimationFrame(frame);
+    }
+    function kick() { if (!raf) raf = requestAnimationFrame(frame); }
+
+    if (canHover) {
+      var cur = { rx: 0, ry: 0 }, goal = { rx: 0, ry: 0 }, tiltRaf = null;
+      function tiltStep() {
+        tiltRaf = null; var moving = false;
+        ['rx', 'ry'].forEach(function (k) { var d = goal[k] - cur[k]; if (Math.abs(d) > 0.02) moving = true; cur[k] += d * 0.08; });
+        wrap.style.transform = 'rotateX(' + cur.rx.toFixed(2) + 'deg) rotateY(' + cur.ry.toFixed(2) + 'deg)';
+        if (moving) tiltRaf = requestAnimationFrame(tiltStep);
+      }
+      section.addEventListener('pointermove', function (e) {
+        var r = wrap.getBoundingClientRect();
+        var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+        var nx = Math.max(-1, Math.min(1, (e.clientX - cx) / (window.innerWidth / 2)));
+        var ny = Math.max(-1, Math.min(1, (e.clientY - cy) / (window.innerHeight / 2)));
+        goal.ry = nx * 12; goal.rx = -ny * 12;
+        if (!tiltRaf && !staticMode) tiltRaf = requestAnimationFrame(tiltStep);
+        // ponto do cursor, preso dentro do radar
+        var dx = e.clientX - cx, dy = e.clientY - cy, dist = Math.sqrt(dx * dx + dy * dy);
+        var max = R * 0.92, k = dist > max ? max / dist : 1;
+        pointer = { x: C + dx * k, y: C + dy * k, a: Math.atan2(dy, dx), lit: pointer ? pointer.lit : 0.35 };
+        if (staticMode) draw();
+      });
+      section.addEventListener('pointerleave', function () {
+        goal.rx = goal.ry = 0; pointer = null;
+        if (!tiltRaf && !staticMode) tiltRaf = requestAnimationFrame(tiltStep);
+        if (staticMode) draw();
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        if (visible) kick();
+      }, { threshold: 0.1 }).observe(wrap);
+    } else { visible = true; kick(); }
+    document.addEventListener('visibilitychange', function () { if (!document.hidden && visible) kick(); });
+    var rT; window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(resize, 120); });
+    resize();
+    if (staticMode) { blips.forEach(function (b, i) { b.lit = i % 2 ? 0.8 : 0.4; }); draw(); }
   })();
 
   /* ======================================================================
