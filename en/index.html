@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Marco Vinicius | Product Designer & Developer</title>
   <meta name="description" content="Marco Vinicius, Senior Product Designer with 7+ years of experience in UX/UI, Design Systems, and high-impact digital products. Check out my projects and case studies.">
@@ -22,9 +22,9 @@
   <link rel="alternate" hreflang="en" href="https://marcodsvinicius.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://marcodsvinicius.com/">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
   
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
@@ -235,7 +235,7 @@
                 <span class="h-[1px] w-8 bg-neutral-800/20"></span>
                 <span class="font-montserrat font-bold text-xs uppercase tracking-widest text-neutral-900">Design System</span>
               </div>
-              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/50 mt-1">Nelogica</span>
+              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/70 mt-1">Nelogica</span>
             </div>
           </div>
 
@@ -270,7 +270,7 @@
                 <span class="h-[1px] w-8 bg-neutral-800/20"></span>
                 <span class="font-montserrat font-bold text-xs uppercase tracking-widest text-neutral-900">Fintech</span>
               </div>
-              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/50 mt-1">Nelogica</span>
+              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/70 mt-1">Nelogica</span>
             </div>
           </div>
 
@@ -305,7 +305,7 @@
                 <span class="h-[1px] w-8 bg-neutral-800/20"></span>
                 <span class="font-montserrat font-bold text-xs uppercase tracking-widest text-neutral-900">UX Research</span>
               </div>
-              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/50 mt-1">Nelogica</span>
+              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/70 mt-1">Nelogica</span>
             </div>
           </div>
 
@@ -342,7 +342,7 @@
                 <span class="h-[1px] w-8 bg-neutral-800/20"></span>
                 <span class="font-montserrat font-bold text-xs uppercase tracking-widest text-neutral-900">Product Design</span>
               </div>
-              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/50 mt-1">Hub de Obras</span>
+              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/70 mt-1">Hub de Obras</span>
             </div>
             <div class="flex items-center gap-2">
               <span class="w-7 h-7 flex items-center justify-center bg-black/10 text-neutral-900 rounded-sm" title="Password protected article">
@@ -579,12 +579,12 @@
               <!-- Formação 1 -->
               <div class="group relative reveal">
                 <div class="tl-dot absolute -left-[28px] top-[5px] w-2 h-2 rounded-full bg-brand"></div>
-                <span class="block text-xs font-mono text-gray-500 mb-1">2025 - 2026</span>
+                <span class="block text-xs font-mono text-muted mb-1">2025 - 2026</span>
                 <h4 class="font-montserrat text-lg font-bold text-white group-hover:text-brand transition-colors">
                   Postgraduate Degree in UX Design and Beyond
                 </h4>
                 <p class="text-sm text-gray-400 font-medium mb-3">PUCRS - Specialization • Completed</p>
-                <p class="text-sm text-gray-500 leading-relaxed font-light">
+                <p class="text-sm text-muted leading-relaxed font-light">
                   Specialization covering strategic disciplines such as Interface Evaluation, Design Leadership, Advanced Design Systems, and Product Discovery.
                 </p>
               </div>
@@ -592,12 +592,12 @@
               <!-- Formação 2 -->
               <div class="group relative reveal" style="--d:1">
                 <div class="tl-dot absolute -left-[28px] top-[5px] w-2 h-2 rounded-full bg-white/20 group-hover:bg-brand transition-colors"></div>
-                <span class="block text-xs font-mono text-gray-500 mb-1">2019 - 2023</span>
+                <span class="block text-xs font-mono text-muted mb-1">2019 - 2023</span>
                 <h4 class="font-montserrat text-lg font-bold text-white group-hover:text-brand transition-colors">
                   Bachelor's Degree in Computer Science
                 </h4>
                 <p class="text-sm text-gray-400 font-medium mb-3">IFRJ - Pinheiral Campus • Completed</p>
-                <p class="text-sm text-gray-500 leading-relaxed font-light">
+                <p class="text-sm text-muted leading-relaxed font-light">
                   Academic development focused on software engineering and technologies. Communications Director at the Student Union and teaching assistant for technical subjects.
                 </p>
               </div>
@@ -685,8 +685,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Senior Product Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">OceanPact | Stefanini</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Dec 2025 - Present</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Dec 2025 - Present</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -706,8 +706,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Mid-level UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">Banco do Brasil | Stefanini</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Nov 2024 - Nov 2025 (1 year and 1 month)</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Nov 2024 - Nov 2025 (1 year and 1 month)</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -724,8 +724,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Mid-level UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">GameOn (Freelance)</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Jun 2024 - Mar 2025 (10 months)</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Jun 2024 - Mar 2025 (10 months)</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -742,8 +742,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Mid-level UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">MAG Seguros</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Aug 2024 - Nov 2024 (4 months)</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Aug 2024 - Nov 2024 (4 months)</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -760,8 +760,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">Cypher Financial AI</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Nov 2023 - Aug 2024 (10 months)</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Nov 2023 - Aug 2024 (10 months)</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -778,8 +778,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">Nelogica</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Oct 2021 - Apr 2023 (1 year and 7 months)</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Oct 2021 - Apr 2023 (1 year and 7 months)</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -796,8 +796,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UI Designer and Front-End Developer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">Freelance</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Feb 2020 - Jan 2022 (2 years)</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Feb 2020 - Jan 2022 (2 years)</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -814,8 +814,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Programming and Design Teacher</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">LivreLab</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Mar 2020 - Sep 2021 (1 year and 7 months)</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Mar 2020 - Sep 2021 (1 year and 7 months)</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -832,8 +832,8 @@
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">React Developer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
                 <span class="text-white">DarwinX</span>
-                <span class="hidden md:inline text-gray-500 mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-gray-500 mt-1 md:mt-0">Mar 2021 - Jul 2021 (5 months)</span>
+                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
+                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Mar 2021 - Jul 2021 (5 months)</span>
               </div>
               <div class="exp-body" data-expandable data-more="Read more" data-less="Show less">
                 <div class="exp-text">
@@ -904,7 +904,7 @@
              <div class="h-10 w-[1px] bg-white/20"></div> 
              <div class="flex flex-col justify-center">
                 <span class="text-white font-bold text-lg uppercase tracking-wide leading-none mb-1">Years of</span>
-                <span class="text-gray-500 text-xs uppercase font-bold tracking-[0.2em] leading-none">Experience</span>
+                <span class="text-muted text-xs uppercase font-bold tracking-[0.2em] leading-none">Experience</span>
              </div>
           </div>
 
@@ -1049,7 +1049,7 @@
     <div class="hub-gate-card w-full max-w-md bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden scale-95 transition-transform duration-300">
       <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand/10 blur-[80px] rounded-full pointer-events-none"></div>
 
-      <button type="button" id="hub-gate-close" aria-label="Close" class="absolute top-5 right-5 text-gray-500 hover:text-white transition-colors z-10">
+      <button type="button" id="hub-gate-close" aria-label="Close" class="absolute top-5 right-5 text-muted hover:text-white transition-colors z-10">
         <i data-lucide="x" width="20" height="20"></i>
       </button>
 
@@ -1076,9 +1076,9 @@
               autocomplete="off"
               spellcheck="false"
               placeholder="Enter the access password"
-              class="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-5 pr-12 text-white placeholder:text-gray-600 font-medium text-sm focus:outline-none focus:border-brand/50 focus:bg-white/[0.05] transition-colors"
+              class="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-5 pr-12 text-white placeholder:text-muted font-medium text-sm focus:outline-none focus:border-brand/50 focus:bg-white/[0.05] transition-colors"
             >
-            <button type="button" id="hub-gate-toggle-visibility" aria-label="Show password" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-brand transition-colors">
+            <button type="button" id="hub-gate-toggle-visibility" aria-label="Show password" class="absolute right-4 top-1/2 -translate-y-1/2 text-muted hover:text-brand transition-colors">
               <i data-lucide="eye" width="18" height="18"></i>
             </button>
           </div>
@@ -1099,7 +1099,7 @@
           </div>
         </form>
 
-        <a href="mailto:contato@marcodsvinicius.com?subject=Access%20password%20-%20Hub%20de%20Obras" class="mt-6 flex items-center justify-center gap-2 text-xs text-gray-500 hover:text-brand transition-colors font-medium">
+        <a href="mailto:contato@marcodsvinicius.com?subject=Access%20password%20-%20Hub%20de%20Obras" class="mt-6 flex items-center justify-center gap-2 text-xs text-muted hover:text-brand transition-colors font-medium">
           Don't have the password yet? Contact me
           <i data-lucide="arrow-up-right" width="12" height="12"></i>
         </a>

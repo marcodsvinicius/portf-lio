@@ -63,6 +63,26 @@
     update();
   });
 
+  /* --- Comparador antes / depois ----------------------------------------- */
+  document.querySelectorAll('.ba-compare').forEach(function (box) {
+    var range = box.querySelector('.ba-compare__range');
+    var before = box.querySelector('.ba-compare__before');
+    var thumbs = box.querySelectorAll('.ba-compare__thumb');
+    if (!range) return;
+    function sync() { box.style.setProperty('--pos', range.value + '%'); }
+    range.addEventListener('input', sync);
+    range.addEventListener('pointerdown', function () { box.classList.add('is-dragging'); });
+    ['pointerup', 'pointercancel', 'blur'].forEach(function (ev) { range.addEventListener(ev, function () { box.classList.remove('is-dragging'); }); });
+    thumbs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        if (!before) return;
+        before.src = t.dataset.src; before.alt = t.dataset.alt || before.alt;
+        thumbs.forEach(function (o) { o.classList.toggle('is-active', o === t); });
+      });
+    });
+    sync();
+  });
+
   /* --- Lightbox ---------------------------------------------------------- */
   var modal = document.getElementById('image-modal');
   var modalImg = document.getElementById('modal-image');

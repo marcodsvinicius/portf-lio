@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Design System Nelogica | Marco Vinicius</title>
   <meta name="description" content="Escalando a criação de interfaces e unindo Design e Engenharia.">
@@ -16,9 +16,9 @@
   <link rel="alternate" hreflang="pt-BR" href="https://marcodsvinicius.com/pt/Case-Design-System.html">
   <link rel="alternate" hreflang="en" href="https://marcodsvinicius.com/en/Case-Design-System.html">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
 
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
@@ -145,7 +145,7 @@
 
 
   <!-- HERO SECTION -->
-  <header class="relative z-10 pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-hero-glow">
+  <header class="vt-case-card relative z-10 pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-hero-glow">
 
 
     <div class="max-w-7xl mx-auto">
@@ -155,7 +155,7 @@
           Voltar aos Projetos
         </a>
       </div>
-      <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase py-2 leading-[1.0] tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 animate-fade-in-up">
+      <h1 class="vt-case-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase py-2 leading-[1.0] tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 animate-fade-in-up">
         CRIAÇÃO E GERENCIAMENTO DE DESIGN SYSTEM
       </h1>
       
@@ -164,25 +164,25 @@
       </p>
 
       <div class="flex flex-wrap items-center gap-2 mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">Design System</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">Design Tokens</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">UI Design</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">Governança</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">Notion</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">Colaboração Técnica</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Design System</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Design Tokens</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">UI Design</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Governança</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Notion</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Colaboração Técnica</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mt-12 border-t border-white/10 pt-12">
         <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Empresa</h3>
+          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Empresa</h3>
           <p class="text-lg font-bold">Nelogica</p>
         </div>
         <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Minha Função</h3>
+          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Minha Função</h3>
           <p class="text-lg font-bold">Product Designer (UX/UI)</p>
         </div>
         <div class="md:col-span-2">
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Resumo de Impacto</h3>
+          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Resumo de Impacto</h3>
           <p class="text-sm md:text-base font-medium text-gray-300 leading-relaxed border-l-2 border-lime/50 pl-4">
             <strong class="text-lime">Redução significativa no tempo de entrega</strong> de novas interfaces, otimização de código (eliminação de estilos redundantes) e criação de uma linguagem única (Design Tokens) para democratizar o acesso entre os times.
           </p>
@@ -351,7 +351,7 @@
                 <i data-lucide="clock" width="24"></i>
               </div>
               <div class="mb-4">
-                <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest block mb-1">Tempo de Construção</span>
+                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Tempo de Construção</span>
                 <div class="text-3xl font-black text-lime leading-tight">
                   Mais<br>Ágil
                 </div>
@@ -369,7 +369,7 @@
                 <i data-lucide="message-square" width="24"></i>
               </div>
               <div class="mb-4">
-                <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest block mb-1">Comunicação</span>
+                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Comunicação</span>
                 <div class="text-3xl font-black text-white leading-tight">
                   Handoff<br>Fluido
                 </div>
@@ -387,7 +387,7 @@
                 <i data-lucide="sparkles" width="24"></i>
               </div>
               <div class="mb-4">
-                <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest block mb-1">Experiência (UX)</span>
+                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Experiência (UX)</span>
                 <div class="text-3xl font-black text-lime leading-tight">
                   Foco no<br>Usuário
                 </div>
@@ -449,18 +449,18 @@
     <section class="py-16 px-6 md:px-12 border-b border-white/5">
       <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
         <a href="Case-Hub-de-Obras.html" class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all">
-          <i data-lucide="arrow-left" class="text-gray-500 group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
+          <i data-lucide="arrow-left" class="text-muted group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
           <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">Case Anterior</span>
+            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Case Anterior</span>
             <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Hub de Obras</span>
           </div>
         </a>
         <a href="Case-Rebalanceamento-Carteira.html" class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right">
           <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">Próximo Case</span>
+            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Próximo Case</span>
             <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Rebalanceamento de Carteira</span>
           </div>
-          <i data-lucide="arrow-right" class="text-gray-500 group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
+          <i data-lucide="arrow-right" class="text-muted group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
         </a>
       </div>
     </section>

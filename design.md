@@ -118,6 +118,7 @@ The system uses a strict hierarchical color system to guide the user's attention
 * **Accent Hover Green (`#B3E600`):** A slightly deeper lime green for hover feedback transitions.
 * **Text Primary (`#FFFFFF`):** High-readability white for headings, active labels, and critical text.
 * **Text Secondary (`#A0A0A0`):** Soft grey for descriptions, subheadings, metadata, and default states.
+* **Text Muted (`#8B9099`, token `muted`):** the dimmest text allowed on the black background (6.3:1 contrast). Use it instead of `text-gray-500` for dates, labels and placeholders.
 * **Border Subtle (`rgba(255, 255, 255, 0.1)`):** Standard line dividers and container borders to maintain structure without cluttering.
 
 ---
@@ -261,11 +262,13 @@ A smooth overlay window allowing users to examine case mockups in detailed full-
 * `assets/css/site.css` — shared base styles plus the motion components below.
 * `assets/js/site.js` — menu, header glass-on-scroll, scrollspy, scroll reveal, back-to-top, page transitions.
 * `assets/js/home.js` — home-only interactions.
-* `assets/js/case.js` — case-study carousels (slides from `#solucao-data` JSON), lightbox and password gate.
+* `assets/js/case.js` — case-study carousels (slides from `#solucao-data` JSON), before/after comparator, lightbox and password gate.
+* `assets/css/fonts.css` + `assets/fonts/` — Montserrat and Plus Jakarta Sans served locally (no Google Fonts request).
 
 ### Motion components (home)
 * **Scroll reveal:** add `class="reveal"` (+ `style="--d:n"` for stagger, `--stagger` to change the step). Elements fade/slide in once when 8% visible.
-* **Page transitions:** cross-document View Transitions (`@view-transition { navigation: auto }`) with a fade/slide; browsers without support get a 200 ms fade-out on internal link clicks.
+* **Page transitions:** cross-document View Transitions (`@view-transition { navigation: auto }`) with a fade/slide; browsers without support get a 200 ms fade-out on internal link clicks. Clicking a project card names it `case-card` (and its title `case-title`), so it morphs into the case `<header class="vt-case-card">` / `<h1 class="vt-case-title">`; on the way back, `pagereveal` names the originating card.
+* **Before / after comparator (cases):** `.ba-compare` with an invisible `<input type="range">` covering the frame, so mouse, touch and keyboard all move the lime divider; `.ba-compare__thumb` buttons swap the "before" screen when a case has more than one.
 * **Hero:** `#hero-canvas` draws a lime dot grid that brightens and pushes away from the pointer; `.hero-spot` is a radial light following the cursor. `.hero-highlight` wraps the key phrase of the `h1` (lime, glow, underline that draws itself). `.scroll-cue` is the animated scroll hint (hidden after 80 px, not shown on phones).
 * **Project cards:** `.tilt-card` gets a 3D tilt (±6°) and a `.tilt-glow` sheen following the pointer; `.card-preview` slides a screenshot in on hover; below 1024 px it becomes a static block between the card header and the title.
 * **Skills:** `.skill-card` items get a lime border glow and soft fill that follow the pointer across `#skills-grid` (desktop only).

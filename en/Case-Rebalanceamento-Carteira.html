@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Investment Portfolio Rebalancing | Marco Vinicius</title>
   <meta name="description" content="Retaining users and adding value to the B2B Home Broker. Creation of a new investment management feature that curbed user churn to third-party platforms, elevating the value of the product offered to financial market giants such as Nubank, C6 Bank, Sicoob, and Sicredi.">
@@ -16,9 +16,9 @@
   <link rel="alternate" hreflang="en" href="https://marcodsvinicius.com/en/Case-Rebalanceamento-Carteira.html">
   <link rel="alternate" hreflang="pt-BR" href="https://marcodsvinicius.com/pt/Case-Rebalanceamento-Carteira.html">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
 
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
@@ -143,7 +143,7 @@
   <div id="mobile-menu-backdrop" class="fixed inset-0 bg-transparent z-40 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none"></div>
 
   <!-- HERO SECTION -->
-  <header class="relative z-10 pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-hero-glow">
+  <header class="vt-case-card relative z-10 pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-hero-glow">
 
     <div class="max-w-7xl mx-auto">
       <div class="mb-6 animate-fade-in-up">
@@ -152,34 +152,34 @@
           Back to Projects
         </a>
       </div>
-      <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 animate-fade-in-up -mr-6 sm:mr-0 break-words hyphens-auto">
+      <h1 class="vt-case-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 animate-fade-in-up -mr-6 sm:mr-0 break-words hyphens-auto">
         Investment Portfolio Rebalancing
       </h1>
       
       <p class="text-lg md:text-xl text-gray-400 font-medium max-w-3xl mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
-        Retaining users and adding value to the B2B Home Broker. <span class="text-gray-500 block mt-2 text-base md:text-lg">Creation of a new investment management feature that curbed user churn to third-party platforms, elevating the value of the product offered to financial market giants such as Nubank, C6 Bank, Sicoob, and Sicredi.</span>
+        Retaining users and adding value to the B2B Home Broker. <span class="text-muted block mt-2 text-base md:text-lg">Creation of a new investment management feature that curbed user churn to third-party platforms, elevating the value of the product offered to financial market giants such as Nubank, C6 Bank, Sicoob, and Sicredi.</span>
       </p>
 
       <div class="flex flex-wrap items-center gap-2 mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">B2B2C</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">User Retention</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">Churn</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">Benchmarking</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">UX Strategy</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest">Wireframing</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">B2B2C</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">User Retention</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Churn</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Benchmarking</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">UX Strategy</span>
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Wireframing</span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mt-12 border-t border-white/10 pt-12">
         <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Company</h3>
+          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Company</h3>
           <p class="text-lg font-bold">Nelogica</p>
         </div>
         <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">My Role</h3>
+          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">My Role</h3>
           <p class="text-lg font-bold">Product Designer (UX/UI)</p>
         </div>
         <div class="md:col-span-2">
-          <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Impact Summary</h3>
+          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Impact Summary</h3>
           <p class="text-sm md:text-base font-medium text-gray-300 leading-relaxed border-l-2 border-lime/50 pl-4">
             Solved a critical churn problem by creating a native portfolio management ecosystem, keeping users engaged within the product instead of migrating to external tools or spreadsheets.
           </p>
@@ -213,28 +213,22 @@
       </div>
       
       <!-- Visualization of the Old Process -->
-      <div class="max-w-4xl mx-auto mt-16 group relative">
-        <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Visualization of the Old Process</h4>
-        <div id="antigo-carousel-container" class="w-full rounded-xl overflow-hidden border border-white/10 relative">
-          <div class="flex transition-transform duration-500 ease-in-out" id="antigo-carousel-track">
-            <img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png" alt="Old Process 1" loading="lazy" class="w-full shrink-0 h-auto object-cover hover:opacity-90 transition-opacity zoomable-image cursor-pointer">
-            <img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-2.png" alt="Old Process 2" loading="lazy" class="w-full shrink-0 h-auto object-cover hover:opacity-90 transition-opacity zoomable-image cursor-pointer">
-            <img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-3.png" alt="Old Process 3" loading="lazy" class="w-full shrink-0 h-auto object-cover hover:opacity-90 transition-opacity zoomable-image cursor-pointer">
+      <div class="max-w-4xl mx-auto mt-16">
+        <h4 class="text-xs font-bold text-muted uppercase tracking-widest mb-4">Before and after</h4>
+        <div class="ba-compare" role="group" aria-label="Comparison between the old process and the new experience">
+          <div class="ba-compare__frame">
+            <img class="ba-compare__after" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&amp;ssl=1" alt="Portfolio rebalancing screen isolated from the main trading screen" loading="lazy" decoding="async">
+            <div class="ba-compare__before-wrap"><img class="ba-compare__before" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png" alt="Old Process 1" loading="lazy" decoding="async"></div>
+            <input type="range" class="ba-compare__range" min="0" max="100" value="50" step="0.5" aria-label="Comparison position">
+            <div class="ba-compare__handle" aria-hidden="true"><span class="ba-compare__grip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6"/><path d="m15 6 6 6-6 6"/></svg></span></div>
+            <span class="ba-compare__tag ba-compare__tag--before" aria-hidden="true">Before</span>
+            <span class="ba-compare__tag ba-compare__tag--after" aria-hidden="true">After</span>
           </div>
-          <!-- Controles do Carrossel Antigo -->
-          <button id="antigo-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-black/50 disabled:hover:text-white">
-            <i data-lucide="arrow-left" width="18"></i>
-          </button>
-          <button id="antigo-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-black/50 disabled:hover:text-white">
-            <i data-lucide="arrow-right" width="18"></i>
-          </button>
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" id="antigo-dots">
-            <div class="w-2 h-2 rounded-full bg-white transition-colors"></div>
-            <div class="w-2 h-2 rounded-full bg-white/30 transition-colors"></div>
-            <div class="w-2 h-2 rounded-full bg-white/30 transition-colors"></div>
-          </div>
-          <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white/80 pointer-events-none">
-            <i data-lucide="maximize-2" width="16" height="16"></i>
+          <p class="ba-compare__hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>Drag the line to compare. On a keyboard, use the arrow keys.</p>
+          <div class="ba-compare__thumbs" role="group" aria-label="Show another old screen">
+            <button type="button" class="ba-compare__thumb is-active" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png" data-alt="Old Process 1" aria-label="Old Process 1"><img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png" alt="" loading="lazy"></button>
+            <button type="button" class="ba-compare__thumb" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-2.png" data-alt="Old Process 2" aria-label="Old Process 2"><img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-2.png" alt="" loading="lazy"></button>
+            <button type="button" class="ba-compare__thumb" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-3.png" data-alt="Old Process 3" aria-label="Old Process 3"><img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-3.png" alt="" loading="lazy"></button>
           </div>
         </div>
       </div>
@@ -380,7 +374,7 @@
                 <i data-lucide="trending-up" width="24"></i>
               </div>
               <div class="mb-4">
-                <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest block mb-1">Strategic Retention</span>
+                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Strategic Retention</span>
                 <div class="text-2xl md:text-3xl font-black uppercase leading-tight tracking-tight text-white">
                   End of<br/><span class="text-lime">Churn</span>
                 </div>
@@ -398,7 +392,7 @@
                 <i data-lucide="briefcase" width="24"></i>
               </div>
               <div class="mb-4">
-                <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest block mb-1">B2B Strengthening</span>
+                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">B2B Strengthening</span>
                 <div class="text-2xl md:text-3xl font-black uppercase leading-tight tracking-tight text-white">
                   Major<br/><span class="text-lime">Partnerships</span>
                 </div>
@@ -416,7 +410,7 @@
                 <i data-lucide="check-circle" width="24"></i>
               </div>
               <div class="mb-4">
-                <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest block mb-1">Agile Validation</span>
+                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Agile Validation</span>
                 <div class="text-2xl md:text-3xl font-black uppercase leading-tight tracking-tight text-white">
                   High<br/><span class="text-lime">Adherence</span>
                 </div>
@@ -478,18 +472,18 @@
     <section class="py-16 px-6 md:px-12 border-b border-white/5">
       <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
         <a href="Case-Design-System.html" class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all">
-          <i data-lucide="arrow-left" class="text-gray-500 group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
+          <i data-lucide="arrow-left" class="text-muted group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
           <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">Previous Case</span>
+            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Previous Case</span>
             <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Design System</span>
           </div>
         </a>
         <a href="Case-Tour-Guiado.html" class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right">
           <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">Next Case</span>
+            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Next Case</span>
             <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Guided Tour</span>
           </div>
-          <i data-lucide="arrow-right" class="text-gray-500 group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
+          <i data-lucide="arrow-right" class="text-muted group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
         </a>
       </div>
     </section>

@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         ink: '#050505',
         surface: '#111111',
+        muted: '#8B9099',
         lime: '#CCFF00',
         brand: { DEFAULT: '#B7E500', hover: '#B3E600' }
       },

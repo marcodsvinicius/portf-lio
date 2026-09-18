@@ -154,6 +154,38 @@
   headerState();
   backTopState();
 
+  /* --- Card -> case: elementos compartilhados na View Transition -------- */
+  function nameCard(card) {
+    if (!card) return;
+    card.style.viewTransitionName = 'case-card';
+    var title = card.querySelector('h3');
+    if (title) title.style.viewTransitionName = 'case-title';
+  }
+  function unnameCards() {
+    document.querySelectorAll('.tilt-card').forEach(function (c) {
+      c.style.viewTransitionName = '';
+      var t = c.querySelector('h3'); if (t) t.style.viewTransitionName = '';
+    });
+  }
+  document.querySelectorAll('.tilt-card').forEach(function (card) {
+    card.addEventListener('click', function () { unnameCards(); nameCard(card); });
+  });
+  window.addEventListener('pagereveal', function (e) {
+    if (!e.viewTransition) return;
+    var from = '';
+    try { from = (navigation.activation && navigation.activation.from && navigation.activation.from.url) || document.referrer || ''; } catch (err) { from = document.referrer || ''; }
+    var file = from.split('#')[0].split('?')[0].split('/').pop();
+    if (!/^Case-.+\.html$/.test(file)) return;
+    var card = document.querySelector('.tilt-card[href$="' + file + '"]');
+    if (!card) return;
+    nameCard(card);
+    e.viewTransition.finished.then(unnameCards);
+  });
+  window.addEventListener('pageswap', function (e) {
+    if (!e.viewTransition) return;
+    // saindo da home por um link que não é card: nada a nomear
+  });
+
   /* --- Transição de saída para navegadores sem View Transitions ---------- */
   var hasCrossDocVT = 'startViewTransition' in document && CSS.supports && CSS.supports('view-transition-name: x');
   if (!hasCrossDocVT && !prefersReducedMotion()) {
