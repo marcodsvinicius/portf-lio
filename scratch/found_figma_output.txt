@@ -1,0 +1,491 @@
+Match found at line 1005!
+e following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+600:                   <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+601:                     Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+602:                   </a>
+603:                 </div>
+604:               </div>
+605: 
+606:               <!-- Certificado 5 -->
+607:               <div class="flex gap-4 group">
+608:                 <div class="w-20 shrink-0 text-right pt-1">
+609:                   <span class="text-xs font-mono text-gray-500">Jun • 2022</span>
+610:                 </div>
+611:                 <div>
+612:                   <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
+613:                   <p class="text-xs text-gray-400 mb-1 font-light">Alura</p>
+614:                   <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+615:                     Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+616:                   </a>
+617:                 </div>
+618:               </div>
+619: 
+620:               <!-- Certificado 6 -->
+621:               <div class="flex gap-4 group">
+622:                 <div class="w-20 shrink-0 text-right pt-1">
+623:                   <span class="text-xs font-mono text-gray-500">Abr • 2021</span>
+624:                 </div>
+625:                 <div>
+626:                   <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Desig
+<truncated 2105 bytes>
+terfaces corporativas analíticas de grande complexidade técnica.
+658:               </p>
+659:             </div>
+660: 
+661:             <!-- Experiência 2 -->
+662:             <div class="relative group">
+663:               <div class="absolute -left-[39px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-[#B7E500] group-hover:scale-110 transition-all"></div>
+664:               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Design Pleno</h4>
+665:               <div class="flex flex-wrap gap-2 items-center text
+====================================================================================================
+Match found at line 1007!
+e following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+600:                   <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+601:                     Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+602:                   </a>
+603:                 </div>
+604:               </div>
+605: 
+606:               <!-- Certificado 5 -->
+607:               <div class="flex gap-4 group">
+608:                 <div class="w-20 shrink-0 text-right pt-1">
+609:                   <span class="text-xs font-mono text-gray-500">Jun • 2022</span>
+610:                 </div>
+611:                 <div>
+612:                   <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
+613:                   <p class="text-xs text-gray-400 mb-1 font-light">Alura</p>
+614:                   <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+615:                     Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+616:                   </a>
+617:                 </div>
+618:               </div>
+619: 
+620:               <!-- Certificado 6 -->
+621:               <div class="flex gap-4 group">
+622:                 <div class="w-20 shrink-0 text-right pt-1">
+623:                   <span class="text-xs font-mono text-gray-500">Abr • 2021</span>
+624:                 </div>
+625:                 <div>
+626:                   <h4 class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex item
+<truncated 2126 bytes>
+      <div class="absolute -left-[39px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-[#B7E500] group-hover:scale-110 transition-all"></div>
+662:               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Design Pleno</h4>
+663:               <div class="flex flex-wrap gap-2 items-center text-sm text-gray-400 mb-4 font-medium">
+664:                 <span class="text-white">GameOn (Freelancer)</span>
+665:                 <span class="w-1 h-1 bg-gray-500 rounded-full"></span>
+666:                 <span class=\
+====================================================================================================
+Match found at line 1423!
+olon, and leading space.
+720:                   <h4 class="font-montserrat text-base font-bold text-white leading-tight">Design System Specialist</h4>
+721:                   <p class="text-xs text-gray-400 mb-1 font-light">Meluca</p>
+722:                   <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+723:                     Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+724:                   </a>
+725:                 </div>
+726:               </div>
+727: 
+728:               <!-- Certificado 5 -->
+729:               <div class="flex gap-4 group">
+730:                 <div class="w-20 shrink-0 text-right pt-1">
+731:                   <span class="text-xs font-mono text-gray-500">Jun • 2022</span>
+732:                 </div>
+733:                 <div>
+734:                   <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
+735:                   <p class="text-xs text-gray-400 mb-1 font-light">Alura</p>
+736:                   <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+737:                     Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+738:                   </a>
+739:                 </div>
+740:               </div>
+741: 
+742:               <!-- Certificado 6 -->
+743:               <div class="flex gap-4 group">
+744:                 <div class="w-20 shrink-0 text-right pt-1">
+745:                   <span class="text-
+<truncated 3931 bytes>
+          </p>
+798:             </div>
+799: 
+800:             <!-- Experiência 3 -->
+801:             <div class="relative group">
+802:               <div class="absolute -left-[39px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-[#B7E500] group-hover:scale-110 transition-all"></div>
+803:               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Design Pleno</h4>
+804:               <div class="flex flex-wrap gap-2 items-center text-sm text-gray-400 mb-4 font-medium">
+805:                 <span class="text-white">GameOn (Freelancer)</span>
+806:                 <span class="w-1 h-1 bg-gray-500 rounded-full"></span>
+807:                 <span class="font-montserrat font-mono font-bold text-xs uppercase tracki
+====================================================================================================
+Match found at line 1695!
+05-20T03:30:06Z","content":"Created At: 2026-05-20T03:30:06Z
+Completed At: 2026-05-20T03:30:06Z
+File Path: `file:///c:/Users/mvsilva23/OneDrive%20-%20Stefanini/Documentos/Portfolio/index.html`
+Total Lines: 1056
+Total Bytes: 69918
+Showing lines 770 to 800
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+770:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+771:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+772:                 </a>
+773:               </div>
+774: 
+775:               <!-- Certificado 5 -->
+776:               <div class="group">
+777:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
+778:                 <p class="text-xs text-gray-400 mb-1 font-light">Alura - Concluído em Jun/2022</p>
+779:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+780:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+781:                 </a>
+782:               </div>
+783: 
+784:               <!-- Certificado 6 -->
+785:               <div class="group">
+786:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>
+787:                 <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr/2021</p>
+788:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
+789:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+790:                 </a>
+791:               </div>
+792: 
+793:             </div>
+794:           </div>
+795: 
+796:         </div>
+797: 
+798:         <!-- Coluna Direita: Experiência Profissional (lg:col-span-7) -->
+799:         <div class="lg:col-span-7">
+800:           <h3 class="font-montserrat text-2xl font-bold text-[#B7E500] mb-8 uppercase tracking-wide">
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown
+====================================================================================================
+Match found at line 1697!
+t-white leading-tight">Big Data e Inteligência Artificial: O Poder dos Dados</h4>
+                 <p class="text-xs text-gray-400 mb-1 font-light">LinkedIn - Concluído em Jun/2025</p>
+-                <a href="https://www.linkedin.com/learning/certificates/5bb44f81258a9fb77665673600277ca1ddc4c769a37562835e3976eba9d1a5bf?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B
+<truncated 10550 bytes>
+font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
++                <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                 </a>
+               </div>
+@@ -764,7 +764,7 @@
+               <div class="group">
+                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
+                 <p class="text-xs text-gray-400 mb-1 font-light">Alura - Concluído em Jun/2022</p>
+-                <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
++                <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                 </a>
+               </div>
+@@ -772,7 +772,7 @@
+               <div class="group">
+                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>
+                 <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr/2021</p>
+-                <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">
++                <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                 </a>
+               </div>
+[diff_block_end]
+
+Please note that the above snippet only shows the MODIFIED lines from the last change. It shows up to 3 lines of unchanged lines before and after the modified lines. The actual 
+====================================================================================================
+Match found at line 1758!
+na Esquerda: Formação e Cursos (lg:col-span-5) -->
+620:         <div class="lg:col-span-5 space-y-16">
+621:           
+622:           <!-- Bloco Formação Acadêmica -->
+623:           <div>
+624:             <h3 class="font-montserrat text-2xl font-bold text-[#B7E500] mb-8 uppercase tracking-wide">
+625:               Formação Acadêmica
+626:             </h3>
+627:             
+628:             <div class="space-y-10 border-l border-white/5 
+<truncated 11831 bytes>
+</p>
+770:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+771:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+772:                 </a>
+773:               </div>
+774: 
+775:               <!-- Certificado 5 -->
+776:               <div class="group">
+777:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
+778:                 <p class="text-xs text-gray-400 mb-1 font-light">Alura - Concluído em Jun/2022</p>
+779:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+780:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+781:                 </a>
+782:               </div>
+783: 
+784:               <!-- Certificado 6 -->
+785:               <div class="group">
+786:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>
+787:                 <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr/2021</p>
+788:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+789:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+790:                 </a>
+791:               </div>
+792: 
+793:             </div>
+794:           </div>
+795: 
+796:         </div>
+797: 
+798:         <!-- Coluna Direita: Experiência Profissional (lg:col-span-7) -->
+799:         <div class="lg:col-span-7">
+800:           <h3 class="font-montserrat text-2xl font-bold text-[#B7E500] mb-8 uppercase tracking-wide">
+The above content does NOT show the entire file contents. If you need to view any lines 
+====================================================================================================
+Match found at line 1900!
+B7E500]/5 cursor-default">
+516:           <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-[#B7E500]/30 group-hover:bg-[#B7E500]/10 transition-all duration-300">
+517:             <i data-lucide="trending-up" class="text-gray-400 group-hover:text-[#B7E500] transition-colors duration-300" width="16" height="16"></i>
+518:           </div>
+519:           <span class="f
+<truncated 20384 bytes>
+</p>
+770:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+771:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+772:                 </a>
+773:               </div>
+774: 
+775:               <!-- Certificado 5 -->
+776:               <div class="group">
+777:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
+778:                 <p class="text-xs text-gray-400 mb-1 font-light">Alura - Concluído em Jun/2022</p>
+779:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+780:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+781:                 </a>
+782:               </div>
+783: 
+784:               <!-- Certificado 6 -->
+785:               <div class="group">
+786:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>
+787:                 <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr/2021</p>
+788:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+789:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+790:                 </a>
+791:               </div>
+792: 
+793:             </div>
+794:           </div>
+795: 
+796:         </div>
+797: 
+798:         <!-- Coluna Direita: Experiência Profissional (lg:col-span-7) -->
+799:         <div class="lg:col-span-7">
+800:           <h3 class="font-montserrat text-2xl font-bold text-[#B7E500] mb-8 uppercase tracking-wide">
+The above content does NOT show the entire file contents. If you need to view any lines 
+====================================================================================================
+Match found at line 2563!
+>
+684:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+685:                 </a>
+686:               </div>
+687: 
+688:               <!-- Certificado 4 -->
+689:               <div class="group">
+690:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Design System Specialist</h4>
+691:                 <p class="text-xs text-gray-400 mb-1 font-light">Meluca - Concluído em Mai/2022</p>
+692:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
+693:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+694:                 </a>
+695:               </div>
+696: 
+697:               <!-- Certificado 5 -->
+698:               <div class="group">
+699:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
+700:                 <p class="text-xs text-gray-400 mb-1 font-light">Alura - Concluído em Jun/2022</p>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
+"}
+
+====================================================================================================
+Match found at line 4316!
+lls":[{"name":"write_to_file","args":{"CodeContent":""import json\
+import os\
+import re\
+\
+log_dir = r\\"C:\\\\Users\\\\mvsilva23\\\\.gemini\\\\antigravity\\\\brain\\\\bb31168c-07f7-4f3e-add8-cb9056432b34\\\\.system_generated\\\\logs\\"\
+transcript_path = os.path.join(log_dir, \\"transcript.jsonl\\")\
+\
+# Let's search the transcript to find the exact HTML strings for each course to make sure we don't guess links.\
+courses_to_find = [\
+    \\"Fundamentos de Comunicação\\",\
+    \\"Big Data e Inteligência Artificial\\",\
+    \\"IA Generativa para Profissionais Criativos\\",\
+    \\"Liderança com Inovação\\",\
+    \\"Introdução à Inteligência Artificial\\",\
+    \\"Fundamentos de Agentes de IA\\",\
+    \\"Prompt Engineering\\",\
+    \\"Fundamentos da Inteligência Artificial Generativa\\",\
+    \\"Salesforce Platform\\",\
+    \\"Noloco Certified Expert\\",\
+    \\"Planejamento e Gestão Ágil\\",\
+    \\"Design System Specialist\\",\
+    \\"Figma Avançado\\",\
+    \\"UX/UI Design\\"\
+]\
+\
+results = {}\
+if os.path.exists(transcript_path):\
+    with open(transcript_path, \\"r\\", encoding=\\"utf-8\\") as f:\
+        for line in f:\
+            for course in courses_to_find:\
+                if course in results:\
+                    continue\
+                if f'class=\\"group\\"' in line and course in line:\
+                    # Extract the <div class=\\"group\\">...</div> block\
+                    idx = line.find(course)\
+                    start_div = line.rfind('<div class=\\"group\\">', 0, idx)\
+                    if start_div == -1:\
+                        start_div = line.rfind('<div class=\\\\\\\\\\"group\\\\\\\\\\">', 0, idx)\
+                    if start_div != -1:\
+                        end_div = line.find('</div>', idx)\
+                        if end_div == -1:\
+                            end_div = line.find('<\\\\\\\/div>', idx)\
+                        if end_div != -1:\
+                            block = line[start_div:end_div+6]\
+                            results[course] = block\
+\
+for course, block in results.items():\
+    print(f\\"=== {course} ===\\")\
+    print(block)\
+    print(\\"-\\" * 50)\
+"","Description":""Search transcript for the exact HTML block of each course to ensure perfect accuracy of links and metadata"","IsArtifact":"false","Overwrite":"true","TargetFile":""c:\\\\Users\\\\mvsilva23\\\\OneDrive - Stefanini\\\\Docum
+====================================================================================================
+Match found at line 4320!
+t_path = os.path.join(log_dir, \\"transcript.jsonl\\")\
+\
+courses_to_find = [\
+    (\\"Fundamentos de Comunicação\\", \\"Fundamentos de Comunica\\"),\
+    (\\"Big Data e Inteligência Artificial\\", \\"Big Data\\"),\
+    (\\"IA Generativa para Profissionais Criativos\\", \\"IA Generativa para Profissionais\\"),\
+    (\\"Liderança com Inovação\\", \\"Lideran\\"),\
+    (\\"Introdução à Inteligência Artificial\\", \\"Introdu\\"),\
+    (\\"Fundamentos de Agentes de IA\\", \\"Agentes de IA\\"),\
+    (\\"Prompt Engineering\\", \\"Prompt Engineering\\"),\
+    (\\"Fundamentos da Inteligência Artificial Generativa\\", \\"Fundamentos da Intelig\\\\u00eancia Artificial Generativa\\"),\
+    (\\"Salesforce Platform\\", \\"Salesforce\\"),\
+    (\\"Noloco Certified Expert\\", \\"Noloco\\"),\
+    (\\"Planejamento e Gestão Ágil\\", \\"Planejamento e Gest\\"),\
+    (\\"Design System Specialist\\", \\"Design System Specialist\\"),\
+    (\\"Figma Avançado\\", \\"Figma Avan\\"),\
+    (\\"UX/UI Design\\", \\"UX/UI Design\\")\
+]\
+\
+results = {}\
+if os.path.exists(transcript_path):\
+    with open(transcript_path, \\"r\\", encoding=\\"utf-8\\") as f:\
+        for line in f:\
+            for course_name, key in courses_to_find:\
+                if course_name in results:\
+                    continue\
+                if key in line and (\\"Visualizar Certificado\\" in line or \\"Visualizar\\" in line):\
+                    # Let's search for a div pattern\
+                    idx = line.find(key)\
+                    # Search backwards for '<div' or '<!-- Certificado'\
+                    start = max(0, idx - 800)\
+                    chunk = line[start:idx+1200]\
+                    \
+                    # Clean up backslashes and json escapes\
+                    chunk_clean = chunk.replace('\\\\\\\\\\"', '\\"').replace('\\\\\\\
+', '\\\
+').replace('\\\\\\\/', '/')\
+                    \
+                    # Find last '<div class=\\"group\\">' b
+<truncated 924 bytes>","Description":""Robustly parse and clean up individual course HTML blocks from the transcript logs"","IsArtifact":"false","Overwrite":"true","TargetFile":""c:\\\\Users\\\\mvsilva23\\\\OneDrive - Stefanini\\\\Documentos\\\\Portfolio\\\\scratch\\\\extract_clean.py"","toolAction":""Creating script to extract courses cleanly"","toolSummary":""Create extraction script""}}]}
+
+====================================================================================================
+Match found at line 4325!
+{"step_index":4427,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-05-21T12:31:26Z","content":"Created At: 2026-05-21T12:31:26Z
+Completed At: 2026-05-21T12:31:26Z
+File Path: `file:///c:/Users/mvsilva23/OneDrive%20-%20Stefanini/Documentos/Portfolio/scratch/extracted_individual_clean.txt`
+Total Lines: 92
+Total Bytes: 7318
+Showing lines 1 to 92
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: === Figma Avançado ===\r
+2: <div class="group">\r
+3: 786:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>\r
+4: 787:                 <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr/2021</p>\r
+5: 788:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">\r
+6: 789:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>\r
+7: 790:                 </a>\r
+8: 791:               </div>\r
+9: \r
+10: === UX/UI Design ===\r
+11: <div class="group">\r
+12: 786:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>\r
+13: 787:                 <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr/2021</p>\r
+14: 788:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">\r
+15: 789:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>\r
+16: 790:                 </a>\r
+17: 791:               </div>\r
+18: \r
+19: === Big Data e Inteligência Artificial ===\r
+20: <div class="group">\r
+21: 594:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Big Data e Inteligência Artificial: O Poder dos Dados</h4>\r
+22: 595:       
+====================================================================================================
+Match found at line 4330!
+{"step_index":4433,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-05-21T12:31:39Z","content":"Created At: 2026-05-21T12:31:39Z
+Completed At: 2026-05-21T12:31:40Z
+File Path: `file:///c:/Users/mvsilva23/OneDrive%20-%20Stefanini/Documentos/Portfolio/scratch/extracted_individual_clean.txt`
+Total Lines: 92
+Total Bytes: 7318
+Showing lines 1 to 92
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: === Figma Avançado ===\r
+2: <div class="group">\r
+3: 786:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>\r
+4: 787:                 <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr/2021</p>\r
+5: 788:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">\r
+6: 789:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>\r
+7: 790:                 </a>\r
+8: 791:               </div>\r
+9: \r
+10: === UX/UI Design ===\r
+11: <div class="group">\r
+12: 786:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>\r
+13: 787:                 <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr/2021</p>\r
+14: 788:                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-[#B7E500] flex items-center gap-1 hover:underline">\r
+15: 789:                   Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>\r
+16: 790:                 </a>\r
+17: 791:               </div>\r
+18: \r
+19: === Big Data e Inteligência Artificial ===\r
+20: <div class="group">\r
+21: 594:                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Big Data e Inteligência Artificial: O Poder dos Dados</h4>\r
+22: 595:       
+====================================================================================================
+Match found at line 4357!
+just pinpointed two occurrences of "Cursos e Especializações" and "Noloco" within the transcript, specifically at lines 459 and 883. Now, I'm focusing on the context surrounding these matches, especially the HTML snippets, and I am parsing the extracted date to see what inferences can be drawn.
+
+
+","tool_calls":[{"name":"write_to_file","args":{"CodeContent":""import os\
+\
+log_dir = r\\"C:\\\\Users\\\\mvsilva23\\\\.gemini\\\\antigravity\\\\brain\\\\bb31168c-07f7-4f3e-add8-cb9056432b34\\\\.system_generated\\\\logs\\"\
+transcript_path = os.path.join(log_dir, \\"transcript.jsonl\\")\
+output_path = r\\"c:\\\\Users\\\\mvsilva23\\\\OneDrive - Stefanini\\\\Documentos\\\\Portfolio\\\\scratch\\\\found_figma_output.txt\\"\
+\
+with open(output_path, \\"w\\", encoding=\\"utf-8\\") as out:\
+    if os.path.exists(transcript_path):\
+        with open(transcript_path, \\"r\\", encoding=\\"utf-8\\") as f:\
+            for idx, line in enumerate(f):\
+                if \\"Figma Avançado\\" in line:\
+                    out.write(f\\"Match found at line {idx}!\\\
+\\")\
+                    # Let's print out 2000 chars around it\
+                    pos = line.find(\\"Figma Avançado\\")\
+                    block = line[max(0, pos-1000):pos+1500].replace('\\\\\\\
+', '\\\
+').replace('\\\\\\\\\\"', '\\"').replace('\\\\\\\/', '/')\
+                    out.write(block)\
+                    out.write(\\"\\\
+\\" + \\"=\\"*100 + \\"\\\
+\\")\
+        print(\\"Done writing to\\", output_path)\
+    else:\
+        print(\\"Transcript not found\\")\
+"","Description":""Search transcript for Figma Avançado and write to file"","IsArtifact":"false","Overwrite":"true","TargetFile":""c:\\\\Users\\\\mvsilva23\\\\OneDrive - Stefanini\\\\Documentos\\\\Portfolio\\\\scratch\\\\extract_individual_courses.py"","toolAction":""Creating extract individual courses script"","toolSummary":""Create script""}}]}
+
+====================================================================================================
