@@ -34,9 +34,12 @@ As classes de cor usam os tokens `brand` (`#B7E500`), `lime` (`#CCFF00`), `ink` 
 O CSS do Tailwind é compilado. Depois de mudar classes no HTML ou no JS, rode:
 
 ```bash
-npm install          # só na primeira vez
-npm run build:css    # gera assets/css/tailwind.css
+npm install      # só na primeira vez
+npm run build    # compila o Tailwind e carimba ?v=<hash> nos links de CSS e JS
 ```
+
+O carimbo de versão é o que faz o navegador buscar o arquivo novo depois de um deploy.
+Sem ele, uma página nova pode acabar usando o CSS antigo que ficou no cache.
 
 Se você editar direto no GitHub (pelo celular, por exemplo), não precisa rodar nada: o Action
 `build-css.yml` recompila o CSS a cada push na `main` e faz o commit sozinho.

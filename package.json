@@ -3,7 +3,9 @@
   "private": true,
   "description": "Portfólio de Marco Vinicius — site estático com Tailwind CSS compilado",
   "scripts": {
+    "build": "npm run build:css && npm run version:assets",
     "build:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.src.css -o assets/css/tailwind.css --minify",
+    "version:assets": "python3 scripts/versionar-assets.py",
     "watch:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.src.css -o assets/css/tailwind.css --watch",
     "serve": "python3 -m http.server 8080"
   },

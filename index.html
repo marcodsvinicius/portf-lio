@@ -24,16 +24,15 @@
 
   <link rel="preload" href="assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/fonts.css?v=0d0953f3">
   
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 
-  <link rel="stylesheet" href="assets/css/tailwind.css">
-  <link rel="stylesheet" href="assets/css/site.css">
-  <script src="assets/js/vendor/lucide.min.js"></script>
-  <script src="assets/js/site.js" defer></script>
-  <script src="assets/js/home.js" defer></script>
-  <script src="assets/js/home.js" defer></script>
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=31ca6240">
+  <link rel="stylesheet" href="assets/css/site.css?v=3981857b">
+  <script src="assets/js/vendor/lucide.min.js?v=5029514f"></script>
+  <script src="assets/js/site.js?v=095c97e7" defer></script>
+  <script src="assets/js/home.js?v=e56b81fc" defer></script>
 </head>
 <body class="selection:bg-lime selection:text-black min-h-screen relative">
   <a href="#projects" class="skip-link">Pular para o conteúdo</a>
@@ -71,13 +70,13 @@
               <i data-lucide="home" class="w-4 h-4"></i>
               Início
             </a>
-            <a href="#ai-first" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="ai-first">
-              <i data-lucide="sparkles" class="w-4 h-4"></i>
-              AI First
-            </a>
             <a href="#projects" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="projects">
               <i data-lucide="layers" class="w-4 h-4"></i>
               Projetos
+            </a>
+            <a href="#ai-first" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="ai-first">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              AI First
             </a>
             <a href="#skills" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="skills">
               <i data-lucide="award" class="w-4 h-4"></i>
@@ -199,104 +198,10 @@
 
     </div>
 
-    <a href="#ai-first" class="scroll-cue" aria-label="Rolar para a seção AI First">
+    <a href="#projects" class="scroll-cue" aria-label="Rolar para os projetos">
       <span>Scroll</span>
       <span class="scroll-cue__line" aria-hidden="true"></span>
     </a>
-  </section>
-
-  <!-- SEÇÃO AI FIRST -->
-  <section id="ai-first" class="py-24 px-6 md:px-12 border-t border-white/5 relative z-10">
-    <div class="max-w-7xl mx-auto">
-
-      <!-- Cabeçalho + terminal -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-12 md:mb-16">
-        <div class="lg:col-span-5 space-y-5 reveal">
-          <div class="flex items-center gap-3 text-brand">
-            <i data-lucide="sparkles" class="w-4 h-4 text-brand"></i>
-            <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">AI First</span>
-          </div>
-          <h2 class="font-montserrat text-4xl md:text-6xl font-black leading-none uppercase tracking-tighter">
-            IA dentro <br/>
-            <span class="text-brand">do processo</span>
-          </h2>
-          <p class="text-gray-400 text-base md:text-lg font-light leading-relaxed border-l-2 border-brand pl-6">
-            Não uso IA para pular etapas. Uso para encurtar o caminho entre a pergunta e a evidência: transcrevo, gero, testo e reviso mais rápido, e o tempo que sobra volta para o que exige julgamento de design.
-          </p>
-        </div>
-
-        <div class="lg:col-span-7 reveal" style="--d:1">
-          <div class="ai-term" aria-hidden="true">
-            <div class="ai-term__bar">
-              <span class="ai-term__dot"></span><span class="ai-term__dot"></span><span class="ai-term__dot"></span>
-              <span class="ai-term__name">agente · design</span>
-            </div>
-            <div class="ai-term__body">
-              <p class="ai-term__line"><span class="ai-term__sign">&rsaquo;</span><span><span class="ai-term__prompt"></span><span class="ai-term__caret"></span></span></p>
-              <p class="ai-term__out"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 text-brand mt-0.5"></i><span class="ai-term__outtext"></span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Capacidades -->
-      <ol class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
-        <li class="ai-card reveal" style="--d:0" data-prompt="resuma a call e liste decisões, pendências e riscos" data-out="ata estruturada + dúvidas em aberto">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="mic" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/01</span>
-          </div>
-          <h3 class="ai-card__title">Discovery e definição acelerados</h3>
-          <p class="ai-card__desc">Transcrevo reuniões, extraio decisões e pendências, busco referências e chego na definição com o problema já mapeado.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Mais tempo de conversa com o usuário</p>
-        </li>
-        <li class="ai-card reveal" style="--d:1" data-prompt="gere mobile e tablet desta tela seguindo os breakpoints do DS" data-out="dois breakpoints propostos para revisão">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="smartphone" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/02</span>
-          </div>
-          <h3 class="ai-card__title">Interfaces responsivas geradas</h3>
-          <p class="ai-card__desc">A partir dos breakpoints do design system, o agente propõe as versões mobile e tablet. Eu reviso o que fugiu da regra e sigo.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Fim da adaptação manual tela a tela</p>
-        </li>
-        <li class="ai-card reveal" style="--d:2" data-prompt="monte o handoff: estados, mensagens, userflow e regras técnicas" data-out="spec pronta para revisão">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="clipboard-list" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/03</span>
-          </div>
-          <h3 class="ai-card__title">Handoff em poucos cliques</h3>
-          <p class="ai-card__desc">Especificação completa para desenvolvimento: estados, mensagens, fluxos de usuário e regras técnicas, prontos para revisão.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>De uma tarde de escrita para uma revisão</p>
-        </li>
-        <li class="ai-card reveal" style="--d:3" data-prompt="transforme este fluxo em um protótipo HTML navegável" data-out="protótipo testável no navegador">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="flask-conical" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/04</span>
-          </div>
-          <h3 class="ai-card__title">Protótipos em HTML para validar antes</h3>
-          <p class="ai-card__desc">Gero telas navegáveis em minutos e levo para o usuário antes de detalhar no Figma. Só refino o que sobrevive ao teste.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Validação antes do refinamento</p>
-        </li>
-      </ol>
-
-      <!-- Artigos e experimentos -->
-      <div class="mt-16 md:mt-20 reveal">
-        <div class="mb-8">
-          <div class="flex items-center gap-3 text-brand mb-2">
-            <i data-lucide="newspaper" class="w-4 h-4"></i>
-            <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">Artigos e experimentos</span>
-          </div>
-          <p class="text-muted text-sm">O que testei, o que funcionou e o que não funcionou.</p>
-        </div>
-        <script type="application/json" id="ai-articles">[]</script>
-        <div id="ai-articles-list" class="grid grid-cols-1 md:grid-cols-3 gap-4"
-             data-cta="Ler artigo"
-             data-empty-title="Leia meus artigos e experimentos no Medium"
-             data-empty-cta="Abrir Medium"
-             data-profile="https://medium.com/@marcodsvinicius"></div>
-      </div>
-
-    </div>
   </section>
 
   <!-- SEÇÃO PROJETOS EM DESTAQUE -->
@@ -479,6 +384,100 @@
 
 
 
+
+  <!-- SEÇÃO AI FIRST -->
+  <section id="ai-first" class="py-24 px-6 md:px-12 border-t border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Cabeçalho + terminal -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-12 md:mb-16">
+        <div class="lg:col-span-5 space-y-5 reveal">
+          <div class="flex items-center gap-3 text-brand">
+            <i data-lucide="sparkles" class="w-4 h-4 text-brand"></i>
+            <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">AI First</span>
+          </div>
+          <h2 class="font-montserrat text-4xl md:text-6xl font-black leading-none uppercase tracking-tighter">
+            IA dentro <br/>
+            <span class="text-brand">do processo</span>
+          </h2>
+          <p class="text-gray-400 text-base md:text-lg font-light leading-relaxed border-l-2 border-brand pl-6">
+            Não uso IA para pular etapas. Uso para encurtar o caminho entre a pergunta e a evidência: transcrevo, gero, testo e reviso mais rápido, e o tempo que sobra volta para o que exige julgamento de design.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 reveal" style="--d:1">
+          <div class="ai-term" aria-hidden="true">
+            <div class="ai-term__bar">
+              <span class="ai-term__dot"></span><span class="ai-term__dot"></span><span class="ai-term__dot"></span>
+              <span class="ai-term__name">agente · design</span>
+            </div>
+            <div class="ai-term__body">
+              <p class="ai-term__line"><span class="ai-term__sign">&rsaquo;</span><span><span class="ai-term__prompt"></span><span class="ai-term__caret"></span></span></p>
+              <p class="ai-term__out"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 text-brand mt-0.5"></i><span class="ai-term__outtext"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Capacidades -->
+      <ol class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+        <li class="ai-card reveal" style="--d:0" data-prompt="resuma a call e liste decisões, pendências e riscos" data-out="ata estruturada + dúvidas em aberto">
+          <div class="ai-card__top">
+            <span class="ai-card__icon"><i data-lucide="mic" class="w-5 h-5"></i></span>
+            <span class="ai-card__num">/01</span>
+          </div>
+          <h3 class="ai-card__title">Discovery e definição acelerados</h3>
+          <p class="ai-card__desc">Transcrevo reuniões, extraio decisões e pendências, busco referências e chego na definição com o problema já mapeado.</p>
+          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Mais tempo de conversa com o usuário</p>
+        </li>
+        <li class="ai-card reveal" style="--d:1" data-prompt="gere mobile e tablet desta tela seguindo os breakpoints do DS" data-out="dois breakpoints propostos para revisão">
+          <div class="ai-card__top">
+            <span class="ai-card__icon"><i data-lucide="smartphone" class="w-5 h-5"></i></span>
+            <span class="ai-card__num">/02</span>
+          </div>
+          <h3 class="ai-card__title">Interfaces responsivas geradas</h3>
+          <p class="ai-card__desc">A partir dos breakpoints do design system, o agente propõe as versões mobile e tablet. Eu reviso o que fugiu da regra e sigo.</p>
+          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Fim da adaptação manual tela a tela</p>
+        </li>
+        <li class="ai-card reveal" style="--d:2" data-prompt="monte o handoff: estados, mensagens, userflow e regras técnicas" data-out="spec pronta para revisão">
+          <div class="ai-card__top">
+            <span class="ai-card__icon"><i data-lucide="clipboard-list" class="w-5 h-5"></i></span>
+            <span class="ai-card__num">/03</span>
+          </div>
+          <h3 class="ai-card__title">Handoff em poucos cliques</h3>
+          <p class="ai-card__desc">Especificação completa para desenvolvimento: estados, mensagens, fluxos de usuário e regras técnicas, prontos para revisão.</p>
+          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>De uma tarde de escrita para uma revisão</p>
+        </li>
+        <li class="ai-card reveal" style="--d:3" data-prompt="transforme este fluxo em um protótipo HTML navegável" data-out="protótipo testável no navegador">
+          <div class="ai-card__top">
+            <span class="ai-card__icon"><i data-lucide="flask-conical" class="w-5 h-5"></i></span>
+            <span class="ai-card__num">/04</span>
+          </div>
+          <h3 class="ai-card__title">Protótipos em HTML para validar antes</h3>
+          <p class="ai-card__desc">Gero telas navegáveis em minutos e levo para o usuário antes de detalhar no Figma. Só refino o que sobrevive ao teste.</p>
+          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Validação antes do refinamento</p>
+        </li>
+      </ol>
+
+      <!-- Artigos e experimentos -->
+      <div class="mt-16 md:mt-20 reveal">
+        <div class="mb-8">
+          <div class="flex items-center gap-3 text-brand mb-2">
+            <i data-lucide="newspaper" class="w-4 h-4"></i>
+            <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">Artigos e experimentos</span>
+          </div>
+          <p class="text-muted text-sm">O que testei, o que funcionou e o que não funcionou.</p>
+        </div>
+        <script type="application/json" id="ai-articles">[]</script>
+        <div id="ai-articles-list" class="grid grid-cols-1 md:grid-cols-3 gap-4"
+             data-cta="Ler artigo"
+             data-empty-title="Leia meus artigos e experimentos no Medium"
+             data-empty-cta="Abrir Medium"
+             data-profile="https://medium.com/@marcodsvinicius"></div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- SEÇÃO SKILLS & EXPERIÊNCIA -->
   <section id="skills" class="py-24 px-6 md:px-12 border-t border-b border-white/5 bg-white/[0.005] relative z-10">
