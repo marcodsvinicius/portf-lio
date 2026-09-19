@@ -137,6 +137,97 @@
   if (cue) scrollHandlers.push(function () { cue.classList.toggle('is-hidden', window.scrollY > 80); });
 
   /* ======================================================================
+     AI FIRST — o terminal digita o prompt da capacidade em foco
+     ====================================================================== */
+  (function aiFirst() {
+    var term = document.querySelector('.ai-term');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.ai-card'));
+    if (!term || !cards.length) return;
+    var promptEl = term.querySelector('.ai-term__prompt');
+    var outBox = term.querySelector('.ai-term__out');
+    var outEl = term.querySelector('.ai-term__outtext');
+    var still = reduced();
+    var index = -1, typeTimer = null, nextTimer = null, hold = false, visible = false;
+
+    function stop() { clearTimeout(typeTimer); clearTimeout(nextTimer); typeTimer = null; nextTimer = null; }
+    function queue(delay) { if (!hold && visible && !still) nextTimer = setTimeout(advance, delay); }
+    function advance() { show((index + 1) % cards.length, false); }
+
+    function show(i, quick) {
+      stop();
+      index = i;
+      cards.forEach(function (c, n) { c.classList.toggle('is-active', n === i); });
+      var card = cards[i];
+      var text = card.getAttribute('data-prompt') || '';
+      var out = card.getAttribute('data-out') || '';
+      if (still || quick) {
+        promptEl.textContent = text;
+        outEl.textContent = out;
+        outBox.classList.add('is-on');
+        queue(3600);
+        return;
+      }
+      outBox.classList.remove('is-on');
+      promptEl.textContent = '';
+      var n = 0;
+      (function type() {
+        promptEl.textContent = text.slice(0, ++n);
+        if (n < text.length) { typeTimer = setTimeout(type, 24); return; }
+        outEl.textContent = out;
+        typeTimer = setTimeout(function () { outBox.classList.add('is-on'); queue(3400); }, 320);
+      })();
+    }
+
+    if (canHover) {
+      cards.forEach(function (card, i) {
+        card.addEventListener('pointerenter', function () { hold = true; show(i, true); });
+        card.addEventListener('pointerleave', function () { hold = false; queue(2000); });
+      });
+    }
+
+    var section = document.getElementById('ai-first') || term;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        if (!visible) { stop(); return; }
+        if (index === -1) show(0, false); else queue(1600);
+      }, { threshold: 0.2 }).observe(section);
+    } else { visible = true; show(0, true); }
+  })();
+
+  /* ======================================================================
+     AI FIRST — cartões de artigos vindos do bloco JSON #ai-articles
+     ====================================================================== */
+  (function aiArticles() {
+    var box = document.getElementById('ai-articles-list');
+    var data = document.getElementById('ai-articles');
+    if (!box || !data) return;
+    var items = [];
+    try { items = JSON.parse(data.textContent) || []; } catch (e) { items = []; }
+    var d = box.dataset;
+    function esc(v) { return String(v == null ? '' : v).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
+    function link(url, cls, inner) {
+      return '<a class="' + cls + '" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>';
+    }
+    var arrow = '<i data-lucide="arrow-up-right" class="w-4 h-4"></i>';
+    if (!items.length) {
+      box.innerHTML = link(d.profile, 'ai-article ai-article--empty',
+        '<span class="ai-article__title">' + esc(d.emptyTitle) + '</span>' +
+        '<span class="ai-article__cta">' + esc(d.emptyCta) + ' ' + arrow + '</span>');
+    } else {
+      box.innerHTML = items.map(function (a) {
+        return link(a.url, 'ai-article',
+          '<span class="ai-article__meta"><i data-lucide="newspaper" class="w-3.5 h-3.5"></i>' + esc(a.source || 'Medium') + (a.date ? ' · ' + esc(a.date) : '') + '</span>' +
+          '<span class="ai-article__title">' + esc(a.title) + '</span>' +
+          (a.summary ? '<span class="ai-article__sum">' + esc(a.summary) + '</span>' : '') +
+          (a.result ? '<span class="ai-article__result">' + esc(a.result) + '</span>' : '') +
+          '<span class="ai-article__cta">' + esc(d.cta) + ' ' + arrow + '</span>');
+      }).join('');
+    }
+    if (window.lucide) window.lucide.createIcons();
+  })();
+
+  /* ======================================================================
      PROJETOS — tilt 3D com brilho que segue o cursor
      ====================================================================== */
   (function tilt() {

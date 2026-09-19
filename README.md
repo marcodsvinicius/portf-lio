@@ -41,6 +41,29 @@ npm run build:css    # gera assets/css/tailwind.css
 Se você editar direto no GitHub (pelo celular, por exemplo), não precisa rodar nada: o Action
 `build-css.yml` recompila o CSS a cada push na `main` e faz o commit sozinho.
 
+## Seção AI First
+
+Os quatro cards vêm direto do HTML. O terminal ao lado digita o texto de `data-prompt` e mostra `data-out`
+do card ativo, então basta editar esses atributos no card para mudar o que aparece no terminal.
+
+Os artigos são lidos de um bloco JSON dentro da própria página (`<script type="application/json" id="ai-articles">`).
+Para publicar um artigo, troque o `[]` por uma lista assim, em `index.html` e em `en/index.html`:
+
+```json
+[
+  {
+    "title": "Como usei agentes para gerar telas responsivas",
+    "url": "https://medium.com/@marcodsvinicius/...",
+    "source": "Medium",
+    "date": "Set 2026",
+    "summary": "O que testei, onde o agente acertou e onde precisei intervir.",
+    "result": "3 telas revisadas em 40 min"
+  }
+]
+```
+
+Só `title` e `url` são obrigatórios. Com a lista vazia, aparece um único card levando ao perfil do Medium.
+
 ## Rodando localmente
 
 ```bash

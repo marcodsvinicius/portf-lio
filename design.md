@@ -274,8 +274,10 @@ A smooth overlay window allowing users to examine case mockups in detailed full-
 * **Skills:** `.skill-card` items get a lime border glow and soft fill that follow the pointer across `#skills-grid` (desktop only).
 * **Timelines:** `.timeline` containers draw a lime `.timeline-line` as the page scrolls; `.tl-dot` markers light up (`is-lit`) when the line passes them.
 * **Expandable text:** `[data-expandable]` blocks clamp long descriptions and add a "Ler mais / Read more" toggle only when the text overflows.
+* **AI First:** `.ai-term` is a glass terminal that types the `data-prompt` of the active `.ai-card` and then reveals its `data-out`. It cycles through the four cards on its own while the section is in view, and hovering a card jumps to it (desktop only). Articles render from the `#ai-articles` JSON block into `#ai-articles-list`; an empty list falls back to a single card linking to the Medium profile.
 * **Contact:** `.status-dot` availability pulse + `#local-time` (America/Sao_Paulo); `.copy-email` copies the address with a 2 s "Copiado!" state; `#contact-canvas` draws a signal radar (sweep, blips that light up when the beam passes, a blip that follows the pointer) and `#contact-orb-shape` tilts toward the pointer.
 
 ### Accessibility & motion safety
-* Everything above respects `prefers-reduced-motion: reduce` (static grid and radar, no tilt, instant reveal).
+* Everything above respects `prefers-reduced-motion: reduce` (static grid and radar, no tilt, no typing, instant reveal).
+* `section[id]` carries `scroll-margin-top: 96px` so in-page anchors stop below the floating header.
 * Focus is trapped inside the Hub de Obras password modal; `Esc` closes it and focus returns to the card.
