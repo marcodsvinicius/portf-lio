@@ -12,7 +12,7 @@
   var lang = (document.documentElement.lang || 'pt').slice(0, 2);
 
   /* ======================================================================
-     HERO — fundo reativo (grade de pontos + foco de luz)
+     HERO — malha de nós com sinais percorrendo as conexões
      ====================================================================== */
   (function heroBackground() {
     var hero = document.getElementById('hero');
@@ -21,13 +21,72 @@
     if (!hero || !canvas) return;
 
     var ctx = canvas.getContext('2d');
-    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-    var W = 0, H = 0, cols = 0, rows = 0;
-    var GAP = 30, R = 180;
-    var mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999, active: false };
-    var drift = { t: Math.random() * 100 };
-    var raf = null, visible = true, lastMove = 0;
-    var staticMode = reduced();
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var LIME = '204,255,0';
+    var RANGE = 170;   // alcance do cursor
+    var PUSH = 7;      // quanto os nós se afastam do cursor
+    var W = 0, H = 0, vignette = null;
+    var nodes = [], edges = [], signals = [];
+    var mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999, on: false };
+    var raf = null, visible = false, last = 0;
+    var still = reduced();
+
+    /* Ruído determinístico: a malha fica igual a cada carregamento. */
+    function noise(a, b) {
+      var v = Math.sin(a * 12.9898 + b * 78.233) * 43758.5453;
+      return v - Math.floor(v);
+    }
+
+    function build() {
+      var step = W < 640 ? 46 : 62;
+      var cols = Math.ceil(W / step) + 1;
+      var rows = Math.ceil(H / step) + 1;
+      var at = function (i, j) { return i * rows + j; };
+      nodes = [];
+      edges = [];
+      for (var i = 0; i < cols; i++) {
+        for (var j = 0; j < rows; j++) {
+          nodes.push({
+            x: i * step + (noise(i, j) - 0.5) * step * 0.5,
+            y: j * step + (noise(j, i) - 0.5) * step * 0.5,
+            dx: 0, dy: 0, g: 0, h: 0, e: []
+          });
+        }
+      }
+      function connect(a, b) {
+        var k = edges.length;
+        edges.push({ a: a, b: b, g: 0 });
+        nodes[a].e.push(k);
+        nodes[b].e.push(k);
+      }
+      for (i = 0; i < cols; i++) {
+        for (j = 0; j < rows; j++) {
+          if (i + 1 < cols) connect(at(i, j), at(i + 1, j));
+          if (j + 1 < rows) connect(at(i, j), at(i, j + 1));
+          if (i + 1 < cols && j + 1 < rows && noise(i * 3.7, j * 9.1) > 0.87) connect(at(i, j), at(i + 1, j + 1));
+        }
+      }
+      signals = [];
+      if (still) return;
+      var total = W < 640 ? 2 : 4;
+      for (var n = 0; n < total; n++) signals.push(respawn(n * 500));
+    }
+
+    function respawn(wait) {
+      for (var tries = 0; tries < 12; tries++) {
+        var i = Math.floor(Math.random() * nodes.length);
+        if (nodes[i] && nodes[i].e.length) {
+          return {
+            edge: nodes[i].e[Math.floor(Math.random() * nodes[i].e.length)],
+            from: i,
+            t: 0,
+            hops: 5 + Math.floor(Math.random() * 10),
+            wait: wait == null ? 300 + Math.random() * 1400 : wait
+          };
+        }
+      }
+      return { edge: -1, from: 0, t: 0, hops: 0, wait: 1000 };
+    }
 
     function resize() {
       var rect = hero.getBoundingClientRect();
@@ -35,96 +94,187 @@
       canvas.width = Math.round(W * dpr);
       canvas.height = Math.round(H * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      cols = Math.ceil(W / GAP) + 1;
-      rows = Math.ceil(H / GAP) + 1;
+      vignette = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.46);
+      vignette.addColorStop(0, 'rgba(5,5,5,0.74)');
+      vignette.addColorStop(0.55, 'rgba(5,5,5,0.34)');
+      vignette.addColorStop(1, 'rgba(5,5,5,0)');
+      build();
       draw();
     }
 
+    function step(dt) {
+      var i, n, e;
+      for (i = 0; i < edges.length; i++) { e = edges[i]; if (e.g > 0) e.g = Math.max(0, e.g - dt * 0.0009); }
+      for (i = 0; i < nodes.length; i++) { n = nodes[i]; if (n.g > 0) n.g = Math.max(0, n.g - dt * 0.0013); }
+      for (i = 0; i < signals.length; i++) {
+        var s = signals[i];
+        if (s.wait > 0) { s.wait -= dt; continue; }
+        e = edges[s.edge];
+        if (!e) { signals[i] = respawn(); continue; }
+        var a = nodes[e.a], b = nodes[e.b];
+        var len = Math.sqrt((b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y)) || 1;
+        e.g = 1;
+        s.t += (dt * 0.17) / len;
+        if (s.t < 1) continue;
+        var end = s.from === e.a ? e.b : e.a;
+        nodes[end].g = 1;
+        s.hops--;
+        var ways = nodes[end].e.filter(function (k) { return k !== s.edge; });
+        if (s.hops <= 0 || !ways.length) { signals[i] = respawn(); continue; }
+        s.edge = ways[Math.floor(Math.random() * ways.length)];
+        s.from = end;
+        s.t = 0;
+      }
+    }
+
     function draw() {
+      if (!W) return;
       ctx.clearRect(0, 0, W, H);
-      var mx = mouse.x, my = mouse.y;
-      var hasPointer = mx > -999;
-      for (var i = 0; i < cols; i++) {
-        for (var j = 0; j < rows; j++) {
-          var x = i * GAP + (GAP / 2), y = j * GAP + (GAP / 2);
-          var a = 0.10, r = 1;
-          var ox = 0, oy = 0;
-          if (hasPointer) {
-            var dx = x - mx, dy = y - my;
-            var d = Math.sqrt(dx * dx + dy * dy);
-            if (d < R) {
-              var f = 1 - d / R;
-              f = f * f;
-              a = 0.10 + f * 0.85;
-              r = 1 + f * 1.6;
-              var push = f * 9;
-              ox = (dx / (d || 1)) * push;
-              oy = (dy / (d || 1)) * push;
-            }
-          }
-          // esmaece a grade nas bordas para não competir com o texto
-          var edge = Math.min(y / (H * 0.25), 1) * Math.min((H - y) / (H * 0.25), 1);
-          ctx.fillStyle = 'rgba(204,255,0,' + (a * Math.max(edge, 0.25)).toFixed(3) + ')';
+      var i, n, e, a, b;
+      var mx = mouse.x, my = mouse.y, has = mx > -999;
+
+      /* posição exibida de cada nó, já com o empurrão do cursor */
+      for (i = 0; i < nodes.length; i++) {
+        n = nodes[i];
+        n.dx = n.x; n.dy = n.y; n.h = 0;
+        if (!has) continue;
+        var ox = n.x - mx, oy = n.y - my;
+        var d = Math.sqrt(ox * ox + oy * oy);
+        if (d >= RANGE) continue;
+        var f = 1 - d / RANGE; f *= f;
+        n.h = f;
+        n.dx += (ox / (d || 1)) * f * PUSH;
+        n.dy += (oy / (d || 1)) * f * PUSH;
+      }
+
+      /* conexões em repouso: um traço só, para não pesar */
+      ctx.beginPath();
+      for (i = 0; i < edges.length; i++) {
+        e = edges[i]; a = nodes[e.a]; b = nodes[e.b];
+        if (e.g > 0.02 || a.h > 0.02 || b.h > 0.02) continue;
+        ctx.moveTo(a.dx, a.dy); ctx.lineTo(b.dx, b.dy);
+      }
+      ctx.strokeStyle = 'rgba(' + LIME + ',0.055)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      /* conexões acesas pelo sinal ou pelo cursor */
+      for (i = 0; i < edges.length; i++) {
+        e = edges[i]; a = nodes[e.a]; b = nodes[e.b];
+        var lit = Math.max(e.g, (a.h + b.h) * 0.5);
+        if (lit <= 0.02) continue;
+        ctx.beginPath();
+        ctx.moveTo(a.dx, a.dy); ctx.lineTo(b.dx, b.dy);
+        ctx.strokeStyle = 'rgba(' + LIME + ',' + (0.055 + lit * 0.5).toFixed(3) + ')';
+        ctx.lineWidth = 1 + lit * 0.7;
+        ctx.stroke();
+      }
+
+      /* nós em repouso */
+      ctx.beginPath();
+      for (i = 0; i < nodes.length; i++) {
+        n = nodes[i];
+        if (n.g > 0.02 || n.h > 0.02) continue;
+        ctx.moveTo(n.dx + 1.15, n.dy);
+        ctx.arc(n.dx, n.dy, 1.15, 0, Math.PI * 2);
+      }
+      ctx.fillStyle = 'rgba(' + LIME + ',0.17)';
+      ctx.fill();
+
+      /* nós acesos, com anel de pulso quando o sinal chega */
+      for (i = 0; i < nodes.length; i++) {
+        n = nodes[i];
+        var v = Math.max(n.g, n.h);
+        if (v <= 0.02) continue;
+        ctx.beginPath();
+        ctx.arc(n.dx, n.dy, 1.15 + v * 2.3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + LIME + ',' + (0.17 + v * 0.78).toFixed(3) + ')';
+        ctx.fill();
+        if (n.g > 0.25) {
           ctx.beginPath();
-          ctx.arc(x + ox, y + oy, r, 0, Math.PI * 2);
-          ctx.fill();
+          ctx.arc(n.dx, n.dy, (1 - n.g) * 26 + 3, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(' + LIME + ',' + (n.g * 0.3).toFixed(3) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
         }
       }
+
+      /* cabeça luminosa de cada sinal */
+      for (i = 0; i < signals.length; i++) {
+        var s = signals[i];
+        if (s.wait > 0) continue;
+        e = edges[s.edge];
+        if (!e) continue;
+        a = nodes[s.from === e.a ? e.a : e.b];
+        b = nodes[s.from === e.a ? e.b : e.a];
+        var x = a.dx + (b.dx - a.dx) * s.t;
+        var y = a.dy + (b.dy - a.dy) * s.t;
+        var halo = ctx.createRadialGradient(x, y, 0, x, y, 18);
+        halo.addColorStop(0, 'rgba(' + LIME + ',0.5)');
+        halo.addColorStop(1, 'rgba(' + LIME + ',0)');
+        ctx.fillStyle = halo;
+        ctx.beginPath(); ctx.arc(x, y, 18, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(x, y, 2.4, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(232,255,150,0.95)'; ctx.fill();
+      }
+
+      /* escurece o centro para o título continuar legível */
+      if (vignette) { ctx.fillStyle = vignette; ctx.fillRect(0, 0, W, H); }
     }
 
     function frame(now) {
       raf = null;
       if (!visible) return;
-      if (mouse.active) {
+      var dt = Math.min(now - last, 60) || 16;
+      last = now;
+      if (mouse.on) {
         mouse.x += (mouse.tx - mouse.x) * 0.16;
         mouse.y += (mouse.ty - mouse.y) * 0.16;
-      } else {
-        // sem ponteiro (touch) a luz vagueia sozinha, bem devagar
-        drift.t += 0.0035;
-        mouse.x = W * (0.5 + 0.38 * Math.sin(drift.t * 1.1));
-        mouse.y = H * (0.45 + 0.28 * Math.cos(drift.t * 0.8));
       }
       if (spot) {
-        spot.style.setProperty('--mx', mouse.x + 'px');
-        spot.style.setProperty('--my', mouse.y + 'px');
+        spot.style.setProperty('--mx', (mouse.on ? mouse.x : W / 2) + 'px');
+        spot.style.setProperty('--my', (mouse.on ? mouse.y : H * 0.45) + 'px');
       }
+      step(dt);
       draw();
-      var idle = mouse.active && (now - lastMove > 2500);
-      if (!idle) raf = requestAnimationFrame(frame);
+      raf = requestAnimationFrame(frame);
     }
-    function kick() { if (!raf && visible && !staticMode) raf = requestAnimationFrame(frame); }
+    function kick() { if (!raf && visible && !still) { last = performance.now(); raf = requestAnimationFrame(frame); } }
 
     if (canHover) {
-      hero.addEventListener('pointermove', function (e) {
+      hero.addEventListener('pointermove', function (ev) {
         var rect = hero.getBoundingClientRect();
-        mouse.tx = e.clientX - rect.left;
-        mouse.ty = e.clientY - rect.top;
-        if (!mouse.active) { mouse.x = mouse.tx; mouse.y = mouse.ty; }
-        mouse.active = true;
-        lastMove = performance.now();
+        mouse.tx = ev.clientX - rect.left;
+        mouse.ty = ev.clientY - rect.top;
+        if (!mouse.on) { mouse.x = mouse.tx; mouse.y = mouse.ty; }
+        mouse.on = true;
         kick();
       });
       hero.addEventListener('pointerleave', function () {
-        mouse.active = false;
-        kick();
+        mouse.on = false;
+        mouse.x = mouse.y = mouse.tx = mouse.ty = -9999;
       });
     }
 
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         visible = entries[0].isIntersecting;
-        if (visible) kick();
+        if (visible) kick(); else if (raf) { cancelAnimationFrame(raf); raf = null; }
       }, { threshold: 0 }).observe(hero);
-    }
+    } else { visible = true; }
+
     document.addEventListener('visibilitychange', function () {
-      if (document.hidden) visible = false; else { visible = true; kick(); }
+      if (document.hidden) { visible = false; if (raf) { cancelAnimationFrame(raf); raf = null; } }
+      else { visible = true; kick(); }
     });
 
-    var rT;
-    window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(resize, 120); });
+    var tmr;
+    window.addEventListener('resize', function () { clearTimeout(tmr); tmr = setTimeout(resize, 150); });
     resize();
-    if (staticMode) { mouse.x = W * 0.5; mouse.y = H * 0.45; draw(); }
-    else kick();
+    if (still) {
+      for (var k = 0; k < nodes.length; k += 9) nodes[k].g = 0.5;
+      draw();
+    } else { visible = true; kick(); }
   })();
 
   /* ======================================================================
