@@ -287,130 +287,63 @@
   if (cue) scrollHandlers.push(function () { cue.classList.toggle('is-hidden', window.scrollY > 80); });
 
   /* ======================================================================
-     AI FIRST — console, trilhas de etapa e capacidades em um só painel.
-     A trilha da etapa ativa é a própria linha do tempo: a digitação, a saída
-     e a troca automática são lidas do progresso dela, então pausar a trilha
-     pausa tudo junto.
+     AI FIRST — o terminal digita o prompt da capacidade em foco
      ====================================================================== */
   (function aiFirst() {
-    var panel = document.querySelector('.ai-panel');
-    if (!panel) return;
-    var cards = Array.prototype.slice.call(panel.querySelectorAll('.ai-card'));
-    var steps = Array.prototype.slice.call(panel.querySelectorAll('.ai-step'));
-    var promptEl = panel.querySelector('.ai-console__prompt');
-    var outBox = panel.querySelector('.ai-console__out');
-    var outEl = panel.querySelector('.ai-console__text');
-    var countEl = panel.querySelector('.ai-panel__count b');
-    if (!cards.length || !promptEl || !outBox || !outEl) return;
-
+    var term = document.querySelector('.ai-term');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.ai-card'));
+    if (!term || !cards.length) return;
+    var promptEl = term.querySelector('.ai-term__prompt');
+    var outBox = term.querySelector('.ai-term__out');
+    var outEl = term.querySelector('.ai-term__outtext');
     var still = reduced();
-    var TYPE = 24;    // ms por caractere
-    var GAP = 380;    // respiro antes da saída aparecer
-    var HOLD = 3400;  // tempo de leitura antes de trocar
-    var index = -1, anim = null, raf = null, visible = false, held = false;
+    var index = -1, typeTimer = null, nextTimer = null, hold = false, visible = false;
 
-    function fillOf(i) { return steps[i] ? steps[i].querySelector('.ai-step__fill') : null; }
-
-    function setActive(i) {
-      index = i;
-      cards.forEach(function (c, n) { c.classList.toggle('is-active', n === i); });
-      steps.forEach(function (s, n) {
-        s.classList.toggle('is-active', n === i);
-        s.setAttribute('aria-pressed', n === i ? 'true' : 'false');
-        if (n === i) return;
-        var f = s.querySelector('.ai-step__fill');
-        if (!f) return;
-        if (f.getAnimations) f.getAnimations().forEach(function (a) { a.cancel(); });
-        f.style.transform = 'scaleX(0)';
-      });
-      if (countEl) countEl.textContent = '0' + (i + 1);
-    }
-
-    function paint(ms) {
-      var card = cards[index];
-      if (!card) return;
-      var text = card.getAttribute('data-prompt') || '';
-      promptEl.textContent = text.slice(0, Math.min(text.length, Math.floor(ms / TYPE)));
-      outEl.textContent = card.getAttribute('data-out') || '';
-      outBox.classList.toggle('is-on', ms >= text.length * TYPE + GAP);
-    }
-
-    function tick() {
-      raf = null;
-      if (!anim || index < 0) return;
-      paint(Number(anim.currentTime) || 0);
-      if (anim.playState === 'running') raf = requestAnimationFrame(tick);
-    }
+    function stop() { clearTimeout(typeTimer); clearTimeout(nextTimer); typeTimer = null; nextTimer = null; }
+    function queue(delay) { if (!hold && visible && !still) nextTimer = setTimeout(advance, delay); }
+    function advance() { show((index + 1) % cards.length, false); }
 
     function show(i, quick) {
-      setActive(i);
+      stop();
+      index = i;
+      cards.forEach(function (c, n) { c.classList.toggle('is-active', n === i); });
       var card = cards[i];
       var text = card.getAttribute('data-prompt') || '';
-      var typed = text.length * TYPE;
-      var fill = fillOf(i);
-      if (anim) { anim.cancel(); anim = null; }
-      if (raf) { cancelAnimationFrame(raf); raf = null; }
-
-      if (still || !fill || !fill.animate) {
+      var out = card.getAttribute('data-out') || '';
+      if (still || quick) {
         promptEl.textContent = text;
-        outEl.textContent = card.getAttribute('data-out') || '';
+        outEl.textContent = out;
         outBox.classList.add('is-on');
-        if (fill) fill.style.transform = 'scaleX(1)';
+        queue(3600);
         return;
       }
-
-      fill.style.transform = '';
-      anim = fill.animate(
-        [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
-        { duration: typed + GAP + HOLD, easing: 'linear', fill: 'forwards' }
-      );
-      anim.onfinish = function () { if (visible && !held) show((index + 1) % cards.length); };
-      if (quick) anim.currentTime = typed + GAP;
-      paint(Number(anim.currentTime) || 0);
-      if (held || !visible) anim.pause(); else raf = requestAnimationFrame(tick);
+      outBox.classList.remove('is-on');
+      promptEl.textContent = '';
+      var n = 0;
+      (function type() {
+        promptEl.textContent = text.slice(0, ++n);
+        if (n < text.length) { typeTimer = setTimeout(type, 24); return; }
+        outEl.textContent = out;
+        typeTimer = setTimeout(function () { outBox.classList.add('is-on'); queue(3400); }, 320);
+      })();
     }
-
-    function hold(on) {
-      held = on;
-      if (!anim) return;
-      if (on) { anim.pause(); return; }
-      if (!visible) return;
-      anim.play();
-      if (!raf) raf = requestAnimationFrame(tick);
-    }
-
-    steps.forEach(function (s, i) {
-      s.addEventListener('click', function () { held = false; show(i); });
-    });
 
     if (canHover) {
       cards.forEach(function (card, i) {
-        card.addEventListener('pointerenter', function () {
-          held = true;
-          if (i !== index) show(i, true); else if (anim) anim.pause();
-        });
-        card.addEventListener('pointerleave', function () { hold(false); });
+        card.addEventListener('pointerenter', function () { hold = true; show(i, true); });
+        card.addEventListener('pointerleave', function () { hold = false; queue(2000); });
       });
     }
 
+    var section = document.getElementById('ai-first') || term;
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         visible = entries[0].isIntersecting;
-        if (!visible) {
-          if (anim) anim.pause();
-          if (raf) { cancelAnimationFrame(raf); raf = null; }
-          return;
-        }
-        if (index === -1) show(0); else hold(held);
-      }, { threshold: 0.15 }).observe(panel);
-    } else {
-      visible = true;
-      show(0);
-    }
-
-    if (still) show(0);
+        if (!visible) { stop(); return; }
+        if (index === -1) show(0, false); else queue(1600);
+      }, { threshold: 0.2 }).observe(section);
+    } else { visible = true; show(0, true); }
   })();
-
 
   /* ======================================================================
      AI FIRST — cartões de artigos vindos do bloco JSON #ai-articles
