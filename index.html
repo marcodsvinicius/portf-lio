@@ -28,11 +28,11 @@
   
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 
-  <link rel="stylesheet" href="assets/css/tailwind.css?v=31ca6240">
-  <link rel="stylesheet" href="assets/css/site.css?v=3981857b">
+  <link rel="stylesheet" href="assets/css/tailwind.css?v=b84a406a">
+  <link rel="stylesheet" href="assets/css/site.css?v=daa0905d">
   <script src="assets/js/vendor/lucide.min.js?v=5029514f"></script>
   <script src="assets/js/site.js?v=095c97e7" defer></script>
-  <script src="assets/js/home.js?v=742435b5" defer></script>
+  <script src="assets/js/home.js?v=9c1dc1f2" defer></script>
 </head>
 <body class="selection:bg-lime selection:text-black min-h-screen relative">
   <a href="#projects" class="skip-link">Pular para o conteúdo</a>
@@ -389,9 +389,9 @@
   <section id="ai-first" class="py-24 px-6 md:px-12 border-t border-white/5 relative z-10">
     <div class="max-w-7xl mx-auto">
 
-      <!-- Cabeçalho + terminal -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-12 md:mb-16">
-        <div class="lg:col-span-5 space-y-5 reveal">
+      <!-- Cabeçalho -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 lg:items-end mb-10 md:mb-12">
+        <div class="lg:col-span-7 space-y-4 reveal">
           <div class="flex items-center gap-3 text-brand">
             <i data-lucide="sparkles" class="w-4 h-4 text-brand"></i>
             <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">AI First</span>
@@ -400,64 +400,72 @@
             IA dentro <br/>
             <span class="text-brand">do processo</span>
           </h2>
+        </div>
+        <div class="lg:col-span-5 reveal" style="--d:1">
           <p class="text-gray-400 text-base md:text-lg font-light leading-relaxed border-l-2 border-brand pl-6">
             Não uso IA para pular etapas. Uso para encurtar o caminho entre a pergunta e a evidência: transcrevo, gero, testo e reviso mais rápido, e o tempo que sobra volta para o que exige julgamento de design.
           </p>
         </div>
-
-        <div class="lg:col-span-7 reveal" style="--d:1">
-          <div class="ai-term" aria-hidden="true">
-            <div class="ai-term__bar">
-              <span class="ai-term__dot"></span><span class="ai-term__dot"></span><span class="ai-term__dot"></span>
-              <span class="ai-term__name">agente · design</span>
-            </div>
-            <div class="ai-term__body">
-              <p class="ai-term__line"><span class="ai-term__sign">&rsaquo;</span><span><span class="ai-term__prompt"></span><span class="ai-term__caret"></span></span></p>
-              <p class="ai-term__out"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 text-brand mt-0.5"></i><span class="ai-term__outtext"></span></p>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- Capacidades -->
-      <ol class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
-        <li class="ai-card reveal" style="--d:0" data-prompt="resuma a call e liste decisões, pendências e riscos" data-out="ata estruturada + dúvidas em aberto">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="mic" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/01</span>
+      <!-- Painel: console + capacidades -->
+      <div class="ai-panel reveal" style="--d:1">
+        <div class="ai-panel__bar">
+          <span class="ai-panel__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="ai-panel__name">agente · design</span>
+          <div class="ai-steps" role="group" aria-label="Escolher a capacidade">
+            <button type="button" class="ai-step is-active" data-step="0" aria-label="Ver 1/4 — Discovery e definição acelerados" aria-pressed="true"><span class="ai-step__fill"></span></button>
+            <button type="button" class="ai-step" data-step="1" aria-label="Ver 2/4 — Interfaces responsivas geradas" aria-pressed="false"><span class="ai-step__fill"></span></button>
+            <button type="button" class="ai-step" data-step="2" aria-label="Ver 3/4 — Handoff em poucos cliques" aria-pressed="false"><span class="ai-step__fill"></span></button>
+            <button type="button" class="ai-step" data-step="3" aria-label="Ver 4/4 — Protótipos em HTML para validar antes" aria-pressed="false"><span class="ai-step__fill"></span></button>
           </div>
-          <h3 class="ai-card__title">Discovery e definição acelerados</h3>
-          <p class="ai-card__desc">Transcrevo reuniões, extraio decisões e pendências, busco referências e chego na definição com o problema já mapeado.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Mais tempo de conversa com o usuário</p>
-        </li>
-        <li class="ai-card reveal" style="--d:1" data-prompt="gere mobile e tablet desta tela seguindo os breakpoints do DS" data-out="dois breakpoints propostos para revisão">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="smartphone" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/02</span>
-          </div>
-          <h3 class="ai-card__title">Interfaces responsivas geradas</h3>
-          <p class="ai-card__desc">A partir dos breakpoints do design system, o agente propõe as versões mobile e tablet. Eu reviso o que fugiu da regra e sigo.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Fim da adaptação manual tela a tela</p>
-        </li>
-        <li class="ai-card reveal" style="--d:2" data-prompt="monte o handoff: estados, mensagens, userflow e regras técnicas" data-out="spec pronta para revisão">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="clipboard-list" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/03</span>
-          </div>
-          <h3 class="ai-card__title">Handoff em poucos cliques</h3>
-          <p class="ai-card__desc">Especificação completa para desenvolvimento: estados, mensagens, fluxos de usuário e regras técnicas, prontos para revisão.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>De uma tarde de escrita para uma revisão</p>
-        </li>
-        <li class="ai-card reveal" style="--d:3" data-prompt="transforme este fluxo em um protótipo HTML navegável" data-out="protótipo testável no navegador">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="flask-conical" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/04</span>
-          </div>
-          <h3 class="ai-card__title">Protótipos em HTML para validar antes</h3>
-          <p class="ai-card__desc">Gero telas navegáveis em minutos e levo para o usuário antes de detalhar no Figma. Só refino o que sobrevive ao teste.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Validação antes do refinamento</p>
-        </li>
-      </ol>
+          <span class="ai-panel__count" aria-hidden="true"><b>01</b>/04</span>
+        </div>
+
+        <div class="ai-console" aria-hidden="true">
+          <p class="ai-console__line"><span class="ai-console__sign">&rsaquo;</span><span><span class="ai-console__prompt"></span><span class="ai-console__caret"></span></span></p>
+          <p class="ai-console__out"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 text-brand mt-0.5"></i><span class="ai-console__text"></span></p>
+        </div>
+
+        <ol class="ai-grid">
+          <li class="ai-card" data-prompt="resuma a call e liste decisões, pendências e riscos" data-out="ata estruturada + dúvidas em aberto">
+            <span class="ai-card__ghost" aria-hidden="true">01</span>
+            <div class="ai-card__head">
+              <span class="ai-card__icon"><i data-lucide="mic" class="w-[18px] h-[18px]"></i></span>
+              <h3 class="ai-card__title">Discovery e definição acelerados</h3>
+            </div>
+            <p class="ai-card__desc">Transcrevo reuniões, extraio decisões e pendências, busco referências e chego na definição com o problema já mapeado.</p>
+            <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Mais tempo de conversa com o usuário</p>
+          </li>
+          <li class="ai-card" data-prompt="gere mobile e tablet desta tela seguindo os breakpoints do DS" data-out="dois breakpoints propostos para revisão">
+            <span class="ai-card__ghost" aria-hidden="true">02</span>
+            <div class="ai-card__head">
+              <span class="ai-card__icon"><i data-lucide="smartphone" class="w-[18px] h-[18px]"></i></span>
+              <h3 class="ai-card__title">Interfaces responsivas geradas</h3>
+            </div>
+            <p class="ai-card__desc">A partir dos breakpoints do design system, o agente propõe as versões mobile e tablet. Eu reviso o que fugiu da regra e sigo.</p>
+            <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Fim da adaptação manual tela a tela</p>
+          </li>
+          <li class="ai-card" data-prompt="monte o handoff: estados, mensagens, userflow e regras técnicas" data-out="spec pronta para revisão">
+            <span class="ai-card__ghost" aria-hidden="true">03</span>
+            <div class="ai-card__head">
+              <span class="ai-card__icon"><i data-lucide="clipboard-list" class="w-[18px] h-[18px]"></i></span>
+              <h3 class="ai-card__title">Handoff em poucos cliques</h3>
+            </div>
+            <p class="ai-card__desc">Especificação completa para desenvolvimento: estados, mensagens, fluxos de usuário e regras técnicas, prontos para revisão.</p>
+            <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>De uma tarde de escrita para uma revisão</p>
+          </li>
+          <li class="ai-card" data-prompt="transforme este fluxo em um protótipo HTML navegável" data-out="protótipo testável no navegador">
+            <span class="ai-card__ghost" aria-hidden="true">04</span>
+            <div class="ai-card__head">
+              <span class="ai-card__icon"><i data-lucide="flask-conical" class="w-[18px] h-[18px]"></i></span>
+              <h3 class="ai-card__title">Protótipos em HTML para validar antes</h3>
+            </div>
+            <p class="ai-card__desc">Gero telas navegáveis em minutos e levo para o usuário antes de detalhar no Figma. Só refino o que sobrevive ao teste.</p>
+            <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Validação antes do refinamento</p>
+          </li>
+        </ol>
+      </div>
 
       <!-- Artigos e experimentos -->
       <div class="mt-16 md:mt-20 reveal">
@@ -471,8 +479,8 @@
         <script type="application/json" id="ai-articles">[]</script>
         <div id="ai-articles-list" class="grid grid-cols-1 md:grid-cols-3 gap-4"
              data-cta="Ler artigo"
-             data-empty-title="Leia meus artigos e experimentos no Medium"
-             data-empty-cta="Abrir Medium"
+             data-empty-title="Ainda estou escrevendo sobre esses testes."
+             data-empty-cta="Ver meu Medium"
              data-profile="https://medium.com/@marcodsvinicius"></div>
       </div>
 
