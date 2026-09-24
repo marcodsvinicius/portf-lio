@@ -28,11 +28,11 @@
   
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
-  <link rel="stylesheet" href="../assets/css/tailwind.css?v=31ca6240">
-  <link rel="stylesheet" href="../assets/css/site.css?v=3981857b">
+  <link rel="stylesheet" href="../assets/css/tailwind.css?v=643ae9fd">
+  <link rel="stylesheet" href="../assets/css/site.css?v=69ac4522">
   <script src="../assets/js/vendor/lucide.min.js?v=5029514f"></script>
   <script src="../assets/js/site.js?v=095c97e7" defer></script>
-  <script src="../assets/js/home.js?v=742435b5" defer></script>
+  <script src="../assets/js/home.js?v=d13295a6" defer></script>
 </head>
 <body class="selection:bg-lime selection:text-black min-h-screen relative">
   <a href="#projects" class="skip-link">Skip to content</a>
@@ -47,8 +47,13 @@
         </a>
       </div>
       
-      <!-- Botão do Menu Hambúrguer -->
-      <div class="pointer-events-auto">
+      <!-- Resumo em 30 segundos + Botão do Menu Hambúrguer -->
+      <div class="pointer-events-auto flex items-center gap-2">
+        <button id="summary-btn" type="button" class="summary-chip" aria-haspopup="dialog" aria-controls="summary-dialog" aria-keyshortcuts="R" aria-label="Open the 30-second summary (shortcut R)">
+          <i data-lucide="zap" class="w-3.5 h-3.5" aria-hidden="true"></i>
+          <span>Summary</span>
+          <kbd aria-hidden="true">R</kbd>
+        </button>
         <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu-drawer" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-lime/40 [-webkit-tap-highlight-color:transparent] outline-none" aria-label="Navigation Menu">
           <i data-lucide="menu" class="w-6 h-6 text-white transition-transform duration-300"></i>
         </button>
@@ -85,6 +90,10 @@
             <a href="#about" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="about">
               <i data-lucide="user" class="w-4 h-4"></i>
               About
+            </a>
+            <a href="#recommendations" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="recommendations">
+              <i data-lucide="quote" class="w-4 h-4"></i>
+              Recommendations
             </a>
             <a href="#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="contact">
               <i data-lucide="mail" class="w-4 h-4"></i>
@@ -144,7 +153,7 @@
     <div class="max-w-5xl mx-auto w-full flex flex-col items-center text-center relative z-10">
       
       <!-- Alternador de Idioma (Hero) -->
-      <div class="flex items-center bg-white/[0.02] backdrop-blur-sm border border-white/20 rounded-full p-1 gap-1 mb-8 animate-[fadeIn_0.6s_ease-out] pointer-events-auto" role="navigation" aria-label="Language selection">
+      <div class="flex items-center bg-white/[0.02] backdrop-blur-sm border border-white/20 rounded-full p-1 gap-1 mb-6 animate-[fadeIn_0.6s_ease-out] pointer-events-auto" role="navigation" aria-label="Language selection">
         <a href="../" class="px-4 py-1.5 rounded-full text-xs font-montserrat font-bold tracking-wider text-gray-300 hover:text-brand hover:bg-white/5 transition-all" aria-label="Change language to Portuguese">
           Português
         </a>
@@ -152,6 +161,12 @@
           English
         </span>
       </div>
+
+      <!-- Selo de disponibilidade -->
+      <p class="hero-status mb-6 animate-[fadeIn_0.8s_ease-out]">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Available for new projects</span><span class="hero-status__place">· Rio de Janeiro, BR</span>
+      </p>
 
       <!-- Subtítulo Superior -->
       <div class="text-gray-300 font-montserrat text-base md:text-lg lg:text-xl font-semibold tracking-wide mb-6 animate-[fadeIn_0.8s_ease-out]">
@@ -169,8 +184,9 @@
           <i data-lucide="download" class="w-4 h-4"></i>
           Resume
         </a>
-        <a href="#contact" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center text-center">
-          Get in Touch
+        <a href="#contact" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2 text-center">
+          <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
+          Let's talk
         </a>
       </div>
 
@@ -202,6 +218,24 @@
       <span>Scroll</span>
       <span class="scroll-cue__line" aria-hidden="true"></span>
     </a>
+  </section>
+
+  <!-- SEÇÃO JÁ ATUEI EM (empresas da trajetória) -->
+  <section id="companies" class="companies py-14 md:py-16 px-6 md:px-12 border-t border-white/5 relative z-10" aria-labelledby="companies-title">
+    <div class="max-w-7xl mx-auto">
+      <h2 id="companies-title" class="companies__title reveal"><span>Where I've worked</span></h2>
+      <ul class="companies__list">
+        <li class="reveal" style="--d:0;--stagger:55ms"><a class="company" href="#exp-oceanpact">OceanPact</a></li>
+        <li class="reveal" style="--d:1;--stagger:55ms"><a class="company" href="#exp-banco-do-brasil">Banco do Brasil</a></li>
+        <li class="reveal" style="--d:2;--stagger:55ms"><a class="company" href="#exp-oceanpact">Stefanini</a></li>
+        <li class="reveal" style="--d:3;--stagger:55ms"><a class="company" href="#exp-gameon">GameOn</a></li>
+        <li class="reveal" style="--d:4;--stagger:55ms"><a class="company" href="#exp-mag-seguros">MAG Seguros</a></li>
+        <li class="reveal" style="--d:5;--stagger:55ms"><a class="company" href="#exp-cypher">Cypher</a></li>
+        <li class="reveal" style="--d:6;--stagger:55ms"><a class="company" href="#exp-nelogica">Nelogica</a></li>
+        <li class="reveal" style="--d:7;--stagger:55ms"><a class="company" href="#exp-darwinx">DarwinX</a></li>
+        <li class="reveal" style="--d:8;--stagger:55ms"><a class="company" href="#exp-livrelab">LivreLab</a></li>
+      </ul>
+    </div>
   </section>
 
   <!-- SEÇÃO PROJETOS EM DESTAQUE -->
@@ -712,7 +746,7 @@
               <!-- Certificados LinkedIn Learning (consolidado) -->
               <div class="group">
                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">+8 complementary certifications in AI, Leadership and Communication</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">LinkedIn Learning - Completed between Apr/2025 and Oct/2025</p>
+                <p class="text-xs text-gray-400 mb-1 font-light">LinkedIn Learning - Completed between Apr 2025 and Oct 2025</p>
                 <a href="https://www.linkedin.com/in/marcodsvinicius/details/certifications/" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
                   View all on LinkedIn <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                 </a>
@@ -721,7 +755,7 @@
               <!-- Outros Cursos 1 -->
               <div class="group">
                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Noloco Certified Expert Level 1</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">Noloco Academy - Completed Jul/2024</p>
+                <p class="text-xs text-gray-400 mb-1 font-light">Noloco Academy - Completed Jul 2024</p>
                 <a href="https://drive.google.com/file/d/18WcEvl-_Lu7ggNznbmskLrYRdSlcSkCS/view" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
                   View Certificate <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                 </a>
@@ -730,7 +764,7 @@
               <!-- Outros Cursos 2 -->
               <div class="group">
                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Agile Planning and Management</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">Meluca - Completed Jun/2023</p>
+                <p class="text-xs text-gray-400 mb-1 font-light">Meluca - Completed Jun 2023</p>
                 <a href="https://drive.google.com/file/d/1Epo86NFN1V41I2tycKxUqnKvghbr8GvV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
                   View Certificate <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                 </a>
@@ -739,7 +773,7 @@
               <!-- Outros Cursos 3 -->
               <div class="group">
                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Design System Specialist</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">Meluca - Completed May/2022</p>
+                <p class="text-xs text-gray-400 mb-1 font-light">Meluca - Completed May 2022</p>
                 <a href="https://drive.google.com/file/d/1iIlmmC0EI38z0ndcEpOZ6e1Mq4CR08c_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
                   View Certificate <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                 </a>
@@ -748,7 +782,7 @@
               <!-- Outros Cursos 4 -->
               <div class="group">
                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">Advanced Figma</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">Alura - Completed Jun/2022</p>
+                <p class="text-xs text-gray-400 mb-1 font-light">Alura - Completed Jun 2022</p>
                 <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
                   View Certificate <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                 </a>
@@ -757,7 +791,7 @@
               <!-- Outros Cursos 5 -->
               <div class="group">
                 <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">USP - Completed Apr/2021</p>
+                <p class="text-xs text-gray-400 mb-1 font-light">USP - Completed Apr 2021</p>
                 <a href="https://www.coursera.org/account/accomplishments/certificate/5FSP7ATE9R59" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
                   View Certificate <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                 </a>
@@ -777,7 +811,7 @@
             <span class="timeline-line" aria-hidden="true"></span>
             
             <!-- Experiência 1: OceanPact | Stefanini -->
-            <div class="relative group reveal">
+            <div id="exp-oceanpact" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Senior Product Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -798,7 +832,7 @@
             </div>
 
             <!-- Experiência 2: Banco do Brasil | Stefanini -->
-            <div class="relative group reveal">
+            <div id="exp-banco-do-brasil" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Mid-level UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -816,7 +850,7 @@
             </div>
 
             <!-- Experiência 3 -->
-            <div class="relative group reveal">
+            <div id="exp-gameon" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Mid-level UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -834,7 +868,7 @@
             </div>
 
             <!-- Experiência 4 -->
-            <div class="relative group reveal">
+            <div id="exp-mag-seguros" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Mid-level UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -852,7 +886,7 @@
             </div>
 
             <!-- Experiência 5 -->
-            <div class="relative group reveal">
+            <div id="exp-cypher" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -870,7 +904,7 @@
             </div>
 
             <!-- Experiência 6 -->
-            <div class="relative group reveal">
+            <div id="exp-nelogica" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -888,7 +922,7 @@
             </div>
 
             <!-- Experiência 7 -->
-            <div class="relative group reveal">
+            <div id="exp-freelance" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">UI Designer and Front-End Developer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -906,7 +940,7 @@
             </div>
 
             <!-- Experiência 8 -->
-            <div class="relative group reveal">
+            <div id="exp-livrelab" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">Programming and Design Teacher</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -924,7 +958,7 @@
             </div>
 
             <!-- Experiência 9 -->
-            <div class="relative group reveal">
+            <div id="exp-darwinx" class="relative group reveal">
               <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
               <h4 class="font-montserrat text-xl font-bold text-white mb-1">React Developer</h4>
               <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
@@ -978,7 +1012,7 @@
             <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-brand/50 rounded-br-xl transition-all group-hover:-bottom-5 group-hover:-right-5"></div>
             
             <!-- Container da Imagem (Efeitos de hover removidos) -->
-            <div class="w-full h-full bg-[#0a0a0a] rounded-lg overflow-hidden border border-white/10 relative z-10">
+            <div id="about-photo" class="w-full h-full bg-[#0a0a0a] rounded-lg overflow-hidden border border-white/10 relative z-10">
               <!-- Nova URL da foto -->
               <img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png" 
                    alt="Marco Vinicius" 
@@ -990,6 +1024,15 @@
                    Product Designer
                  </div>
                  <p class="block w-fit bg-black/85 backdrop-blur-sm text-white text-xs font-mono px-3 py-1">Rio de Janeiro, BR</p>
+              </div>
+
+              <!-- Ficha: uma linha lima varre a foto e as etiquetas surgem quando ela passa -->
+              <div class="about-hud" aria-hidden="true">
+                <span class="about-hud__wash"></span>
+                <span class="about-hud__scan"></span>
+                <span class="about-hud__lab about-hud__lab--r" style="--y:38%;--at:.38"><small>Level</small><span>Senior</span></span>
+                <span class="about-hud__lab about-hud__lab--l" style="--y:52%;--at:.52"><small>Status</small><span>Available</span></span>
+                <span class="about-hud__lab about-hud__lab--r" style="--y:66%;--at:.66"><small>Focus</small><span>Design System · AI First</span></span>
               </div>
             </div>
 
@@ -1038,8 +1081,9 @@
               <i data-lucide="download" class="w-4 h-4"></i>
               Resume
             </a>
-            <a href="#contact" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center text-center">
-              Get in Touch
+            <a href="#contact" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2 text-center">
+              <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
+              Let's talk
             </a>
           </div>
 
@@ -1048,6 +1092,153 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- SEÇÃO RECOMENDAÇÕES (textos das recomendações do LinkedIn) -->
+  <section id="recommendations" class="py-24 px-6 md:px-12 border-t border-white/5 relative z-10" aria-labelledby="recs-title">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 reveal">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3 text-brand">
+            <i data-lucide="quote" class="w-4 h-4" aria-hidden="true"></i>
+            <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">LinkedIn recommendations</span>
+          </div>
+          <h2 id="recs-title" class="font-montserrat text-4xl md:text-6xl font-black leading-none uppercase tracking-tighter">
+            What people <br/>
+            <span class="text-brand">say about me</span>
+          </h2>
+        </div>
+        <a href="https://www.linkedin.com/in/marcodsvinicius/details/recommendations/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto shrink-0 font-montserrat text-xs uppercase tracking-widest font-black border border-white/20 hover:border-brand hover:text-brand text-white bg-white/[0.02] backdrop-blur-sm transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2">
+          See all 12 on LinkedIn
+          <i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="recs reveal" data-recs>
+        <div class="recs__stage">
+          <figure class="rec is-active" id="rec-1">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>I had the pleasure of working with Marco as a UX teammate, and I can say with confidence that he is <mark>one of the most proactive and hardworking professionals I have ever met</mark>. He is an excellent communicator, with team members and stakeholders alike, able to articulate his ideas clearly and defend his design decisions persuasively. He is dedicated to doing excellent work and is always looking for ways to improve his technique and skills.</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">BC</span>
+              <span class="rec__meta"><strong>Bruno Caregnatto</strong><span>Product Designer @Sicredi</span><span class="rec__rel">Direct manager · Apr 2023</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-2">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>Marco is a fantastic professional with whom I had the opportunity to work collaboratively on a few projects at Nelogica. Always open to new ideas, he has <mark>a refined aesthetic sense, critical thinking and a deep knowledge of Design Systems</mark>.</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">DL</span>
+              <span class="rec__meta"><strong>Danyllo Lisboa</strong><span>Senior UX/UI Designer</span><span class="rec__rel">Different teams · Apr 2023</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-3">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>Marco is an incredible UX designer, always willing to help the team. We worked together at MAG Seguros. He is a great communicator, loves learning and loves sharing knowledge. Always proactive and ready to help. In the time I worked with him I saw his Figma skills, which are incredible, and his Notion skills too. <mark>He contributed a lot to our UX team.</mark></p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">NF</span>
+              <span class="rec__meta"><strong>Nathasha Fariña</strong><span>UX/UI Designer</span><span class="rec__rel">Same team · Nov 2024</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-4">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>Marco is an incredible professional! <mark>He loves to learn and to teach</mark>, and that is why he masters so many subjects: design, programming, Notion, and more. I had the chance to watch many presentations he gave. Whenever we had an open weekly slot, he was the one who took it.</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">VC</span>
+              <span class="rec__meta"><strong>Valesca Cechin</strong><span>Senior UX Designer</span><span class="rec__rel">Same team · Apr 2023</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-5">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>Marco is a great designer, very proactive, and he always shared his knowledge with the team! <mark>I could always count on him</mark>, and I am sure he will bring a lot of joy and knowledge to any team he joins.</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">MF</span>
+              <span class="rec__meta"><strong>Marley Farias</strong><span>UX Designer</span><span class="rec__rel">Same team · Apr 2023</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-6">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>Marco is an incredibly talented professional I had the pleasure of working with over the past few years. During that time, I was impressed by <mark>his technical interface skills and his ability to work as part of a team</mark>.</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">RM</span>
+              <span class="rec__meta"><strong>Renan Marques</strong><span>UX/UI Designer</span><span class="rec__rel">Same team · Apr 2023</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-7">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>Marco Vinicius has an insatiable desire to learn and to help. He is extremely competent and always eager to grow professionally! An excellent professional with an <mark>unquestionable team spirit</mark>. I recommend him without hesitation!</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">AG</span>
+              <span class="rec__meta"><strong>Ana Carolina Goulart</strong><span>Software Engineer @iFood</span><span class="rec__rel">Different teams · Apr 2021</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-8">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>A great professional, <mark>very attentive to the details that matter, with a collaborative profile</mark>. He picks up new technologies easily and commits to the best possible execution on projects. Very pleasant to work with, with admirable personal qualities.</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">RP</span>
+              <span class="rec__meta"><strong>Raphael Matheus Pereira</strong><span>Infrastructure Analyst</span><span class="rec__rel">Same team · Aug 2021</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-9">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>An excellent professional, with lots of initiative, dedicated and with <mark>a leadership spirit</mark>.</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">IR</span>
+              <span class="rec__meta"><strong>Igor Rodrigues</strong><span>Full Stack Developer</span><span class="rec__rel">Mentor · Aug 2021</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-10">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>I studied with Marco during our degree. Marco was always <mark>proactive and a great communicator</mark>, standing out in academic projects and surprising everyone with his excellence. I recommend this professional!</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">DA</span>
+              <span class="rec__meta"><strong>Daniel Amaral</strong><span>Growth Marketing Specialist</span><span class="rec__rel">College classmate · Feb 2021</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-11">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p>Marco is very dynamic and disciplined. Once he has a clear goal, <mark>he sees it through, always seeking the best possible result</mark>.</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">JV</span>
+              <span class="rec__meta"><strong>João Viana</strong><span>Software Engineer</span><span class="rec__rel">Classmate · Oct 2021</span></span>
+            </figcaption>
+          </figure>
+          <figure class="rec" id="rec-12">
+            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
+            <blockquote class="rec__text"><p><mark>Responsible, dedicated</mark>, always ready to help!</p></blockquote>
+            <figcaption class="rec__who">
+              <span class="rec__ava" aria-hidden="true">BG</span>
+              <span class="rec__meta"><strong>Bianca Gomes</strong><span>Credit Analyst</span><span class="rec__rel">Classmate · Jul 2022</span></span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="recs__nav">
+          <div class="recs__people" role="group" aria-label="Choose a recommendation">
+            <button type="button" class="recs__person" aria-controls="rec-1" aria-label="Recommendation from Bruno Caregnatto" aria-current="true"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">BC</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-2" aria-label="Recommendation from Danyllo Lisboa"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">DL</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-3" aria-label="Recommendation from Nathasha Fariña"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">NF</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-4" aria-label="Recommendation from Valesca Cechin"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">VC</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-5" aria-label="Recommendation from Marley Farias"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">MF</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-6" aria-label="Recommendation from Renan Marques"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">RM</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-7" aria-label="Recommendation from Ana Carolina Goulart"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">AG</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-8" aria-label="Recommendation from Raphael Matheus Pereira"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">RP</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-9" aria-label="Recommendation from Igor Rodrigues"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">IR</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-10" aria-label="Recommendation from Daniel Amaral"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">DA</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-11" aria-label="Recommendation from João Viana"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">JV</span></button>
+            <button type="button" class="recs__person" aria-controls="rec-12" aria-label="Recommendation from Bianca Gomes"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">BG</span></button>
+          </div>
+          <div class="recs__ctrl">
+            <span class="recs__count" aria-hidden="true"><b>01</b> / 12</span>
+            <button type="button" class="recs__arrow" data-rec-prev aria-label="Previous recommendation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="recs__arrow" data-rec-next aria-label="Next recommendation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <p class="recs__note">Translated from Portuguese. The originals are on LinkedIn.</p>
+      </div>
+
+    </div>
   </section>
 
   <!-- SEÇÃO CONTATO -->
@@ -1094,8 +1285,9 @@
               <i data-lucide="download" class="w-4 h-4"></i>
               Resume
             </a>
-            <a href="mailto:contato@marcodsvinicius.com" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center text-center">
-              Get in Touch
+            <a href="mailto:contato@marcodsvinicius.com" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2 text-center">
+              <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i>
+              Send email
             </a>
           </div>
 
@@ -1140,6 +1332,67 @@
       </div>
     </div>
   </footer>
+
+  <!-- Resumo em 30 segundos: abre pelo botão do cabeçalho ou pela tecla R -->
+  <div id="summary-backdrop" class="summary-backdrop" hidden></div>
+  <div id="summary-dialog" class="summary" role="dialog" aria-modal="true" aria-labelledby="summary-name" aria-describedby="summary-role" hidden>
+    <div class="summary__grip" aria-hidden="true"></div>
+    <div class="summary__body">
+      <div class="summary__who">
+        <span class="summary__ava" aria-hidden="true">MV.</span>
+        <div>
+          <h2 id="summary-name" class="summary__name" tabindex="-1">Marco Vinicius</h2>
+          <p id="summary-role" class="summary__role">Senior Product Designer</p>
+        </div>
+        <button type="button" class="summary__close" data-summary-close aria-label="Close summary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <p class="hero-status summary__status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Available for new projects</span><span class="hero-status__place">· Rio de Janeiro, BR</span>
+      </p>
+      <dl class="summary__rows">
+        <div class="summary__row">
+          <dt>Background</dt>
+          <dd>Design and front-end since 2020. Today, Senior Product Designer at Stefanini, leading end-to-end design at OceanPact.</dd>
+        </div>
+        <div class="summary__row">
+          <dt>Where I've worked</dt>
+          <dd>OceanPact and Banco do Brasil (via Stefanini) · MAG Seguros · Cypher · Nelogica</dd>
+        </div>
+        <div class="summary__row">
+          <dt>Case results</dt>
+          <dd>
+            <ul class="summary__res">
+              <li><a href="Case-Tour-Guiado.html"><span>6 long tutorials became 13 short, focused guided tours<small>Guided Tour</small></span></a></li>
+              <li><a href="Case-Rebalanceamento-Carteira.html"><span>A new feature that curbed user churn to third-party platforms<small>Investment Portfolio Rebalancing</small></span></a></li>
+              <li><a href="Case-Design-System.html"><span>A single Design Tokens language shared by design and engineering<small>Nelogica Design System</small></span></a></li>
+            </ul>
+          </dd>
+        </div>
+        <div class="summary__row">
+          <dt>Skills</dt>
+          <dd>Design System · Discovery · UX/UI Design · Prototyping · AI First · Visual Analytics · HTML, CSS & JavaScript</dd>
+        </div>
+      </dl>
+      <div class="summary__acts">
+        <a class="summary__act summary__act--lime" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/PD-MARCO-VINICIUS-1.pdf" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i>Resume
+        </a>
+        <button type="button" class="summary__act" data-copy-email data-email="contato@marcodsvinicius.com" data-copied="Copied!" data-label="Copy email">
+          <span class="copy-email__icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></span><span class="copy-email__text" aria-live="polite">Copy email</span>
+        </button>
+        <a class="summary__act" href="https://www.linkedin.com/in/marcodsvinicius/" target="_blank" rel="noopener noreferrer">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn
+        </a>
+        <a class="summary__act" href="#projects" data-summary-cases>
+          <i data-lucide="layers" class="w-4 h-4" aria-hidden="true"></i>See cases
+        </a>
+      </div>
+      <p class="summary__mail">contato@marcodsvinicius.com</p>
+    </div>
+  </div>
 
   <!-- Modal de Senha: Hub de Obras (Acesso Restrito) -->
   <div id="hub-gate-modal" data-label-busy="Checking..." data-label-ok="Access granted" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="hub-gate-title">

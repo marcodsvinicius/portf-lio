@@ -1,6 +1,6 @@
 # Portfólio — Marco Vinicius
 
-Site estático (HTML + Tailwind CSS via CDN) do portfólio publicado em [marcodsvinicius.com](https://marcodsvinicius.com).
+Site estático (HTML + Tailwind CSS compilado) do portfólio publicado em [marcodsvinicius.com](https://marcodsvinicius.com).
 
 ## Estrutura
 
@@ -66,6 +66,29 @@ Para publicar um artigo, troque o `[]` por uma lista assim, em `index.html` e em
 ```
 
 Só `title` e `url` são obrigatórios. Com a lista vazia, aparece um único card levando ao perfil do Medium.
+
+## Já atuei em (empresas)
+
+A faixa logo abaixo do hero mostra o nome de cada empresa como texto, com link para o cargo dela na trajetória
+(`href="#exp-..."`). Para trocar por logos, coloque os arquivos em `assets/img/logos/` (de preferência SVG em
+branco ou cinza claro) e troque o nome pela imagem dentro do mesmo link, nas duas homes:
+
+```html
+<a class="company" href="#exp-nelogica"><img src="assets/img/logos/nelogica.svg" alt="Nelogica"></a>
+```
+
+Na versão em inglês o caminho começa com `../assets/`.
+
+## Recomendações
+
+Os textos estão no HTML, um `<figure class="rec">` por pessoa, na mesma ordem dos avatares em `.recs__people`.
+Para incluir alguém, copie um `figure` e um botão de avatar e ajuste o `id="rec-N"` e o `aria-controls`.
+O trecho em lima é o que está dentro de `<mark>`. Em `en/index.html` os textos são traduções e a página avisa isso.
+
+## Resumo em 30 segundos
+
+O conteúdo fica em `#summary-dialog`, no fim de cada home. Ele abre pelo botão Resumo do cabeçalho ou pela tecla R.
+Quando o currículo mudar, atualize ali também: trajetória, empresas, resultados dos cases e competências.
 
 ## Rodando localmente
 

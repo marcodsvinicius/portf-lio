@@ -1,8 +1,9 @@
 /* ==========================================================================
    Marco Vinicius — Portfólio
-   Interações exclusivas da home: fundo reativo e decodificação do hero,
-   tilt dos cards, filtro de skills, timeline, descrições expansíveis,
-   contato (status, copiar e-mail, espiral) e modal de senha do Hub de Obras.
+   Interações exclusivas da home: malha do hero (sinais e pulso ao toque),
+   faixa de empresas, AI First, tilt dos cards, skills, timeline, descrições
+   expansíveis, ficha da foto, recomendações, resumo em 30 segundos,
+   contato (status, copiar e-mail, radar) e modal de senha do Hub de Obras.
    ========================================================================== */
 (function () {
   'use strict';
@@ -12,7 +13,8 @@
   var lang = (document.documentElement.lang || 'pt').slice(0, 2);
 
   /* ======================================================================
-     HERO — malha de nós com sinais percorrendo as conexões
+     HERO — malha de nós com sinais percorrendo as conexões.
+     Um toque ou clique no fundo dispara um pulso que acende a rede em ondas.
      ====================================================================== */
   (function heroBackground() {
     var hero = document.getElementById('hero');
@@ -26,7 +28,9 @@
     var RANGE = 170;   // alcance do cursor
     var PUSH = 7;      // quanto os nós se afastam do cursor
     var W = 0, H = 0, vignette = null;
-    var nodes = [], edges = [], signals = [];
+    var nodes = [], edges = [], signals = [], waves = [];
+    var HOP = 55;      // ms entre um anel de conexões e o próximo no pulso
+    var GLOW = 900;    // ms que cada nó fica aceso depois que o pulso passa
     var mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999, on: false };
     var raf = null, visible = false, last = 0;
     var still = reduced();
@@ -49,7 +53,7 @@
           nodes.push({
             x: i * step + (noise(i, j) - 0.5) * step * 0.5,
             y: j * step + (noise(j, i) - 0.5) * step * 0.5,
-            dx: 0, dy: 0, g: 0, h: 0, e: []
+            dx: 0, dy: 0, g: 0, h: 0, pt: -1e9, pp: 1, pv: 0, fl: 0, e: []
           });
         }
       }
@@ -67,6 +71,7 @@
         }
       }
       signals = [];
+      waves = [];
       if (still) return;
       var total = W < 640 ? 2 : 4;
       for (var n = 0; n < total; n++) signals.push(respawn(n * 500));
@@ -132,11 +137,14 @@
       ctx.clearRect(0, 0, W, H);
       var i, n, e, a, b;
       var mx = mouse.x, my = mouse.y, has = mx > -999;
+      var now = performance.now();
 
       /* posição exibida de cada nó, já com o empurrão do cursor */
       for (i = 0; i < nodes.length; i++) {
         n = nodes[i];
         n.dx = n.x; n.dy = n.y; n.h = 0;
+        var age = now - n.pt;
+        n.pv = still ? n.fl : (age < 0 || age > GLOW ? 0 : (1 - age / GLOW) * n.pp);
         if (!has) continue;
         var ox = n.x - mx, oy = n.y - my;
         var d = Math.sqrt(ox * ox + oy * oy);
@@ -151,7 +159,7 @@
       ctx.beginPath();
       for (i = 0; i < edges.length; i++) {
         e = edges[i]; a = nodes[e.a]; b = nodes[e.b];
-        if (e.g > 0.02 || a.h > 0.02 || b.h > 0.02) continue;
+        if (e.g > 0.02 || a.h > 0.02 || b.h > 0.02 || Math.min(a.pv, b.pv) > 0.02) continue;
         ctx.moveTo(a.dx, a.dy); ctx.lineTo(b.dx, b.dy);
       }
       ctx.strokeStyle = 'rgba(' + LIME + ',0.055)';
@@ -161,7 +169,7 @@
       /* conexões acesas pelo sinal ou pelo cursor */
       for (i = 0; i < edges.length; i++) {
         e = edges[i]; a = nodes[e.a]; b = nodes[e.b];
-        var lit = Math.max(e.g, (a.h + b.h) * 0.5);
+        var lit = Math.max(e.g, (a.h + b.h) * 0.5, Math.min(a.pv, b.pv));
         if (lit <= 0.02) continue;
         ctx.beginPath();
         ctx.moveTo(a.dx, a.dy); ctx.lineTo(b.dx, b.dy);
@@ -174,7 +182,7 @@
       ctx.beginPath();
       for (i = 0; i < nodes.length; i++) {
         n = nodes[i];
-        if (n.g > 0.02 || n.h > 0.02) continue;
+        if (n.g > 0.02 || n.h > 0.02 || n.pv > 0.02) continue;
         ctx.moveTo(n.dx + 1.15, n.dy);
         ctx.arc(n.dx, n.dy, 1.15, 0, Math.PI * 2);
       }
@@ -184,7 +192,7 @@
       /* nós acesos, com anel de pulso quando o sinal chega */
       for (i = 0; i < nodes.length; i++) {
         n = nodes[i];
-        var v = Math.max(n.g, n.h);
+        var v = Math.max(n.g, n.h, n.pv);
         if (v <= 0.02) continue;
         ctx.beginPath();
         ctx.arc(n.dx, n.dy, 1.15 + v * 2.3, 0, Math.PI * 2);
@@ -197,6 +205,17 @@
           ctx.lineWidth = 1;
           ctx.stroke();
         }
+      }
+
+      /* anel de luz que acompanha a onda do pulso */
+      for (i = waves.length - 1; i >= 0; i--) {
+        var w = waves[i], wa = now - w.t0;
+        if (wa > w.life) { waves.splice(i, 1); continue; }
+        ctx.beginPath();
+        ctx.arc(w.x, w.y, wa * w.speed, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(' + LIME + ',' + (w.a * (1 - wa / w.life)).toFixed(3) + ')';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
       }
 
       /* cabeça luminosa de cada sinal */
@@ -241,6 +260,53 @@
     }
     function kick() { if (!raf && visible && !still) { last = performance.now(); raf = requestAnimationFrame(frame); } }
 
+    /* Pulso: parte do nó mais próximo do toque e acende a rede anel por anel.
+       Com movimento reduzido, os nós em volta só acendem e apagam no lugar. */
+    function pulse(x, y, power, reach) {
+      if (!nodes.length) return;
+      power = power || 1;
+      reach = reach || 16;
+      var i, best = 0, bd = Infinity;
+      for (i = 0; i < nodes.length; i++) {
+        var ox = nodes[i].x - x, oy = nodes[i].y - y, d = ox * ox + oy * oy;
+        if (d < bd) { bd = d; best = i; }
+      }
+      if (still) {
+        var hit = [];
+        for (i = 0; i < nodes.length; i++) {
+          var sx = nodes[i].x - x, sy = nodes[i].y - y;
+          if (sx * sx + sy * sy < 130 * 130) { nodes[i].fl = 1; hit.push(nodes[i]); }
+        }
+        draw();
+        setTimeout(function () { hit.forEach(function (nd) { nd.fl = 0; }); draw(); }, GLOW);
+        return;
+      }
+      var now = performance.now();
+      var depth = [];
+      for (i = 0; i < nodes.length; i++) depth.push(-1);
+      depth[best] = 0;
+      var queue = [best];
+      for (var q = 0; q < queue.length; q++) {
+        var cur = queue[q];
+        if (depth[cur] >= reach) continue;
+        var list = nodes[cur].e;
+        for (var k = 0; k < list.length; k++) {
+          var ed = edges[list[k]], nb = ed.a === cur ? ed.b : ed.a;
+          if (depth[nb] < 0) { depth[nb] = depth[cur] + 1; queue.push(nb); }
+        }
+      }
+      for (i = 0; i < nodes.length; i++) if (depth[i] >= 0) { nodes[i].pt = now + depth[i] * HOP; nodes[i].pp = power; }
+      var stepPx = W < 640 ? 46 : 62;
+      waves.push({ x: nodes[best].x, y: nodes[best].y, t0: now, speed: (stepPx / HOP) * 0.85, life: 1000, a: 0.4 * power });
+      kick();
+    }
+
+    hero.addEventListener('click', function (ev) {
+      if (ev.target.closest('a, button, input, select, textarea, label, [role="navigation"]')) return;
+      var rect = hero.getBoundingClientRect();
+      pulse(ev.clientX - rect.left, ev.clientY - rect.top);
+    });
+
     if (canHover) {
       hero.addEventListener('pointermove', function (ev) {
         var rect = hero.getBoundingClientRect();
@@ -274,7 +340,30 @@
     if (still) {
       for (var k = 0; k < nodes.length; k += 9) nodes[k].g = 0.5;
       draw();
-    } else { visible = true; kick(); }
+    } else {
+      visible = true;
+      kick();
+      setTimeout(function () { if (window.scrollY < H * 0.5) pulse(W / 2, H * 0.48, 0.45, 9); }, 1100);
+    }
+  })();
+
+  /* ======================================================================
+     JÁ ATUEI EM — cada empresa leva ao cargo na timeline e acende o item
+     (a rolagem suave vem do site.js)
+     ====================================================================== */
+  (function companies() {
+    document.querySelectorAll('.company[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var item = document.querySelector(link.getAttribute('href'));
+        if (!item) return;
+        clearTimeout(item._flash);
+        item.classList.remove('is-flash');
+        item._flash = setTimeout(function () {
+          item.classList.add('is-flash');
+          item._flash = setTimeout(function () { item.classList.remove('is-flash'); }, 2400);
+        }, reduced() ? 0 : 700);
+      });
+    });
   })();
 
   /* ======================================================================
@@ -537,7 +626,7 @@
      CONTATO — copiar e-mail com feedback
      ====================================================================== */
   (function copyEmail() {
-    var btns = document.querySelectorAll('.copy-email');
+    var btns = document.querySelectorAll('.copy-email, [data-copy-email]');
     if (!btns.length) return;
     var CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
     function fallbackCopy(text) {
@@ -562,12 +651,239 @@
           clearTimeout(timer);
           timer = setTimeout(function () {
             btn.classList.remove('is-copied');
-            if (label) label.textContent = email;
+            if (label) label.textContent = btn.dataset.label || email;
             if (icon) icon.innerHTML = iconHTML;
           }, 2000);
         });
       });
     });
+  })();
+
+  /* ======================================================================
+     SOBRE — ficha que escaneia a foto: uma linha lima varre a imagem e as
+     etiquetas surgem quando ela passa pela altura de cada uma. Roda quando
+     a foto aparece, ao passar o mouse e ao tocar.
+     ====================================================================== */
+  (function aboutHud() {
+    var hud = document.querySelector('.about-hud');
+    var photo = document.getElementById('about-photo');
+    if (!hud || !photo) return;
+    if (reduced()) { hud.classList.add('is-done'); return; }
+    hud.classList.add('is-armed');
+    var busy = false;
+    function scan() {
+      if (busy) return;
+      busy = true;
+      hud.classList.remove('is-scanning');
+      void hud.offsetWidth;
+      hud.classList.add('is-scanning');
+      setTimeout(function () {
+        hud.classList.add('is-done');
+        hud.classList.remove('is-scanning');
+        busy = false;
+      }, 1600);
+    }
+    if (canHover) photo.addEventListener('pointerenter', scan);
+    photo.addEventListener('click', scan);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        io.disconnect();
+        setTimeout(scan, 300);
+      }, { threshold: 0.5 });
+      io.observe(photo);
+    } else {
+      hud.classList.add('is-done');
+    }
+  })();
+
+  /* ======================================================================
+     RECOMENDAÇÕES — uma por vez, trocando sozinha enquanto a seção está na
+     tela. O anel no avatar marca o tempo até a próxima (mais longo para
+     textos maiores); mouse em cima ou foco pausam, e qualquer escolha
+     manual (avatar, setas ou deslizar no celular) encerra a troca automática.
+     ====================================================================== */
+  (function recommendations() {
+    var box = document.querySelector('[data-recs]');
+    if (!box) return;
+    var slides = Array.prototype.slice.call(box.querySelectorAll('.rec'));
+    var people = Array.prototype.slice.call(box.querySelectorAll('.recs__person'));
+    var stage = box.querySelector('.recs__stage');
+    var count = box.querySelector('.recs__count b');
+    var row = box.querySelector('.recs__people');
+    if (slides.length < 2 || people.length !== slides.length) return;
+    var index = 0, inView = false, hovering = false, focused = false;
+
+    box.classList.add('is-ready');
+    if (reduced()) box.classList.add('is-manual');
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function show(i, manual) {
+      index = (i + slides.length) % slides.length;
+      var text = slides[index].querySelector('.rec__text');
+      var chars = text ? text.textContent.length : 200;
+      box.style.setProperty('--dur', Math.min(24, Math.max(6, 2.5 + chars * 0.045)).toFixed(1) + 's');
+      if (manual) box.classList.add('is-manual');
+      slides.forEach(function (sl, k) { sl.classList.toggle('is-active', k === index); });
+      people.forEach(function (b, k) {
+        if (k === index) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+      });
+      if (count) count.textContent = pad(index + 1);
+      var chip = people[index];
+      if (row && row.scrollWidth > row.clientWidth + 2) {
+        row.scrollTo({ left: chip.offsetLeft - row.clientWidth / 2 + chip.offsetWidth / 2, behavior: reduced() ? 'auto' : 'smooth' });
+      }
+    }
+    function sync() { box.classList.toggle('is-paused', !inView || hovering || focused || document.hidden); }
+
+    people.forEach(function (b, k) { b.addEventListener('click', function () { show(k, true); }); });
+    var prev = box.querySelector('[data-rec-prev]'), next = box.querySelector('[data-rec-next]');
+    if (prev) prev.addEventListener('click', function () { show(index - 1, true); });
+    if (next) next.addEventListener('click', function () { show(index + 1, true); });
+
+    /* fim do anel = próxima recomendação */
+    box.addEventListener('animationend', function (e) {
+      if (e.animationName !== 'rec-ring' || box.classList.contains('is-manual')) return;
+      show(index + 1, false);
+    });
+
+    box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; sync(); } });
+    box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; sync(); } });
+    box.addEventListener('focusin', function () { focused = true; sync(); });
+    box.addEventListener('focusout', function () { setTimeout(function () { focused = box.contains(document.activeElement); sync(); }, 0); });
+    document.addEventListener('visibilitychange', sync);
+
+    /* deslizar para os lados troca no toque */
+    var sx = 0, sy = 0, tracking = false;
+    stage.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse') return;
+      tracking = true; sx = e.clientX; sy = e.clientY;
+    });
+    stage.addEventListener('pointerup', function (e) {
+      if (!tracking) return;
+      tracking = false;
+      var dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.3) show(index + (dx < 0 ? 1 : -1), true);
+    });
+    stage.addEventListener('pointercancel', function () { tracking = false; });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { inView = entries[0].isIntersecting; sync(); }, { threshold: 0.35 }).observe(box);
+    } else { inView = true; }
+    show(0, false);
+    sync();
+  })();
+
+  /* ======================================================================
+     RESUMO EM 30 SEGUNDOS — abre pelo botão do cabeçalho ou pela tecla R.
+     Cartão central no computador; no celular, folha que sobe de baixo e
+     fecha arrastando a alça. Foco preso no diálogo e Esc para fechar.
+     ====================================================================== */
+  (function summary() {
+    var dialog = document.getElementById('summary-dialog');
+    var backdrop = document.getElementById('summary-backdrop');
+    var trigger = document.getElementById('summary-btn');
+    if (!dialog || !backdrop) return;
+    var title = document.getElementById('summary-name');
+    var grip = dialog.querySelector('.summary__grip');
+    var gate = document.getElementById('hub-gate-modal');
+    var lastFocus = null, hideTimer = null;
+
+    function isOpen() { return dialog.classList.contains('is-open'); }
+    function focusables() {
+      return Array.prototype.filter.call(
+        dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+        function (el) { return el.offsetParent !== null; });
+    }
+    function open() {
+      if (isOpen()) return;
+      if (window.MV && window.MV.closeMenu) window.MV.closeMenu();
+      clearTimeout(hideTimer);
+      lastFocus = document.activeElement;
+      dialog.hidden = false;
+      backdrop.hidden = false;
+      dialog.style.transition = '';
+      dialog.style.transform = '';
+      document.documentElement.classList.add('summary-lock');
+      void dialog.offsetWidth;
+      dialog.classList.add('is-open');
+      backdrop.classList.add('is-open');
+      setTimeout(function () { if (title) title.focus({ preventScroll: true }); }, 40);
+    }
+    function close(restoreFocus) {
+      if (!isOpen()) return;
+      dialog.classList.remove('is-open');
+      backdrop.classList.remove('is-open');
+      dialog.style.transition = '';
+      dialog.style.transform = '';
+      document.documentElement.classList.remove('summary-lock');
+      hideTimer = setTimeout(function () { dialog.hidden = true; backdrop.hidden = true; }, reduced() ? 0 : 400);
+      if (restoreFocus !== false && lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    }
+
+    if (trigger) trigger.addEventListener('click', open);
+    backdrop.addEventListener('click', function () { close(); });
+    dialog.querySelectorAll('[data-summary-close]').forEach(function (b) { b.addEventListener('click', function () { close(); }); });
+
+    /* "Ver cases": fecha e leva até os projetos */
+    dialog.querySelectorAll('[data-summary-cases]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        close(false);
+        var target = document.querySelector(a.getAttribute('href'));
+        if (target) setTimeout(function () { target.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' }); }, 30);
+      });
+    });
+    /* Resultados levam ao case: fecha antes para a volta não reabrir travada */
+    dialog.querySelectorAll('.summary__res a').forEach(function (a) {
+      a.addEventListener('click', function () { close(false); });
+    });
+    window.addEventListener('pageshow', function (e) { if (e.persisted && isOpen()) close(false); });
+
+    document.addEventListener('keydown', function (e) {
+      if (isOpen()) {
+        if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+        if (e.key === 'Tab') {
+          var f = focusables();
+          if (!f.length) return;
+          var first = f[0], last = f[f.length - 1];
+          var inside = dialog.contains(document.activeElement);
+          if (e.shiftKey && (document.activeElement === first || !inside)) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && (document.activeElement === last || !inside)) { e.preventDefault(); first.focus(); }
+        }
+        return;
+      }
+      if (e.key !== 'r' && e.key !== 'R') return;
+      if (e.metaKey || e.ctrlKey || e.altKey || e.repeat) return;
+      var el = e.target;
+      if (el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable)) return;
+      if (gate && !gate.classList.contains('hidden')) return;
+      e.preventDefault();
+      open();
+    });
+
+    /* Arrastar a alça para baixo fecha a folha no celular */
+    if (grip) {
+      var y0 = 0, dy = 0, dragging = false;
+      grip.addEventListener('pointerdown', function (e) {
+        dragging = true; y0 = e.clientY; dy = 0;
+        grip.setPointerCapture(e.pointerId);
+        dialog.style.transition = 'none';
+      });
+      grip.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        dy = Math.max(0, e.clientY - y0);
+        dialog.style.transform = 'translateY(' + dy + 'px)';
+      });
+      var end = function () {
+        if (!dragging) return;
+        dragging = false;
+        dialog.style.transition = '';
+        if (dy > 90) close(); else dialog.style.transform = '';
+      };
+      grip.addEventListener('pointerup', end);
+      grip.addEventListener('pointercancel', end);
+    }
   })();
 
   /* ======================================================================
