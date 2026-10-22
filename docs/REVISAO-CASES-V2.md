@@ -1,6 +1,6 @@
 # Revisão dos cases — versão 2
 
-Esta entrega reorganiza os quatro cases nas versões português e inglês a partir do conteúdo existente e das correções fornecidas pelo Marco. A home e o relato aprofundado sobre IA ainda pertencem a etapas posteriores.
+Esta entrega reorganiza os quatro cases nas versões português e inglês a partir do conteúdo existente e das correções fornecidas pelo Marco. A home foi concluída na etapa seguinte, registrada em `REVISAO-HOME-V2.md`. O relato aprofundado sobre IA permanece pendente.
 
 ## O que já foi feito
 
@@ -86,7 +86,7 @@ Nenhuma fala de usuário, percentual, data, amostra de pesquisa ou alternativa d
 - Os textos explicam motivo e aplicação das decisões já descritas. Alternativas rejeitadas não foram acrescentadas sem informação do autor.
 - Períodos, duração e detalhes de equipe ausentes ficam neste documento; não há dados fictícios nem blocos de “a preencher” na página pública.
 - As páginas antigas na raiz, usadas como fragmentos legados, não são os cases ligados pela home atual. As rotas atuais são `pt/Case-*.html` e `en/Case-*.html`.
-- Melhorias técnicas gerais do ponto 10, redesign da home e aprofundamento de IA continuam pendentes conforme o planejamento.
+- Melhorias técnicas gerais do ponto 10 e aprofundamento de IA continuam pendentes conforme o planejamento. O redesign da home já integra a v2.
 
 ## Publicação de comparação
 
@@ -94,7 +94,7 @@ Nenhuma fala de usuário, percentual, data, amostra de pesquisa ou alternativa d
 - Preview: `/portf-lio/preview/v2/`, com cópia independente dos arquivos do site.
 - Entrada de revisão: `/portf-lio/preview/v2/revisao.html`.
 - A publicação do preview adiciona arquivos em `preview/v2` à branch utilizada pelo Pages. Isso não substitui o conteúdo da raiz nem mescla a nova estrutura nos cases atuais.
-- O preview representa esta etapa dos cases. A home copiada continua com a estrutura anterior até a próxima etapa.
+- O preview reúne a nova home e a nova estrutura dos cases. Os dois documentos de revisão registram as entregas e pendências de cada etapa.
 
 ## Verificação realizada
 
