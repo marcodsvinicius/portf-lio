@@ -63,6 +63,8 @@ Nenhuma fala de usuário, percentual, data, amostra de pesquisa ou alternativa d
 
 ## Hub de Obras
 
+**Revisão editorial fornecida pelo Marco:** título com foco na gestão integrada de obras em navios; descrição de Product Design para obras de alta complexidade; contribuições: AI First, liderança em design, gestão de backlog, pesquisa com usuários, definição de processos e arquitetura da informação. O relato detalhado de IA continua pendente.
+
 **Base utilizada:** produto em desenvolvimento, ainda não lançado; orientação de dois designers juniores; parceria com gerente de produto; descoberta existente da consultoria; entrevistas direcionadas; Double Diamond por módulos; GMUDs; desktop/mobile.
 
 **Esclarecimento do Marco:** os ganhos de tempo são estimativas iniciais apoiadas na percepção do time e em comentários de usuários. Não há medição formal. A nova página não apresenta -75%, zero planilhas ou adoção total como resultados concluídos.
