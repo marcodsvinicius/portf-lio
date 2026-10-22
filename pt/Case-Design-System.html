@@ -6,11 +6,11 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Design System Nelogica | Marco Vinicius</title>
-  <meta name="description" content="Escalando a criação de interfaces e unindo Design e Engenharia.">
+  <meta name="description" content="Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de criptoativos.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://marcodsvinicius.com/pt/Case-Design-System.html">
   <meta property="og:title" content="Design System Nelogica | Marco Vinicius">
-  <meta property="og:description" content="Escalando a criação de interfaces e unindo Design e Engenharia.">
+  <meta property="og:description" content="Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de criptoativos.">
   <meta property="og:image" content="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png">
   <link rel="canonical" href="https://marcodsvinicius.com/pt/Case-Design-System.html">
   <link rel="alternate" hreflang="pt-BR" href="https://marcodsvinicius.com/pt/Case-Design-System.html">
@@ -22,7 +22,7 @@
 
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
-  <link rel="stylesheet" href="../assets/css/tailwind.css?v=2451c9cc">
+  <link rel="stylesheet" href="../assets/css/tailwind.css?v=59210aa8">
   <link rel="stylesheet" href="../assets/css/site.css?v=69ac4522">
   <script src="../assets/js/vendor/lucide.min.js?v=5029514f"></script>
   <script src="../assets/js/site.js?v=095c97e7" defer></script>
@@ -49,10 +49,11 @@
     z-index: -1;
   }
   </style>
+  <link rel="stylesheet" href="../assets/css/case-v2.css?v=44707d7c">
 </head>
-<body class="font-montserrat">
-  <a href="#cenario" class="skip-link">Pular para o conteúdo</a>
-<div class="min-h-screen relative overflow-x-hidden selection:bg-lime selection:text-black">
+<body class="font-montserrat case-v2">
+  <a href="#case-content" class="skip-link">Pular para o conteúdo</a>
+<div class="case-shell min-h-screen relative selection:bg-lime selection:text-black">
 
   <!-- Menu e Logo Flutuantes (Widescreen Limiter) -->
   <div class="fixed top-0 left-0 right-0 z-50 pointer-events-none w-full px-6 md:px-12">
@@ -80,24 +81,19 @@
           <nav class="flex flex-col gap-3 pt-2">
             <a href="#cenario" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="cenario">
               <i data-lucide="compass" class="w-4 h-4"></i>
-              Cenário
-            </a>
+              O desafio</a>
             <a href="#estrategia" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="estrategia">
               <i data-lucide="target" class="w-4 h-4"></i>
-              Estratégia
-            </a>
+              Decisões de design</a>
             <a href="#solucao" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="solucao">
               <i data-lucide="layers" class="w-4 h-4"></i>
-              Solução
-            </a>
+              A solução em uso</a>
             <a href="#valor-gerado" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="valor-gerado">
               <i data-lucide="trending-up" class="w-4 h-4"></i>
-              Impacto
-            </a>
+              Entregas e evidências</a>
             <a href="#aprendizados" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="aprendizados">
               <i data-lucide="award" class="w-4 h-4"></i>
-              Aprendizados
-            </a>
+              Aprendizados</a>
             <a href="../#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider">
               <i data-lucide="mail" class="w-4 h-4"></i>
               Contato
@@ -145,355 +141,450 @@
 
 
   <!-- HERO SECTION -->
-  <header class="vt-case-card relative z-10 pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-hero-glow">
+  <header class="case-hero">
+ <div class="case-wrap">
+  <a class="case-back" href="../#projects">
+   <span aria-hidden="true">
+    ←
+   </span>
+   Voltar aos projetos
+  </a>
+  <p class="case-eyebrow">
+   Design System · UI · Colaboração técnica
+  </p>
+  <p class="case-name">
+   Design System Nelogica
+  </p>
+  <h1>
+   Uma base compartilhada para interfaces consistentes
+  </h1>
+  <p class="case-intro">
+   Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de criptoativos.
+  </p>
+  <figure class="case-cover">
+   <img width="768" height="452" alt="Estudo de paleta de cores testada em temas claro e escuro" decoding="async" fetchpriority="high" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/study-colors.png?resize=768%2C452&amp;ssl=1"/>
+   <figcaption>
+    Estudo de cores em temas claro e escuro, incluindo a revisão de escolhas com problemas de visibilidade.
+   </figcaption>
+  </figure>
+ </div>
+</header>
 
-
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-6 animate-fade-in-up">
-        <a href="../" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-xs font-mono text-gray-400 hover:text-lime hover:border-lime transition-colors bg-black/50 backdrop-blur-md">
-          <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          Voltar aos Projetos
-        </a>
-      </div>
-      <h1 class="vt-case-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase py-2 leading-[1.0] tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 animate-fade-in-up">
-        CRIAÇÃO E GERENCIAMENTO DE DESIGN SYSTEM
-      </h1>
-      
-      <p class="text-lg md:text-xl text-gray-400 font-medium max-w-2xl mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
-        Escalando a criação de interfaces e unindo Design e Engenharia.
-      </p>
-
-      <div class="flex flex-wrap items-center gap-2 mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Design System</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Design Tokens</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">UI Design</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Governança</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Notion</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Colaboração Técnica</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mt-12 border-t border-white/10 pt-12">
-        <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Empresa</h3>
-          <p class="text-lg font-bold">Nelogica</p>
-        </div>
-        <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Minha Função</h3>
-          <p class="text-lg font-bold">Product Designer (UX/UI)</p>
-        </div>
-        <div class="md:col-span-2">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Resumo de Impacto</h3>
-          <p class="text-sm md:text-base font-medium text-gray-300 leading-relaxed border-l-2 border-lime/50 pl-4">
-            <strong class="text-lime">Redução significativa no tempo de entrega</strong> de novas interfaces, otimização de código (eliminação de estilos redundantes) e criação de uma linguagem única (Design Tokens) para democratizar o acesso entre os times.
-          </p>
-        </div>
-      </div>
-    </div>
-  </header>
 
   <!-- CONTEÚDO DO CASE -->
-  <main class="relative z-10">
-    
-    <!-- 01. CENÁRIO -->
-    <section id="cenario" class="py-24 px-6 md:px-12 border-b border-white/5 bg-white/[0.02]">
-      <div class="max-w-4xl mx-auto grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <span class="text-lime font-mono text-sm font-bold mb-2 block">01 / CENÁRIO</span>
-          <h2 class="text-3xl font-bold uppercase tracking-tight">Contexto e Desafio</h2>
-        </div>
-        <div class="md:col-span-8 space-y-6 text-gray-300 text-lg leading-relaxed">
-          <p>
-            A Nelogica é uma gigante de tecnologia com mais de 500 funcionários e grandes equipes trabalhando simultaneamente em diversas plataformas. Durante o desenvolvimento de um novo produto focado no mercado de criptomoedas, realizei uma observação transversal nos outros produtos da empresa e identifiquei uma lacuna crítica: a ausência de um Design System estruturado.
-          </p>
-          <div class="bg-red-500/10 border border-red-500/20 p-6 rounded-lg">
-            <h4 class="text-red-400 font-bold uppercase text-xs tracking-widest mb-2">O Problema Central</h4>
-            <p class="text-white font-medium">Sem um Design System estruturado, o novo produto estava fadado a herdar as mesmas limitações e gargalos de eficiência já enfrentados em outros grandes produtos da empresa. Vi ali uma oportunidade estratégica: construir uma fundação do zero que servisse como business case (case de sucesso) para provar o valor em toda a operação da Nelogica.</p>
-          </div>
-          <p>
-            Para resolver isso, conduzi diversas conversas estratégicas com desenvolvedores, o PO e o Líder de UX. Como o produto ainda estava em construção, vi a grande oportunidade de criar um Design System do zero, focado na redução do tempo de criação e na melhora da comunicação técnica — e, com esse alinhamento, conquistei o apoio e a aprovação das lideranças para iniciar o projeto.
-          </p>
-        </div>
+  <main id="case-content" tabindex="-1">
+ <div class="case-wrap">
+  <details class="case-mobile-index">
+   <summary>
+    Neste case
+   </summary>
+   <nav aria-label="Neste case">
+    <a href="#resumo">
+     Projeto em um minuto
+    </a>
+    <a href="#contexto">
+     Contexto da atuação
+    </a>
+    <a href="#cenario">
+     O desafio
+    </a>
+    <a href="#estrategia">
+     Decisões de design
+    </a>
+    <a href="#solucao">
+     A solução em uso
+    </a>
+    <a href="#valor-gerado">
+     Entregas e evidências
+    </a>
+    <a href="#aprendizados">
+     Aprendizados
+    </a>
+   </nav>
+  </details>
+  <div class="case-layout">
+   <aside class="case-sidebar">
+    <p class="case-eyebrow">
+     Neste case
+    </p>
+    <nav aria-label="Neste case">
+     <a href="#resumo">
+      Projeto em um minuto
+     </a>
+     <a href="#contexto">
+      Contexto da atuação
+     </a>
+     <a href="#cenario">
+      O desafio
+     </a>
+     <a href="#estrategia">
+      Decisões de design
+     </a>
+     <a href="#solucao">
+      A solução em uso
+     </a>
+     <a href="#valor-gerado">
+      Entregas e evidências
+     </a>
+     <a href="#aprendizados">
+      Aprendizados
+     </a>
+    </nav>
+   </aside>
+   <div class="case-body">
+    <section aria-labelledby="heading-resumo" class="case-section" id="resumo">
+     <span class="case-eyebrow">
+      01
+     </span>
+     <h2 id="heading-resumo">
+      Projeto em um minuto
+     </h2>
+     <dl class="case-summary">
+      <div>
+       <dt>
+        O problema
+       </dt>
+       <dd>
+        Inconsistências de interface e referências dispersas dificultavam a construção de uma base comum para o novo produto.
+       </dd>
       </div>
-      
+      <div>
+       <dt>
+        Minha contribuição
+       </dt>
+       <dd>
+        Auditoria de interface, definição de tokens, documentação e alinhamento entre design e engenharia.
+       </dd>
+      </div>
+      <div>
+       <dt>
+        A entrega
+       </dt>
+       <dd>
+        Uma base de estilos e componentes, com nomenclatura compartilhada e documentação no Notion.
+       </dd>
+      </div>
+     </dl>
     </section>
-
-    <!-- 02. ESTRATÉGIA -->
-    <section id="estrategia" class="py-24 px-6 md:px-12 border-b border-white/5">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-12 mb-16">
-           <div class="w-full md:w-1/3">
-             <span class="text-lime font-mono text-sm font-bold mb-2 block">02 / ESTRATÉGIA</span>
-             <h2 class="text-3xl font-bold uppercase tracking-tight">Minha Atuação e Processos</h2>
-           </div>
-           <div class="w-full md:w-2/3 text-gray-300 text-lg leading-relaxed">
-             <ul class="list-none space-y-6">
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Auditei e mapeei inconsistências</strong>
-                   <span class="text-gray-400 text-base">Realizei um levantamento minucioso de todos os artefatos de interface (cores, tipografia, espaçamentos, botões e modais) na etapa de descoberta.</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Otimizei processos já existentes</strong>
-                    <span class="text-gray-400 text-base">Em vez de recriar a roda, analisei iniciativas prévias (guias de estilo do design e códigos reutilizados pelos devs) e reaproveitei essas bases para acelerar as definições do novo produto.</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Padronizei a linguagem técnica</strong>
-                   <span class="text-gray-400 text-base">Defini a arquitetura de Design Tokens (variáveis semânticas). Estabeleci regras claras de nomenclatura (ex: brand-primary-color) para que o desenvolvedor soubesse a função exata do componente apenas lendo seu nome.</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Democratizei a governança</strong>
-                   <span class="text-gray-400 text-base">Criei e organizei a documentação oficial do Design System no Notion. Isso permitiu que qualquer colaborador, atual ou futuro, acessasse e compreendesse os princípios que guiam a construção da interface.</span>
-                 </div>
-               </li>
-             </ul>
-           </div>
-        </div>
+    <section aria-labelledby="heading-contexto" class="case-section" id="contexto">
+     <span class="case-eyebrow">
+      02
+     </span>
+     <h2 id="heading-contexto">
+      Contexto da atuação
+     </h2>
+     <dl class="case-facts">
+      <div>
+       <dt>
+        Empresa
+       </dt>
+       <dd>
+        Nelogica
+       </dd>
       </div>
+      <div>
+       <dt>
+        Atuação
+       </dt>
+       <dd>
+        Product Designer · UX/UI
+       </dd>
+      </div>
+      <div>
+       <dt>
+        Colaboração
+       </dt>
+       <dd>
+        Desenvolvedores, PO e liderança de UX na definição e evolução do sistema.
+       </dd>
+      </div>
+      <div>
+       <dt>
+        Contexto do produto
+       </dt>
+       <dd>
+        Novo produto de criptoativos em construção durante o projeto.
+       </dd>
+      </div>
+     </dl>
     </section>
-
-    <!-- 03. SOLUÇÃO -->
-    <section id="solucao" class="py-24 px-6 md:px-12 bg-lime text-black">
-      <div class="max-w-6xl mx-auto">
-        
-        <!-- Título Mobile (Visível apenas em telas menores) -->
-        <div class="block md:hidden mb-8">
-          <span class="text-black/60 font-mono text-sm font-bold mb-2 block">03 / SOLUÇÃO</span>
-          <h2 class="text-4xl font-black uppercase tracking-tight">A Nova Experiência</h2>
-        </div>
-
-        <div class="flex flex-col-reverse items-stretch md:grid md:grid-cols-12 gap-12 lg:gap-16 md:items-center">
-          <div class="min-w-0 w-full md:col-span-5">
-            
-            <!-- Título Desktop (Visível apenas em telas médias e maiores) -->
-            <div class="hidden md:block">
-              <span class="text-black/60 font-mono text-sm font-bold mb-2 block">03 / SOLUÇÃO</span>
-              <h2 class="text-5xl font-black uppercase tracking-tight mb-8">A Nova Experiência</h2>
-            </div>
-            
-            <div class="relative w-full max-w-full overflow-hidden" id="solucao-carousel-container">
-              <!-- Carousel Track -->
-              <div class="flex transition-transform duration-500 ease-in-out" id="solucao-carousel-track">
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Revisão Focada em Acessibilidade</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">Submeti a paleta de cores a testes rigorosos em temas Claro e Escuro. Identifiquei, por exemplo, que o amarelo causava problemas de visibilidade e precisava ser repensado.</span>
-                </div>
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Integração Contínua</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">Estabeleci uma estratégia de implementação viva, conduzindo reuniões periódicas e constantes com desenvolvedores e outros designers para gerir, iterar e evoluir o Design System.</span>
-                </div>
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Documentação e Governança</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">Para garantir a governança, estruturei a documentação no Notion. Isso democratizou o acesso para toda a equipe, permitindo que colaboradores consultem componentes e tokens rapidamente, acelerando a produção.</span>
-                </div>
-                
-              </div>
-              
-              <!-- Navigation Controls -->
-              <div class="flex items-center gap-4 mt-8">
-                <button id="solucao-prev" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
-                  <i data-lucide="arrow-left" width="18"></i>
-                </button>
-                <div class="flex gap-2" id="solucao-dots">
-                  <div class="w-2 h-2 rounded-full bg-black"></div>
-                  <div class="w-2 h-2 rounded-full bg-black/20"></div>
-                  <div class="w-2 h-2 rounded-full bg-black/20"></div>
-                </div>
-                <button id="solucao-next" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
-                  <i data-lucide="arrow-right" width="18"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- MOCKUP VISUAL DA SOLUÇÃO (TELA GRANDE) -->
-          <div class="relative w-full md:col-span-7">
-             <div class="relative w-full bg-black/5 rounded-2xl shadow-2xl border border-black/10 overflow-hidden">
-               <img id="solucao-image" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/study-colors.png?resize=768%2C452&ssl=1" alt="Estudo de paleta de cores testada em temas claro e escuro" loading="lazy" class="w-full h-auto object-cover transition-all duration-300 zoomable-image cursor-pointer">
-               <div class="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white/80 pointer-events-none">
-                 <i data-lucide="maximize-2" width="16" height="16"></i>
-               </div>
-             </div>
-          </div>
-        </div>
-      </div>
+    <section aria-labelledby="heading-cenario" class="case-section" id="cenario">
+     <span class="case-eyebrow">
+      03
+     </span>
+     <h2 id="heading-cenario">
+      O desafio
+     </h2>
+     <div class="case-prose">
+      <p>
+       Durante o desenvolvimento de um produto de criptoativos, observei inconsistências nos artefatos de interface e a oportunidade de estruturar um Design System desde a base.
+      </p>
+      <p>
+       Conversei com desenvolvedores, o PO e a liderança de UX para alinhar a iniciativa. O objetivo era organizar referências comuns e melhorar a comunicação técnica, aproveitando o que já existia nos guias de design e no código.
+      </p>
+     </div>
     </section>
-
-    <!-- 04. VALOR GERADO -->
-    <section id="valor-gerado" class="py-24 px-6 md:px-12 border-b border-white/5 relative overflow-hidden">
-      <!-- Glow Background -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-lime/5 blur-[120px] rounded-full pointer-events-none"></div>
-      
-      <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-          <span class="text-lime font-mono text-sm font-bold mb-2 block">04 / VALOR GERADO</span>
-          <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">Impacto de Negócio</h2>
+    <section aria-labelledby="heading-estrategia" class="case-section" id="estrategia">
+     <span class="case-eyebrow">
+      04
+     </span>
+     <h2 id="heading-estrategia">
+      Decisões de design
+     </h2>
+     <div class="case-decisions">
+      <article class="case-decision">
+       <h3>
+        Auditar e reaproveitar antes de definir
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Por que essa decisão
+         </dt>
+         <dd>
+          Já existiam guias de estilo e elementos reutilizados pela engenharia.
+         </dd>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          <!-- Card 1: Tempo de Construção -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
-                <i data-lucide="clock" width="24"></i>
-              </div>
-              <div class="mb-4">
-                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Tempo de Construção</span>
-                <div class="text-3xl font-black text-lime leading-tight">
-                  Mais<br>Ágil
-                </div>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed pt-6 border-t border-white/5 mt-4">
-              Encurtamento drástico no tempo de desenvolvimento de telas. Passaram a ser montadas em <strong class="text-white">blocos consistentes</strong>.
-            </p>
-          </div>
-
-          <!-- Card 2: Eficiência de Comunicação -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
-                <i data-lucide="message-square" width="24"></i>
-              </div>
-              <div class="mb-4">
-                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Comunicação</span>
-                <div class="text-3xl font-black text-white leading-tight">
-                  Handoff<br>Fluido
-                </div>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed pt-6 border-t border-white/5 mt-4">
-              A ponte entre Design e Engenharia foi consolidada. As equipes passaram a falar a <strong class="text-white">mesma língua técnica</strong>.
-            </p>
-          </div>
-
-          <!-- Card 3: Foco na Experiência -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
-                <i data-lucide="sparkles" width="24"></i>
-              </div>
-              <div class="mb-4">
-                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Experiência (UX)</span>
-                <div class="text-3xl font-black text-lime leading-tight">
-                  Foco no<br>Usuário
-                </div>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed pt-6 border-t border-white/5 mt-4">
-              Com estilos padronizados, a equipe parou de "empurrar pixels" e focou em aprimorar de fato a <strong class="text-white">jornada do usuário</strong>.
-            </p>
-          </div>
-
+        <div>
+         <dt>
+          Como apliquei
+         </dt>
+         <dd>
+          Mapeei cores, tipografia, espaçamentos, botões e modais. Usei essas referências para orientar a base do novo produto.
+         </dd>
         </div>
-      </div>
+       </dl>
+      </article>
+      <article class="case-decision">
+       <h3>
+        Criar uma linguagem de tokens
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Por que essa decisão
+         </dt>
+         <dd>
+          Design e desenvolvimento precisavam identificar a função de cada escolha visual.
+         </dd>
+        </div>
+        <div>
+         <dt>
+          Como apliquei
+         </dt>
+         <dd>
+          Defini variáveis semânticas e regras de nomenclatura compartilhadas, como “brand-primary-color”. Revisei a paleta em temas claro e escuro, incluindo problemas de visibilidade do amarelo.
+         </dd>
+        </div>
+       </dl>
+      </article>
+      <article class="case-decision">
+       <h3>
+        Documentar e manter o alinhamento
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Por que essa decisão
+         </dt>
+         <dd>
+          As definições precisavam estar acessíveis a colaboradores atuais e futuros.
+         </dd>
+        </div>
+        <div>
+         <dt>
+          Como apliquei
+         </dt>
+         <dd>
+          Organizei a documentação no Notion e conduzi reuniões periódicas com designers e desenvolvedores para discutir a evolução do sistema.
+         </dd>
+        </div>
+       </dl>
+      </article>
+     </div>
     </section>
-
-    <!-- 05. APRENDIZADOS -->
-    <section id="aprendizados" class="py-24 px-6 md:px-12 border-b border-white/5 bg-white/[0.02]">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-12">
-           <div class="w-full md:w-1/3">
-             <span class="text-lime font-mono text-sm font-bold mb-2 block">05 / APRENDIZADOS</span>
-             <h2 class="text-3xl font-bold uppercase tracking-tight">Lições do Projeto</h2>
-           </div>
-           <div class="w-full md:w-2/3 space-y-6">
-             <!-- Card 1 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">01 / </span>DESIGN OPS E ESCALABILIDADE
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 O design só escala de verdade quando existe governança clara e um alinhamento operacional contínuo entre designers e engenheiros de software.
-               </p>
-             </div>
-
-             <!-- Card 2 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">02 / </span>ACESSIBILIDADE DESDE A BASE
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 A acessibilidade não deve ser tratada como uma etapa final de validação, mas sim como um requisito fundamental de todos os componentes e tokens desde a concepção.
-               </p>
-             </div>
-
-             <!-- Card 3 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">03 / </span>DOCUMENTAÇÃO COMO PRODUTO
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 Um Design System sem documentação viva é inútil. Centralizar regras no Notion e sincronizar guias com a engenharia garante a aderência total da equipe.
-               </p>
-             </div>
-           </div>
-        </div>
-      </div>
+    <section aria-labelledby="heading-solucao" class="case-section" id="solucao">
+     <span class="case-eyebrow">
+      05
+     </span>
+     <h2 id="heading-solucao">
+      A solução em uso
+     </h2>
+     <figure class="case-figure">
+      <img width="768" height="452" alt="Estudo de paleta de cores testada em temas claro e escuro" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/study-colors.png?resize=768%2C452&amp;ssl=1"/>
+      <figcaption>
+       Estudo de cores em temas claro e escuro, incluindo a revisão de escolhas com problemas de visibilidade.
+       <br/>
+       <a href="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/study-colors.png?resize=768%2C452&amp;ssl=1" rel="noopener noreferrer" target="_blank">
+        Ampliar imagem (nova aba)
+        <span aria-hidden="true">
+         ↗
+        </span>
+       </a>
+      </figcaption>
+     </figure>
+     <figure class="case-figure">
+      <img width="768" height="402" alt="Reunião de alinhamento entre design e desenvolvimento" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/callcomdevs.png?resize=768%2C402&amp;ssl=1"/>
+      <figcaption>
+       Alinhamentos entre design e desenvolvimento fizeram parte da evolução do sistema.
+       <br/>
+       <a href="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/callcomdevs.png?resize=768%2C402&amp;ssl=1" rel="noopener noreferrer" target="_blank">
+        Ampliar imagem (nova aba)
+        <span aria-hidden="true">
+         ↗
+        </span>
+       </a>
+      </figcaption>
+     </figure>
+     <figure class="case-figure">
+      <img width="768" height="487" alt="Documentação do Design System organizada no Notion" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/hbcrypto-doc.png?resize=768%2C487&amp;ssl=1"/>
+      <figcaption>
+       Documentação centralizada no Notion para consulta aos componentes e às definições compartilhadas.
+       <br/>
+       <a href="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/hbcrypto-doc.png?resize=768%2C487&amp;ssl=1" rel="noopener noreferrer" target="_blank">
+        Ampliar imagem (nova aba)
+        <span aria-hidden="true">
+         ↗
+        </span>
+       </a>
+      </figcaption>
+     </figure>
     </section>
-
-    <!-- NAVEGAÇÃO ENTRE CASES -->
-    <section class="py-16 px-6 md:px-12 border-b border-white/5">
-      <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <a href="Case-Hub-de-Obras.html" class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all">
-          <i data-lucide="arrow-left" class="text-muted group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
-          <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Case Anterior</span>
-            <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Hub de Obras</span>
-          </div>
-        </a>
-        <a href="Case-Rebalanceamento-Carteira.html" class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right">
-          <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Próximo Case</span>
-            <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Rebalanceamento de Carteira</span>
-          </div>
-          <i data-lucide="arrow-right" class="text-muted group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
-        </a>
-      </div>
+    <section aria-labelledby="heading-valor-gerado" class="case-section" id="valor-gerado">
+     <span class="case-eyebrow">
+      06
+     </span>
+     <h2 id="heading-valor-gerado">
+      Entregas e evidências
+     </h2>
+     <div class="case-evidence">
+      <article>
+       <h3>
+        Base visual organizada
+       </h3>
+       <p>
+        O trabalho reuniu referências de interface e regras para construir componentes de forma consistente.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Linguagem compartilhada
+       </h3>
+       <p>
+        A nomenclatura dos tokens tornou explícita a função das escolhas visuais nas conversas entre design e engenharia.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Documentação acessível ao time
+       </h3>
+       <p>
+        O Notion concentrou as definições do sistema em um local de consulta para a equipe.
+       </p>
+      </article>
+     </div>
+     <aside class="case-note">
+      <p>
+       O case apresenta a estrutura criada e os materiais de trabalho. Ganhos de velocidade e adoção ainda precisam de evidências complementares para serem quantificados.
+      </p>
+     </aside>
     </section>
+    <section aria-labelledby="heading-aprendizados" class="case-section" id="aprendizados">
+     <span class="case-eyebrow">
+      07
+     </span>
+     <h2 id="heading-aprendizados">
+      Aprendizados
+     </h2>
+     <div class="case-lessons">
+      <article>
+       <h3>
+        Governança faz parte do sistema
+       </h3>
+       <p>
+        Documentação e conversas recorrentes com engenharia acompanharam a construção dos componentes.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Acessibilidade nas definições visuais
+       </h3>
+       <p>
+        Revisar as cores nos dois temas trouxe questões de visibilidade para a discussão da base visual.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Documentação como parte da entrega
+       </h3>
+       <p>
+        A referência compartilhada precisava ser consultável e evoluir junto com o produto.
+       </p>
+      </article>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+ <section class="py-16 px-6 md:px-12 border-b border-white/5">
+  <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+   <a class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all" href="Case-Hub-de-Obras.html">
+    <i class="text-muted group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" data-lucide="arrow-left" height="20" width="20">
+    </i>
+    <div>
+     <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">
+      Case Anterior
+     </span>
+     <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">
+      Hub de Obras
+     </span>
+    </div>
+   </a>
+   <a class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right" href="Case-Rebalanceamento-Carteira.html">
+    <div>
+     <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">
+      Próximo Case
+     </span>
+     <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">
+      Rebalanceamento de Carteira
+     </span>
+    </div>
+    <i class="text-muted group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" data-lucide="arrow-right" height="20" width="20">
+    </i>
+   </a>
+  </div>
+ </section>
+ <footer class="py-24 px-6 md:px-12 border-t border-white/5 bg-gradient-to-t from-white/5 to-transparent text-center">
+  <div class="max-w-2xl mx-auto">
+   <h2 class="text-3xl font-bold uppercase mb-6">
+    Gostou deste projeto?
+   </h2>
+   <p class="text-gray-400 mb-8">
+    Estou disponível para novos desafios e colaborações. Vamos construir experiências incríveis juntos.
+   </p>
+   <div class="flex flex-col sm:flex-row-reverse justify-center gap-4 w-full max-w-2xl mx-auto">
+    <a class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm bg-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center" href="mailto:contato@marcodsvinicius.com">
+     Entrar em Contato
+    </a>
+    <a class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm border border-white/20 hover:border-lime hover:text-lime font-bold uppercase tracking-widest transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center gap-2" href="../">
+     <i class="w-4 h-4" data-lucide="arrow-left">
+     </i>
+     Voltar aos Projetos
+    </a>
+   </div>
+  </div>
+ </footer>
+ <footer class="w-full relative z-10 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto w-full border-t border-white/5">
+   <div class="py-8 flex justify-start items-center text-sm text-gray-400 font-mono">
+    <span>
+     Design e Interação feitos por Marco Vinicius e código via Claude Code.
+    </span>
+   </div>
+  </div>
+ </footer>
+</main>
 
-    <!-- 06. NEXT STEPS / FOOTER -->
-    <footer class="py-24 px-6 md:px-12 border-t border-white/5 bg-gradient-to-t from-white/5 to-transparent text-center">
-      <div class="max-w-2xl mx-auto">
-        <h2 class="text-3xl font-bold uppercase mb-6">Gostou deste projeto?</h2>
-        <p class="text-gray-400 mb-8">
-          Estou disponível para novos desafios e colaborações. Vamos construir experiências incríveis juntos.
-        </p>
-        <div class="flex flex-col sm:flex-row-reverse justify-center gap-4 w-full max-w-2xl mx-auto">
-          <a href="mailto:contato@marcodsvinicius.com" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm bg-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center">
-            Entrar em Contato
-          </a>
-          <a href="../" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm border border-white/20 hover:border-lime hover:text-lime font-bold uppercase tracking-widest transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center gap-2">
-            <i data-lucide="arrow-left" class="w-4 h-4"></i>
-            Voltar aos Projetos
-          </a>
-        </div>
-      </div>
-    </footer>
-    
-    <!-- RODAPÉ FINAL -->
-    <footer class="w-full relative z-10 px-6 md:px-12">
-      <div class="max-w-7xl mx-auto w-full border-t border-white/5">
-        <div class="py-8 flex justify-start items-center text-sm text-gray-400 font-mono">
-          <span>Design e Interação feitos por Marco Vinicius e código via Claude Code.</span>
-        </div>
-      </div>
-    </footer>
-
-  </main>
 
 </div>
 
@@ -505,7 +596,6 @@
   <img id="modal-image" src="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300" alt="Imagem ampliada">
 </div>
 
-<script type="application/json" id="solucao-data">{"images": ["https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/study-colors.png?resize=768%2C452&ssl=1", "https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/callcomdevs.png?resize=768%2C402&ssl=1", "https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/hbcrypto-doc.png?resize=768%2C487&ssl=1"], "alts": ["Estudo de paleta de cores testada em temas claro e escuro", "Reunião de alinhamento entre design e desenvolvimento", "Documentação do Design System organizada no Notion"]}</script>
 
   <!-- Botão Flutuante Voltar ao Topo -->
   <button id="back-to-top" type="button" class="back-to-top" aria-label="Voltar ao topo">
