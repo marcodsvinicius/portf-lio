@@ -67,8 +67,20 @@ Não foram criadas falas de usuários, métricas, experiências ou certificaçõ
 
 ## Proposta visual para contato
 
-- Estudo separado em `proposta-contato.html`, sem substituir a seção da home nesta etapa de proposta.
+- Estudo em `proposta-contato.html`, agora aplicado também à home em português e inglês após a solicitação de implementação.
 - Canvas colaborativo com um desafio e uma interface em construção, acompanhado pelos cursores ilustrativos Você e Marco.
 - Texto, disponibilidade, horário do Rio, currículo, e-mail, copiar endereço e redes sociais preservados da seção atual.
 - Movimento curto e discreto nos cursores, com preferência por movimento reduzido respeitada.
-- A proposta está acessível pelo índice de revisão; aguarda avaliação visual do Marco.
+- A página separada continua disponível pelo índice de revisão como referência visual.
+
+
+## Consistência dos cards e ritmo entre seções
+
+- As quatro prévias de projetos usam uma janela 16:9, com preenchimento proporcional e alinhamento no topo. Imagens mais altas têm recorte apenas na miniatura; os arquivos e as imagens dos cases não foram alterados.
+- A grade de projetos usa alturas iguais nos quatro cards em duas colunas. No celular, a altura acompanha o conteúdo para evitar espaços artificiais.
+- AI First usa fundo oliva com trama discreta, numeração em destaque e uma frase de apoio por etapa. Os blocos de apoio da IA e responsabilidade têm superfícies distintas; em telas largas ficam lado a lado.
+- Competências usa uma faixa grafite mais clara e cards sólidos. Recomendações retorna a um fundo escuro, com tratamento de citação e identificação por iniciais, preservando os depoimentos originais.
+- Conteúdos equivalentes em português e inglês.
+
+- Formação ganhou dois cards para a pós em UX Design and Beyond (PUCRS, 2025–2026) e a Licenciatura em Computação (IFRJ, 2019–2023). A pós está marcada como concluída, conforme confirmação do Marco. Os cursos complementares permanecem disponíveis na expansão.
+- O canvas colaborativo foi aplicado ao contato da home PT/EN, com informações e links preservados e estilos compartilhados com a página de proposta.
