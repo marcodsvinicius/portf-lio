@@ -1,1452 +1,1550 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Marco Vinicius | Product Designer & Developer</title>
-  <meta name="description" content="Marco Vinicius, Product Designer sênior com +7 anos de experiência em UX/UI, Design Systems e produtos digitais de alto impacto. Confira meus projetos e cases.">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://marcodsvinicius.com/">
-  <meta property="og:title" content="Marco Vinicius | Product Designer & Developer">
-  <meta property="og:description" content="Product Designer sênior com +7 anos de experiência em UX/UI, Design Systems e produtos digitais de alto impacto.">
-  <meta property="og:image" content="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Marco Vinicius | Product Designer & Developer">
-  <meta name="twitter:description" content="Product Designer sênior com +7 anos de experiência em UX/UI, Design Systems e produtos digitais de alto impacto.">
-  <meta name="twitter:image" content="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png">
-
-  <link rel="alternate" hreflang="pt-BR" href="https://marcodsvinicius.com/">
-  <link rel="alternate" hreflang="en" href="https://marcodsvinicius.com/en/">
-  <link rel="alternate" hreflang="x-default" href="https://marcodsvinicius.com/">
-
-  <link rel="preload" href="assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/fonts.css?v=0d0953f3">
-  
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-
-  <link rel="stylesheet" href="assets/css/tailwind.css?v=2451c9cc">
-  <link rel="stylesheet" href="assets/css/site.css?v=69ac4522">
-  <script src="assets/js/vendor/lucide.min.js?v=5029514f"></script>
-  <script src="assets/js/site.js?v=095c97e7" defer></script>
-  <script src="assets/js/home.js?v=d13295a6" defer></script>
-</head>
-<body class="selection:bg-lime selection:text-black min-h-screen relative">
-  <a href="#projects" class="skip-link">Pular para o conteúdo</a>
-
-  <div class="fixed top-0 left-0 right-0 z-50 pointer-events-none w-full px-6 md:px-12">
-    <div class="max-w-7xl mx-auto w-full">
-      <div class="py-6 flex justify-between items-center relative pointer-events-none w-full">
-      <!-- Logo MV. -->
-      <div class="pointer-events-auto">
-        <a id="logo-box" href="#hero" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-lime/40 font-montserrat font-black text-lg tracking-tighter text-brand hover:text-lime" aria-label="Página Inicial">
-          MV.
-        </a>
-      </div>
-      
-      <!-- Resumo em 30 segundos + Botão do Menu Hambúrguer -->
-      <div class="pointer-events-auto flex items-center gap-2">
-        <button id="summary-btn" type="button" class="summary-chip" aria-haspopup="dialog" aria-controls="summary-dialog" aria-keyshortcuts="R" aria-label="Abrir o resumo em 30 segundos (atalho R)">
-          <i data-lucide="zap" class="w-3.5 h-3.5" aria-hidden="true"></i>
-          <span>Resumo</span>
-          <kbd aria-hidden="true">R</kbd>
-        </button>
-        <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu-drawer" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-lime/40 [-webkit-tap-highlight-color:transparent] outline-none" aria-label="Menu de Navegação">
-          <i data-lucide="menu" class="w-6 h-6 text-white transition-transform duration-300"></i>
-        </button>
-      </div>
-
-      <!-- Menu Lateral / Painel Compacto (Dentro do Limiter para alinhamento no desktop) -->
-      <div id="mobile-menu-drawer" class="pointer-events-auto absolute top-20 right-0 w-64 h-auto bg-[#050505]/95 backdrop-blur-2xl border border-white/10 rounded-2xl z-40 p-6 flex flex-col justify-between transform transition-all duration-300 ease-in-out opacity-0 pointer-events-none scale-95">
-        <div class="flex flex-col gap-6">
-          
-          <!-- Alternador de Idioma (Menu Lateral) -->
-          <div class="flex items-center justify-between border border-white/20 rounded-xl p-1 gap-1 bg-white/[0.02] backdrop-blur-sm w-full" role="navigation" aria-label="Seleção de idioma">
-            <span class="flex-1 py-2 rounded-lg text-[10px] font-montserrat font-black tracking-widest text-center bg-brand text-black shadow-md cursor-default" aria-current="page">PT</span>
-            <a href="en/" class="flex-1 py-2 rounded-lg text-[10px] font-montserrat font-black tracking-widest text-center text-gray-300 hover:text-brand hover:bg-white/5 transition-colors active:scale-95" aria-label="Mudar para inglês">EN</a>
-          </div>
-
-          <!-- Links de Navegação -->
-          <nav class="flex flex-col gap-3 pt-2">
-            <a href="#hero" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="hero">
-              <i data-lucide="home" class="w-4 h-4"></i>
-              Início
-            </a>
-            <a href="#projects" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="projects">
-              <i data-lucide="layers" class="w-4 h-4"></i>
-              Projetos
-            </a>
-            <a href="#ai-first" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="ai-first">
-              <i data-lucide="sparkles" class="w-4 h-4"></i>
-              AI First
-            </a>
-            <a href="#skills" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="skills">
-              <i data-lucide="award" class="w-4 h-4"></i>
-              Skills
-            </a>
-            <a href="#about" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="about">
-              <i data-lucide="user" class="w-4 h-4"></i>
-              Sobre
-            </a>
-            <a href="#recommendations" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="recommendations">
-              <i data-lucide="quote" class="w-4 h-4"></i>
-              Recomendações
-            </a>
-            <a href="#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="contact">
-              <i data-lucide="mail" class="w-4 h-4"></i>
-              Contato
-            </a>
-          </nav>
-        </div>
-        
-        <!-- Rodapé do Menu (Redes Sociais) -->
-        <div class="flex flex-col gap-6 mt-6 pt-6 border-t border-white/10">
-          <!-- Redes Sociais com Espaçamento Premium e Separadores -->
-          <div class="flex justify-center items-center gap-5">
-            <a href="https://www.linkedin.com/in/marcodsvinicius/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="LinkedIn">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
-            <div class="w-px h-4 bg-white/10"></div>
-            <a href="https://medium.com/@marcodsvinicius" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Medium">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12a6.8 6.8 0 01-3.46 5.86 6.8 6.8 0 010-11.72A6.8 6.8 0 0120.96 12zM24 12a6.8 6.8 0 01-1.3 2.91 6.8 6.8 0 010-5.82A6.8 6.8 0 0124 12z"/>
-              </svg>
-            </a>
-            <div class="w-px h-4 bg-white/10"></div>
-            <a href="https://github.com/marcodsvinicius?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="GitHub">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-    </div>
+<html class="scroll-smooth" lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <meta content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+  <meta content="strict-origin-when-cross-origin" name="referrer"/>
+  <title>
+   Marco Vinicius | Product Designer Sênior · AI First · UX/UI
+  </title>
+  <meta content="Conecto pesquisa, design e IA para criar produtos úteis para pessoas e negócios." name="description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://marcodsvinicius.com/" property="og:url"/>
+  <meta content="Marco Vinicius | Product Designer Sênior · AI First · UX/UI" property="og:title"/>
+  <meta content="Conecto pesquisa, design e IA para criar produtos úteis para pessoas e negócios." property="og:description"/>
+  <meta content="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Marco Vinicius | Product Designer Sênior · AI First · UX/UI" name="twitter:title"/>
+  <meta content="Conecto pesquisa, design e IA para criar produtos úteis para pessoas e negócios." name="twitter:description"/>
+  <meta content="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png" name="twitter:image"/>
+  <link href="https://marcodsvinicius.com/" hreflang="pt-BR" rel="alternate"/>
+  <link href="https://marcodsvinicius.com/en/" hreflang="en" rel="alternate"/>
+  <link href="https://marcodsvinicius.com/" hreflang="x-default" rel="alternate"/>
+  <link as="font" crossorigin="" href="assets/fonts/montserrat-latin-700-normal.woff2" rel="preload" type="font/woff2"/>
+  <link as="font" crossorigin="" href="assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" rel="preload" type="font/woff2"/>
+  <link href="assets/css/fonts.css?v=0d0953f3" rel="stylesheet"/>
+  <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="assets/css/tailwind.css?v=9e40b031" rel="stylesheet"/>
+  <link href="assets/css/site.css?v=00b05c8c" rel="stylesheet"/>
+  <script src="assets/js/vendor/lucide.min.js?v=5029514f">
+  </script>
+  <script defer="" src="assets/js/site.js?v=095c97e7">
+  </script>
+  <script defer="" src="assets/js/home.js?v=d13295a6">
+  </script>
+  <link href="assets/css/home-v2.css?v=9773295e" rel="stylesheet"/>
+  <script defer="True" src="assets/js/home-v2.js?v=31de0ae4">
+  </script>
+  <link href="assets/css/contact-proposal.css?v=a21cff8a" rel="stylesheet"/>
+ </head>
+ <body class="selection:bg-lime selection:text-black min-h-screen relative home-v2">
+  <div aria-hidden="true" class="v2-ambient">
+   <div class="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-lime/5 blur-[150px] rounded-full pointer-events-none z-0">
+   </div>
+   <div class="absolute top-[40%] right-[-10%] w-[600px] h-[600px] bg-lime/[0.03] blur-[150px] rounded-full pointer-events-none z-0">
+   </div>
+   <div class="absolute bottom-[15%] left-[-5%] w-[550px] h-[550px] bg-lime/[0.04] blur-[150px] rounded-full pointer-events-none z-0">
+   </div>
   </div>
-</div>
-</div>
-
-  <!-- Overlay de Fundo (Backdrop Blur) -->
-  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-transparent z-40 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none"></div>
-
-  <!-- Efeito de Ruído/Textura sutil sobre a página -->
-  <div class="fixed inset-0 opacity-[0.015] pointer-events-none mix-blend-overlay z-50 bg-repeat" style='background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")'></div>
-
-  <!-- Ambient Glows de Fundo (Glows de Design) -->
-  <div class="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-lime/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
-  <div class="absolute top-[40%] right-[-10%] w-[600px] h-[600px] bg-lime/[0.03] blur-[150px] rounded-full pointer-events-none z-0"></div>
-  <div class="absolute bottom-[15%] left-[-5%] w-[550px] h-[550px] bg-lime/[0.04] blur-[150px] rounded-full pointer-events-none z-0"></div>
-
-
-
-  <!-- SEÇÃO HERO (INÍCIO) -->
-  <section id="hero" class="min-h-screen flex items-center justify-center pt-32 pb-20 px-6 md:px-12 relative z-10 overflow-hidden">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-    <div class="hero-spot" aria-hidden="true"></div>
-    
-
-
-    <div class="max-w-5xl mx-auto w-full flex flex-col items-center text-center relative z-10">
-      
-      <!-- Alternador de Idioma (Hero) -->
-      <div class="flex items-center bg-white/[0.02] backdrop-blur-sm border border-white/20 rounded-full p-1 gap-1 mb-6 animate-[fadeIn_0.6s_ease-out] pointer-events-auto" role="navigation" aria-label="Seleção de idioma / Language selection">
-        <span class="px-4 py-1.5 rounded-full text-xs font-montserrat font-bold tracking-wider bg-brand text-black cursor-default shadow-md" aria-current="page">
-          Português
+  <a class="skip-link" href="#projects">
+   Pular para o conteúdo
+  </a>
+  <div class="fixed top-0 left-0 right-0 z-50 pointer-events-none w-full px-6 md:px-12">
+   <div class="max-w-7xl mx-auto w-full">
+    <div class="py-6 flex justify-between items-center relative pointer-events-none w-full">
+     <!-- Logo MV. -->
+     <div class="pointer-events-auto">
+      <a aria-label="Página Inicial" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-lime/40 font-montserrat font-black text-lg tracking-tighter text-brand hover:text-lime" href="#hero" id="logo-box">
+       MV.
+      </a>
+     </div>
+     <!-- Resumo em 30 segundos + Botão do Menu Hambúrguer -->
+     <div class="pointer-events-auto flex items-center gap-2">
+      <button aria-controls="summary-dialog" aria-haspopup="dialog" aria-keyshortcuts="R" aria-label="Abrir o resumo em 30 segundos (atalho R)" class="summary-chip" id="summary-btn" type="button">
+       <i aria-hidden="true" class="w-3.5 h-3.5" data-lucide="zap">
+       </i>
+       <span>
+        Resumo
+       </span>
+       <kbd aria-hidden="true">
+        R
+       </kbd>
+      </button>
+      <button aria-controls="mobile-menu-drawer" aria-expanded="false" aria-label="Menu de Navegação" class="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border border-transparent shadow-none active:scale-95 transition-all duration-300 hover:border-lime/40 [-webkit-tap-highlight-color:transparent] outline-none" id="mobile-menu-btn" type="button">
+       <i class="w-6 h-6 text-white transition-transform duration-300" data-lucide="menu">
+       </i>
+      </button>
+     </div>
+     <!-- Menu Lateral / Painel Compacto (Dentro do Limiter para alinhamento no desktop) -->
+     <div class="pointer-events-auto absolute top-20 right-0 w-64 h-auto bg-[#050505]/95 backdrop-blur-2xl border border-white/10 rounded-2xl z-40 p-6 flex flex-col justify-between transform transition-all duration-300 ease-in-out opacity-0 pointer-events-none scale-95" id="mobile-menu-drawer">
+      <div class="flex flex-col gap-6">
+       <!-- Alternador de Idioma (Menu Lateral) -->
+       <div aria-label="Seleção de idioma" class="flex items-center justify-between border border-white/20 rounded-xl p-1 gap-1 bg-white/[0.02] backdrop-blur-sm w-full" role="navigation">
+        <span aria-current="page" class="flex-1 py-2 rounded-lg text-[10px] font-montserrat font-black tracking-widest text-center bg-brand text-black shadow-md cursor-default">
+         PT
         </span>
-        <a href="en/" class="px-4 py-1.5 rounded-full text-xs font-montserrat font-bold tracking-wider text-gray-300 hover:text-brand hover:bg-white/5 transition-all" aria-label="Change language to English">
-          English
+        <a aria-label="Mudar para inglês" class="flex-1 py-2 rounded-lg text-[10px] font-montserrat font-black tracking-widest text-center text-gray-300 hover:text-brand hover:bg-white/5 transition-colors active:scale-95" href="en/">
+         EN
         </a>
+       </div>
+       <!-- Links de Navegação -->
+       <nav class="flex flex-col gap-3 pt-2">
+        <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="hero" href="#hero">
+         <i class="w-4 h-4" data-lucide="home">
+         </i>
+         Início
+        </a>
+        <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="projects" href="#projects">
+         <i class="w-4 h-4" data-lucide="layers">
+         </i>
+         Projetos
+        </a>
+        <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="ai-first" href="#ai-first">
+         <i class="w-4 h-4" data-lucide="sparkles">
+         </i>
+         AI First
+        </a>
+        <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="skills" href="#skills">
+         <i class="w-4 h-4" data-lucide="award">
+         </i>
+         Competências
+        </a>
+        <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="about" href="#about">
+         <i class="w-4 h-4" data-lucide="user">
+         </i>
+         Sobre
+        </a>
+        <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="recommendations" href="#recommendations">
+         <i class="w-4 h-4" data-lucide="quote">
+         </i>
+         Recomendações
+        </a>
+        <a class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="contact" href="#contact">
+         <i class="w-4 h-4" data-lucide="mail">
+         </i>
+         Contato
+        </a>
+       </nav>
       </div>
-
-      <!-- Selo de disponibilidade -->
-      <p class="hero-status mb-6 animate-[fadeIn_0.8s_ease-out]">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>Disponível para novos projetos</span><span class="hero-status__place">· Rio de Janeiro, BR</span>
-      </p>
-
-      <!-- Subtítulo Superior -->
-      <div class="text-gray-300 font-montserrat text-base md:text-lg lg:text-xl font-semibold tracking-wide mb-6 animate-[fadeIn_0.8s_ease-out]">
-        Portfólio de Marco Vinicius
+      <!-- Rodapé do Menu (Redes Sociais) -->
+      <div class="flex flex-col gap-6 mt-6 pt-6 border-t border-white/10">
+       <!-- Redes Sociais com Espaçamento Premium e Separadores -->
+       <div class="flex justify-center items-center gap-5">
+        <a aria-label="LinkedIn" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" href="https://www.linkedin.com/in/marcodsvinicius/" rel="noopener noreferrer" target="_blank">
+         <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+          </path>
+         </svg>
+        </a>
+        <div class="w-px h-4 bg-white/10">
+        </div>
+        <a aria-label="Medium" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" href="https://medium.com/@marcodsvinicius" rel="noopener noreferrer" target="_blank">
+         <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12a6.8 6.8 0 01-3.46 5.86 6.8 6.8 0 010-11.72A6.8 6.8 0 0120.96 12zM24 12a6.8 6.8 0 01-1.3 2.91 6.8 6.8 0 010-5.82A6.8 6.8 0 0124 12z">
+          </path>
+         </svg>
+        </a>
+        <div class="w-px h-4 bg-white/10">
+        </div>
+        <a aria-label="GitHub" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" href="https://github.com/marcodsvinicius?tab=repositories" rel="noopener noreferrer" target="_blank">
+         <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+          </path>
+         </svg>
+        </a>
+       </div>
       </div>
-
-      <!-- Título Principal (Unificado e Centrado) -->
-      <h1 id="hero-title" class="font-montserrat text-3xl md:text-5xl lg:text-5xl font-extrabold text-white leading-[1.15] tracking-tight mb-10 max-w-4xl py-2 animate-[fadeIn_0.9s_ease-out_0.15s_both]">
-        Designer de produto estratégico focado em <span class="hero-highlight">soluções escaláveis de alto impacto</span>.
-      </h1>
-
-      <!-- Grupo de Botões (Estilo dos Cases - rounded-sm) -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-xs sm:max-w-none mx-auto animate-[fadeIn_0.9s_ease-out_0.35s_both]">
-        <a href="https://marcodsvinicius.com/wp-content/uploads/2026/05/PD-MARCO-VINICIUS-1.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black border border-white/20 hover:border-brand hover:text-brand text-white bg-white/[0.02] backdrop-blur-sm transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2">
-          <i data-lucide="download" class="w-4 h-4"></i>
-          Currículo
-        </a>
-        <a href="#contact" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2 text-center">
-          <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
-          Falar comigo
-        </a>
-      </div>
-
-      <!-- Links de Redes Sociais (Centrados, Sem Círculos, SVGs Puros) -->
-      <div class="flex items-center justify-center gap-8 animate-[fadeIn_0.9s_ease-out_0.5s_both]">
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/marcodsvinicius/" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="LinkedIn">
-          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-          </svg>
-        </a>
-        <!-- Medium -->
-        <a href="https://medium.com/@marcodsvinicius" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Medium">
-          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12a6.8 6.8 0 01-3.46 5.86 6.8 6.8 0 010-11.72A6.8 6.8 0 0120.96 12zM24 12a6.8 6.8 0 01-1.3 2.91 6.8 6.8 0 010-5.82A6.8 6.8 0 0124 12z"/>
-          </svg>
-        </a>
-        <!-- GitHub -->
-        <a href="https://github.com/marcodsvinicius?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="GitHub">
-          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
-        </a>
-      </div>
-
+     </div>
     </div>
-
-    <a href="#projects" class="scroll-cue" aria-label="Rolar para os projetos">
-      <span>Scroll</span>
-      <span class="scroll-cue__line" aria-hidden="true"></span>
-    </a>
+   </div>
+  </div>
+  <!-- Overlay de Fundo (Backdrop Blur) -->
+  <div class="fixed inset-0 bg-transparent z-40 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none" id="mobile-menu-backdrop">
+  </div>
+  <!-- Efeito de Ruído/Textura sutil sobre a página -->
+  <div class="fixed inset-0 opacity-[0.015] pointer-events-none mix-blend-overlay z-50 bg-repeat" style='background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")'>
+  </div>
+  <!-- Ambient Glows de Fundo (Glows de Design) -->
+  <!-- SEÇÃO HERO (INÍCIO) -->
+  <section class="v2-hero" id="hero">
+   <canvas aria-hidden="true" id="hero-canvas">
+   </canvas>
+   <div aria-hidden="true" class="hero-spot">
+   </div>
+   <div class="v2-wrap v2-hero-inner">
+    <div class="v2-hero-top">
+     <p class="hero-status">
+      <span aria-hidden="true" class="status-dot">
+      </span>
+      <span>
+       Disponível para novos projetos
+      </span>
+      <span class="hero-status__place">
+       · Rio de Janeiro, BR
+      </span>
+     </p>
+     <div aria-label="Idioma / Language" class="v2-language" role="navigation">
+      <span aria-current="page">
+       PT
+      </span>
+      <a aria-label="Switch to English" href="en/">
+       EN
+      </a>
+     </div>
+    </div>
+    <p class="v2-hero-name">
+     Marco Vinicius
+    </p>
+    <p class="v2-role">
+     Product Designer Sênior · AI First · UX/UI
+    </p>
+    <h1 id="hero-title">
+     Transformo processos complexos em
+     <span>
+      experiências digitais claras.
+     </span>
+    </h1>
+    <p class="v2-hero-copy">
+     Conecto pesquisa, design e IA para criar produtos úteis para pessoas e negócios.
+    </p>
+    <div class="v2-hero-actions">
+     <a class="v2-action v2-action--primary" href="#projects">
+      Ver projetos
+      <span aria-hidden="true">
+       ↓
+      </span>
+     </a>
+     <a class="v2-action" href="#contact">
+      Falar comigo
+     </a>
+    </div>
+    <div class="v2-hero-links">
+     <a class="v2-inline" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/PD-MARCO-VINICIUS-1.pdf" rel="noopener noreferrer" target="_blank">
+      Currículo
+      <span aria-hidden="true">
+       ↗︎
+      </span>
+     </a>
+     <a class="v2-inline" href="https://www.linkedin.com/in/marcodsvinicius/" rel="noopener noreferrer" target="_blank">
+      LinkedIn
+      <span aria-hidden="true">
+       ↗︎
+      </span>
+     </a>
+    </div>
+   </div>
   </section>
-
   <!-- SEÇÃO JÁ ATUEI EM (empresas da trajetória) -->
-  <section id="companies" class="companies py-14 md:py-16 px-6 md:px-12 border-t border-white/5 relative z-10" aria-labelledby="companies-title">
-    <div class="max-w-7xl mx-auto">
-      <h2 id="companies-title" class="companies__title reveal"><span>Já atuei em</span></h2>
-      <ul class="companies__list">
-        <li class="reveal" style="--d:0;--stagger:55ms"><a class="company" href="#exp-oceanpact">OceanPact</a></li>
-        <li class="reveal" style="--d:1;--stagger:55ms"><a class="company" href="#exp-banco-do-brasil">Banco do Brasil</a></li>
-        <li class="reveal" style="--d:2;--stagger:55ms"><a class="company" href="#exp-oceanpact">Stefanini</a></li>
-        <li class="reveal" style="--d:3;--stagger:55ms"><a class="company" href="#exp-gameon">GameOn</a></li>
-        <li class="reveal" style="--d:4;--stagger:55ms"><a class="company" href="#exp-mag-seguros">MAG Seguros</a></li>
-        <li class="reveal" style="--d:5;--stagger:55ms"><a class="company" href="#exp-cypher">Cypher</a></li>
-        <li class="reveal" style="--d:6;--stagger:55ms"><a class="company" href="#exp-nelogica">Nelogica</a></li>
-        <li class="reveal" style="--d:7;--stagger:55ms"><a class="company" href="#exp-darwinx">DarwinX</a></li>
-        <li class="reveal" style="--d:8;--stagger:55ms"><a class="company" href="#exp-livrelab">LivreLab</a></li>
-      </ul>
-    </div>
+  <section aria-labelledby="companies-title" class="companies py-14 md:py-16 px-6 md:px-12 border-t border-white/5 relative z-10" id="companies">
+   <div class="max-w-7xl mx-auto">
+    <h2 class="companies__title reveal" id="companies-title">
+     <span>
+      Já atuei em
+     </span>
+    </h2>
+    <ul class="companies__list">
+     <li class="reveal" style="--d:0;--stagger:55ms">
+      <a class="company" href="#exp-oceanpact">
+       OceanPact
+      </a>
+     </li>
+     <li class="reveal" style="--d:1;--stagger:55ms">
+      <a class="company" href="#exp-banco-do-brasil">
+       Banco do Brasil
+      </a>
+     </li>
+     <li class="reveal" style="--d:2;--stagger:55ms">
+      <a class="company" href="#exp-oceanpact">
+       Stefanini
+      </a>
+     </li>
+     <li class="reveal" style="--d:3;--stagger:55ms">
+      <a class="company" href="#exp-gameon">
+       GameOn
+      </a>
+     </li>
+     <li class="reveal" style="--d:4;--stagger:55ms">
+      <a class="company" href="#exp-mag-seguros">
+       MAG Seguros
+      </a>
+     </li>
+     <li class="reveal" style="--d:5;--stagger:55ms">
+      <a class="company" href="#exp-cypher">
+       Cypher
+      </a>
+     </li>
+     <li class="reveal" style="--d:6;--stagger:55ms">
+      <a class="company" href="#exp-nelogica">
+       Nelogica
+      </a>
+     </li>
+     <li class="reveal" style="--d:7;--stagger:55ms">
+      <a class="company" href="#exp-darwinx">
+       DarwinX
+      </a>
+     </li>
+     <li class="reveal" style="--d:8;--stagger:55ms">
+      <a class="company" href="#exp-livrelab">
+       LivreLab
+      </a>
+     </li>
+    </ul>
+   </div>
   </section>
-
   <!-- SEÇÃO PROJETOS EM DESTAQUE -->
-  <section id="projects" class="py-24 px-6 md:px-12 border-t border-b border-white/5 bg-white/[0.01] relative z-10">
-    <div class="max-w-7xl mx-auto">
-      
-      <!-- Cabeçalho da Seção -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-        <div class="space-y-4 reveal">
-          <div class="flex items-center gap-3 text-brand">
-            <i data-lucide="hash" class="w-4 h-4 text-brand"></i>
-            <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">Trabalhos Selecionados</span>
-          </div>
-          <h2 class="font-montserrat text-4xl md:text-6xl font-black leading-none uppercase tracking-tighter">
-            Projetos <br/>
-            <span class="text-brand">Em Destaque</span>
-          </h2>
-        </div>
-      </div>
-
-      <!-- Grid de Projetos 2x2 -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-        <!-- PROJETO 01: Design System -->
-        <div class="reveal" style="--d:0">
-        <a href="pt/Case-Design-System.html" class="tilt-card group relative bg-brand hover:bg-lime h-[480px] w-full cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(183,229,0,0.3)] border border-transparent hover:border-white/20 rounded-2xl flex flex-col justify-between p-8">
-          <div class="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay z-0" style='background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")'></div>
-          <div class="tilt-glow" aria-hidden="true"></div>
-
-          <div class="flex justify-between items-start z-10 w-full">
-            <div class="flex flex-col gap-1">
-              <div class="flex items-center gap-2">
-                <span class="font-montserrat font-mono text-xs font-bold text-neutral-800 opacity-60">/01</span>
-                <span class="h-[1px] w-8 bg-neutral-800/20"></span>
-                <span class="font-montserrat font-bold text-xs uppercase tracking-widest text-neutral-900">Design System</span>
-              </div>
-              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/70 mt-1">Nelogica</span>
-            </div>
-          </div>
-
-          <div class="card-preview" aria-hidden="true"><img src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/study-colors.png?resize=768%2C452&ssl=1" alt="" loading="lazy" decoding="async"></div>
-
-          <div class="z-10 max-w-xl mt-auto mb-8">
-            <h3 class="font-montserrat text-2xl md:text-3xl font-black leading-tight tracking-tight text-neutral-900 mb-4 group-hover:translate-x-2 transition-transform duration-500">
-              Criação e Gerenciamento de Design System
-            </h3>
-            <p class="text-neutral-800 font-medium text-sm md:text-base opacity-80 leading-relaxed">
-              Escalando a criação de interfaces e unindo Design e Engenharia.
-            </p>
-          </div>
-
-          <div class="flex items-center justify-between border-t border-black/10 pt-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300 z-10 w-full">
-            <span class="font-montserrat text-[10px] uppercase font-bold tracking-widest text-neutral-800">Ver Artigo</span>
-            <i data-lucide="arrow-up-right" class="text-neutral-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" width="20" height="20"></i>
-          </div>
-        </a>
-        </div>
-
-        <!-- PROJETO 02: Rebalanceamento de Carteira -->
-        <div class="reveal" style="--d:1">
-        <a href="pt/Case-Rebalanceamento-Carteira.html" class="tilt-card group relative bg-brand hover:bg-lime h-[480px] w-full cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(183,229,0,0.3)] border border-transparent hover:border-white/20 rounded-2xl flex flex-col justify-between p-8">
-          <div class="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay z-0" style='background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")'></div>
-          <div class="tilt-glow" aria-hidden="true"></div>
-
-          <div class="flex justify-between items-start z-10 w-full">
-            <div class="flex flex-col gap-1">
-              <div class="flex items-center gap-2">
-                <span class="font-montserrat font-mono text-xs font-bold text-neutral-800 opacity-60">/02</span>
-                <span class="h-[1px] w-8 bg-neutral-800/20"></span>
-                <span class="font-montserrat font-bold text-xs uppercase tracking-widest text-neutral-900">Fintech</span>
-              </div>
-              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/70 mt-1">Nelogica</span>
-            </div>
-          </div>
-
-          <div class="card-preview" aria-hidden="true"><img src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&ssl=1" alt="" loading="lazy" decoding="async"></div>
-
-          <div class="z-10 max-w-xl mt-auto mb-8">
-            <h3 class="font-montserrat text-2xl md:text-3xl font-black leading-tight tracking-tight text-neutral-900 mb-4 group-hover:translate-x-2 transition-transform duration-500">
-              Rebalanceamento de Carteira
-            </h3>
-            <p class="text-neutral-800 font-medium text-sm md:text-base opacity-80 leading-relaxed">
-              Retendo usuários e agregando valor ao Home Broker B2B.
-            </p>
-          </div>
-
-          <div class="flex items-center justify-between border-t border-black/10 pt-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300 z-10 w-full">
-            <span class="font-montserrat text-[10px] uppercase font-bold tracking-widest text-neutral-800">Ver Artigo</span>
-            <i data-lucide="arrow-up-right" class="text-neutral-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" width="20" height="20"></i>
-          </div>
-        </a>
-        </div>
-
-        <!-- PROJETO 03: Tour Guiado -->
-        <div class="reveal" style="--d:2">
-        <a href="pt/Case-Tour-Guiado.html" class="tilt-card group relative bg-brand hover:bg-lime h-[480px] w-full cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(183,229,0,0.3)] border border-transparent hover:border-white/20 rounded-2xl flex flex-col justify-between p-8">
-          <div class="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay z-0" style='background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")'></div>
-          <div class="tilt-glow" aria-hidden="true"></div>
-
-          <div class="flex justify-between items-start z-10 w-full">
-            <div class="flex flex-col gap-1">
-              <div class="flex items-center gap-2">
-                <span class="font-montserrat font-mono text-xs font-bold text-neutral-800 opacity-60">/03</span>
-                <span class="h-[1px] w-8 bg-neutral-800/20"></span>
-                <span class="font-montserrat font-bold text-xs uppercase tracking-widest text-neutral-900">UX Research</span>
-              </div>
-              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/70 mt-1">Nelogica</span>
-            </div>
-          </div>
-
-          <div class="card-preview" aria-hidden="true"><img src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&ssl=1" alt="" loading="lazy" decoding="async"></div>
-
-          <div class="z-10 max-w-xl mt-auto mb-8">
-            <h3 class="font-montserrat text-2xl md:text-3xl font-black leading-tight tracking-tight text-neutral-900 mb-4 group-hover:translate-x-2 transition-transform duration-500">
-              Tour Guiado
-            </h3>
-            <p class="text-neutral-800 font-medium text-sm md:text-base opacity-80 leading-relaxed">
-              Reduzindo a Carga Cognitiva e Otimizando o Onboarding de Usuários.
-            </p>
-          </div>
-
-          <div class="flex items-center justify-between border-t border-black/10 pt-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300 z-10 w-full">
-            <span class="font-montserrat text-[10px] uppercase font-bold tracking-widest text-neutral-800">Ver Artigo</span>
-            <i data-lucide="arrow-up-right" class="text-neutral-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" width="20" height="20"></i>
-          </div>
-        </a>
-        </div>
-
-        <!-- PROJETO 04: Hub de Obras -->
-        <div class="reveal" style="--d:3">
-        <a id="project-hub-obras" href="pt/Case-Hub-de-Obras.html" class="tilt-card group relative bg-brand hover:bg-lime h-[480px] w-full cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(183,229,0,0.3)] border border-transparent hover:border-white/20 rounded-2xl flex flex-col justify-between p-8">
-          <!-- Efeito de Ruído interno -->
-          <div class="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay z-0" style='background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")'></div>
-          <div class="tilt-glow" aria-hidden="true"></div>
-
-          <!-- Topo Card -->
-          <div class="flex justify-between items-start z-10 w-full">
-            <div class="flex flex-col gap-1">
-              <div class="flex items-center gap-2">
-                <span class="font-montserrat font-mono text-xs font-bold text-neutral-800 opacity-60">/04</span>
-                <span class="h-[1px] w-8 bg-neutral-800/20"></span>
-                <span class="font-montserrat font-bold text-xs uppercase tracking-widest text-neutral-900">Product Design</span>
-              </div>
-              <span class="font-montserrat text-[10px] font-bold uppercase tracking-wider text-neutral-900/70 mt-1">Hub de Obras</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 flex items-center justify-center bg-black/10 text-neutral-900 rounded-sm" title="Artigo protegido por senha">
-                <i data-lucide="lock" width="14" height="14"></i>
-              </span>
-              <span class="bg-black text-brand text-[10px] font-black px-3 py-1 uppercase tracking-widest group-hover:text-lime transition-colors rounded-sm">
-                Novo
-              </span>
-            </div>
-          </div>
-
-          <!-- Meio: Título e Resumo -->
-          <div class="card-preview" aria-hidden="true"><img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/hub-obras-1.png" alt="" loading="lazy" decoding="async"></div>
-
-          <div class="z-10 max-w-xl mt-auto mb-8">
-            <h3 class="font-montserrat text-2xl md:text-3xl font-black leading-tight tracking-tight text-neutral-900 mb-4 group-hover:translate-x-2 transition-transform duration-500">
-              Transformando a gestão de obras de navios
-            </h3>
-            <p class="text-neutral-800 font-medium text-sm md:text-base opacity-80 leading-relaxed">
-              Do caos de planilhas complexas para um software moderno e ágil.
-            </p>
-          </div>
-
-          <!-- Base: Action -->
-          <div class="flex items-center justify-between border-t border-black/10 pt-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300 z-10 w-full">
-            <span class="font-montserrat text-[10px] uppercase font-bold tracking-widest text-neutral-800">Desbloquear Artigo</span>
-            <i data-lucide="lock" class="text-neutral-900 group-hover:scale-110 transition-transform" width="18" height="18"></i>
-          </div>
-        </a>
-        </div>
-
-      </div>
+  <section class="v2-section" id="projects">
+   <div class="v2-wrap">
+    <div class="v2-section-head">
+     <p class="v2-eyebrow">
+      Trabalhos selecionados
+     </p>
+     <h2 class="v2-title">
+      Design que resolve problemas reais
+     </h2>
+     <p class="v2-lead">
+      Quatro projetos para conhecer minhas decisões, contribuições e formas de trabalhar.
+     </p>
     </div>
+    <div class="v2-projects">
+     <article class="v2-project">
+      <a class="v2-project-main" href="pt/Case-Tour-Guiado.html">
+       <div class="v2-project-image">
+        <img alt="Tela do tour guiado dividido em passos curtos de micro-learning" decoding="async" height="900" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&amp;ssl=1" width="1600"/>
+       </div>
+       <div class="v2-project-copy">
+        <p class="v2-project-meta">
+         <span>
+          Onboarding
+         </span>
+         <span>
+          Nelogica
+         </span>
+        </p>
+        <h3>
+         Um onboarding dividido em jornadas curtas e focadas
+        </h3>
+        <p class="v2-project-description">
+         Reorganização de seis tutoriais em treze trilhas, com revisão de conteúdo, navegação e hierarquia para orientar o aprendizado no Home Broker.
+        </p>
+        <dl class="v2-project-facts">
+         <div>
+          <dt>
+           Minha contribuição
+          </dt>
+          <dd>
+           UX/UI, Arquitetura da informação, UX Writing
+          </dd>
+         </div>
+         <div>
+          <dt>
+           Entrega em destaque
+          </dt>
+          <dd>
+           6 tutoriais reorganizados em 13 trilhas focadas.
+          </dd>
+         </div>
+        </dl>
+        <span class="v2-project-cta">
+         Ver case
+         <span aria-hidden="true">
+          ↗︎
+         </span>
+        </span>
+       </div>
+      </a>
+     </article>
+     <article class="v2-project">
+      <a class="v2-project-main" href="pt/Case-Rebalanceamento-Carteira.html">
+       <div class="v2-project-image">
+        <img alt="Tela de rebalanceamento de carteira isolada da tela principal de trade" decoding="async" height="900" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&amp;ssl=1" width="1600"/>
+       </div>
+       <div class="v2-project-copy">
+        <p class="v2-project-meta">
+         <span>
+          Fintech
+         </span>
+         <span>
+          Nelogica
+         </span>
+        </p>
+        <h3>
+         Gestão de carteiras de investimentos financeiros
+        </h3>
+        <p class="v2-project-description">
+         Design e pesquisa de uma experiência para acompanhar investimentos e planejar ajustes de carteira dentro da plataforma.
+        </p>
+        <dl class="v2-project-facts">
+         <div>
+          <dt>
+           Minha contribuição
+          </dt>
+          <dd>
+           UX/UI Design, Discovery, Userflow
+          </dd>
+         </div>
+         <div>
+          <dt>
+           Entrega em destaque
+          </dt>
+          <dd>
+           Entrada, acompanhamento e ajustes de carteira dentro da plataforma.
+          </dd>
+         </div>
+        </dl>
+        <span class="v2-project-cta">
+         Ver case
+         <span aria-hidden="true">
+          ↗︎
+         </span>
+        </span>
+       </div>
+      </a>
+     </article>
+     <article class="v2-project">
+      <a class="v2-project-main" href="pt/Case-Design-System.html">
+       <div class="v2-project-image">
+        <img alt="Estudo de paleta de cores testada em temas claro e escuro" decoding="async" height="452" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/study-colors.png?resize=768%2C452&amp;ssl=1" width="768"/>
+       </div>
+       <div class="v2-project-copy">
+        <p class="v2-project-meta">
+         <span>
+          Design System
+         </span>
+         <span>
+          Nelogica
+         </span>
+        </p>
+        <h3>
+         Uma base compartilhada para interfaces consistentes
+        </h3>
+        <p class="v2-project-description">
+         Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de criptoativos.
+        </p>
+        <dl class="v2-project-facts">
+         <div>
+          <dt>
+           Minha contribuição
+          </dt>
+          <dd>
+           Auditoria · Tokens · Documentação
+          </dd>
+         </div>
+         <div>
+          <dt>
+           Entrega em destaque
+          </dt>
+          <dd>
+           Estilos, componentes e uma linguagem compartilhada com engenharia.
+          </dd>
+         </div>
+        </dl>
+        <span class="v2-project-cta">
+         Ver case
+         <span aria-hidden="true">
+          ↗︎
+         </span>
+        </span>
+       </div>
+      </a>
+     </article>
+     <article class="v2-project">
+      <div class="v2-project-main">
+       <div class="v2-project-image">
+        <img alt="Tela do Hub de Obras mostrando a unificação de planilhas em uma interface única" decoding="async" height="827" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/hub-obras-1.png" width="1276"/>
+       </div>
+       <div class="v2-project-copy">
+        <p class="v2-project-meta">
+         <span>
+          Product Design
+         </span>
+         <span>
+          Hub de Obras
+         </span>
+        </p>
+        <h3>
+         De planilhas à gestão integrada de obras em navios
+        </h3>
+        <p class="v2-project-description">
+         Product Design de uma plataforma em desenvolvimento para conectar planejamento, acompanhamento e mudanças em obras de alta complexidade em navios.
+        </p>
+        <dl class="v2-project-facts">
+         <div>
+          <dt>
+           Minha contribuição
+          </dt>
+          <dd>
+           AI First - Liderança em Design - Pesquisa com Usuários - Definição de Processos. Arquitetura da Informação
+          </dd>
+         </div>
+         <div>
+          <dt>
+           Entrega em destaque
+          </dt>
+          <dd>
+           Integração de processos de planejamento, mudanças e acompanhamento de obras.
+          </dd>
+         </div>
+        </dl>
+        <p class="v2-project-status">
+         Em desenvolvimento · Acesso restrito
+        </p>
+       </div>
+      </div>
+      <div class="v2-project-access">
+       <a class="v2-action" href="mailto:contato@marcodsvinicius.com?subject=Hub%20de%20Obras%20-%20Acesso%20ao%20case">
+        Solicitar acesso
+       </a>
+       <a class="v2-inline" href="pt/Case-Hub-de-Obras.html" id="project-hub-obras">
+        Já tenho a senha
+       </a>
+      </div>
+     </article>
+    </div>
+   </div>
   </section>
-
-
-
-
-
   <!-- SEÇÃO AI FIRST -->
-  <section id="ai-first" class="py-24 px-6 md:px-12 border-t border-white/5 relative z-10">
-    <div class="max-w-7xl mx-auto">
-
-      <!-- Cabeçalho + terminal -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-12 md:mb-16">
-        <div class="lg:col-span-5 space-y-5 reveal">
-          <div class="flex items-center gap-3 text-brand">
-            <i data-lucide="sparkles" class="w-4 h-4 text-brand"></i>
-            <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">AI First</span>
-          </div>
-          <h2 class="font-montserrat text-4xl md:text-6xl font-black leading-none uppercase tracking-tighter">
-            IA dentro <br/>
-            <span class="text-brand">do processo</span>
-          </h2>
-          <p class="text-gray-400 text-base md:text-lg font-light leading-relaxed border-l-2 border-brand pl-6">
-            Não uso IA para pular etapas. Uso para encurtar o caminho entre a pergunta e a evidência: transcrevo, gero, testo e reviso mais rápido, e o tempo que sobra volta para o que exige julgamento de design.
-          </p>
-        </div>
-
-        <div class="lg:col-span-7 reveal" style="--d:1">
-          <div class="ai-term" aria-hidden="true">
-            <div class="ai-term__bar">
-              <span class="ai-term__dot"></span><span class="ai-term__dot"></span><span class="ai-term__dot"></span>
-              <span class="ai-term__name">agente · design</span>
-            </div>
-            <div class="ai-term__body">
-              <p class="ai-term__line"><span class="ai-term__sign">&rsaquo;</span><span><span class="ai-term__prompt"></span><span class="ai-term__caret"></span></span></p>
-              <p class="ai-term__out"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0 text-brand mt-0.5"></i><span class="ai-term__outtext"></span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Capacidades -->
-      <ol class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
-        <li class="ai-card reveal" style="--d:0" data-prompt="resuma a call e liste decisões, pendências e riscos" data-out="ata estruturada + dúvidas em aberto">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="mic" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/01</span>
-          </div>
-          <h3 class="ai-card__title">Discovery e definição acelerados</h3>
-          <p class="ai-card__desc">Transcrevo reuniões, extraio decisões e pendências, busco referências e chego na definição com o problema já mapeado.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Mais tempo de conversa com o usuário</p>
-        </li>
-        <li class="ai-card reveal" style="--d:1" data-prompt="gere mobile e tablet desta tela seguindo os breakpoints do DS" data-out="dois breakpoints propostos para revisão">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="smartphone" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/02</span>
-          </div>
-          <h3 class="ai-card__title">Interfaces responsivas geradas</h3>
-          <p class="ai-card__desc">A partir dos breakpoints do design system, o agente propõe as versões mobile e tablet. Eu reviso o que fugiu da regra e sigo.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Fim da adaptação manual tela a tela</p>
-        </li>
-        <li class="ai-card reveal" style="--d:2" data-prompt="monte o handoff: estados, mensagens, userflow e regras técnicas" data-out="spec pronta para revisão">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="clipboard-list" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/03</span>
-          </div>
-          <h3 class="ai-card__title">Handoff em poucos cliques</h3>
-          <p class="ai-card__desc">Especificação completa para desenvolvimento: estados, mensagens, fluxos de usuário e regras técnicas, prontos para revisão.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>De uma tarde de escrita para uma revisão</p>
-        </li>
-        <li class="ai-card reveal" style="--d:3" data-prompt="transforme este fluxo em um protótipo HTML navegável" data-out="protótipo testável no navegador">
-          <div class="ai-card__top">
-            <span class="ai-card__icon"><i data-lucide="flask-conical" class="w-5 h-5"></i></span>
-            <span class="ai-card__num">/04</span>
-          </div>
-          <h3 class="ai-card__title">Protótipos em HTML para validar antes</h3>
-          <p class="ai-card__desc">Gero telas navegáveis em minutos e levo para o usuário antes de detalhar no Figma. Só refino o que sobrevive ao teste.</p>
-          <p class="ai-card__result"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>Validação antes do refinamento</p>
-        </li>
-      </ol>
-
-
-    </div>
-  </section>
+  <section class="v2-section" id="ai-first">
+ <div class="v2-wrap">
+  <div class="v2-section-head">
+   <p class="v2-eyebrow">
+    AI First
+   </p>
+   <h2 class="v2-title">
+    IA aplicada ao trabalho de design
+   </h2>
+   <p class="v2-lead">
+    Quatro etapas conectam entendimento, exploração, entrega e evolução do Design System. A IA apoia o processo; eu defino o contexto e reviso cada decisão.
+   </p>
+  </div>
+  <div class="v2-ai-grid">
+   <article class="v2-ai-card">
+    <header class="v2-ai-card-header">
+     <p class="v2-ai-number">
+      01
+     </p>
+     <div>
+      <h3>
+       Entender e organizar
+      </h3>
+      <p class="v2-ai-support">
+       Clareza sobre o problema antes de explorar soluções.
+      </p>
+     </div>
+    </header>
+    <dl>
+     <div>
+      <dt>
+       Apoio da IA
+      </dt>
+      <dd>
+       Síntese de reuniões, organização de referências e estruturação de perguntas, requisitos e hipóteses.
+      </dd>
+     </div>
+     <div>
+      <dt>
+       Minha responsabilidade
+      </dt>
+      <dd>
+       Definir o problema, conferir as informações e aprofundar o entendimento com as pessoas envolvidas.
+      </dd>
+     </div>
+    </dl>
+   </article>
+   <article class="v2-ai-card">
+    <header class="v2-ai-card-header">
+     <p class="v2-ai-number">
+      02
+     </p>
+     <div>
+      <h3>
+       Explorar e prototipar
+      </h3>
+      <p class="v2-ai-support">
+       Alternativas concretas para avaliar decisões de design.
+      </p>
+     </div>
+    </header>
+    <dl>
+     <div>
+      <dt>
+       Apoio da IA
+      </dt>
+      <dd>
+       Geração de alternativas de interface, adaptações responsivas e protótipos com base nas regras do Design System.
+      </dd>
+     </div>
+     <div>
+      <dt>
+       Minha responsabilidade
+      </dt>
+      <dd>
+       Orientar a exploração e avaliar fluxos, hierarquia e consistência antes de avançar com uma proposta.
+      </dd>
+     </div>
+    </dl>
+   </article>
+   <article class="v2-ai-card">
+    <header class="v2-ai-card-header">
+     <p class="v2-ai-number">
+      03
+     </p>
+     <div>
+      <h3>
+       Revisar e entregar
+      </h3>
+      <p class="v2-ai-support">
+       Detalhes claros para alinhar design e desenvolvimento.
+      </p>
+     </div>
+    </header>
+    <dl>
+     <div>
+      <dt>
+       Apoio da IA
+      </dt>
+      <dd>
+       Documentação de estados, mensagens, fluxos e especificações para desenvolvimento.
+      </dd>
+     </div>
+     <div>
+      <dt>
+       Minha responsabilidade
+      </dt>
+      <dd>
+       Revisar os detalhes, alinhar com engenharia e validar a solução no contexto do projeto.
+      </dd>
+     </div>
+    </dl>
+   </article>
+   <article class="v2-ai-card">
+    <header class="v2-ai-card-header">
+     <p class="v2-ai-number">
+      04
+     </p>
+     <div>
+      <h3>
+       Gerenciar e otimizar
+      </h3>
+      <p class="v2-ai-support">
+       Uma base consistente para evoluir com reaproveitamento.
+      </p>
+     </div>
+    </header>
+    <dl>
+     <div>
+      <dt>
+       Apoio da IA
+      </dt>
+      <dd>
+       Apoio à gestão do Design System, identificando inconsistências e sugerindo melhorias em componentes.
+      </dd>
+     </div>
+     <div>
+      <dt>
+       Minha responsabilidade
+      </dt>
+      <dd>
+       Criar skills e agentes para gerenciar mudanças e acelerar entregas, revisando as sugestões e priorizando componentes reutilizáveis.
+      </dd>
+     </div>
+    </dl>
+   </article>
+  </div>
+ </div>
+</section>
 
   <!-- SEÇÃO SKILLS & EXPERIÊNCIA -->
-  <section id="skills" class="py-24 px-6 md:px-12 border-t border-b border-white/5 bg-white/[0.005] relative z-10">
-    <div class="max-w-7xl mx-auto">
-      
-      <!-- Cabeçalho da Seção -->
-      <div class="mb-16 reveal">
-        <div class="flex items-center gap-4 mb-4">
-          <h2 class="font-montserrat text-4xl md:text-5xl font-black uppercase tracking-tighter">
-            <span class="text-white">Skills &</span> <br class="md:hidden"/> <span class="text-brand">Experiência</span>
-          </h2>
-        </div>
-        <p class="text-gray-400 text-lg md:text-xl font-medium max-w-2xl border-l-2 border-brand pl-6 leading-relaxed">
-          Utilizando Design e Tecnologia para criar soluções que escalam o seu negócio.
-        </p>
-      </div>
-
-      <!-- Grid de Habilidades (Pills/Cards Interativos Simplificados) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-24" id="skills-grid">
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:0;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="pen-tool" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Figma
-          </span>
-        </div>
-
-        <!-- Skill: Discovery -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:1;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="search" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Discovery
-          </span>
-        </div>
-
-        <!-- Skill: Benchmark -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:2;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="trending-up" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Benchmark
-          </span>
-        </div>
-
-        <!-- Skill: AI First -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:3;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="sparkles" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            AI First
-          </span>
-        </div>
-
-        <!-- Skill: UX Design -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:4;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="compass" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            UX Design
-          </span>
-        </div>
-
-        <!-- Skill: UI Design -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:5;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="layout" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            UI Design
-          </span>
-        </div>
-
-        <!-- Skill: Prototipação -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:6;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="mouse-pointer-2" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Prototipação
-          </span>
-        </div>
-
-        <!-- Skill: Design System -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:7;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="layers" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Design System
-          </span>
-        </div>
-
-        <!-- Skill: HTML5 -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:8;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="code" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            HTML5
-          </span>
-        </div>
-
-        <!-- Skill: CSS -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:9;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="palette" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            CSS
-          </span>
-        </div>
-
-        <!-- Skill: Javascript -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:10;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="code-2" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Javascript
-          </span>
-        </div>
-
-        <!-- Skill: Python -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:11;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="terminal" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Python
-          </span>
-        </div>
-
-        <!-- Skill: Hotjar -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:12;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="flame" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Hotjar
-          </span>
-        </div>
-
-        <!-- Skill: Adobe Suite -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:13;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="paintbrush" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Adobe Suite
-          </span>
-        </div>
-
-        <!-- Skill: Visual Analytics -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:14;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="bar-chart-3" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Visual Analytics
-          </span>
-        </div>
-
-        <!-- Skill: Antigravity -->
-        <div class="group flex items-center gap-3 bg-white/[0.02] border border-white/10 rounded-lg p-3.5 transition-all duration-300 hover:border-brand/40 hover:bg-brand/5 cursor-default reveal skill-card" style="--d:15;--stagger:40ms">
-          <div class="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white/[0.03] border border-white/5 group-hover:border-brand/30 group-hover:bg-brand/10 transition-all duration-300">
-            <i data-lucide="rocket" class="text-gray-400 group-hover:text-brand transition-colors duration-300" width="16" height="16"></i>
-          </div>
-          <span class="font-montserrat text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors duration-300">
-            Antigravity
-          </span>
-        </div>
-
-      </div>
-
-      <!-- Grid de Timeline Acadêmica & Profissional -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-        
-        <!-- Coluna Esquerda: Formação e Cursos (lg:col-span-5) -->
-        <div class="lg:col-span-5 space-y-16">
-          
-          <!-- Bloco Formação Acadêmica -->
-          <div>
-            <h3 class="font-montserrat text-2xl font-bold text-brand mb-8 uppercase tracking-wide">
-              Formação Acadêmica
-            </h3>
-            
-            <div class="space-y-10 border-l border-white/5 pl-6 timeline">
-              <span class="timeline-line" aria-hidden="true"></span>
-              
-              <!-- Formação 1 -->
-              <div class="group relative reveal">
-                <div class="tl-dot absolute -left-[28px] top-[5px] w-2 h-2 rounded-full bg-brand"></div>
-                <span class="block text-xs font-mono text-muted mb-1">2025 - 2026</span>
-                <h4 class="font-montserrat text-lg font-bold text-white group-hover:text-brand transition-colors">
-                  Pós-graduação em UX Design and Beyond
-                </h4>
-                <p class="text-sm text-gray-400 font-medium mb-3">PUCRS - Especialização • Concluído</p>
-                <p class="text-sm text-muted leading-relaxed font-light">
-                  Especialização abrangendo disciplinas estratégicas como Avaliação de Interfaces, Liderança em Design, Design Systems avançado e Product Discovery.
-                </p>
-              </div>
-
-              <!-- Formação 2 -->
-              <div class="group relative reveal" style="--d:1">
-                <div class="tl-dot absolute -left-[28px] top-[5px] w-2 h-2 rounded-full bg-white/20 group-hover:bg-brand transition-colors"></div>
-                <span class="block text-xs font-mono text-muted mb-1">2019 - 2023</span>
-                <h4 class="font-montserrat text-lg font-bold text-white group-hover:text-brand transition-colors">
-                  Licenciatura em Computação
-                </h4>
-                <p class="text-sm text-gray-400 font-medium mb-3">IFRJ - Campus Pinheiral • Concluído</p>
-                <p class="text-sm text-muted leading-relaxed font-light">
-                  Desenvolvimento acadêmico focado em engenharia de software e tecnologias. Diretor de Comunicação no Diretório Acadêmico e monitor de disciplinas técnicas.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Bloco Cursos & Especializações -->
-          <div>
-            <h3 class="font-montserrat text-2xl font-bold text-brand mb-8 uppercase tracking-wide">
-              Cursos e Especializações
-            </h3>
-            
-            <div class="space-y-6">
-              <!-- Certificados LinkedIn Learning (consolidado) -->
-              <div class="group">
-                <h4 class="font-montserrat text-base font-bold text-white leading-tight">+8 certificações complementares em IA, Liderança e Comunicação</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">LinkedIn Learning - Concluídas entre Abr 2025 e Out 2025</p>
-                <a href="https://www.linkedin.com/in/marcodsvinicius/details/certifications/" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
-                  Ver todas no LinkedIn <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                </a>
-              </div>
-
-              <!-- Outros Cursos 1 -->
-              <div class="group">
-                <h4 class="font-montserrat text-base font-bold text-white leading-tight">Noloco Certified Expert Level 1</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">Noloco Academy - Concluído em Jul 2024</p>
-                <a href="https://drive.google.com/file/d/18WcEvl-_Lu7ggNznbmskLrYRdSlcSkCS/view" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
-                  Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                </a>
-              </div>
-
-              <!-- Outros Cursos 2 -->
-              <div class="group">
-                <h4 class="font-montserrat text-base font-bold text-white leading-tight">Planejamento e Gestão Ágil</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">Meluca - Concluído em Jun 2023</p>
-                <a href="https://drive.google.com/file/d/1Epo86NFN1V41I2tycKxUqnKvghbr8GvV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
-                  Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                </a>
-              </div>
-
-              <!-- Outros Cursos 3 -->
-              <div class="group">
-                <h4 class="font-montserrat text-base font-bold text-white leading-tight">Design System Specialist</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">Meluca - Concluído em Mai 2022</p>
-                <a href="https://drive.google.com/file/d/1iIlmmC0EI38z0ndcEpOZ6e1Mq4CR08c_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
-                  Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                </a>
-              </div>
-
-              <!-- Outros Cursos 4 -->
-              <div class="group">
-                <h4 class="font-montserrat text-base font-bold text-white leading-tight">Figma Avançado</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">Alura - Concluído em Jun 2022</p>
-                <a href="#" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
-                  Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                </a>
-              </div>
-
-              <!-- Outros Cursos 5 -->
-              <div class="group">
-                <h4 class="font-montserrat text-base font-bold text-white leading-tight">UX/UI Design</h4>
-                <p class="text-xs text-gray-400 mb-1 font-light">USP - Concluído em Abr 2021</p>
-                <a href="https://www.coursera.org/account/accomplishments/certificate/5FSP7ATE9R59" target="_blank" rel="noopener noreferrer" class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline">
-                  Visualizar Certificado <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                </a>
-              </div>
-              </div>
-          </div>
-
-        </div>
-
-        <!-- Coluna Direita: Experiência Profissional (lg:col-span-7) -->
-        <div class="lg:col-span-7">
-          <h3 class="font-montserrat text-2xl font-bold text-brand mb-8 uppercase tracking-wide">
-            Experiência Profissional
-          </h3>
-          
-          <div class="space-y-12 border-l border-white/10 ml-2 pl-6 md:pl-12 relative timeline">
-            <span class="timeline-line" aria-hidden="true"></span>
-            
-            <!-- Experiência 1: OceanPact | Stefanini -->
-            <div id="exp-oceanpact" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">Product Design Sênior</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">OceanPact | Stefanini</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Dez 2025 - até o momento</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light mb-3">
-                Atuo como Product Designer Sênior, liderando a construção de interfaces do primeiro Gerenciador de Obras de Navios da empresa, anteriormente eram usados Excel e Forms para controlar os seus processos.
-              </p>
-              <p class="text-gray-400 text-base leading-relaxed font-light">
-                Utilizei o Double Diamond com IA para me apoiar em decisões, processos e testes. Criei agentes para me apoiar em Design, Testes de Design, Análise de Interfaces, o que me fez acelerar entregas que antes levariam duas semanas para alguns dias.
-              </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Experiência 2: Banco do Brasil | Stefanini -->
-            <div id="exp-banco-do-brasil" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer Pleno</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">Banco do Brasil | Stefanini</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Nov 2024 - Nov 2025 (1 ano e 1 mês)</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light">
-                Colaborador ativo em diversas squads com conhecimentos em IA e TI; Alinhamento e planejamento em conjunto com PO, SM e outros papéis; Facilitador em processos de design (Discover, Double Diamond); Desenho de interfaces para PowerBI utilizando o Figma.
-              </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Experiência 3 -->
-            <div id="exp-gameon" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer Pleno</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">GameOn (Freelancer)</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Jun 2024 - Mar 2025 (10 meses)</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light">
-                Atuação estratégica no desenho e escopo técnico do MVP. Liderança em benchmarking de competidores diretos e estruturação metodológica do Double Diamond para consolidação ágil do produto.
-              </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Experiência 4 -->
-            <div id="exp-mag-seguros" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer Pleno</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">MAG Seguros</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Ago 2024 - Nov 2024 (4 meses)</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light">
-                Condução de pesquisas profundas com usuários e testes de usabilidade regulares. Coordenação de design de ponta a ponta no produto, aliando análises qualitativas/quantitativas e projeções precisas para fluxos de checkout e conversão.
-              </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Experiência 5 -->
-            <div id="exp-cypher" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">Cypher Financial AI</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Nov 2023 - Ago 2024 (10 meses)</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light">
-                Modelagem e desenho completo de interfaces inteligentes orientadas a finanças. Realização de análises heurísticas rigorosas e gestão ativa do backlog de melhorias estéticas do produto.
-              </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Experiência 6 -->
-            <div id="exp-nelogica" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">UX/UI Designer</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">Nelogica</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Out 2021 - Abr 2023 (1 ano e 7 meses)</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light">
-                Planejamento estratégico de soluções para o mercado financeiro. Liderança da criação e governança do primeiro Design System do ecossistema de criptoativos da empresa, otimizando arquiteturas de informação complexas.
-              </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Experiência 7 -->
-            <div id="exp-freelance" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">UI Designer e Desenvolvedor Front End</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">Freelance</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Fev 2020 - Jan 2022 (2 anos)</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light">
-                Atuação autônoma no desenvolvimento ponta a ponta de produtos digitais, unindo design e programação. Criação de interfaces modernas no Figma, Elementor, Photoshop e Illustrator, com implementação técnica em WordPress, HTML5, CSS3, JavaScript e jQuery. Uso estratégico de Hotjar e Google Analytics para análise de dados e otimização de conversões.
-              </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Experiência 8 -->
-            <div id="exp-livrelab" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">Professor de Programação e Design</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">LivreLab</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Mar 2020 - Set 2021 (1 ano e 7 meses)</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light">
-                Ministrei aulas de design, game design e programação para crianças e adolescentes. Também colaborei diretamente com o CEO na análise e desenvolvimento de anúncios estratégicos, na criação de peças publicitárias para todas as redes sociais da escola e no desenvolvimento e manutenção técnica da plataforma online de ensino dos alunos.
-              </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Experiência 9 -->
-            <div id="exp-darwinx" class="relative group reveal">
-              <div class="tl-dot absolute -left-[30px] md:-left-[55px] top-2 w-3 h-3 rounded-full bg-white/20 border-2 border-[#050505] group-hover:bg-brand group-hover:scale-110 transition-all"></div>
-              <h4 class="font-montserrat text-xl font-bold text-white mb-1">Desenvolvedor React</h4>
-              <div class="flex flex-col md:flex-row md:items-center text-[11px] md:text-sm text-gray-400 mb-4 font-medium">
-                <span class="text-white">DarwinX</span>
-                <span class="hidden md:inline text-muted mx-1.5 md:mx-2 select-none">•</span>
-                <span class="font-bold text-[9px] md:text-xs uppercase tracking-wider text-muted mt-1 md:mt-0">Mar 2021 - Jul 2021 (5 meses)</span>
-              </div>
-              <div class="exp-body" data-expandable data-more="Ler mais" data-less="Mostrar menos">
-                <div class="exp-text">
-                <p class="text-gray-400 text-base leading-relaxed font-light">
-                Atuação no desenvolvimento e componentização de interfaces responsivas utilizando React. Foco na criação de elementos de UI reutilizáveis, consumo de APIs RESTful e colaboração próxima com a equipe de design para assegurar a fidelidade visual e a melhor experiência de uso no produto.
-              </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
+  <section class="v2-section" id="skills">
+   <div class="v2-wrap">
+    <div class="v2-section-head">
+     <p class="v2-eyebrow">
+      Competências
+     </p>
+     <h2 class="v2-title">
+      Do entendimento à interface
+     </h2>
+     <p class="v2-lead">
+      Conecto decisões de produto, qualidade de interface e colaboração técnica ao longo do trabalho.
+     </p>
     </div>
+    <div class="v2-skills">
+     <article class="v2-skill">
+      <h3>
+       UX para produtos complexos
+      </h3>
+      <p>
+       Discovery, arquitetura da informação e desenho de fluxos para organizar necessidades e regras de negócio.
+      </p>
+      <a class="v2-inline" href="pt/Case-Rebalanceamento-Carteira.html">
+       Veja no Rebalanceamento
+       <span aria-hidden="true">
+        ↗︎
+       </span>
+      </a>
+     </article>
+     <article class="v2-skill">
+      <h3>
+       UI e Design Systems
+      </h3>
+      <p>
+       Hierarquia visual, componentes, estados e tokens para construir experiências consistentes.
+      </p>
+      <a class="v2-inline" href="pt/Case-Design-System.html">
+       Veja no Design System
+       <span aria-hidden="true">
+        ↗︎
+       </span>
+      </a>
+     </article>
+     <article class="v2-skill">
+      <h3>
+       Design com implementação em mente
+      </h3>
+      <p>
+       Prototipação em HTML, responsividade, handoff e diálogo com engenharia para apoiar a construção do produto.
+      </p>
+      <a class="v2-inline" href="pt/Case-Tour-Guiado.html">
+       Veja as decisões de onboarding
+       <span aria-hidden="true">
+        ↗︎
+       </span>
+      </a>
+     </article>
+     <article class="v2-skill">
+      <h3>
+       Colaboração e liderança
+      </h3>
+      <p>
+       Alinhamento com stakeholders, negociação de escopo e orientação de designers em projetos com diferentes equipes.
+      </p>
+      <a class="v2-inline" href="#about">
+       Conheça minha trajetória
+       <span aria-hidden="true">
+        ↗︎
+       </span>
+      </a>
+     </article>
+    </div>
+    <p class="v2-toolset">
+     Ferramentas de apoio: Figma, HTML, CSS, JavaScript, Notion, Hotjar e ferramentas de IA.
+    </p>
+   </div>
   </section>
-
   <!-- Container Principal (Fundo escuro #0B0B0B) -->
-  <section id="about" class="bg-[#0B0B0B] text-white py-16 md:py-24 font-montserrat relative overflow-hidden">
-
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-      
-      <!-- CABEÇALHO MOBILE (Visível apenas em telas menores que LG) -->
-      <!-- Isso garante a ordem: Título -> Foto -> Texto no celular -->
-      <div class="block lg:hidden mb-12">
-          <div class="flex items-center gap-3 text-brand mb-3">
-            <i data-lucide="user" width="16" height="16"></i>
-            <span class="text-xs font-bold uppercase tracking-[0.2em]">SOBRE MIM</span>
-          </div>
-          <h2 class="text-4xl font-black uppercase tracking-tighter text-white leading-tight">
-            Minha <br/><span class="text-brand">Jornada</span>
-          </h2>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-        
-        <!-- COLUNA DA FOTO (Esquerda) -->
-        <div class="lg:col-span-5 flex flex-col items-center lg:items-start relative reveal">
-          
-          <!-- Moldura Futurista da Foto -->
-          <div class="relative w-72 h-[380px] md:w-full md:max-w-md md:h-[560px] group">
-            
-            <!-- Elementos Decorativos de Fundo (Ainda reagem ao hover da moldura, o que é legal) -->
-            <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand/50 rounded-tl-xl transition-all group-hover:-top-5 group-hover:-left-5"></div>
-            <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-brand/50 rounded-br-xl transition-all group-hover:-bottom-5 group-hover:-right-5"></div>
-            
-            <!-- Container da Imagem (Efeitos de hover removidos) -->
-            <div id="about-photo" class="w-full h-full bg-[#0a0a0a] rounded-lg overflow-hidden border border-white/10 relative z-10">
-              <!-- Nova URL da foto -->
-              <img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png" 
-                   alt="Marco Vinicius" 
-                   class="w-full h-full object-cover object-top" loading="lazy" decoding="async">
-              
-              <!-- Badge Flutuante -->
-              <div class="absolute bottom-6 left-6">
-                 <div class="bg-brand text-black px-3 py-1 text-[10px] font-black uppercase tracking-widest inline-block mb-1">
-                   Product Designer
-                 </div>
-                 <p class="block w-fit bg-black/85 backdrop-blur-sm text-white text-xs font-mono px-3 py-1">Rio de Janeiro, BR</p>
-              </div>
-
-              <!-- Ficha: uma linha lima varre a foto e as etiquetas surgem quando ela passa -->
-              <div class="about-hud" aria-hidden="true">
-                <span class="about-hud__wash"></span>
-                <span class="about-hud__scan"></span>
-                <span class="about-hud__lab about-hud__lab--r" style="--y:38%;--at:.38"><small>Nível</small><span>Sênior</span></span>
-                <span class="about-hud__lab about-hud__lab--l" style="--y:52%;--at:.52"><small>Status</small><span>Disponível</span></span>
-                <span class="about-hud__lab about-hud__lab--r" style="--y:66%;--at:.66"><small>Foco</small><span>AI FIRST - UX/UI DESIGN</span></span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Estatística de Experiência -->
-          <div class="mt-8 flex items-center gap-5 pl-2">
-             <span class="text-6xl md:text-7xl font-black text-brand leading-none tracking-tighter">+7</span>
-             <div class="h-10 w-[1px] bg-white/20"></div> 
-             <div class="flex flex-col justify-center">
-                <span class="text-white font-bold text-lg uppercase tracking-wide leading-none mb-1">Anos de</span>
-                <span class="text-muted text-xs uppercase font-bold tracking-[0.2em] leading-none">Experiência</span>
-             </div>
-          </div>
-
-        </div>
-
-        <!-- COLUNA DE TEXTO (Direita) -->
-        <div class="lg:col-span-7 space-y-10 pt-4 reveal" style="--d:1">
-          
-          <!-- CABEÇALHO DESKTOP (Visível apenas em telas LG ou maiores) -->
-          <div class="hidden lg:block">
-            <div class="flex items-center gap-3 text-brand mb-3">
-              <i data-lucide="user" width="16" height="16"></i>
-              <span class="text-xs font-bold uppercase tracking-[0.2em]">SOBRE MIM</span>
-            </div>
-            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-tight">
-              Minha <br/><span class="text-brand">Jornada</span>
-            </h2>
-          </div>
-
-                    <!-- Texto Corrido -->
-          <div class="text-gray-400 text-base md:text-lg leading-relaxed space-y-6 font-medium border-l border-white/10 pl-6 md:pl-8">
-            <p>
-              Minha jornada começou na Computação (IFRJ), unindo o desenvolvimento front-end com <strong class="text-white">React</strong> ao design de interfaces no <strong class="text-white">Figma</strong>. Consolidei minha carreira em empresas como <span class="text-white border-b border-white/20">Nelogica</span>, <span class="text-white border-b border-white/20">Cypher (Financial AI)</span> e <span class="text-white border-b border-white/20">MAG Seguros</span>, desenvolvendo uma base sólida em pesquisa com usuários (Discovery), processos ágeis (Double Diamond) e validação de hipóteses orientadas a dados.
-            </p>
-            
-            <p>
-              Atualmente, sou <strong class="text-brand">Product Designer Sênior na Stefanini</strong>. Atuei no <span class="text-white border-b border-white/20">Banco do Brasil</span> liderando descobertas e desenhando painéis analíticos complexos (DataViz) para lideranças. Hoje, lidero o design de ponta a ponta na <strong class="text-white">OceanPact</strong>, traduzindo objetivos estratégicos de negócio em jornadas digitais intuitivas e de alto impacto técnico.
-            </p>
-          </div>
-
-          <!-- Ações / Botões -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-4 w-full max-w-xs sm:max-w-none">
-            <a href="https://marcodsvinicius.com/wp-content/uploads/2026/05/PD-MARCO-VINICIUS-1.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black border border-white/20 hover:border-brand hover:text-brand text-white bg-white/[0.02] backdrop-blur-sm transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2">
-              <i data-lucide="download" class="w-4 h-4"></i>
-              Currículo
-            </a>
-            <a href="#contact" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2 text-center">
-              <i data-lucide="message-circle" class="w-4 h-4" aria-hidden="true"></i>
-              Falar comigo
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
   <!-- SEÇÃO RECOMENDAÇÕES (textos das recomendações do LinkedIn) -->
-  <section id="recommendations" class="py-24 px-6 md:px-12 border-t border-white/5 relative z-10" aria-labelledby="recs-title">
-    <div class="max-w-7xl mx-auto">
-
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 reveal">
-        <div class="space-y-4">
-          <div class="flex items-center gap-3 text-brand">
-            <i data-lucide="quote" class="w-4 h-4" aria-hidden="true"></i>
-            <span class="font-montserrat text-xs font-bold uppercase tracking-[0.2em]">Recomendações no LinkedIn</span>
-          </div>
-          <h2 id="recs-title" class="font-montserrat text-4xl md:text-6xl font-black leading-none uppercase tracking-tighter">
-            O que dizem <br/>
-            <span class="text-brand">sobre mim</span>
-          </h2>
-        </div>
-        <a href="https://www.linkedin.com/in/marcodsvinicius/details/recommendations/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto shrink-0 font-montserrat text-xs uppercase tracking-widest font-black border border-white/20 hover:border-brand hover:text-brand text-white bg-white/[0.02] backdrop-blur-sm transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2">
-          Ver as 12 no LinkedIn
-          <i data-lucide="arrow-up-right" class="w-4 h-4" aria-hidden="true"></i>
-        </a>
-      </div>
-
-      <div class="recs reveal" data-recs>
-        <div class="recs__stage">
-          <figure class="rec is-active" id="rec-1">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>Eu tive o prazer de trabalhar com Marco como colega de equipe de UX e posso dizer com confiança que ele é <mark>um dos profissionais mais proativos e esforçados que já conheci</mark>. É um excelente comunicador, tanto com os membros da equipe como com os stakeholders, capaz de articular claramente suas ideias e defender suas decisões de design de maneira persuasiva. Se dedica a fazer um trabalho excelente e está sempre buscando maneiras de melhorar sua técnica e habilidades.</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">BC</span>
-              <span class="rec__meta"><strong>Bruno Caregnatto</strong><span>Product Designer @Sicredi</span><span class="rec__rel">Líder direto · Abr 2023</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-2">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>O Marco é um profissional fantástico com quem tive oportunidade de trabalhar de modo colaborativo em alguns projetos na Nelogica. Sempre aberto a novas ideias, ele é uma pessoa de <mark>senso estético refinado, pensamento crítico e um grande conhecimento sobre Design Systems</mark>.</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">DL</span>
-              <span class="rec__meta"><strong>Danyllo Lisboa</strong><span>Senior UX/UI Designer</span><span class="rec__rel">Equipes diferentes · Abr 2023</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-3">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>O Marco é um UX incrível, sempre disposto a ajudar o time. Trabalhamos juntos na MAG Seguros. Ele é um ótimo comunicador, gosta de aprender e gosta de compartilhar conhecimentos. Sempre pró-ativo e disposto a ajudar. Com o tempo que trabalhei com ele vi suas habilidades com Figma que são incríveis e no Notion também. <mark>Ele contribuiu muito para nosso time de UX.</mark></p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">NF</span>
-              <span class="rec__meta"><strong>Nathasha Fariña</strong><span>UX/UI Designer</span><span class="rec__rel">Mesma equipe · Nov 2024</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-4">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>O Marco é um profissional incrível! <mark>Ele gosta de aprender e ensinar</mark>, e por isso domina diversos assuntos: design, programação, notion, etc. Tive a oportunidade de assistir diversas apresentações feitas por ele. Sempre que nós tínhamos uma weekly disponível, era ele quem assumia.</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">VC</span>
-              <span class="rec__meta"><strong>Valesca Cechin</strong><span>Senior UX Designer</span><span class="rec__rel">Mesma equipe · Abr 2023</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-5">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>Marco é um ótimo designer, muito proativo e sempre compartilhou seu conhecimento com o time! <mark>Sempre pude contar com ele</mark> e tenho certeza que ele vai trazer muita alegria e conhecimento para qualquer time que ele estiver.</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">MF</span>
-              <span class="rec__meta"><strong>Marley Farias</strong><span>UX Designer</span><span class="rec__rel">Mesma equipe · Abr 2023</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-6">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>Marco é um profissional incrivelmente talentoso que eu tive o prazer de trabalhar junto nos últimos anos. Durante esse período, eu fiquei impressionado com suas <mark>habilidades técnicas de interface e sua capacidade de trabalhar em equipe</mark>.</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">RM</span>
-              <span class="rec__meta"><strong>Renan Marques</strong><span>UX/UI Designer</span><span class="rec__rel">Mesma equipe · Abr 2023</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-7">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>Marco Vinicius possui uma vontade insaciável de aprender e ajudar. Possui uma competência enorme e está sempre disposto a crescer profissionalmente! Excelente profissional com um <mark>espírito de equipe inquestionável</mark>, indico de olhos fechados!</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">AG</span>
-              <span class="rec__meta"><strong>Ana Carolina Goulart</strong><span>Software Engineer @iFood</span><span class="rec__rel">Equipes diferentes · Abr 2021</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-8">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>Ótimo profissional, <mark>muito atento aos detalhes importantes e perfil colaborativo</mark>. Tem facilidade em aprender novas tecnologias e se aplica para melhor execução possível em projetos. De convívio muito agradável e qualidades pessoais admiráveis.</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">RP</span>
-              <span class="rec__meta"><strong>Raphael Matheus Pereira</strong><span>Infrastructure Analyst</span><span class="rec__rel">Mesma equipe · Ago 2021</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-9">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>Excelente profissional, com muita iniciativa, dedicado e com <mark>espírito de liderança</mark>.</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">IR</span>
-              <span class="rec__meta"><strong>Igor Rodrigues</strong><span>Full Stack Developer</span><span class="rec__rel">Mentor · Ago 2021</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-10">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>Estudei junto com Marco durante a graduação. Marco sempre foi <mark>proativo e com uma ótima comunicação</mark>, se destacando em trabalhos acadêmicos de forma a surpreender a todos com sua excelência. Recomendo este profissional!</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">DA</span>
-              <span class="rec__meta"><strong>Daniel Amaral</strong><span>Growth Marketing Specialist</span><span class="rec__rel">Colega de graduação · Fev 2021</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-11">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p>Marco é bem dinâmico e disciplinado, tendo um objetivo claro ele <mark>vai até o fim sempre buscando o melhor resultado possível</mark>.</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">JV</span>
-              <span class="rec__meta"><strong>João Viana</strong><span>Software Engineer</span><span class="rec__rel">Colega de estudos · Out 2021</span></span>
-            </figcaption>
-          </figure>
-          <figure class="rec" id="rec-12">
-            <svg class="rec__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.6 5C6.2 6.4 4 9.3 4 13.2V19h6.2v-6.2H7.4c.1-2.4 1.5-4.2 3.4-5.1L9.6 5Zm10 0c-3.4 1.4-5.6 4.3-5.6 8.2V19h6.2v-6.2h-2.8c.1-2.4 1.5-4.2 3.4-5.1L19.6 5Z"/></svg>
-            <blockquote class="rec__text"><p><mark>Responsável, dedicado</mark>, sempre a disposição!</p></blockquote>
-            <figcaption class="rec__who">
-              <span class="rec__ava" aria-hidden="true">BG</span>
-              <span class="rec__meta"><strong>Bianca Gomes</strong><span>Analista de Crédito</span><span class="rec__rel">Colega de estudos · Jul 2022</span></span>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="recs__nav">
-          <div class="recs__people" role="group" aria-label="Escolher recomendação">
-            <button type="button" class="recs__person" aria-controls="rec-1" aria-label="Recomendação de Bruno Caregnatto" aria-current="true"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">BC</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-2" aria-label="Recomendação de Danyllo Lisboa"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">DL</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-3" aria-label="Recomendação de Nathasha Fariña"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">NF</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-4" aria-label="Recomendação de Valesca Cechin"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">VC</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-5" aria-label="Recomendação de Marley Farias"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">MF</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-6" aria-label="Recomendação de Renan Marques"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">RM</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-7" aria-label="Recomendação de Ana Carolina Goulart"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">AG</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-8" aria-label="Recomendação de Raphael Matheus Pereira"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">RP</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-9" aria-label="Recomendação de Igor Rodrigues"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">IR</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-10" aria-label="Recomendação de Daniel Amaral"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">DA</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-11" aria-label="Recomendação de João Viana"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">JV</span></button>
-            <button type="button" class="recs__person" aria-controls="rec-12" aria-label="Recomendação de Bianca Gomes"><svg class="recs__ring" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="23.5" pathLength="100"/></svg><span aria-hidden="true">BG</span></button>
-          </div>
-          <div class="recs__ctrl">
-            <span class="recs__count" aria-hidden="true"><b>01</b> / 12</span>
-            <button type="button" class="recs__arrow" data-rec-prev aria-label="Recomendação anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-            <button type="button" class="recs__arrow" data-rec-next aria-label="Próxima recomendação"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
-          </div>
-        </div>
-      </div>
-
+  <section class="v2-section" id="recommendations">
+   <div class="v2-wrap">
+    <div class="v2-section-head">
+     <p class="v2-eyebrow">
+      Recomendações no LinkedIn
+     </p>
+     <h2 class="v2-title">
+      Como é trabalhar comigo
+     </h2>
+     <p class="v2-lead">
+      Trechos de recomendações de profissionais com quem trabalhei.
+     </p>
     </div>
+    <div class="v2-recommendations">
+     <figure class="v2-quote">
+      <span aria-hidden="true" class="v2-quote-mark">
+       “
+      </span>
+      <p class="v2-quote-topic">
+       Comunicação e defesa de decisões
+      </p>
+      <blockquote>
+       <p>
+        “É um excelente comunicador, tanto com os membros da equipe como com os stakeholders, capaz de articular claramente suas ideias e defender suas decisões de design de maneira persuasiva.”
+       </p>
+      </blockquote>
+      <figcaption>
+       <span aria-hidden="true" class="v2-quote-avatar">
+        BC
+       </span>
+       <div>
+        <strong>
+         Bruno Caregnatto
+        </strong>
+        <span>
+         Product Designer @Sicredi
+        </span>
+        <span>
+         Líder direto · Abr 2023
+        </span>
+       </div>
+      </figcaption>
+     </figure>
+     <figure class="v2-quote">
+      <span aria-hidden="true" class="v2-quote-mark">
+       “
+      </span>
+      <p class="v2-quote-topic">
+       Qualidade visual e visão sistêmica
+      </p>
+      <blockquote>
+       <p>
+        “Sempre aberto a novas ideias, ele é uma pessoa de senso estético refinado, pensamento crítico e um grande conhecimento sobre Design Systems.”
+       </p>
+      </blockquote>
+      <figcaption>
+       <span aria-hidden="true" class="v2-quote-avatar">
+        DL
+       </span>
+       <div>
+        <strong>
+         Danyllo Lisboa
+        </strong>
+        <span>
+         Senior UX/UI Designer
+        </span>
+        <span>
+         Equipes diferentes · Abr 2023
+        </span>
+       </div>
+      </figcaption>
+     </figure>
+     <figure class="v2-quote">
+      <span aria-hidden="true" class="v2-quote-mark">
+       “
+      </span>
+      <p class="v2-quote-topic">
+       Colaboração e aprendizado
+      </p>
+      <blockquote>
+       <p>
+        “Ele é um ótimo comunicador, gosta de aprender e gosta de compartilhar conhecimentos. Sempre pró-ativo e disposto a ajudar.”
+       </p>
+      </blockquote>
+      <figcaption>
+       <span aria-hidden="true" class="v2-quote-avatar">
+        NF
+       </span>
+       <div>
+        <strong>
+         Nathasha Fariña
+        </strong>
+        <span>
+         UX/UI Designer
+        </span>
+        <span>
+         Mesma equipe · Nov 2024
+        </span>
+       </div>
+      </figcaption>
+     </figure>
+    </div>
+    <a class="v2-inline" href="https://www.linkedin.com/in/marcodsvinicius/details/recommendations/" rel="noopener noreferrer" target="_blank">
+     Ver todas as recomendações
+     <span aria-hidden="true">
+      ↗︎
+     </span>
+    </a>
+   </div>
   </section>
-
-  <!-- SEÇÃO CONTATO -->
-  <section id="contact" class="py-24 px-6 md:px-12 relative z-10">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
-        <!-- Lado Esquerdo: Espiral Cyberpunk Morfando -->
-        <div id="contact-orb" class="flex justify-center relative reveal">
-          <!-- Brilho radial de fundo -->
-          <div class="absolute w-80 h-80 bg-lime/10 blur-[80px] rounded-full pointer-events-none"></div>
-          
-          <div id="contact-orb-shape" class="relative z-10 w-72 h-72 md:w-80 md:h-80">
-            <canvas id="contact-canvas" aria-hidden="true"></canvas>
-            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div class="w-16 h-16 rounded-full bg-ink/90 border border-brand/60 flex items-center justify-center shadow-[0_0_36px_rgba(204,255,0,0.35)]">
-                <i data-lucide="mail" class="w-6 h-6 text-lime"></i>
-              </div>
-            </div>
-          </div>
+  <section class="v2-section" id="about">
+   <div class="v2-wrap">
+    <div class="v2-section-head">
+     <p class="v2-eyebrow">
+      Sobre mim
+     </p>
+     <h2 class="v2-title">
+      Design e tecnologia na mesma trajetória
+     </h2>
+    </div>
+    <div class="v2-about">
+     <div>
+      <div class="v2-portrait">
+       <div class="w-full h-full bg-[#0a0a0a] rounded-lg overflow-hidden border border-white/10 relative z-10" id="about-photo">
+        <!-- Nova URL da foto -->
+        <img alt="Marco Vinicius" class="w-full h-full object-cover object-top" decoding="async" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png"/>
+        <!-- Badge Flutuante -->
+        <div class="absolute bottom-6 left-6">
+         <div class="bg-brand text-black px-3 py-1 text-[10px] font-black uppercase tracking-widest inline-block mb-1">
+          Product Designer
+         </div>
+         <p class="block w-fit bg-black/85 backdrop-blur-sm text-white text-xs font-mono px-3 py-1">
+          Rio de Janeiro, BR
+         </p>
         </div>
+        <!-- Ficha: uma linha lima varre a foto e as etiquetas surgem quando ela passa -->
+        <div aria-hidden="true" class="about-hud">
+         <span class="about-hud__wash">
+         </span>
+         <span class="about-hud__scan">
+         </span>
+         <span class="about-hud__lab about-hud__lab--r" style="--y:38%;--at:.38">
+          <small>
+           Nível
+          </small>
+          <span>
+           Sênior
+          </span>
+         </span>
+         <span class="about-hud__lab about-hud__lab--l" style="--y:52%;--at:.52">
+          <small>
+           Status
+          </small>
+          <span>
+           Disponível
+          </span>
+         </span>
+         <span class="about-hud__lab about-hud__lab--r" style="--y:66%;--at:.66">
+          <small>
+           Foco
+          </small>
+          <span>
+           AI FIRST - UX/UI DESIGN
+          </span>
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="v2-about-copy">
+      <p>
+       Minha formação em Computação no IFRJ aproximou o desenvolvimento de interfaces do trabalho de design. Passei por empresas como Nelogica, Cypher e MAG Seguros, trabalhando com pesquisa, jornadas e interfaces de produtos digitais.
+      </p>
+      <p>
+       Hoje sou Product Designer Sênior na Stefanini, atuando na OceanPact. Minha experiência reúne discovery, painéis analíticos, Design Systems e colaboração com equipes de produto e engenharia.
+      </p>
+      <div class="v2-career" id="career-experience">
+       <h3 data-expanded-heading="Trajetória profissional" data-selected-heading="Experiências selecionadas" id="career-heading">
+        Trajetória profissional
+       </h3>
+       <p class="v2-career-order">
+        Da experiência mais recente à mais antiga, pela data de término. O vínculo atual aparece primeiro.
+       </p>
+       <div class="v2-career-list" id="career-history">
+        <article class="v2-career-item" id="exp-oceanpact">
+         <h4>
+          Product Design Sênior
+         </h4>
+         <p class="v2-career-meta">
+          OceanPact | Stefanini · Dez 2025 - até o momento
+         </p>
+         <p>
+          Liderança do design do Hub de Obras, uma plataforma em desenvolvimento. Orientação de designers e colaboração com produto e equipes usuárias.
+         </p>
+        </article>
+        <article class="v2-career-item" id="exp-banco-do-brasil">
+         <h4>
+          UX/UI Designer Pleno
+         </h4>
+         <p class="v2-career-meta">
+          Banco do Brasil | Stefanini · Nov 2024 - Nov 2025 (1 ano e 1 mês)
+         </p>
+         <p>
+          Facilitação de discovery, alinhamento com squads e desenho de interfaces para painéis analíticos em Power BI.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-gameon">
+         <h4>
+          UX/UI Designer Pleno
+         </h4>
+         <p class="v2-career-meta">
+          GameOn (Freelancer) · Jun 2024 - Mar 2025 (10 meses)
+         </p>
+         <p>
+          Atuação estratégica no desenho e escopo técnico do MVP. Liderança em benchmarking de competidores diretos e estruturação metodológica do Double Diamond para consolidação ágil do produto.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-mag-seguros">
+         <h4>
+          UX/UI Designer Pleno
+         </h4>
+         <p class="v2-career-meta">
+          MAG Seguros · Ago 2024 - Nov 2024 (4 meses)
+         </p>
+         <p>
+          Condução de pesquisas profundas com usuários e testes de usabilidade regulares. Coordenação de design de ponta a ponta no produto, aliando análises qualitativas/quantitativas e projeções precisas para fluxos de checkout e conversão.
+         </p>
+        </article>
+        <article class="v2-career-item" id="exp-cypher">
+         <h4>
+          UX/UI Designer
+         </h4>
+         <p class="v2-career-meta">
+          Cypher Financial AI · Nov 2023 - Ago 2024 (10 meses)
+         </p>
+         <p>
+          Design de interfaces para produtos financeiros, análises heurísticas e gestão de melhorias do produto.
+         </p>
+        </article>
+        <article class="v2-career-item" id="exp-nelogica">
+         <h4>
+          UX/UI Designer
+         </h4>
+         <p class="v2-career-meta">
+          Nelogica · Out 2021 - Abr 2023 (1 ano e 7 meses)
+         </p>
+         <p>
+          Design de soluções para o mercado financeiro e estruturação de componentes, tokens e documentação para um produto de criptoativos.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-freelance">
+         <h4>
+          UI Designer e Desenvolvedor Front End
+         </h4>
+         <p class="v2-career-meta">
+          Freelance · Fev 2020 - Jan 2022 (2 anos)
+         </p>
+         <p>
+          Atuação autônoma no desenvolvimento ponta a ponta de produtos digitais, unindo design e programação. Criação de interfaces modernas no Figma, Elementor, Photoshop e Illustrator, com implementação técnica em WordPress, HTML5, CSS3, JavaScript e jQuery. Uso estratégico de Hotjar e Google Analytics para análise de dados e otimização de conversões.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-livrelab">
+         <h4>
+          Professor de Programação e Design
+         </h4>
+         <p class="v2-career-meta">
+          LivreLab · Mar 2020 - Set 2021 (1 ano e 7 meses)
+         </p>
+         <p>
+          Ministrei aulas de design, game design e programação para crianças e adolescentes. Também colaborei diretamente com o CEO na análise e desenvolvimento de anúncios estratégicos, na criação de peças publicitárias para todas as redes sociais da escola e no desenvolvimento e manutenção técnica da plataforma online de ensino dos alunos.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-darwinx">
+         <h4>
+          Desenvolvedor React
+         </h4>
+         <p class="v2-career-meta">
+          DarwinX · Mar 2021 - Jul 2021 (5 meses)
+         </p>
+         <p>
+          Atuação no desenvolvimento e componentização de interfaces responsivas utilizando React. Foco na criação de elementos de UI reutilizáveis, consumo de APIs RESTful e colaboração próxima com a equipe de design para assegurar a fidelidade visual e a melhor experiência de uso no produto.
+         </p>
+        </article>
+       </div>
+       <button aria-controls="career-history" aria-expanded="true" class="v2-action v2-career-toggle" data-career-toggle="" data-collapse-label="Mostrar apenas selecionadas" data-expand-label="Ver trajetória completa" hidden="" type="button">
+        Mostrar apenas selecionadas
+       </button>
+      </div>
 
-        <!-- Lado Direito: Texto de Contato e Ações -->
-        <div class="space-y-8 reveal" style="--d:1">
-          <div class="space-y-4">
-            <div class="flex items-center gap-3 text-brand">
-              <i data-lucide="mail" class="w-4 h-4"></i>
-              <span class="font-montserrat text-xs font-bold uppercase tracking-[0.25em]">CONECTAR</span>
-            </div>
-            <h2 class="font-montserrat text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
-              Contato
-            </h2>
-            <p class="text-gray-400 text-lg font-light leading-relaxed max-w-lg">
-              Estou à disposição para colaborar em projetos inovadores, desafios em squads de tecnologia ou consultorias especializadas. Sinta-se livre para me mandar uma mensagem!
+      <div class="v2-education">
+       <h3>
+        Formação e desenvolvimento
+       </h3>
+       <div class="v2-degrees">
+        <article class="v2-degree">
+         <div class="v2-degree-top">
+          <p class="v2-degree-type">Pós-graduação</p>
+          <i data-lucide="graduation-cap" aria-hidden="true"></i>
+         </div>
+         <h4>UX Design and Beyond</h4>
+         <p class="v2-degree-meta"><strong>PUCRS</strong><span>2025–2026</span></p>
+         <p class="v2-degree-status">Concluída</p>
+        </article>
+        <article class="v2-degree">
+         <div class="v2-degree-top">
+          <p class="v2-degree-type">Graduação</p>
+          <i data-lucide="graduation-cap" aria-hidden="true"></i>
+         </div>
+         <h4>Licenciatura em Computação</h4>
+         <p class="v2-degree-meta"><strong>IFRJ</strong><span>2019–2023</span></p>
+        </article>
+       </div>
+       <details class="v2-details">
+        <summary>
+         Ver cursos e certificações
+        </summary>
+        <div class="v2-details-content">
+         <div>
+          <div class="space-y-6">
+           <!-- Certificados LinkedIn Learning (consolidado) -->
+           <div class="group">
+            <h4 class="font-montserrat text-base font-bold text-white leading-tight">
+             +8 certificações complementares em IA, Liderança e Comunicação
+            </h4>
+            <p class="text-xs text-gray-400 mb-1 font-light">
+             LinkedIn Learning - Concluídas entre Abr 2025 e Out 2025
             </p>
-            <div id="contact-status" class="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-gray-400 pt-2">
-              <span class="inline-flex items-center gap-2.5"><span class="status-dot" aria-hidden="true"></span>Disponível para novos projetos</span>
-              <span class="inline-flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-brand" aria-hidden="true"></i>Brasil, Rio de Janeiro - <time id="local-time" data-tz="America/Sao_Paulo">--:--</time> <span id="local-utc">(UTC-3)</span></span>
-            </div>
+            <a class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline" href="https://www.linkedin.com/in/marcodsvinicius/details/certifications/" rel="noopener noreferrer" target="_blank">
+             Ver todas no LinkedIn
+             <i class="w-3 h-3" data-lucide="arrow-up-right">
+             </i>
+            </a>
+           </div>
+           <!-- Outros Cursos 1 -->
+           <div class="group">
+            <h4 class="font-montserrat text-base font-bold text-white leading-tight">
+             Noloco Certified Expert Level 1
+            </h4>
+            <p class="text-xs text-gray-400 mb-1 font-light">
+             Noloco Academy - Concluído em Jul 2024
+            </p>
+            <a class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline" href="https://drive.google.com/file/d/18WcEvl-_Lu7ggNznbmskLrYRdSlcSkCS/view" rel="noopener noreferrer" target="_blank">
+             Visualizar Certificado
+             <i class="w-3 h-3" data-lucide="arrow-up-right">
+             </i>
+            </a>
+           </div>
+           <!-- Outros Cursos 2 -->
+           <div class="group">
+            <h4 class="font-montserrat text-base font-bold text-white leading-tight">
+             Planejamento e Gestão Ágil
+            </h4>
+            <p class="text-xs text-gray-400 mb-1 font-light">
+             Meluca - Concluído em Jun 2023
+            </p>
+            <a class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline" href="https://drive.google.com/file/d/1Epo86NFN1V41I2tycKxUqnKvghbr8GvV/view?usp=sharing" rel="noopener noreferrer" target="_blank">
+             Visualizar Certificado
+             <i class="w-3 h-3" data-lucide="arrow-up-right">
+             </i>
+            </a>
+           </div>
+           <!-- Outros Cursos 3 -->
+           <div class="group">
+            <h4 class="font-montserrat text-base font-bold text-white leading-tight">
+             Design System Specialist
+            </h4>
+            <p class="text-xs text-gray-400 mb-1 font-light">
+             Meluca - Concluído em Mai 2022
+            </p>
+            <a class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline" href="https://drive.google.com/file/d/1iIlmmC0EI38z0ndcEpOZ6e1Mq4CR08c_/view?usp=sharing" rel="noopener noreferrer" target="_blank">
+             Visualizar Certificado
+             <i class="w-3 h-3" data-lucide="arrow-up-right">
+             </i>
+            </a>
+           </div>
+           <!-- Outros Cursos 4 -->
+           <div class="group">
+            <h4 class="font-montserrat text-base font-bold text-white leading-tight">
+             Figma Avançado
+            </h4>
+            <p class="text-xs text-gray-400 mb-1 font-light">
+             Alura - Concluído em Jun 2022
+            </p>
+           </div>
+           <!-- Outros Cursos 5 -->
+           <div class="group">
+            <h4 class="font-montserrat text-base font-bold text-white leading-tight">
+             UX/UI Design
+            </h4>
+            <p class="text-xs text-gray-400 mb-1 font-light">
+             USP - Concluído em Abr 2021
+            </p>
+            <a class="font-montserrat text-[10px] uppercase font-bold text-gray-400 flex items-center gap-1 hover:text-white hover:underline" href="https://www.coursera.org/account/accomplishments/certificate/5FSP7ATE9R59" rel="noopener noreferrer" target="_blank">
+             Visualizar Certificado
+             <i class="w-3 h-3" data-lucide="arrow-up-right">
+             </i>
+            </a>
+           </div>
           </div>
-
-          <div class="flex flex-col sm:flex-row gap-4 w-full max-w-xs sm:max-w-none">
-            <a href="https://marcodsvinicius.com/wp-content/uploads/2026/05/PD-MARCO-VINICIUS-1.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black border border-white/20 hover:border-brand hover:text-brand text-white bg-white/[0.02] backdrop-blur-sm transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2">
-              <i data-lucide="download" class="w-4 h-4"></i>
-              Currículo
-            </a>
-            <a href="mailto:contato@marcodsvinicius.com" class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2 text-center">
-              <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i>
-              Enviar e-mail
-            </a>
-          </div>
-
-          <button type="button" class="copy-email" data-email="contato@marcodsvinicius.com" data-copied="Copiado!" aria-label="Copiar e-mail" aria-live="polite">
-            <span class="copy-email__text">contato@marcodsvinicius.com</span>
-            <span class="copy-email__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></span>
-          </button>
-
-          <!-- Links Sociais de Contato -->
-          <div class="flex justify-center sm:justify-start items-center gap-8 sm:gap-5 border-t border-transparent sm:border-white/5 pt-2 sm:pt-8 w-full max-w-xs sm:max-w-sm">
-            <a href="https://www.linkedin.com/in/marcodsvinicius/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="LinkedIn">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
-            <div class="hidden sm:block w-px h-4 bg-white/10"></div>
-            <a href="https://medium.com/@marcodsvinicius" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="Medium">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12a6.8 6.8 0 01-3.46 5.86 6.8 6.8 0 010-11.72A6.8 6.8 0 0120.96 12zM24 12a6.8 6.8 0 01-1.3 2.91 6.8 6.8 0 010-5.82A6.8 6.8 0 0124 12z"/>
-              </svg>
-            </a>
-            <div class="hidden sm:block w-px h-4 bg-white/10"></div>
-            <a href="https://github.com/marcodsvinicius?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" aria-label="GitHub">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </a>
-          </div>
+         </div>
         </div>
-
+       </details>
       </div>
+     </div>
     </div>
+   </div>
   </section>
-
+  <!-- SEÇÃO CONTATO -->
+  <section class="py-24 px-6 md:px-12 relative z-10" id="contact">
+   <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center contact-layout">
+     <!-- Canvas colaborativo: início de um projeto juntos -->
+     <figure aria-label="Canvas colaborativo: um desafio se transforma em uma interface, com os cursores de Você e Marco trabalhando juntos." class="collab-illustration" role="img">
+ <div aria-hidden="true" class="collab-canvas">
+  <div class="collab-toolbar">
+   <div class="collab-dots">
+    <i>
+    </i>
+    <i>
+    </i>
+    <i>
+    </i>
+   </div>
+   <span>
+    Um novo projeto
+   </span>
+  </div>
+  <div class="collab-workspace">
+   <div class="collab-note">
+    <strong>
+     Seu desafio
+    </strong>
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <div class="collab-selection">
+    <span class="collab-selection-label">
+     Próximo passo
+    </span>
+    <i class="collab-handle">
+    </i>
+    <i class="collab-handle">
+    </i>
+    <i class="collab-handle">
+    </i>
+    <i class="collab-handle">
+    </i>
+    <div class="collab-mini-ui">
+     <div class="collab-mini-header">
+      <span>
+      </span>
+      <i>
+      </i>
+     </div>
+     <div class="collab-mini-body">
+      <div class="collab-mini-nav">
+       <span>
+       </span>
+       <span>
+       </span>
+       <span>
+       </span>
+      </div>
+      <div class="collab-mini-content">
+       <span>
+       </span>
+       <span>
+       </span>
+       <span>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="collab-cursor collab-cursor--you">
+    <svg fill="currentColor" viewbox="0 0 20 25">
+     <path d="M2 1 18 15 10 16 7 23Z" stroke="#070907" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+    </svg>
+    <span>
+     Você
+    </span>
+   </div>
+   <div class="collab-cursor collab-cursor--marco">
+    <svg fill="currentColor" viewbox="0 0 20 25">
+     <path d="M2 1 18 15 10 16 7 23Z" stroke="#070907" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+    </svg>
+    <span>
+     Marco
+    </span>
+   </div>
+  </div>
+ </div>
+ <figcaption class="collab-caption">
+  Você traz o desafio.
+  <br/>
+  <span>
+   Vamos desenhar o próximo passo.
+  </span>
+ </figcaption>
+</figure>
+     <!-- Lado Direito: Texto de Contato e Ações -->
+     <div class="space-y-8 reveal" style="--d:1">
+      <div class="space-y-4">
+       <div class="flex items-center gap-3 text-brand">
+        <i class="w-4 h-4" data-lucide="mail">
+        </i>
+        <span class="font-montserrat text-xs font-bold uppercase tracking-[0.25em]">
+         CONECTAR
+        </span>
+       </div>
+       <h2 class="font-montserrat text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
+        Contato
+       </h2>
+       <p class="text-gray-400 text-lg font-light leading-relaxed max-w-lg">
+        Vamos conversar sobre o seu próximo produto, aplicativo ou desafio de design. Estou disponível para projetos, oportunidades em equipes de produto e consultorias.
+       </p>
+       <div class="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-gray-400 pt-2" id="contact-status">
+        <span class="inline-flex items-center gap-2.5">
+         <span aria-hidden="true" class="status-dot">
+         </span>
+         Disponível para novos projetos
+        </span>
+        <span class="inline-flex items-center gap-2">
+         <i aria-hidden="true" class="w-3.5 h-3.5 text-brand" data-lucide="clock">
+         </i>
+         Brasil, Rio de Janeiro -
+         <time data-tz="America/Sao_Paulo" id="local-time">
+          --:--
+         </time>
+         <span id="local-utc">
+          (UTC-3)
+         </span>
+        </span>
+       </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 w-full max-w-xs sm:max-w-none">
+       <a class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black border border-white/20 hover:border-brand hover:text-brand text-white bg-white/[0.02] backdrop-blur-sm transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/PD-MARCO-VINICIUS-1.pdf" rel="noopener noreferrer" target="_blank">
+        <i class="w-4 h-4" data-lucide="download">
+        </i>
+        Currículo
+       </a>
+       <a class="w-full sm:w-auto font-montserrat text-xs uppercase tracking-widest font-black bg-brand text-black hover:bg-white transition-colors px-8 py-4 rounded-sm flex items-center justify-center gap-2 text-center" href="mailto:contato@marcodsvinicius.com">
+        <i aria-hidden="true" class="w-4 h-4" data-lucide="mail">
+        </i>
+        Enviar e-mail
+       </a>
+      </div>
+      <button aria-label="Copiar e-mail" aria-live="polite" class="copy-email" data-copied="Copiado!" data-email="contato@marcodsvinicius.com" type="button">
+       <span class="copy-email__text">
+        contato@marcodsvinicius.com
+       </span>
+       <span aria-hidden="true" class="copy-email__icon">
+        <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16">
+         <rect height="14" rx="2" ry="2" width="14" x="8" y="8">
+         </rect>
+         <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
+         </path>
+        </svg>
+       </span>
+      </button>
+      <!-- Links Sociais de Contato -->
+      <div class="flex justify-center sm:justify-start items-center gap-8 sm:gap-5 border-t border-transparent sm:border-white/5 pt-2 sm:pt-8 w-full max-w-xs sm:max-w-sm">
+       <a aria-label="LinkedIn" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" href="https://www.linkedin.com/in/marcodsvinicius/" rel="noopener noreferrer" target="_blank">
+        <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+         </path>
+        </svg>
+       </a>
+       <div class="hidden sm:block w-px h-4 bg-white/10">
+       </div>
+       <a aria-label="Medium" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" href="https://medium.com/@marcodsvinicius" rel="noopener noreferrer" target="_blank">
+        <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12a6.8 6.8 0 01-3.46 5.86 6.8 6.8 0 010-11.72A6.8 6.8 0 0120.96 12zM24 12a6.8 6.8 0 01-1.3 2.91 6.8 6.8 0 010-5.82A6.8 6.8 0 0124 12z">
+         </path>
+        </svg>
+       </a>
+       <div class="hidden sm:block w-px h-4 bg-white/10">
+       </div>
+       <a aria-label="GitHub" class="text-gray-400 hover:text-lime hover:scale-110 active:scale-95 transition-all duration-300" href="https://github.com/marcodsvinicius?tab=repositories" rel="noopener noreferrer" target="_blank">
+        <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+         </path>
+        </svg>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
   <!-- BARRA DE NAVEGAÇÃO FLUTUANTE REMOVIDA DA BASE (POSTA NO TOPO) -->
-
   <!-- RODAPÉ FINAL -->
   <footer class="w-full relative z-10 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto w-full border-t border-white/5">
-      <div class="py-8 flex justify-start items-center text-sm text-gray-400 font-mono">
-        <span>Design e Interação feitos por Marco Vinicius e código via Claude Code.</span>
-      </div>
+   <div class="max-w-7xl mx-auto w-full border-t border-white/5">
+    <div class="py-8 flex justify-start items-center text-sm text-gray-400 font-mono">
+     <span>
+      Design e Interação feitos por Marco Vinicius e código via Claude Code.
+     </span>
     </div>
+   </div>
   </footer>
-
   <!-- Resumo em 30 segundos: abre pelo botão do cabeçalho ou pela tecla R -->
-  <div id="summary-backdrop" class="summary-backdrop" hidden></div>
-  <div id="summary-dialog" class="summary" role="dialog" aria-modal="true" aria-labelledby="summary-name" aria-describedby="summary-role" hidden>
-    <div class="summary__grip" aria-hidden="true"></div>
-    <div class="summary__body">
-      <div class="summary__who">
-        <span class="summary__ava" aria-hidden="true">MV.</span>
-        <div>
-          <h2 id="summary-name" class="summary__name" tabindex="-1">Marco Vinicius</h2>
-          <p id="summary-role" class="summary__role">Product Designer Sênior</p>
-        </div>
-        <button type="button" class="summary__close" data-summary-close aria-label="Fechar resumo">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-      </div>
-      <p class="hero-status summary__status">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>Disponível para novos projetos</span><span class="hero-status__place">· Rio de Janeiro, BR</span>
+  <div class="summary-backdrop" hidden="" id="summary-backdrop">
+  </div>
+  <div aria-describedby="summary-role" aria-labelledby="summary-name" aria-modal="true" class="summary" hidden="" id="summary-dialog" role="dialog">
+   <div aria-hidden="true" class="summary__grip">
+   </div>
+   <div class="summary__body">
+    <div class="summary__who">
+     <span aria-hidden="true" class="summary__ava">
+      MV.
+     </span>
+     <div>
+      <h2 class="summary__name" id="summary-name" tabindex="-1">
+       Marco Vinicius
+      </h2>
+      <p class="summary__role" id="summary-role">
+       Product Designer Sênior · AI First · UX/UI
       </p>
-      <dl class="summary__rows">
-        <div class="summary__row">
-          <dt>Trajetória</dt>
-          <dd>Design e front-end desde 2020. Hoje, Product Designer Sênior na Stefanini, liderando o design de ponta a ponta na OceanPact.</dd>
-        </div>
-        <div class="summary__row">
-          <dt>Onde atuei</dt>
-          <dd>OceanPact e Banco do Brasil (via Stefanini) · MAG Seguros · Cypher · Nelogica</dd>
-        </div>
-        <div class="summary__row">
-          <dt>Resultados dos cases</dt>
-          <dd>
-            <ul class="summary__res">
-              <li><a href="pt/Case-Tour-Guiado.html"><span>6 tutoriais longos viraram 13 trilhas curtas e focadas<small>Tour Guiado</small></span></a></li>
-              <li><a href="pt/Case-Rebalanceamento-Carteira.html"><span>Nova funcionalidade que freou a evasão de usuários para ferramentas externas<small>Rebalanceamento de Carteira</small></span></a></li>
-              <li><a href="pt/Case-Design-System.html"><span>Uma linguagem única de Design Tokens entre design e engenharia<small>Design System Nelogica</small></span></a></li>
-            </ul>
-          </dd>
-        </div>
-        <div class="summary__row">
-          <dt>Competências</dt>
-          <dd>Design System · Discovery · UX/UI Design · Prototipação · AI First · Visual Analytics · HTML, CSS e JavaScript</dd>
-        </div>
-      </dl>
-      <div class="summary__acts">
-        <a class="summary__act summary__act--lime" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/PD-MARCO-VINICIUS-1.pdf" target="_blank" rel="noopener noreferrer">
-          <i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i>Currículo
-        </a>
-        <button type="button" class="summary__act" data-copy-email data-email="contato@marcodsvinicius.com" data-copied="Copiado!" data-label="Copiar e-mail">
-          <span class="copy-email__icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></span><span class="copy-email__text" aria-live="polite">Copiar e-mail</span>
-        </button>
-        <a class="summary__act" href="https://www.linkedin.com/in/marcodsvinicius/" target="_blank" rel="noopener noreferrer">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn
-        </a>
-        <a class="summary__act" href="#projects" data-summary-cases>
-          <i data-lucide="layers" class="w-4 h-4" aria-hidden="true"></i>Ver cases
-        </a>
-      </div>
-      <p class="summary__mail">contato@marcodsvinicius.com</p>
+     </div>
+     <button aria-label="Fechar resumo" class="summary__close" data-summary-close="" type="button">
+      <svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24" width="16">
+       <path d="M18 6 6 18">
+       </path>
+       <path d="m6 6 12 12">
+       </path>
+      </svg>
+     </button>
     </div>
+    <p class="hero-status summary__status">
+     <span aria-hidden="true" class="status-dot">
+     </span>
+     <span>
+      Disponível para novos projetos
+     </span>
+     <span class="hero-status__place">
+      · Rio de Janeiro, BR
+     </span>
+    </p>
+    <dl class="summary__rows">
+     <div class="summary__row">
+      <dt>
+       Trajetória
+      </dt>
+      <dd>
+       Design e front-end desde 2020. Hoje, Product Designer Sênior na Stefanini, liderando o design de ponta a ponta na OceanPact.
+      </dd>
+     </div>
+     <div class="summary__row">
+      <dt>
+       Onde atuei
+      </dt>
+      <dd>
+       OceanPact e Banco do Brasil (via Stefanini) · MAG Seguros · Cypher · Nelogica
+      </dd>
+     </div>
+     <div class="summary__row">
+      <dt>
+       Entregas dos cases
+      </dt>
+      <dd>
+       <ul class="summary__res">
+        <li>
+         <a href="pt/Case-Tour-Guiado.html">
+          <span>
+           6 tutoriais reorganizados em 13 trilhas focadas
+           <small>
+            Tour Guiado
+           </small>
+          </span>
+         </a>
+        </li>
+        <li>
+         <a href="pt/Case-Rebalanceamento-Carteira.html">
+          <span>
+           Gestão de carteira integrada ao Home Broker
+           <small>
+            Rebalanceamento de Carteira
+           </small>
+          </span>
+         </a>
+        </li>
+        <li>
+         <a href="pt/Case-Design-System.html">
+          <span>
+           Componentes, tokens e documentação compartilhada
+           <small>
+            Design System Nelogica
+           </small>
+          </span>
+         </a>
+        </li>
+       </ul>
+      </dd>
+     </div>
+     <div class="summary__row">
+      <dt>
+       Competências
+      </dt>
+      <dd>
+       UX de produtos complexos · UI e Design Systems · Prototipação · AI First · Colaboração e liderança
+      </dd>
+     </div>
+    </dl>
+    <div class="summary__acts">
+     <a class="summary__act summary__act--lime" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/PD-MARCO-VINICIUS-1.pdf" rel="noopener noreferrer" target="_blank">
+      <i aria-hidden="true" class="w-4 h-4" data-lucide="download">
+      </i>
+      Currículo
+     </a>
+     <button class="summary__act" data-copied="Copiado!" data-copy-email="" data-email="contato@marcodsvinicius.com" data-label="Copiar e-mail" type="button">
+      <span aria-hidden="true" class="copy-email__icon">
+       <svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15">
+        <rect height="14" rx="2" ry="2" width="14" x="8" y="8">
+        </rect>
+        <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
+        </path>
+       </svg>
+      </span>
+      <span aria-live="polite" class="copy-email__text">
+       Copiar e-mail
+      </span>
+     </button>
+     <a class="summary__act" href="https://www.linkedin.com/in/marcodsvinicius/" rel="noopener noreferrer" target="_blank">
+      <svg aria-hidden="true" class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+       </path>
+      </svg>
+      LinkedIn
+     </a>
+     <a class="summary__act" data-summary-cases="" href="#projects">
+      <i aria-hidden="true" class="w-4 h-4" data-lucide="layers">
+      </i>
+      Ver cases
+     </a>
+    </div>
+    <p class="summary__mail">
+     contato@marcodsvinicius.com
+    </p>
+   </div>
   </div>
-
   <!-- Modal de Senha: Hub de Obras (Acesso Restrito) -->
-  <div id="hub-gate-modal" data-label-busy="Verificando..." data-label-ok="Acesso liberado" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="hub-gate-title">
-    <div class="hub-gate-card w-full max-w-md bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden scale-95 transition-transform duration-300">
-      <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand/10 blur-[80px] rounded-full pointer-events-none"></div>
-
-      <button type="button" id="hub-gate-close" aria-label="Fechar" class="absolute top-5 right-5 text-muted hover:text-white transition-colors z-10">
-        <i data-lucide="x" width="20" height="20"></i>
-      </button>
-
-      <div class="relative z-10">
-        <div class="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center text-brand mb-6">
-          <i data-lucide="lock" width="26" height="26"></i>
-        </div>
-
-        <span class="text-brand font-montserrat text-xs font-bold uppercase tracking-widest mb-2 block">Acesso restrito</span>
-        <h2 id="hub-gate-title" class="font-montserrat text-2xl font-black uppercase tracking-tight text-white mb-3 leading-tight">
-          Este produto ainda não foi lançado
-        </h2>
-        <p class="text-gray-400 text-sm leading-relaxed mb-8">
-          Somente pessoas autorizadas podem visualizar, digite a senha para acessar.
-        </p>
-
-        <form id="hub-gate-form" novalidate>
-          <label for="hub-gate-password" class="sr-only">Senha de acesso</label>
-          <div class="relative mb-2">
-            <input
-              type="password"
-              id="hub-gate-password"
-              name="password"
-              autocomplete="off"
-              spellcheck="false"
-              placeholder="Digite a senha de acesso"
-              class="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-5 pr-12 text-white placeholder:text-muted font-medium text-sm focus:outline-none focus:border-brand/50 focus:bg-white/[0.05] transition-colors"
-            >
-            <button type="button" id="hub-gate-toggle-visibility" aria-label="Mostrar senha" class="absolute right-4 top-1/2 -translate-y-1/2 text-muted hover:text-brand transition-colors">
-              <i data-lucide="eye" width="18" height="18"></i>
-            </button>
-          </div>
-
-          <p id="hub-gate-error" role="alert" class="text-red-400 text-xs font-medium mb-4 hidden items-center gap-2">
-            <i data-lucide="alert-circle" width="14" height="14"></i>
-            Senha incorreta. Confira e tente de novo.
-          </p>
-
-          <div class="flex flex-col sm:flex-row-reverse gap-3">
-            <button type="submit" id="hub-gate-submit" class="w-full sm:flex-1 bg-brand text-black font-montserrat font-bold uppercase tracking-widest text-xs py-4 rounded-sm hover:bg-white transition-colors flex items-center justify-center gap-2">
-              <i data-lucide="unlock" width="16" height="16"></i>
-              <span id="hub-gate-submit-label">Desbloquear Artigo</span>
-            </button>
-            <button type="button" id="hub-gate-cancel" class="w-full sm:w-auto px-6 py-4 border border-white/20 hover:border-white/40 text-white/70 hover:text-white font-montserrat font-bold uppercase tracking-widest text-xs rounded-sm transition-colors">
-              Cancelar
-            </button>
-          </div>
-        </form>
-
-        <a href="mailto:contato@marcodsvinicius.com?subject=Senha%20de%20acesso%20-%20Hub%20de%20Obras" class="mt-6 flex items-center justify-center gap-2 text-xs text-muted hover:text-brand transition-colors font-medium">
-          Ainda não tem a senha? Fale comigo
-          <i data-lucide="arrow-up-right" width="12" height="12"></i>
-        </a>
-      </div>
+  <div aria-labelledby="hub-gate-title" aria-modal="true" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 transition-opacity duration-300" data-label-busy="Verificando..." data-label-ok="Acesso liberado" id="hub-gate-modal" role="dialog">
+   <div class="hub-gate-card w-full max-w-md bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden scale-95 transition-transform duration-300">
+    <div class="absolute -top-24 -right-24 w-56 h-56 bg-brand/10 blur-[80px] rounded-full pointer-events-none">
     </div>
+    <button aria-label="Fechar" class="absolute top-5 right-5 text-muted hover:text-white transition-colors z-10" id="hub-gate-close" type="button">
+     <i data-lucide="x" height="20" width="20">
+     </i>
+    </button>
+    <div class="relative z-10">
+     <div class="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center text-brand mb-6">
+      <i data-lucide="lock" height="26" width="26">
+      </i>
+     </div>
+     <span class="text-brand font-montserrat text-xs font-bold uppercase tracking-widest mb-2 block">
+      Acesso restrito
+     </span>
+     <h2 class="font-montserrat text-2xl font-black uppercase tracking-tight text-white mb-3 leading-tight" id="hub-gate-title">
+      Produto em desenvolvimento
+     </h2>
+     <p class="text-gray-400 text-sm leading-relaxed mb-8">
+      Somente pessoas autorizadas podem visualizar, digite a senha para acessar.
+     </p>
+     <form id="hub-gate-form" novalidate="">
+      <label class="sr-only" for="hub-gate-password">
+       Senha de acesso
+      </label>
+      <div class="relative mb-2">
+       <input autocomplete="off" class="w-full bg-white/[0.03] border border-white/10 rounded-xl py-4 pl-5 pr-12 text-white placeholder:text-muted font-medium text-sm focus:outline-none focus:border-brand/50 focus:bg-white/[0.05] transition-colors" id="hub-gate-password" name="password" placeholder="Digite a senha de acesso" spellcheck="false" type="password"/>
+       <button aria-label="Mostrar senha" class="absolute right-4 top-1/2 -translate-y-1/2 text-muted hover:text-brand transition-colors" id="hub-gate-toggle-visibility" type="button">
+        <i data-lucide="eye" height="18" width="18">
+        </i>
+       </button>
+      </div>
+      <p class="text-red-400 text-xs font-medium mb-4 hidden items-center gap-2" id="hub-gate-error" role="alert">
+       <i data-lucide="alert-circle" height="14" width="14">
+       </i>
+       Senha incorreta. Confira e tente de novo.
+      </p>
+      <div class="flex flex-col sm:flex-row-reverse gap-3">
+       <button class="w-full sm:flex-1 bg-brand text-black font-montserrat font-bold uppercase tracking-widest text-xs py-4 rounded-sm hover:bg-white transition-colors flex items-center justify-center gap-2" id="hub-gate-submit" type="submit">
+        <i data-lucide="unlock" height="16" width="16">
+        </i>
+        <span id="hub-gate-submit-label">
+         Desbloquear case
+        </span>
+       </button>
+       <button class="w-full sm:w-auto px-6 py-4 border border-white/20 hover:border-white/40 text-white/70 hover:text-white font-montserrat font-bold uppercase tracking-widest text-xs rounded-sm transition-colors" id="hub-gate-cancel" type="button">
+        Cancelar
+       </button>
+      </div>
+     </form>
+     <a class="mt-6 flex items-center justify-center gap-2 text-xs text-muted hover:text-brand transition-colors font-medium" href="mailto:contato@marcodsvinicius.com?subject=Senha%20de%20acesso%20-%20Hub%20de%20Obras">
+      Ainda não tem a senha? Fale comigo
+      <i data-lucide="arrow-up-right" height="12" width="12">
+      </i>
+     </a>
+    </div>
+   </div>
   </div>
-
-
-
   <!-- Botão Flutuante Voltar ao Topo -->
-  <button id="back-to-top" type="button" class="back-to-top" aria-label="Voltar ao topo">
-    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+  <button aria-label="Voltar ao topo" class="back-to-top" id="back-to-top" type="button">
+   <svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="m18 15-6-6-6 6">
+    </path>
+   </svg>
   </button>
-
-
-</body>
+ </body>
 </html>

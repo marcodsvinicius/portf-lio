@@ -43,6 +43,15 @@ body.is-leaving { opacity: 0; }
 .font-montserrat { font-family: 'Montserrat', sans-serif; }
 .text-lime-glow { text-shadow: 0 0 20px rgba(204, 255, 0, 0.3); }
 
+/* Mesmo vidro escuro da logo e do botão de voltar ao topo. */
+#mobile-menu-drawer {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
 /* Gaveta de menu fica fora do fluxo enquanto fechada */
 #mobile-menu-drawer:not(.opacity-100) {
   opacity: 0 !important;

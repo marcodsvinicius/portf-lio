@@ -6,11 +6,11 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Guided Tour | Marco Vinicius</title>
-  <meta name="description" content="Reducing Cognitive Load and Optimizing User Onboarding.">
+  <meta name="description" content="Restructuring six tutorials into thirteen paths, revising content, navigation and hierarchy to guide learning in a trading platform.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://marcodsvinicius.com/en/Case-Tour-Guiado.html">
   <meta property="og:title" content="Guided Tour | Marco Vinicius">
-  <meta property="og:description" content="Reducing Cognitive Load and Optimizing User Onboarding.">
+  <meta property="og:description" content="Restructuring six tutorials into thirteen paths, revising content, navigation and hierarchy to guide learning in a trading platform.">
   <meta property="og:image" content="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png">
   <link rel="canonical" href="https://marcodsvinicius.com/en/Case-Tour-Guiado.html">
   <link rel="alternate" hreflang="en" href="https://marcodsvinicius.com/en/Case-Tour-Guiado.html">
@@ -22,8 +22,8 @@
 
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
-  <link rel="stylesheet" href="../assets/css/tailwind.css?v=2451c9cc">
-  <link rel="stylesheet" href="../assets/css/site.css?v=69ac4522">
+  <link rel="stylesheet" href="../assets/css/tailwind.css?v=9e40b031">
+  <link rel="stylesheet" href="../assets/css/site.css?v=00b05c8c">
   <script src="../assets/js/vendor/lucide.min.js?v=5029514f"></script>
   <script src="../assets/js/site.js?v=095c97e7" defer></script>
   <script src="../assets/js/case.js?v=0585718b" defer></script>
@@ -49,10 +49,11 @@
     z-index: -1;
   }
   </style>
+  <link rel="stylesheet" href="../assets/css/case-v2.css?v=0f737484">
 </head>
-<body class="font-montserrat">
-  <a href="#cenario" class="skip-link">Skip to content</a>
-<div class="min-h-screen relative overflow-x-hidden selection:bg-lime selection:text-black">
+<body class="font-montserrat case-v2">
+  <a href="#case-content" class="skip-link">Skip to content</a>
+<div class="case-shell min-h-screen relative selection:bg-lime selection:text-black">
 
   <!-- Menu e Logo Flutuantes (Widescreen Limiter) -->
   <div class="fixed top-0 left-0 right-0 z-50 pointer-events-none w-full px-6 md:px-12">
@@ -80,24 +81,19 @@
           <nav class="flex flex-col gap-3 pt-2">
             <a href="#cenario" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="cenario">
               <i data-lucide="compass" class="w-4 h-4"></i>
-              Scenario
-            </a>
+              The challenge</a>
             <a href="#estrategia" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="estrategia">
               <i data-lucide="target" class="w-4 h-4"></i>
-              Strategy
-            </a>
+              Design decisions</a>
             <a href="#solucao" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="solucao">
               <i data-lucide="layers" class="w-4 h-4"></i>
-              Solution
-            </a>
+              The solution</a>
             <a href="#valor-gerado" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="valor-gerado">
               <i data-lucide="trending-up" class="w-4 h-4"></i>
-              Impact
-            </a>
+              Deliverables and evidence</a>
             <a href="#aprendizados" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="aprendizados">
               <i data-lucide="award" class="w-4 h-4"></i>
-              Takeaways
-            </a>
+              Lessons learned</a>
             <a href="./#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider">
               <i data-lucide="mail" class="w-4 h-4"></i>
               Contact
@@ -143,363 +139,501 @@
   <div id="mobile-menu-backdrop" class="fixed inset-0 bg-transparent z-40 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none"></div>
 
   <!-- HERO SECTION -->
-  <header class="vt-case-card relative z-10 pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-hero-glow">
+  <header class="case-hero">
+ <div class="case-wrap">
+  <a class="case-back" href="./#projects">
+   <span aria-hidden="true">
+    ←
+   </span>
+   Back to projects
+  </a>
+  <p class="case-eyebrow">
+   Onboarding · UX/UI · UX Writing
+  </p>
+  <p class="case-name">
+   Guided Tour
+  </p>
+  <h1>
+   An onboarding experience built around short, focused journeys
+  </h1>
+  <p class="case-intro">
+   Restructuring six tutorials into thirteen paths, revising content, navigation and hierarchy to guide learning in a trading platform.
+  </p>
+  <figure class="case-cover">
+   <img width="1600" height="900" alt="Guided tour screen broken into short micro-learning steps" decoding="async" fetchpriority="high" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&amp;ssl=1"/>
+   <figcaption>
+    Content divided into short paths, each addressing a specific learning goal.
+   </figcaption>
+  </figure>
+ </div>
+</header>
 
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-6 animate-fade-in-up">
-        <a href="./" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-xs font-mono text-gray-400 hover:text-lime hover:border-lime transition-colors bg-black/50 backdrop-blur-md">
-          <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          Back to Projects
-        </a>
-      </div>
-      <h1 class="vt-case-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 animate-fade-in-up">
-        Guided Tour
-      </h1>
-      
-      <p class="text-lg md:text-xl text-gray-400 font-medium max-w-2xl mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
-        Reducing Cognitive Load and Optimizing User Onboarding.
-      </p>
-
-      <div class="flex flex-wrap items-center gap-2 mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Onboarding</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Cognitive Load</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">UX Writing</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Gamification</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">UI Design</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Heuristics</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mt-12 border-t border-white/10 pt-12">
-        <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Company</h3>
-          <p class="text-lg font-bold">Nelogica</p>
-        </div>
-        <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">My Role</h3>
-          <p class="text-lg font-bold">Product Designer (UX/UI)</p>
-        </div>
-        <div class="md:col-span-2">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Impact Summary</h3>
-          <p class="text-sm md:text-base font-medium text-gray-300 leading-relaxed border-l-2 border-lime/50 pl-4">
-            Increased new user engagement and reduced the learning curve through a complete restructuring of the Information Architecture: breaking down <strong class="text-lime">6 long and complex tutorials into 13 short, focused guided tours.</strong>
-          </p>
-        </div>
-      </div>
-    </div>
-  </header>
 
   <!-- CONTEÚDO DO CASE -->
-  <main class="relative z-10">
-    
-    <!-- 01. CENÁRIO -->
-    <section id="cenario" class="py-24 px-6 md:px-12 border-b border-white/5 bg-white/[0.02]">
-      <div class="max-w-4xl mx-auto grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <span class="text-lime font-mono text-sm font-bold mb-2 block">01 / SCENARIO</span>
-          <h2 class="text-3xl font-bold uppercase tracking-tight">Context and Challenge</h2>
-        </div>
-        <div class="md:col-span-8 space-y-6 text-gray-300 text-lg leading-relaxed">
-          <p>
-            Nelogica's Home Broker is an extremely powerful tool with dozens of native features (Order Ticket, Order List, Portfolio, etc.). However, power without usability generates frustration. When new users tried to learn how to use these tools through our "Guided Tour" system, they hit a wall of complexity.
-          </p>
-          <p>
-            I conducted an analysis of the current interface, and the diagnosis was clear: the tutorials had too many steps and massive blocks of text. Furthermore, the navigation required users to read information at the top of the screen and then look down at the footer to advance, creating a visual "ping-pong" effect.
-          </p>
-          <div class="bg-red-500/10 border border-red-500/20 p-6 rounded-lg">
-            <h4 class="text-red-400 font-bold uppercase text-xs tracking-widest mb-2">The Core Problem</h4>
-            <p class="text-white font-medium">The learning flow overloaded the user cognitively. A high cognitive load during Onboarding (first steps) is fatal to retention, as users feel incapable of using the platform and abandon it before even seeing its value. We needed to transform a painful learning process into something fluid, direct, and engaging.</p>
-          </div>
-        </div>
+  <main id="case-content" tabindex="-1">
+ <div class="case-wrap">
+  <details class="case-mobile-index">
+   <summary>
+    In this case
+   </summary>
+   <nav aria-label="In this case">
+    <a href="#resumo">
+     Project in one minute
+    </a>
+    <a href="#contexto">
+     Role and context
+    </a>
+    <a href="#cenario">
+     The challenge
+    </a>
+    <a href="#estrategia">
+     Design decisions
+    </a>
+    <a href="#solucao">
+     The solution
+    </a>
+    <a href="#valor-gerado">
+     Deliverables and evidence
+    </a>
+    <a href="#aprendizados">
+     Lessons learned
+    </a>
+   </nav>
+  </details>
+  <div class="case-layout">
+   <aside class="case-sidebar">
+    <p class="case-eyebrow">
+     In this case
+    </p>
+    <nav aria-label="In this case">
+     <a href="#resumo">
+      Project in one minute
+     </a>
+     <a href="#contexto">
+      Role and context
+     </a>
+     <a href="#cenario">
+      The challenge
+     </a>
+     <a href="#estrategia">
+      Design decisions
+     </a>
+     <a href="#solucao">
+      The solution
+     </a>
+     <a href="#valor-gerado">
+      Deliverables and evidence
+     </a>
+     <a href="#aprendizados">
+      Lessons learned
+     </a>
+    </nav>
+   </aside>
+   <div class="case-body">
+    <section aria-labelledby="heading-resumo" class="case-section" id="resumo">
+     <span class="case-eyebrow">
+      01
+     </span>
+     <h2 id="heading-resumo">
+      Project in one minute
+     </h2>
+     <dl class="case-summary">
+      <div>
+       <dt>
+        The problem
+       </dt>
+       <dd>
+        Lengthy tutorials, long text blocks and controls placed far from the content made reading and navigation harder.
+       </dd>
       </div>
-      
-      <!-- Visualization of the Old Process -->
-      <div class="max-w-4xl mx-auto mt-16">
-        <h4 class="text-xs font-bold text-muted uppercase tracking-widest mb-4">Before and after</h4>
-        <div class="ba-compare" role="group" aria-label="Comparison between the old process and the new experience">
-          <div class="ba-compare__frame">
-            <img class="ba-compare__after" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&amp;ssl=1" alt="Guided tour screen broken into short micro-learning steps" loading="lazy" decoding="async">
-            <div class="ba-compare__before-wrap"><img class="ba-compare__before" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-1.png?resize=768%2C432&amp;ssl=1" alt="Old Process 1" loading="lazy" decoding="async"></div>
-            <input type="range" class="ba-compare__range" min="0" max="100" value="50" step="0.5" aria-label="Comparison position">
-            <div class="ba-compare__handle" aria-hidden="true"><span class="ba-compare__grip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6"/><path d="m15 6 6 6-6 6"/></svg></span></div>
-            <span class="ba-compare__tag ba-compare__tag--before" aria-hidden="true">Before</span>
-            <span class="ba-compare__tag ba-compare__tag--after" aria-hidden="true">After</span>
-          </div>
-          <p class="ba-compare__hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>Drag the line to compare. On a keyboard, use the arrow keys.</p>
-          <div class="ba-compare__thumbs" role="group" aria-label="Show another old screen">
-            <button type="button" class="ba-compare__thumb is-active" data-src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-1.png?resize=768%2C432&amp;ssl=1" data-alt="Old Process 1" aria-label="Old Process 1"><img src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-1.png?resize=768%2C432&amp;ssl=1" alt="" loading="lazy"></button>
-            <button type="button" class="ba-compare__thumb" data-src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-2.png?resize=768%2C365&amp;ssl=1" data-alt="Old Process 2" aria-label="Old Process 2"><img src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-2.png?resize=768%2C365&amp;ssl=1" alt="" loading="lazy"></button>
-          </div>
-        </div>
+      <div>
+       <dt>
+        My contribution
+       </dt>
+       <dd>
+        UX/UI, Information Architecture, UX Writing
+       </dd>
       </div>
+      <div>
+       <dt>
+        The deliverable
+       </dt>
+       <dd>
+        Six tutorials reorganized into thirteen paths, with focused steps and new completion screens.
+       </dd>
+      </div>
+     </dl>
     </section>
-
-    <!-- 02. ESTRATÉGIA -->
-    <section id="estrategia" class="py-24 px-6 md:px-12 border-b border-white/5">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-12 mb-16">
-           <div class="w-full md:w-1/3">
-             <span class="text-lime font-mono text-sm font-bold mb-2 block">02 / STRATEGY</span>
-             <h2 class="text-3xl font-bold uppercase tracking-tight">My Role and Processes</h2>
-           </div>
-           <div class="w-full md:w-2/3 text-gray-300 text-lg leading-relaxed">
-             <ul class="list-none space-y-6">
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Usability Audit</strong>
-                   <span class="text-gray-400 text-base">I used the Double Diamond framework to structure the process. My first action was to dive into the current interface, mapping out reading friction, navigation issues, and heuristic flaws step by step.</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Onboarding Benchmarking</strong>
-                    <span class="text-gray-400 text-base">I looked at the market to analyze how top software handled user education. I validated that the gold standard consisted of: clear division of steps, a clean look, short texts (focused UX Writing), and tutorials with a maximum of 5 steps to avoid fatiguing the reader.</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Information Architecture (IA) Restructuring</strong>
-                   <span class="text-gray-400 text-base">The major challenge wasn't just visual, but content-related. I analyzed every line of text from the old system and restructured the journey. I divided the content into two clear mental categories: "First Steps" (the basics) and "Market Tools" (advanced).</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Agile Prototyping</strong>
-                   <span class="text-gray-400 text-base">Since the project's main constraint was the text layout and the slicing of steps, I chose to skip low-fidelity wireframes and design directly in high-fidelity, accelerating the testing and approval cycles.</span>
-                 </div>
-               </li>
-             </ul>
-           </div>
-        </div>
+    <section aria-labelledby="heading-contexto" class="case-section" id="contexto">
+     <span class="case-eyebrow">
+      02
+     </span>
+     <h2 id="heading-contexto">
+      Role and context
+     </h2>
+     <dl class="case-facts">
+      <div>
+       <dt>
+        Company
+       </dt>
+       <dd>
+        Nelogica
+       </dd>
       </div>
+      <div>
+       <dt>
+        Role
+       </dt>
+       <dd>
+        Product Designer · UX/UI
+       </dd>
+      </div>
+      <div>
+       <dt>
+        Collaboration
+       </dt>
+       <dd>
+        Development team, with weekly design deliveries.
+       </dd>
+      </div>
+      <div>
+       <dt>
+        Scope
+       </dt>
+       <dd>
+        Restructuring onboarding content and navigation for a trading platform.
+       </dd>
+      </div>
+     </dl>
     </section>
-
-    <!-- 03. SOLUÇÃO -->
-    <section id="solucao" class="py-24 px-6 md:px-12 bg-lime text-black">
-      <div class="max-w-6xl mx-auto">
-        
-        <!-- Título Mobile (Visível apenas em telas menores) -->
-        <div class="block md:hidden mb-8">
-          <span class="text-black/60 font-mono text-sm font-bold mb-2 block">03 / SOLUTION</span>
-          <h2 class="text-4xl font-black uppercase tracking-tight">The New Experience</h2>
+    <section aria-labelledby="heading-cenario" class="case-section" id="cenario">
+     <span class="case-eyebrow">
+      03
+     </span>
+     <h2 id="heading-cenario">
+      The challenge
+     </h2>
+     <div class="case-prose">
+      <p>
+       The trading platform includes tools such as order entry, order lists and portfolio tracking. Guided tours needed to introduce these capabilities without packing too much information into one sequence.
+      </p>
+      <p>
+       The interface review revealed too many steps and long text blocks. Instructions appeared at the top of the screen, while the next button sat at the bottom, requiring attention to shift between two areas.
+      </p>
+     </div>
+     <div class="case-comparison">
+      <h3>
+       Before and proposal
+      </h3>
+      <div aria-label="Comparison between the old process and the new experience" class="ba-compare" role="group">
+       <div class="ba-compare__frame">
+        <img width="1600" height="900" alt="Guided tour screen broken into short micro-learning steps" class="ba-compare__after" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&amp;ssl=1"/>
+        <div class="ba-compare__before-wrap">
+         <img alt="Old Process 1" class="ba-compare__before" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-1.png?resize=768%2C432&amp;ssl=1"/>
         </div>
-
-        <div class="flex flex-col-reverse items-stretch md:grid md:grid-cols-12 gap-12 lg:gap-16 md:items-center">
-          <div class="min-w-0 w-full md:col-span-5">
-            
-            <!-- Título Desktop (Visível apenas em telas médias e maiores) -->
-            <div class="hidden md:block">
-              <span class="text-black/60 font-mono text-sm font-bold mb-2 block">03 / SOLUTION</span>
-              <h2 class="text-5xl font-black uppercase tracking-tight mb-8">The New Experience</h2>
-            </div>
-            
-            <div class="relative w-full max-w-full overflow-hidden" id="solucao-carousel-container">
-              <!-- Carousel Track -->
-              <div class="flex transition-transform duration-500 ease-in-out" id="solucao-carousel-track">
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Micro-learning (Short Steps)</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">I broke down the 6 long and exhaustive tutorials we had into 13 new short and highly focused guided tours. The user now learns one thing at a time without feeling overwhelmed.</span>
-                </div>
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Intuitive and Clean Navigation</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">I redesigned the tour modals so that the explanatory text and action buttons were close together, eliminating visual strain and respecting Human-Computer Interaction (HCI) principles.</span>
-                </div>
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Gamification and Retention Triggers</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">I identified a golden opportunity at the end of each tour. I designed a "Celebration Screen" to reward users for finishing the learning module and, capitalizing on this peak in engagement, I inserted smart suggestions for them to start the next tour immediately.</span>
-                </div>
-                
-              </div>
-              
-              <!-- Navigation Controls -->
-              <div class="flex items-center gap-4 mt-8">
-                <button id="solucao-prev" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
-                  <i data-lucide="arrow-left" width="18"></i>
-                </button>
-                <div class="flex gap-2" id="solucao-dots">
-                  <div class="w-2 h-2 rounded-full bg-black"></div>
-                  <div class="w-2 h-2 rounded-full bg-black/20"></div>
-                  <div class="w-2 h-2 rounded-full bg-black/20"></div>
-                </div>
-                <button id="solucao-next" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
-                  <i data-lucide="arrow-right" width="18"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- MOCKUP VISUAL DA SOLUÇÃO (TELA GRANDE) -->
-          <div class="relative w-full md:col-span-7">
-             <div class="relative w-full bg-black/5 rounded-2xl shadow-2xl border border-black/10 overflow-hidden">
-                <img id="solucao-image" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&ssl=1" alt="Guided tour screen broken into short micro-learning steps" loading="lazy" class="w-full h-auto object-cover transition-all duration-300 zoomable-image cursor-pointer">
-                <div class="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white/80 pointer-events-none">
-                  <i data-lucide="maximize-2" width="16" height="16"></i>
-                </div>
-             </div>
-          </div>
+        <input aria-label="Comparison position" class="ba-compare__range" max="100" min="0" step="0.5" type="range" value="50"/>
+        <div aria-hidden="true" class="ba-compare__handle">
+         <span class="ba-compare__grip">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18">
+           <path d="m9 6-6 6 6 6">
+           </path>
+           <path d="m15 6 6 6-6 6">
+           </path>
+          </svg>
+         </span>
         </div>
+        <span aria-hidden="true" class="ba-compare__tag ba-compare__tag--before">
+         Before
+        </span>
+        <span aria-hidden="true" class="ba-compare__tag ba-compare__tag--after">
+         After
+        </span>
+       </div>
+       <p class="ba-compare__hint">
+        <svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14">
+         <path d="M8 3 4 7l4 4">
+         </path>
+         <path d="M4 7h16">
+         </path>
+         <path d="m16 21 4-4-4-4">
+         </path>
+         <path d="M20 17H4">
+         </path>
+        </svg>
+        Drag the line to compare. On a keyboard, use the arrow keys.
+       </p>
+       <div aria-label="Show another old screen" class="ba-compare__thumbs" role="group">
+        <button aria-label="Old Process 1" class="ba-compare__thumb is-active" data-alt="Old Process 1" data-src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-1.png?resize=768%2C432&amp;ssl=1" type="button">
+         <img alt="" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-1.png?resize=768%2C432&amp;ssl=1"/>
+        </button>
+        <button aria-label="Old Process 2" class="ba-compare__thumb" data-alt="Old Process 2" data-src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-2.png?resize=768%2C365&amp;ssl=1" type="button">
+         <img alt="" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour-2.png?resize=768%2C365&amp;ssl=1"/>
+        </button>
+       </div>
       </div>
+     </div>
     </section>
-
-    <!-- 04. VALOR GERADO -->
-    <section id="valor-gerado" class="py-24 px-6 md:px-12 border-b border-white/5 relative overflow-hidden">
-      <!-- Glow Background -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-lime/5 blur-[120px] rounded-full pointer-events-none"></div>
-      
-      <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-          <span class="text-lime font-mono text-sm font-bold mb-2 block">04 / VALUE GENERATED</span>
-          <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">Business Impact</h2>
+    <section aria-labelledby="heading-estrategia" class="case-section" id="estrategia">
+     <span class="case-eyebrow">
+      04
+     </span>
+     <h2 id="heading-estrategia">
+      Design decisions
+     </h2>
+     <div class="case-decisions">
+      <article class="case-decision">
+       <h3>
+        Organize learning around individual goals
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Why this decision
+         </dt>
+         <dd>
+          The previous flow grouped too much information into long tutorials.
+         </dd>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          
-          <!-- Card 1: Redução -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
-                <i data-lucide="trending-up" width="24"></i>
-              </div>
-              <div class="mb-4">
-                <h3 class="text-xl md:text-2xl font-black uppercase leading-tight tracking-tight text-white group-hover:text-lime transition-colors">
-                  Learning<br/>Curve
-                </h3>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed pt-6 border-t border-white/5 mt-4">
-              By making it easier to understand complex tools (like the Order Ticket and Order List), we ensured that new users could extract value from the Home Broker <strong class="text-white">much faster</strong>.
-            </p>
-          </div>
-
-          <!-- Card 2: Engajamento -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
-                <i data-lucide="activity" width="24"></i>
-              </div>
-              <div class="mb-4">
-                <h3 class="text-xl md:text-2xl font-black uppercase leading-tight tracking-tight text-white group-hover:text-lime transition-colors">
-                  Increased<br/>Engagement
-                </h3>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed pt-6 border-t border-white/5 mt-4">
-              The use of gamification and the division into short steps (micro-learning) reduced abandonment in the tutorials, keeping the user <strong class="text-white">immersed in the product</strong> longer.
-            </p>
-          </div>
-
+        <div>
+         <dt>
+          How I applied it
+         </dt>
+         <dd>
+          I organized the content into “Getting Started” and “Market Tools”, restructuring six tutorials into thirteen focused paths.
+         </dd>
         </div>
-      </div>
+       </dl>
+      </article>
+      <article class="case-decision">
+       <h3>
+        Bring instructions and controls together
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Why this decision
+         </dt>
+         <dd>
+          Explanatory text and the next action occupied distant areas of the screen.
+         </dd>
+        </div>
+        <div>
+         <dt>
+          How I applied it
+         </dt>
+         <dd>
+          I redesigned the modals to place instructions near the controls and revised the copy to make each step more direct.
+         </dd>
+        </div>
+       </dl>
+      </article>
+      <article class="case-decision">
+       <h3>
+        Work directly in high fidelity
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Why this decision
+         </dt>
+         <dd>
+          The main scope concerned text layout and the division of steps.
+         </dd>
+        </div>
+        <div>
+         <dt>
+          How I applied it
+         </dt>
+         <dd>
+          Based on the audit and benchmarking, I worked directly in high fidelity to discuss content and interface adjustments.
+         </dd>
+        </div>
+       </dl>
+      </article>
+     </div>
     </section>
-
-    <!-- 05. APRENDIZADOS -->
-    <section id="aprendizados" class="py-24 px-6 md:px-12 border-b border-white/5 bg-white/[0.02]">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-12">
-           <div class="w-full md:w-1/3">
-             <span class="text-lime font-mono text-sm font-bold mb-2 block">05 / TAKEAWAYS</span>
-             <h2 class="text-3xl font-bold uppercase tracking-tight">Project Lessons</h2>
-           </div>
-           <div class="w-full md:w-2/3 space-y-6">
-             <!-- Card 1 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">01 / </span>COGNITIVE LOAD REDUCTION
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 The best feature is useless if the user doesn't know how to use it. Simplifying and focusing on reducing cognitive load is key to retaining customers.
-               </p>
-             </div>
-
-             <!-- Card 2 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">02 / </span>MICRO-LEARNING AND SHORT FLOWS
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 Replacing long tutorials with small blocks focused on a single action prevents abandonment and improves learning absorption.
-               </p>
-             </div>
-
-             <!-- Card 3 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">03 / </span>GAMIFICATION FOR RETENTION
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 Celebrating achievements generates peaks of satisfaction that keep users engaged and motivated to continue exploring new product features.
-               </p>
-             </div>
-
-             <!-- Card 4 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">04 / </span>CONTINUOUS DELIVERY
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 Weekly design deliverables. A continuous implementation flow with no technical bottlenecks and highly positive feedback from the team.
-               </p>
-             </div>
-           </div>
-        </div>
-      </div>
+    <section aria-labelledby="heading-solucao" class="case-section" id="solucao">
+     <span class="case-eyebrow">
+      05
+     </span>
+     <h2 id="heading-solucao">
+      The solution
+     </h2>
+     <figure class="case-figure">
+      <img width="1600" height="900" alt="Guided tour screen broken into short micro-learning steps" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&amp;ssl=1"/>
+      <figcaption>
+       Content divided into short paths, each addressing a specific learning goal.
+       <br/>
+       <a href="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&amp;ssl=1" rel="noopener noreferrer" target="_blank">
+        Open full image (new tab)
+        <span aria-hidden="true">
+         ↗
+        </span>
+       </a>
+      </figcaption>
+     </figure>
+     <figure class="case-figure">
+      <img width="1600" height="900" alt="Guided tour modal with clean navigation between text and buttons" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour05.png?fit=1920%2C1080&amp;ssl=1"/>
+      <figcaption>
+       Instructions and navigation controls brought together in the modal.
+       <br/>
+       <a href="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour05.png?fit=1920%2C1080&amp;ssl=1" rel="noopener noreferrer" target="_blank">
+        Open full image (new tab)
+        <span aria-hidden="true">
+         ↗
+        </span>
+       </a>
+      </figcaption>
+     </figure>
+     <figure class="case-figure">
+      <img width="768" height="432" alt="Celebration screen at the end of a guided tour" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour04.png?resize=768%2C432&amp;ssl=1"/>
+      <figcaption>
+       Completion screen offering paths to continue learning.
+       <br/>
+       <a href="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour04.png?resize=768%2C432&amp;ssl=1" rel="noopener noreferrer" target="_blank">
+        Open full image (new tab)
+        <span aria-hidden="true">
+         ↗
+        </span>
+       </a>
+      </figcaption>
+     </figure>
     </section>
-
-    <!-- NAVEGAÇÃO ENTRE CASES -->
-    <section class="py-16 px-6 md:px-12 border-b border-white/5">
-      <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <a href="Case-Rebalanceamento-Carteira.html" class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all">
-          <i data-lucide="arrow-left" class="text-muted group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
-          <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Previous Case</span>
-            <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Investment Portfolio Rebalancing</span>
-          </div>
-        </a>
-        <a href="Case-Hub-de-Obras.html" class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right">
-          <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Next Case</span>
-            <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Hub de Obras</span>
-          </div>
-          <i data-lucide="arrow-right" class="text-muted group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
-        </a>
-      </div>
+    <section aria-labelledby="heading-valor-gerado" class="case-section" id="valor-gerado">
+     <span class="case-eyebrow">
+      06
+     </span>
+     <h2 id="heading-valor-gerado">
+      Deliverables and evidence
+     </h2>
+     <div class="case-evidence">
+      <article>
+       <h3>
+        Information architecture
+       </h3>
+       <p>
+        Reorganizing six tutorials into thirteen paths is a concrete change to the onboarding structure.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Interface comparison
+       </h3>
+       <p>
+        The previous screens and the proposal show changes to the placement of content and controls.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Learning continuity
+       </h3>
+       <p>
+        The completion screen offers routes to other tours as part of the designed solution.
+       </p>
+      </article>
+     </div>
+     <aside class="case-note">
+      <p>
+       These deliverables describe product changes. This case does not yet include engagement or drop-off measurements that quantify their effects.
+      </p>
+     </aside>
     </section>
+    <section aria-labelledby="heading-aprendizados" class="case-section" id="aprendizados">
+     <span class="case-eyebrow">
+      07
+     </span>
+     <h2 id="heading-aprendizados">
+      Lessons learned
+     </h2>
+     <div class="case-lessons">
+      <article>
+       <h3>
+        Content is part of the interface
+       </h3>
+       <p>
+        The work involved dividing and organizing instructions as well as designing modals.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Decisions tied to the problem
+       </h3>
+       <p>
+        Bringing text and controls together addressed friction identified in the interface review.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Learning in stages
+       </h3>
+       <p>
+        Focused paths organized onboarding around smaller goals and offered continuity at the end of each tour.
+       </p>
+      </article>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+ <section class="py-16 px-6 md:px-12 border-b border-white/5">
+  <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+   <a class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all" href="Case-Rebalanceamento-Carteira.html">
+    <i class="text-muted group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" data-lucide="arrow-left" height="20" width="20">
+    </i>
+    <div>
+     <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">
+      Previous Case
+     </span>
+     <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">
+      Investment Portfolio Rebalancing
+     </span>
+    </div>
+   </a>
+   <a class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right" href="Case-Hub-de-Obras.html">
+    <div>
+     <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">
+      Next Case
+     </span>
+     <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">
+      Hub de Obras
+     </span>
+    </div>
+    <i class="text-muted group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" data-lucide="arrow-right" height="20" width="20">
+    </i>
+   </a>
+  </div>
+ </section>
+ <footer class="py-24 px-6 md:px-12 border-t border-white/5 bg-gradient-to-t from-white/5 to-transparent text-center">
+  <div class="max-w-2xl mx-auto">
+   <h2 class="text-3xl font-bold uppercase mb-6">
+    Liked this project?
+   </h2>
+   <p class="text-gray-400 mb-8">
+    I'm available for new challenges and collaborations. Let's build incredible experiences together.
+   </p>
+   <div class="flex flex-col sm:flex-row-reverse justify-center gap-4 w-full max-w-2xl mx-auto">
+    <a class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm bg-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center" href="mailto:contato@marcodsvinicius.com">
+     Get in Touch
+    </a>
+    <a class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm border border-white/20 hover:border-lime hover:text-lime font-bold uppercase tracking-widest transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center gap-2" href="./">
+     <i class="w-4 h-4" data-lucide="arrow-left">
+     </i>
+     Back to Projects
+    </a>
+   </div>
+  </div>
+ </footer>
+ <footer class="w-full relative z-10 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto w-full border-t border-white/5">
+   <div class="py-8 flex justify-start items-center text-sm text-gray-400 font-mono">
+    <span>
+     Design and Interaction by Marco Vinicius, code via Claude Code.
+    </span>
+   </div>
+  </div>
+ </footer>
+</main>
 
-    <!-- 06. NEXT STEPS / FOOTER -->
-    <footer class="py-24 px-6 md:px-12 border-t border-white/5 bg-gradient-to-t from-white/5 to-transparent text-center">
-      <div class="max-w-2xl mx-auto">
-        <h2 class="text-3xl font-bold uppercase mb-6">Liked this project?</h2>
-        <p class="text-gray-400 mb-8">
-          I'm available for new challenges and collaborations. Let's build incredible experiences together.
-        </p>
-        <div class="flex flex-col sm:flex-row-reverse justify-center gap-4 w-full max-w-2xl mx-auto">
-          <a href="mailto:contato@marcodsvinicius.com" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm bg-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center">
-            Get in Touch
-          </a>
-          <a href="./" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm border border-white/20 hover:border-lime hover:text-lime font-bold uppercase tracking-widest transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center gap-2">
-            <i data-lucide="arrow-left" class="w-4 h-4"></i>
-            Back to Projects
-          </a>
-        </div>
-      </div>
-    </footer>
-    
-    <!-- RODAPÉ FINAL -->
-    <footer class="w-full relative z-10 px-6 md:px-12">
-      <div class="max-w-7xl mx-auto w-full border-t border-white/5">
-        <div class="py-8 flex justify-start items-center text-sm text-gray-400 font-mono">
-          <span>Design and Interaction by Marco Vinicius, code via Claude Code.</span>
-        </div>
-      </div>
-    </footer>
-
-  </main>
 
 </div>
 
@@ -511,7 +645,6 @@
   <img id="modal-image" src="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300" alt="Enlarged image">
 </div>
 
-<script type="application/json" id="solucao-data">{"images": ["https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour01.png?fit=1920%2C1080&ssl=1", "https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour05.png?fit=1920%2C1080&ssl=1", "https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/tour04.png?resize=768%2C432&ssl=1"], "alts": ["Guided tour screen broken into short micro-learning steps", "Guided tour modal with clean navigation between text and buttons", "Celebration screen at the end of a guided tour"]}</script>
 
   <!-- Botão Flutuante Voltar ao Topo -->
   <button id="back-to-top" type="button" class="back-to-top" aria-label="Back to top">
