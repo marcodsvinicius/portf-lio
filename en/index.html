@@ -33,8 +33,8 @@
   </script>
   <script defer="" src="../assets/js/home.js?v=d13295a6">
   </script>
-  <link href="../assets/css/home-v2.css?v=c9cdb496" rel="stylesheet"/>
-  <script defer="True" src="../assets/js/home-v2.js?v=9e6ed777">
+  <link href="../assets/css/home-v2.css?v=e0816ad4" rel="stylesheet"/>
+  <script defer="True" src="../assets/js/home-v2.js?v=31de0ae4">
   </script>
  </head>
  <body class="selection:bg-lime selection:text-black min-h-screen relative home-v2">
@@ -856,117 +856,119 @@
       <p>
        Today I am a Senior Product Designer at Stefanini, working with OceanPact. My experience spans discovery, analytical dashboards, Design Systems and collaboration with product and engineering teams.
       </p>
-      <div class="v2-career">
-       <h3>
-        Selected experience
+      <div class="v2-career" id="career-experience">
+       <h3 data-expanded-heading="Professional experience" data-selected-heading="Selected experience" id="career-heading">
+        Professional experience
        </h3>
-       <article class="v2-career-item" id="exp-oceanpact">
-        <h4>
-         Senior Product Designer
-        </h4>
-        <p class="v2-career-meta">
-         OceanPact | Stefanini · Dec 2025 - Present
-        </p>
-        <p>
-         Design leadership for the Works Hub, a platform under development. Guidance for designers and collaboration with product and user teams.
-        </p>
-       </article>
-       <article class="v2-career-item" id="exp-banco-do-brasil">
-        <h4>
-         Mid-level UX/UI Designer
-        </h4>
-        <p class="v2-career-meta">
-         Banco do Brasil | Stefanini · Nov 2024 - Nov 2025 (1 year and 1 month)
-        </p>
-        <p>
-         Discovery facilitation, squad alignment and interface design for analytical dashboards in Power BI.
-        </p>
-       </article>
-       <article class="v2-career-item" id="exp-nelogica">
-        <h4>
-         UX/UI Designer
-        </h4>
-        <p class="v2-career-meta">
-         Nelogica · Oct 2021 - Apr 2023 (1 year and 7 months)
-        </p>
-        <p>
-         Design of financial products and a foundation of components, tokens and documentation for a cryptocurrency product.
-        </p>
-       </article>
-       <details class="v2-details">
-        <summary>
-         View full experience
-        </summary>
-        <div class="v2-details-content">
-         <article class="v2-career-item" id="exp-gameon">
-          <h4>
-           Mid-level UX/UI Designer
-          </h4>
-          <p class="v2-career-meta">
-           GameOn (Freelance) · Jun 2024 - Mar 2025 (10 months)
-          </p>
-          <p>
-           Strategic role in the UI design and technical scoping of the MVP. Led benchmarking of direct competitors and the methodological structuring of the Double Diamond framework for agile product consolidation.
-          </p>
-         </article>
-         <article class="v2-career-item" id="exp-mag-seguros">
-          <h4>
-           Mid-level UX/UI Designer
-          </h4>
-          <p class="v2-career-meta">
-           MAG Seguros · Aug 2024 - Nov 2024 (4 months)
-          </p>
-          <p>
-           Conducted in-depth user research and regular usability testing. Coordinated end-to-end product design, combining qualitative/quantitative analysis and accurate projections for checkout and conversion flows.
-          </p>
-         </article>
-         <article class="v2-career-item" id="exp-cypher">
-          <h4>
-           UX/UI Designer
-          </h4>
-          <p class="v2-career-meta">
-           Cypher Financial AI · Nov 2023 - Aug 2024 (10 months)
-          </p>
-          <p>
-           Comprehensive modeling and UI design of finance-oriented smart interfaces. Conducted rigorous heuristic evaluations and actively managed the backlog for the product's aesthetic improvements.
-          </p>
-         </article>
-         <article class="v2-career-item" id="exp-freelance">
-          <h4>
-           UI Designer and Front-End Developer
-          </h4>
-          <p class="v2-career-meta">
-           Freelance · Feb 2020 - Jan 2022 (2 years)
-          </p>
-          <p>
-           Autonomous role in the end-to-end development of digital products, merging design and programming. Created modern user interfaces in Figma, Elementor, Photoshop, and Illustrator, with technical implementation in WordPress, HTML5, CSS3, JavaScript, and jQuery. Strategic use of Hotjar and Google Analytics for data analysis and conversion optimization.
-          </p>
-         </article>
-         <article class="v2-career-item" id="exp-livrelab">
-          <h4>
-           Programming and Design Teacher
-          </h4>
-          <p class="v2-career-meta">
-           LivreLab · Mar 2020 - Sep 2021 (1 year and 7 months)
-          </p>
-          <p>
-           Taught design, game design, and programming classes to children and teenagers. Also collaborated directly with the CEO in the analysis and development of strategic ads, creating advertising materials for all of the school's social media platforms, and in the technical development and maintenance of the students' online learning platform.
-          </p>
-         </article>
-         <article class="v2-career-item" id="exp-darwinx">
-          <h4>
-           React Developer
-          </h4>
-          <p class="v2-career-meta">
-           DarwinX · Mar 2021 - Jul 2021 (5 months)
-          </p>
-          <p>
-           Worked on the development and componentization of responsive interfaces using React. Focused on creating reusable UI elements, consuming RESTful APIs, and collaborating closely with the design team to ensure visual fidelity and the best user experience across the product.
-          </p>
-         </article>
-        </div>
-       </details>
+       <p class="v2-career-order">
+        Most recent first, ordered by end date. The current role appears first.
+       </p>
+       <div class="v2-career-list" id="career-history">
+        <article class="v2-career-item" id="exp-oceanpact">
+         <h4>
+          Senior Product Designer
+         </h4>
+         <p class="v2-career-meta">
+          OceanPact | Stefanini · Dec 2025 - Present
+         </p>
+         <p>
+          Design leadership for the Works Hub, a platform under development. Guidance for designers and collaboration with product and user teams.
+         </p>
+        </article>
+        <article class="v2-career-item" id="exp-banco-do-brasil">
+         <h4>
+          Mid-level UX/UI Designer
+         </h4>
+         <p class="v2-career-meta">
+          Banco do Brasil | Stefanini · Nov 2024 - Nov 2025 (1 year and 1 month)
+         </p>
+         <p>
+          Discovery facilitation, squad alignment and interface design for analytical dashboards in Power BI.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-gameon">
+         <h4>
+          Mid-level UX/UI Designer
+         </h4>
+         <p class="v2-career-meta">
+          GameOn (Freelance) · Jun 2024 - Mar 2025 (10 months)
+         </p>
+         <p>
+          Strategic role in the UI design and technical scoping of the MVP. Led benchmarking of direct competitors and the methodological structuring of the Double Diamond framework for agile product consolidation.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-mag-seguros">
+         <h4>
+          Mid-level UX/UI Designer
+         </h4>
+         <p class="v2-career-meta">
+          MAG Seguros · Aug 2024 - Nov 2024 (4 months)
+         </p>
+         <p>
+          Conducted in-depth user research and regular usability testing. Coordinated end-to-end product design, combining qualitative/quantitative analysis and accurate projections for checkout and conversion flows.
+         </p>
+        </article>
+        <article class="v2-career-item" id="exp-cypher">
+         <h4>
+          UX/UI Designer
+         </h4>
+         <p class="v2-career-meta">
+          Cypher Financial AI · Nov 2023 - Aug 2024 (10 months)
+         </p>
+         <p>
+          Interface design for financial products, heuristic evaluations and management of product improvements.
+         </p>
+        </article>
+        <article class="v2-career-item" id="exp-nelogica">
+         <h4>
+          UX/UI Designer
+         </h4>
+         <p class="v2-career-meta">
+          Nelogica · Oct 2021 - Apr 2023 (1 year and 7 months)
+         </p>
+         <p>
+          Design of financial products and a foundation of components, tokens and documentation for a cryptocurrency product.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-freelance">
+         <h4>
+          UI Designer and Front-End Developer
+         </h4>
+         <p class="v2-career-meta">
+          Freelance · Feb 2020 - Jan 2022 (2 years)
+         </p>
+         <p>
+          Autonomous role in the end-to-end development of digital products, merging design and programming. Created modern user interfaces in Figma, Elementor, Photoshop, and Illustrator, with technical implementation in WordPress, HTML5, CSS3, JavaScript, and jQuery. Strategic use of Hotjar and Google Analytics for data analysis and conversion optimization.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-livrelab">
+         <h4>
+          Programming and Design Teacher
+         </h4>
+         <p class="v2-career-meta">
+          LivreLab · Mar 2020 - Sep 2021 (1 year and 7 months)
+         </p>
+         <p>
+          Taught design, game design, and programming classes to children and teenagers. Also collaborated directly with the CEO in the analysis and development of strategic ads, creating advertising materials for all of the school's social media platforms, and in the technical development and maintenance of the students' online learning platform.
+         </p>
+        </article>
+        <article class="v2-career-item" data-career-extra="" id="exp-darwinx">
+         <h4>
+          React Developer
+         </h4>
+         <p class="v2-career-meta">
+          DarwinX · Mar 2021 - Jul 2021 (5 months)
+         </p>
+         <p>
+          Worked on the development and componentization of responsive interfaces using React. Focused on creating reusable UI elements, consuming RESTful APIs, and collaborating closely with the design team to ensure visual fidelity and the best user experience across the product.
+         </p>
+        </article>
+       </div>
+       <button aria-controls="career-history" aria-expanded="true" class="v2-action v2-career-toggle" data-career-toggle="" data-collapse-label="Show selected experience" data-expand-label="View full experience" hidden="" type="button">
+        Show selected experience
+       </button>
       </div>
+
       <div class="v2-education">
        <h3>
         Education and development
