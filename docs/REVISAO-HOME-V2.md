@@ -8,7 +8,7 @@
 - Quatro projetos com o mesmo peso visual, nesta ordem: Tour Guiado, Rebalanceamento, Design System e Hub de Obras.
 - Imagens permanentes nos cards em desktop e mobile, com descrição, contribuição e entrega em destaque.
 - Hub identificado como Em desenvolvimento · Acesso restrito, com Solicitar acesso por e-mail e Já tenho a senha, que utiliza o modal existente.
-- IA apresentada em três momentos: entender e organizar, explorar e prototipar, revisar e entregar. Cada bloco explicita apoio da IA e responsabilidade do designer.
+- IA apresentada em quatro momentos: entender e organizar, explorar e prototipar, revisar e entregar, gerenciar e otimizar. O quarto bloco conecta a evolução do Design System a skills, agentes e reaproveitamento de componentes. Cada bloco explicita apoio da IA e responsabilidade do designer. A grade usa duas colunas no desktop/tablet e uma no mobile.
 - Quatro competências: UX para produtos complexos, UI e Design Systems, design com implementação em mente e colaboração/liderança.
 - Três trechos fiéis das recomendações existentes: Bruno Caregnatto, Danyllo Lisboa e Nathasha Fariña. Inglês identificado como tradução.
 - Sobre com formação e contexto profissional, três experiências selecionadas e expansão para o restante da trajetória. Dados existentes de cargos e datas preservados.
