@@ -10,9 +10,9 @@
 .case-v2 .case-hero h1 { max-width: 990px; margin: 0; font: 800 clamp(32px, 4.5vw, 64px)/1.08 Montserrat, sans-serif; letter-spacing: -.045em; text-wrap: balance; }
 .case-v2 .case-intro { max-width: 760px; margin: 24px 0; font: 400 clamp(17px, 2vw, 21px)/1.7 'Plus Jakarta Sans', sans-serif; color: #c4c7cc; }
 .case-v2 .case-status { display: inline-flex; border: 1px solid #b7e50055; border-radius: 100px; padding: 8px 14px; color: #ccff00; font-size: 12px; margin: 0 0 12px; }
-.case-v2 .case-cover { margin: 40px 0 0; padding: 24px 24px 0; border: 1px solid #ffffff18; border-bottom: 0; border-radius: 20px 20px 0 0; background: #141611; }
-.case-v2 .case-cover img { display: block; width: 100%; height: clamp(200px, 33vw, 450px); object-fit: contain; object-position: center; background: #0a0a0a; border-radius: 10px 10px 0 0; }
-.case-v2 .case-cover figcaption { padding: 16px 0; color: var(--case-muted); font-size: 12px; line-height: 1.6; }
+.case-v2 .case-cover { margin: 40px 0 0; border: 1px solid #ffffff18; border-bottom: 0; border-radius: 20px 20px 0 0; overflow: hidden; background: #141611; }
+.case-v2 .case-cover img { display: block; width: 100%; height: auto; }
+.case-v2 .case-cover figcaption { padding: 16px 20px; color: var(--case-muted); font-size: 12px; line-height: 1.6; }
 .case-v2 .case-layout { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 56px; align-items: start; }
 .case-v2 .case-sidebar { position: sticky; top: 120px; padding-top: 56px; }
 .case-v2 .case-sidebar p { margin-bottom: 16px; }
@@ -40,7 +40,7 @@
 .case-v2 .case-decision dl { display: grid; gap: 16px; }
 .case-v2 .case-decision dt { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 5px; color: #cdd3bb; }
 .case-v2 .case-figure { margin-top: 32px; border: 1px solid #ffffff20; border-radius: 14px; overflow: hidden; background: #131510; }
-.case-v2 .case-figure img { display: block; width: 100%; height: auto; max-height: 600px; object-fit: contain; background: #0b0c09; }
+.case-v2 .case-figure img { display: block; width: 100%; height: auto; }
 .case-v2 .case-figure figcaption { padding: 20px 24px; font: 400 14px/1.7 'Plus Jakarta Sans', sans-serif; color: #c4c7cc; }
 .case-v2 .case-figure a { display: inline-block; margin-top: 12px; padding: 8px 0; min-height: 40px; color: #ccff00; font-size: 12px; }
 .case-v2 .case-comparison { margin-top: 32px; }
@@ -64,8 +64,7 @@
  .case-v2 .case-wrap { padding: 0 24px; }
  .case-v2 .case-hero { padding-top: 120px; }
  .case-v2 .case-back { margin-bottom: 24px; }
- .case-v2 .case-cover { padding: 10px 10px 0; border-radius: 12px 12px 0 0; margin-top: 28px; }
- .case-v2 .case-cover img { height: auto; max-height: 350px; }
+ .case-v2 .case-cover { border-radius: 12px 12px 0 0; margin-top: 28px; }
  .case-v2 .case-section { padding: 44px 0; }
  .case-v2 .case-summary { padding: 0 20px; }
  .case-v2 .case-summary > div { display: block; padding: 20px 0; }
