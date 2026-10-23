@@ -69,8 +69,11 @@
 .home-v2 .v2-about-copy p { color: var(--v2-muted); font: 400 17px/1.9 'Plus Jakarta Sans',sans-serif; margin-bottom: 18px; }
 .home-v2 .about-hud__lab { max-width: calc(100% - 24px); }
 .home-v2 .about-hud__lab span { white-space: normal; overflow-wrap: anywhere; }
-.home-v2 .v2-career { margin-top: 48px; }
+.home-v2 .v2-career { margin-top: 48px; scroll-margin-top: 112px; }
 .home-v2 .v2-career h3 { font: 700 25px/1.3 Montserrat,sans-serif; margin-bottom: 28px; letter-spacing: -.025em; }
+.home-v2 .v2-career .v2-career-order { font-size: 13px; line-height: 1.8; margin-bottom: 24px; }
+.home-v2 .v2-career-toggle { margin-top: 20px; }
+.home-v2 .v2-career-item[hidden], .home-v2 .v2-career-toggle[hidden] { display: none; }
 .home-v2 .v2-career-item { padding: 24px 0; border-top: 1px solid #ffffff20; scroll-margin-top: 112px; }
 .home-v2 .v2-career-item h4 { font: 700 17px/1.5 Montserrat,sans-serif; }
 .home-v2 .v2-career-item .v2-career-meta { color: #c1c6b7; font: 500 13px/1.8 'Plus Jakarta Sans',sans-serif; margin: 6px 0 12px; }

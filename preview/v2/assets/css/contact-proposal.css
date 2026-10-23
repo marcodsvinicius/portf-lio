@@ -1,0 +1,70 @@
+/* Visual study: a shared design canvas, replacing the contact radar. */
+.contact-proposal { background: #050605; }
+.contact-proposal .proposal-bar { max-width: 1280px; margin: auto; padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #ffffff16; }
+.contact-proposal .proposal-bar p { font: 500 12px/1.6 'Plus Jakarta Sans',sans-serif; color: #b7e500; }
+.contact-proposal .proposal-bar a { padding: 12px 0; font: 600 13px/1.5 'Plus Jakarta Sans',sans-serif; color: #d4d8ce; }
+.contact-proposal #contact { padding-top: 72px; padding-bottom: 72px; }
+.contact-proposal .contact-layout { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 72px; }
+.contact-proposal .collab-illustration { width: 100%; max-width: 520px; margin: 0 auto; }
+.contact-proposal .collab-canvas { position: relative; width: 100%; aspect-ratio: 1.13; border: 1px solid #ffffff24; border-radius: 22px; background: radial-gradient(ellipse at 75% 80%,#b7e50013,transparent 60%),#ffffff04; box-shadow: 0 28px 80px #0008, inset 0 1px 0 #ffffff0b; overflow: hidden; }
+.contact-proposal .collab-toolbar { height: 52px; display: flex; align-items: center; gap: 16px; padding: 0 20px; border-bottom: 1px solid #ffffff18; background: #ffffff03; }
+.contact-proposal .collab-toolbar > span { font: 500 12px/1.5 'Plus Jakarta Sans',sans-serif; color: #c6ccbd; }
+.contact-proposal .collab-dots { display: flex; gap: 5px; }
+.contact-proposal .collab-dots i { display: block; width: 5px; height: 5px; border-radius: 50%; background: #ffffff38; }
+.contact-proposal .collab-workspace { position: absolute; inset: 52px 0 0; background-image: radial-gradient(#ffffff15 .8px,transparent .8px); background-size: 18px 18px; }
+.contact-proposal .collab-note { position: absolute; top: 13%; left: 8%; width: 29%; padding: 14px; border-radius: 6px; background: #1a1f12; border: 1px solid #b7e50050; transform: rotate(-7deg); box-shadow: 0 10px 22px #0005; }
+.contact-proposal .collab-note strong { display: block; color: #d9edac; font: 600 12px/1.5 'Plus Jakarta Sans',sans-serif; margin-bottom: 10px; }
+.contact-proposal .collab-note span { display: block; height: 4px; border-radius: 4px; margin: 6px 0; background: #d0d7c129; }
+.contact-proposal .collab-note span:last-child { width: 60%; }
+.contact-proposal .collab-selection { position: absolute; top: 36%; right: 10%; width: 67%; height: 45%; border: 1px solid #b7e500a0; padding: 10px; transition: border-color .25s, box-shadow .25s; }
+.contact-proposal .collab-canvas:hover .collab-selection { border-color: #ccff00; box-shadow: 0 0 28px #b7e50015; }
+.contact-proposal .collab-selection-label { position: absolute; top: -26px; left: -1px; padding: 5px 9px; background: #b7e500; color: #0a0c07; border-radius: 4px 4px 0 0; font: 700 10px/1.5 'Plus Jakarta Sans',sans-serif; }
+.contact-proposal .collab-handle { position: absolute; width: 6px; height: 6px; border: 1px solid #ccff00; background: #080b04; }
+.contact-proposal .collab-handle:nth-of-type(1) { top: -3px; left: -3px; }
+.contact-proposal .collab-handle:nth-of-type(2) { top: -3px; right: -3px; }
+.contact-proposal .collab-handle:nth-of-type(3) { bottom: -3px; left: -3px; }
+.contact-proposal .collab-handle:nth-of-type(4) { bottom: -3px; right: -3px; }
+.contact-proposal .collab-mini-ui { height: 100%; border: 1px solid #ffffff18; border-radius: 8px; background: #141711; overflow: hidden; }
+.contact-proposal .collab-mini-header { display: flex; align-items: center; justify-content: space-between; padding: 11px 12px; border-bottom: 1px solid #ffffff12; }
+.contact-proposal .collab-mini-header span { display: block; width: 40%; height: 5px; border-radius: 4px; background: #d9e1ce55; }
+.contact-proposal .collab-mini-header i { display: block; width: 17%; height: 10px; border-radius: 3px; background: #b7e500; }
+.contact-proposal .collab-mini-body { display: grid; grid-template-columns: 24% 1fr; gap: 12px; padding: 12px; height: calc(100% - 34px); }
+.contact-proposal .collab-mini-nav span { display: block; height: 4px; border-radius: 3px; background: #aeb6a333; margin-bottom: 9px; }
+.contact-proposal .collab-mini-nav span:first-child { background: #b7e50077; }
+.contact-proposal .collab-mini-content { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.contact-proposal .collab-mini-content span { border-radius: 4px; border: 1px solid #ffffff12; background: linear-gradient(145deg,#b7e50015,#ffffff03); }
+.contact-proposal .collab-mini-content span:first-child { grid-column: 1/-1; }
+.contact-proposal .collab-cursor { position: absolute; display: flex; align-items: flex-start; gap: 3px; filter: drop-shadow(0 2px 4px #0008); }
+.contact-proposal .collab-cursor svg { width: 20px; height: 25px; flex: 0 0 auto; }
+.contact-proposal .collab-cursor span { padding: 5px 10px; border-radius: 0 7px 7px; margin-top: 20px; font: 700 11px/1.5 'Plus Jakarta Sans',sans-serif; }
+.contact-proposal .collab-cursor--you { left: 57%; top: 15%; color: #e8ebdf; animation: cursor-you 4s ease-in-out 1; }
+.contact-proposal .collab-cursor--you span { background: #e8ebdf; color: #171a13; }
+.contact-proposal .collab-cursor--marco { right: 3%; bottom: 9%; color: #b7e500; animation: cursor-marco 4s ease-in-out 1; }
+.contact-proposal .collab-cursor--marco span { background: #b7e500; color: #11150b; }
+.contact-proposal .collab-caption { padding: 24px 4px 0; max-width: 400px; font: 600 clamp(20px,2.1vw,26px)/1.4 Montserrat,sans-serif; color: #d9dfcf; letter-spacing: -.035em; }
+.contact-proposal .collab-caption span { color: #b7e500; }
+@keyframes cursor-you { 0%,100% { transform: translate(0,0); } 50% { transform: translate(5px,4px); } }
+@keyframes cursor-marco { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-6px,-4px); } }
+@media (max-width: 1023px) {
+ .contact-proposal .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+ .contact-proposal #contact { max-width: 720px; margin: auto; }
+ .contact-proposal .collab-illustration { max-width: 470px; }
+}
+@media (max-width: 600px) {
+ .contact-proposal .proposal-bar { padding: 20px 24px; align-items: flex-start; }
+ .contact-proposal .proposal-bar p { max-width: 160px; }
+ .contact-proposal #contact { padding-top: 36px; }
+ .contact-proposal .collab-toolbar { height: 42px; padding: 0 14px; }
+ .contact-proposal .collab-workspace { inset: 42px 0 0; }
+ .contact-proposal .collab-note { padding: 10px; }
+ .contact-proposal .collab-note strong { font-size: 10px; }
+ .contact-proposal .collab-selection { padding: 7px; }
+ .contact-proposal .collab-mini-body { padding: 8px; gap: 8px; }
+ .contact-proposal .collab-cursor span { font-size: 10px; padding: 4px 8px; }
+ .contact-proposal .collab-cursor svg { width: 16px; height: 20px; }
+ .contact-proposal .collab-caption { padding-top: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .contact-proposal .collab-cursor { animation: none; }
+ .contact-proposal .collab-selection { transition: none; }
+}
