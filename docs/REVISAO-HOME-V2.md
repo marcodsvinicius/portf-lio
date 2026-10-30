@@ -82,5 +82,5 @@ Não foram criadas falas de usuários, métricas, experiências ou certificaçõ
 - Competências usa uma faixa grafite mais clara e cards sólidos. Recomendações retorna a um fundo escuro, com tratamento de citação e identificação por iniciais, preservando os depoimentos originais.
 - Conteúdos equivalentes em português e inglês.
 
-- Formação ganhou dois cards para a pós em UX Design and Beyond (PUCRS, 2025–2026) e a Licenciatura em Computação (IFRJ, 2019–2023). A pós está marcada como concluída, conforme confirmação do Marco. Os cursos complementares permanecem disponíveis na expansão.
+- Formação ganhou dois cards para a pós em UX Design and Beyond (PUCRS, 2025–2026) e a Licenciatura em Computação (IFRJ, 2019–2025). A pós está marcada como concluída, conforme confirmação do Marco. Os cursos complementares permanecem disponíveis na expansão.
 - O canvas colaborativo foi aplicado ao contato da home PT/EN, com informações e links preservados e estilos compartilhados com a página de proposta.
