@@ -118,3 +118,11 @@ Nenhuma fala de usuário, percentual, data, amostra de pesquisa ou alternativa d
 - Sem JavaScript ou suporte a diálogo nativo, os links das imagens continuam disponíveis na mesma aba como alternativa.
 
 - Verificação desta galeria: 32 combinações de página e largura (320, 390, 768 e 1440 px), com abertura, navegação, zoom, foco e restauração da rolagem; swipe e bloqueio inicial do Hub também conferidos.
+
+
+## Revisão dos resultados do Tour Guiado
+
+- Removida, a pedido do Marco, a nota pública sobre ausência de medição de engajamento/abandono.
+- Incluídos os tempos aproximados informados pelo Marco: antes, cerca de 10 minutos para percorrer a seção completa da ferramenta; agora, tutoriais de 2–3 minutos focados em um tópico. Os escopos ficam explícitos, sem calcular uma redução percentual ou apresentar isso como tempo de aprendizado medido em teste.
+- Benefícios destacados: escolha direta do assunto, facilidade de revisão durante o uso e menos atrito para iniciar ou retomar um tutorial. A tela de conclusão mantém a sugestão de continuidade em outras trilhas.
+- Não foram criadas taxas de engajamento, abandono ou falas de usuários. O relato de facilidade para revisitar o conteúdo foi fornecido pelo Marco nesta revisão.

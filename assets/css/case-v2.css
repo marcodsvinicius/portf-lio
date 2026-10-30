@@ -77,6 +77,20 @@
 .case-v2 .case-comparison { margin-top: 32px; }
 .case-v2 .case-comparison h3 { margin-bottom: 16px; }
 .case-v2 .case-evidence, .case-v2 .case-lessons { display: grid; gap: 24px; }
+.case-v2 .case-time-comparison { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-bottom: 32px; }
+.case-v2 .case-time-period { padding: 24px; border: 1px solid #ffffff26; border-radius: 14px; background: #12160f; }
+.case-v2 .case-time-period--focused { background: linear-gradient(135deg,#263514,#141c0d); border-color: #b7e50055; }
+.case-v2 .case-time-period .case-time-label { color: #c5cdbd; font: 600 12px/1.6 'Plus Jakarta Sans',sans-serif; }
+.case-v2 .case-time-period .case-time-value { color: #e2e7da; font: 700 clamp(28px,3.8vw,44px)/1.2 Montserrat,sans-serif; white-space: nowrap; letter-spacing: -.035em; margin: 12px 0; }
+.case-v2 .case-time-value span { font-size: 14px; font-weight: 500; letter-spacing: 0; }
+.case-v2 .case-time-period--focused .case-time-value { color: #ccff00; }
+.case-v2 .case-time-period .case-time-context { color: #b5bead; font-size: 13px; line-height: 1.7; }
+@media (max-width: 600px) {
+ .case-v2 .case-time-comparison { gap: 12px; }
+ .case-v2 .case-time-period { padding: 16px; }
+ .case-v2 .case-time-period .case-time-label { font-size: 11px; }
+ .case-v2 .case-time-period .case-time-context { font-size: 12px; }
+}
 .case-v2 .case-evidence article { padding-left: 24px; border-left: 2px solid #b7e500; }
 .case-v2 .case-evidence h3, .case-v2 .case-lessons h3 { margin-bottom: 8px; }
 .case-v2 .case-note { padding: 20px 24px; margin-top: 32px; border: 1px solid #ffffff20; border-radius: 12px; background: #ffffff04; }
