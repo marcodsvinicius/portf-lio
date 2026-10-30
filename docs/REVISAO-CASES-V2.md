@@ -108,3 +108,13 @@ Nenhuma fala de usuário, percentual, data, amostra de pesquisa ou alternativa d
 - Hub permanece bloqueado em uma sessão nova e rejeita senha inválida; layout também verificado no estado já desbloqueado.
 - Nenhum erro JavaScript nas oito páginas durante a verificação.
 - Inspeção visual da abertura e do conteúdo do Tour em desktop e mobile.
+
+## Galeria ampliada na própria página
+
+- As fotos da solução abrem um diálogo sobre o próprio case, ao tocar na imagem ou em “Ampliar imagem”. Não há abertura de nova aba no uso normal.
+- O visualizador mantém a legenda de cada imagem e oferece anterior/próxima, contador, zoom de 2× com rolagem e ajuste à tela.
+- Navegação por setas, swipe sem zoom, fechamento por Escape, botão ou fundo externo. O foco retorna ao controle que abriu a imagem e a posição da página é preservada.
+- O mesmo padrão foi aplicado aos quatro cases em português e inglês, sem alterar os arquivos de imagem, as legendas ou a proteção do Hub.
+- Sem JavaScript ou suporte a diálogo nativo, os links das imagens continuam disponíveis na mesma aba como alternativa.
+
+- Verificação desta galeria: 32 combinações de página e largura (320, 390, 768 e 1440 px), com abertura, navegação, zoom, foco e restauração da rolagem; swipe e bloqueio inicial do Hub também conferidos.
