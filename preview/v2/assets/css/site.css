@@ -117,6 +117,14 @@ section[id] { scroll-margin-top: 96px; }
 .no-js .reveal { opacity: 1; transform: none; }
 
 /* --- Botão "voltar ao topo" ----------------------------------------------- */
+/* A quiet, shared signature with room for the floating back-to-top control. */
+.portfolio-credit { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; padding: 28px 88px 28px 0; color: #9da599; font: 400 12px/1.8 'Plus Jakarta Sans',sans-serif; }
+.portfolio-credit strong { color: #c6cdbf; font-weight: 500; white-space: nowrap; }
+.portfolio-credit-divider { color: #6f795f; }
+@media (max-width: 600px) {
+  .portfolio-credit { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .portfolio-credit-divider { display: none; }
+}
 .back-to-top {
   position: fixed;
   right: 24px;
