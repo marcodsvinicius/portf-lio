@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="../assets/css/site.css?v=f31ac92b">
   <script src="../assets/js/vendor/lucide.min.js?v=5029514f"></script>
   <script src="../assets/js/site.js?v=095c97e7" defer></script>
-  <script src="../assets/js/case.js?v=0585718b" defer></script>
+  <script src="../assets/js/case.js?v=b2bf142c" defer></script>
 
   <!-- Estilos específicos deste case -->
   <style>
@@ -65,7 +65,7 @@
     pointer-events: none;
   }
   </style>
-  <link rel="stylesheet" href="../assets/css/case-v2.css?v=0f737484">
+  <link rel="stylesheet" href="../assets/css/case-v2.css?v=bf2e2742">
 </head>
 <body class="font-montserrat case-v2">
   <a href="#case-content" class="skip-link">Skip to content</a>
@@ -471,40 +471,52 @@
       The solution
      </h2>
      <figure class="case-figure">
-      <img width="1276" height="827" alt="Hub de Obras screen showing spreadsheets unified into a single interface" decoding="async" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/hub-obras-1.png"/>
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="Enlarge image: Hub de Obras screen showing spreadsheets unified into a single interface" class="case-image-trigger" data-case-image="0" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/hub-obras-1.png">
+       <img alt="Hub de Obras screen showing spreadsheets unified into a single interface" decoding="async" height="827" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/hub-obras-1.png" width="1276"/>
+      </a>
       <figcaption>
-       Proposed interface for centralizing information previously spread across different tools.
+       <span data-image-caption="">
+        Proposed interface for centralizing information previously spread across different tools.
+       </span>
        <br/>
-       <a href="https://marcodsvinicius.com/wp-content/uploads/2026/05/hub-obras-1.png" rel="noopener noreferrer" target="_blank">
-        Open full image (new tab)
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="0" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/hub-obras-1.png">
+        Enlarge image
         <span aria-hidden="true">
-         ↗
+         ⤢
         </span>
        </a>
       </figcaption>
      </figure>
      <figure class="case-figure">
-      <img width="1276" height="829" alt="Hub de Obras screen showing integration with Change Management (GMUDs)" decoding="async" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/gmuds-hub.png"/>
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="Enlarge image: Hub de Obras screen showing integration with Change Management (GMUDs)" class="case-image-trigger" data-case-image="1" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/gmuds-hub.png">
+       <img alt="Hub de Obras screen showing integration with Change Management (GMUDs)" decoding="async" height="829" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/gmuds-hub.png" width="1276"/>
+      </a>
       <figcaption>
-       Change management flow to organize requests, approvals and outstanding items.
+       <span data-image-caption="">
+        Change management flow to organize requests, approvals and outstanding items.
+       </span>
        <br/>
-       <a href="https://marcodsvinicius.com/wp-content/uploads/2026/05/gmuds-hub.png" rel="noopener noreferrer" target="_blank">
-        Open full image (new tab)
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="1" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/gmuds-hub.png">
+        Enlarge image
         <span aria-hidden="true">
-         ↗
+         ⤢
         </span>
        </a>
       </figcaption>
      </figure>
      <figure class="case-figure">
-      <img width="1276" height="829" alt="Hub de Obras screen optimized for field use on smartphone" decoding="async" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/lista-de-obras-hub.png"/>
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="Enlarge image: Hub de Obras screen optimized for field use on smartphone" class="case-image-trigger" data-case-image="2" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/lista-de-obras-hub.png">
+       <img alt="Hub de Obras screen optimized for field use on smartphone" decoding="async" height="829" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/lista-de-obras-hub.png" width="1276"/>
+      </a>
       <figcaption>
-       Works tracking view; the solution considers needs in both field and office contexts.
+       <span data-image-caption="">
+        Works tracking view; the solution considers needs in both field and office contexts.
+       </span>
        <br/>
-       <a href="https://marcodsvinicius.com/wp-content/uploads/2026/05/lista-de-obras-hub.png" rel="noopener noreferrer" target="_blank">
-        Open full image (new tab)
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="2" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/lista-de-obras-hub.png">
+        Enlarge image
         <span aria-hidden="true">
-         ↗
+         ⤢
         </span>
        </a>
       </figcaption>
@@ -703,12 +715,25 @@
 </div>
 
 <!-- Modal de Imagem -->
-<div id="image-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300 p-4">
-  <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-lime transition-colors z-50">
-    <i data-lucide="x" width="32" height="32"></i>
-  </button>
-  <img id="modal-image" src="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300" alt="Enlarged image">
-</div>
+<dialog class="case-viewer" id="case-image-viewer" aria-labelledby="case-viewer-title" data-zoom-label="Enlarge" data-fit-label="Fit to screen">
+ <div class="case-viewer-panel">
+  <header class="case-viewer-toolbar">
+   <div><h2 id="case-viewer-title">Solution images</h2><p id="case-viewer-count" aria-live="polite"></p></div>
+   <div class="case-viewer-tools">
+    <button type="button" class="case-viewer-zoom" data-viewer-zoom aria-pressed="false">Enlarge</button>
+    <button type="button" class="case-viewer-icon" data-viewer-close aria-label="Close images" autofocus><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+   </div>
+  </header>
+  <div class="case-viewer-stage"><img id="case-viewer-image" alt=""/></div>
+  <footer class="case-viewer-footer">
+   <div><p id="case-viewer-caption"></p><p class="case-viewer-zoom-hint" hidden>Drag or scroll to explore the details.</p></div>
+   <nav class="case-viewer-navigation" aria-label="Image navigation">
+    <button type="button" class="case-viewer-icon" data-viewer-prev aria-label="Previous image"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+    <button type="button" class="case-viewer-icon" data-viewer-next aria-label="Next image"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+   </nav>
+  </footer>
+ </div>
+</dialog>
 
 
   <!-- Botão Flutuante Voltar ao Topo -->

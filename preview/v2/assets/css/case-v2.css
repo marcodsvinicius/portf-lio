@@ -1,4 +1,35 @@
 /* Case studies v2: editorial structure, scoped to the case pages. */
+.case-v2 .case-image-trigger { display: block; cursor: zoom-in; }
+.case-v2 .case-image-open { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #ccff00; font: 600 13px/1.6 'Plus Jakarta Sans',sans-serif; }
+.case-v2 .case-viewer { width: calc(100% - 32px); max-width: 1600px; height: min(90dvh,1100px); max-height: calc(100dvh - 32px); padding: 0; margin: auto; overflow: hidden; border: 1px solid #ffffff30; border-radius: 16px; color: #f4f5f0; background: #10140d; box-shadow: 0 24px 100px #000a; font-family: 'Plus Jakarta Sans',sans-serif; }
+.case-v2 .case-viewer::backdrop { background: #000d; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.case-v2 .case-viewer-panel { display: grid; grid-template-rows: auto minmax(0,1fr) auto; height: 100%; }
+.case-v2 .case-viewer-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 20px; border-bottom: 1px solid #ffffff20; }
+.case-v2 .case-viewer-toolbar h2 { font: 700 16px/1.5 Montserrat,sans-serif; }
+.case-v2 .case-viewer-toolbar p { font-size: 12px; line-height: 1.6; color: #b3bdaa; }
+.case-v2 .case-viewer-tools, .case-v2 .case-viewer-navigation { display: flex; align-items: center; gap: 8px; }
+.case-v2 .case-viewer button { min-width: 44px; min-height: 44px; border: 1px solid #ffffff30; border-radius: 10px; background: #ffffff08; color: #f0f4e9; }
+.case-v2 .case-viewer button:hover:not(:disabled) { border-color: #b7e500; color: #ccff00; }
+.case-v2 .case-viewer button:disabled { opacity: .3; cursor: default; }
+.case-v2 .case-viewer-icon { display: flex; align-items: center; justify-content: center; flex: none; }
+.case-v2 .case-viewer-zoom { padding: 8px 12px; font-size: 12px; font-weight: 600; }
+.case-v2 .case-viewer-stage { display: flex; align-items: center; justify-content: center; overflow: auto; min-height: 0; background: #050605; overscroll-behavior: contain; }
+.case-v2 .case-viewer-stage img { display: block; flex: none; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.case-v2 .case-viewer.is-zoomed .case-viewer-stage { display: block; }
+.case-v2 .case-viewer.is-zoomed img { max-width: none; max-height: none; }
+.case-v2 .case-viewer-footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 20px; border-top: 1px solid #ffffff20; }
+.case-v2 .case-viewer-footer p { color: #c4ccbd; font-size: 13px; line-height: 1.7; }
+.case-v2 .case-viewer-footer .case-viewer-zoom-hint { color: #cde69b; font-size: 11px; margin-top: 4px; }
+@media (max-width: 600px) {
+ .case-v2 .case-viewer { width: calc(100% - 16px); height: calc(100dvh - 16px); max-height: none; border-radius: 12px; }
+ .case-v2 .case-viewer-toolbar { padding: 10px 12px; gap: 8px; }
+ .case-v2 .case-viewer-toolbar h2 { font-size: 13px; }
+ .case-v2 .case-viewer-tools { gap: 6px; }
+ .case-v2 .case-viewer-zoom { max-width: 110px; }
+ .case-v2 .case-viewer-footer { padding: 12px; align-items: flex-end; gap: 12px; }
+ .case-v2 .case-viewer-footer p { font-size: 12px; }
+ .case-v2 .case-viewer-navigation { gap: 6px; }
+}
 .case-v2 { --case-muted: #adb1b9; }
 .case-v2 .case-shell { overflow-x: clip; }
 .case-v2 .case-wrap { max-width: 1216px; margin: 0 auto; padding: 0 32px; }
