@@ -6,11 +6,11 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Investment Portfolio Rebalancing | Marco Vinicius</title>
-  <meta name="description" content="Retaining users and adding value to the B2B Home Broker. Creation of a new investment management feature that curbed user churn to third-party platforms, elevating the value of the product offered to financial market giants such as Nubank, C6 Bank, Sicoob, and Sicredi.">
+  <meta name="description" content="Design and research for an experience to track investments and plan portfolio adjustments within the platform.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://marcodsvinicius.com/en/Case-Rebalanceamento-Carteira.html">
   <meta property="og:title" content="Investment Portfolio Rebalancing | Marco Vinicius">
-  <meta property="og:description" content="Retaining users and adding value to the B2B Home Broker. Creation of a new investment management feature that curbed user churn to third-party platforms, elevating the value of the product offered to financial market giants such as Nubank, C6 Bank, Sicoob, and Sicredi.">
+  <meta property="og:description" content="Design and research for an experience to track investments and plan portfolio adjustments within the platform.">
   <meta property="og:image" content="https://marcodsvinicius.com/wp-content/uploads/2026/05/1760040640522.png">
   <link rel="canonical" href="https://marcodsvinicius.com/en/Case-Rebalanceamento-Carteira.html">
   <link rel="alternate" hreflang="en" href="https://marcodsvinicius.com/en/Case-Rebalanceamento-Carteira.html">
@@ -22,11 +22,11 @@
 
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
-  <link rel="stylesheet" href="../assets/css/tailwind.css?v=2451c9cc">
-  <link rel="stylesheet" href="../assets/css/site.css?v=69ac4522">
+  <link rel="stylesheet" href="../assets/css/tailwind.css?v=9e40b031">
+  <link rel="stylesheet" href="../assets/css/site.css?v=f31ac92b">
   <script src="../assets/js/vendor/lucide.min.js?v=5029514f"></script>
   <script src="../assets/js/site.js?v=095c97e7" defer></script>
-  <script src="../assets/js/case.js?v=0585718b" defer></script>
+  <script src="../assets/js/case.js?v=b2bf142c" defer></script>
 
   <!-- Estilos específicos deste case -->
   <style>
@@ -49,10 +49,11 @@
     z-index: -1;
   }
   </style>
+  <link rel="stylesheet" href="../assets/css/case-v2.css?v=34f13bfb">
 </head>
-<body class="font-montserrat">
-  <a href="#cenario" class="skip-link">Skip to content</a>
-<div class="min-h-screen relative overflow-x-hidden selection:bg-lime selection:text-black">
+<body class="font-montserrat case-v2">
+  <a href="#case-content" class="skip-link">Skip to content</a>
+<div class="case-shell min-h-screen relative selection:bg-lime selection:text-black">
 
   <!-- Menu e Logo Flutuantes (Widescreen Limiter) -->
   <div class="fixed top-0 left-0 right-0 z-50 pointer-events-none w-full px-6 md:px-12">
@@ -80,24 +81,19 @@
           <nav class="flex flex-col gap-3 pt-2">
             <a href="#cenario" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="cenario">
               <i data-lucide="compass" class="w-4 h-4"></i>
-              Scenario
-            </a>
+              The challenge</a>
             <a href="#estrategia" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="estrategia">
               <i data-lucide="target" class="w-4 h-4"></i>
-              Strategy
-            </a>
+              Design decisions</a>
             <a href="#solucao" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="solucao">
               <i data-lucide="layers" class="w-4 h-4"></i>
-              Solution
-            </a>
+              The solution</a>
             <a href="#valor-gerado" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="valor-gerado">
               <i data-lucide="trending-up" class="w-4 h-4"></i>
-              Impact
-            </a>
+              Deliverables and evidence</a>
             <a href="#aprendizados" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider" data-mobile-section="aprendizados">
               <i data-lucide="award" class="w-4 h-4"></i>
-              Takeaways
-            </a>
+              Lessons learned</a>
             <a href="./#contact" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-lime hover:bg-white/5 transition-all duration-300 font-montserrat font-bold text-xs uppercase tracking-wider">
               <i data-lucide="mail" class="w-4 h-4"></i>
               Contact
@@ -143,392 +139,540 @@
   <div id="mobile-menu-backdrop" class="fixed inset-0 bg-transparent z-40 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none"></div>
 
   <!-- HERO SECTION -->
-  <header class="vt-case-card relative z-10 pt-32 pb-20 px-6 md:px-12 border-b border-white/5 bg-hero-glow">
+  <header class="case-hero">
+ <div class="case-wrap">
+  <a class="case-back" href="./#projects">
+   <span aria-hidden="true">
+    ←
+   </span>
+   Back to projects
+  </a>
+  <p class="case-eyebrow">
+   Financial product · UX/UI · Strategy
+  </p>
+  <p class="case-name">
+   Portfolio Rebalancing
+  </p>
+  <h1>
+   Financial investment portfolio management
+  </h1>
+  <p class="case-intro">
+   Design and research for an experience to track investments and plan portfolio adjustments within the platform.
+  </p>
+  <figure class="case-cover">
+   <img width="1600" height="900" alt="Portfolio rebalancing screen isolated from the main trading screen" decoding="async" fetchpriority="high" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&amp;ssl=1"/>
+   <figcaption>
+    A dedicated portfolio management space compares current allocation with investment goals.
+   </figcaption>
+  </figure>
+ </div>
+</header>
 
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-6 animate-fade-in-up">
-        <a href="./" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-xs font-mono text-gray-400 hover:text-lime hover:border-lime transition-colors bg-black/50 backdrop-blur-md">
-          <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          Back to Projects
-        </a>
-      </div>
-      <h1 class="vt-case-title text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 animate-fade-in-up -mr-6 sm:mr-0 break-words hyphens-auto">
-        Investment Portfolio Rebalancing
-      </h1>
-      
-      <p class="text-lg md:text-xl text-gray-400 font-medium max-w-3xl mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
-        Retaining users and adding value to the B2B Home Broker. <span class="text-muted block mt-2 text-base md:text-lg">Creation of a new investment management feature that curbed user churn to third-party platforms, elevating the value of the product offered to financial market giants such as Nubank, C6 Bank, Sicoob, and Sicredi.</span>
-      </p>
-
-      <div class="flex flex-wrap items-center gap-2 mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">B2B2C</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">User Retention</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Churn</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Benchmarking</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">UX Strategy</span>
-        <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] md:text-xs font-mono text-muted uppercase tracking-widest">Wireframing</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mt-12 border-t border-white/10 pt-12">
-        <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Company</h3>
-          <p class="text-lg font-bold">Nelogica</p>
-        </div>
-        <div class="md:col-span-1">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">My Role</h3>
-          <p class="text-lg font-bold">Product Designer (UX/UI)</p>
-        </div>
-        <div class="md:col-span-2">
-          <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-2">Impact Summary</h3>
-          <p class="text-sm md:text-base font-medium text-gray-300 leading-relaxed border-l-2 border-lime/50 pl-4">
-            Solved a critical churn problem by creating a native portfolio management ecosystem, keeping users engaged within the product instead of migrating to external tools or spreadsheets.
-          </p>
-        </div>
-      </div>
-    </div>
-  </header>
 
   <!-- CONTEÚDO DO CASE -->
-  <main class="relative z-10">
-    
-    <!-- 01. CENÁRIO -->
-    <section id="cenario" class="py-24 px-6 md:px-12 border-b border-white/5 bg-white/[0.02]">
-      <div class="max-w-4xl mx-auto grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <span class="text-lime font-mono text-sm font-bold mb-2 block">01 / SCENARIO</span>
-          <h2 class="text-3xl font-bold uppercase tracking-tight">Context and Challenge</h2>
-        </div>
-        <div class="md:col-span-8 space-y-6 text-gray-300 text-lg leading-relaxed">
-          <p>
-            Nelogica's Home Broker is a robust analysis and trading platform, sold in a B2B model to massive financial institutions (like Nubank, C6 Bank, Sicoob, and Sicredi). During strategic discussions with the UX Leadership and Tech Lead, we identified a concerning behavioral pattern in the usage data.
-          </p>
-          <p>
-            Investors would enter the platform, learn about the market, and use indicators for study. However, over time, engagement plummeted. The reason? Financial maturity.
-          </p>
-          <div class="bg-red-500/10 border border-red-500/20 p-6 rounded-lg">
-            <h4 class="text-red-400 font-bold uppercase text-xs tracking-widest mb-2">The Core Problem</h4>
-            <p class="text-white font-medium">We were suffering from a retention bottleneck (churn). Upon defining their long-term investment goals, users needed to "rebalance" their portfolios. Since our Home Broker lacked this continuous management tool, investors were abandoning our application and migrating to complex spreadsheets or third-party platforms (like SmarttInvest and StatusInvest) to manage their wealth.</p>
-          </div>
-        </div>
+  <main id="case-content" tabindex="-1">
+ <div class="case-wrap">
+  <details class="case-mobile-index">
+   <summary>
+    In this case
+   </summary>
+   <nav aria-label="In this case">
+    <a href="#resumo">
+     Project in one minute
+    </a>
+    <a href="#contexto">
+     Role and context
+    </a>
+    <a href="#cenario">
+     The challenge
+    </a>
+    <a href="#estrategia">
+     Design decisions
+    </a>
+    <a href="#solucao">
+     The solution
+    </a>
+    <a href="#valor-gerado">
+     Deliverables and evidence
+    </a>
+    <a href="#aprendizados">
+     Lessons learned
+    </a>
+   </nav>
+  </details>
+  <div class="case-layout">
+   <aside class="case-sidebar">
+    <p class="case-eyebrow">
+     In this case
+    </p>
+    <nav aria-label="In this case">
+     <a href="#resumo">
+      Project in one minute
+     </a>
+     <a href="#contexto">
+      Role and context
+     </a>
+     <a href="#cenario">
+      The challenge
+     </a>
+     <a href="#estrategia">
+      Design decisions
+     </a>
+     <a href="#solucao">
+      The solution
+     </a>
+     <a href="#valor-gerado">
+      Deliverables and evidence
+     </a>
+     <a href="#aprendizados">
+      Lessons learned
+     </a>
+    </nav>
+   </aside>
+   <div class="case-body">
+    <section aria-labelledby="heading-resumo" class="case-section" id="resumo">
+     <span class="case-eyebrow">
+      01
+     </span>
+     <h2 id="heading-resumo">
+      Project in one minute
+     </h2>
+     <dl class="case-summary">
+      <div>
+       <dt>
+        The problem
+       </dt>
+       <dd>
+        Without a rebalancing tool, investors relied on spreadsheets and external services.
+       </dd>
       </div>
-      
-      <!-- Visualization of the Old Process -->
-      <div class="max-w-4xl mx-auto mt-16">
-        <h4 class="text-xs font-bold text-muted uppercase tracking-widest mb-4">Before and after</h4>
-        <div class="ba-compare" role="group" aria-label="Comparison between the old process and the new experience">
-          <div class="ba-compare__frame">
-            <img class="ba-compare__after" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&amp;ssl=1" alt="Portfolio rebalancing screen isolated from the main trading screen" loading="lazy" decoding="async">
-            <div class="ba-compare__before-wrap"><img class="ba-compare__before" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png" alt="Old Process 1" loading="lazy" decoding="async"></div>
-            <input type="range" class="ba-compare__range" min="0" max="100" value="50" step="0.5" aria-label="Comparison position">
-            <div class="ba-compare__handle" aria-hidden="true"><span class="ba-compare__grip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6"/><path d="m15 6 6 6-6 6"/></svg></span></div>
-            <span class="ba-compare__tag ba-compare__tag--before" aria-hidden="true">Before</span>
-            <span class="ba-compare__tag ba-compare__tag--after" aria-hidden="true">After</span>
-          </div>
-          <p class="ba-compare__hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>Drag the line to compare. On a keyboard, use the arrow keys.</p>
-          <div class="ba-compare__thumbs" role="group" aria-label="Show another old screen">
-            <button type="button" class="ba-compare__thumb is-active" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png" data-alt="Old Process 1" aria-label="Old Process 1"><img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png" alt="" loading="lazy"></button>
-            <button type="button" class="ba-compare__thumb" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-2.png" data-alt="Old Process 2" aria-label="Old Process 2"><img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-2.png" alt="" loading="lazy"></button>
-            <button type="button" class="ba-compare__thumb" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-3.png" data-alt="Old Process 3" aria-label="Old Process 3"><img src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-3.png" alt="" loading="lazy"></button>
-          </div>
-        </div>
+      <div>
+       <dt>
+        My contribution
+       </dt>
+       <dd>
+        UX/UI Design, Discovery, Userflow
+       </dd>
       </div>
+      <div>
+       <dt>
+        The deliverable
+       </dt>
+       <dd>
+        A portfolio management experience with goal tracking and suggested allocation of available funds.
+       </dd>
+      </div>
+     </dl>
     </section>
-
-    <!-- 02. ESTRATÉGIA -->
-    <section id="estrategia" class="py-24 px-6 md:px-12 border-b border-white/5">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-12 mb-16">
-           <div class="w-full md:w-1/3">
-             <span class="text-lime font-mono text-sm font-bold mb-2 block">02 / STRATEGY</span>
-             <h2 class="text-3xl font-bold uppercase tracking-tight">My Role and Processes</h2>
-           </div>
-           <div class="w-full md:w-2/3 text-gray-300 text-lg leading-relaxed">
-             <ul class="list-none space-y-6">
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Conducted an Adapted Discovery</strong>
-                   <span class="text-gray-400 text-base">Due to strict compliance and data protection policies that prevented direct access to end-users, I structured an in-depth market research initiative, analyzing the behavior of long-term investors and the wealth rebalancing journey.</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Mapped the Competitive Landscape</strong>
-                    <span class="text-gray-400 text-base">I performed a critical benchmarking analysis against the top 3 solutions in the market (Spreadsheets, StatusInvest, and SmarttInvest). I identified that our greatest competitive advantage would be the automatic integration of buy and sell orders, something competitors required users to do manually.</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Managed Expectations and Technical Feasibility</strong>
-                   <span class="text-gray-400 text-base">I facilitated continuous alignment meetings with the UX Leadership (Renan Paz) and the Tech Lead. I translated business insights into technical requirements, ensuring the scope was feasible for the development team.</span>
-                 </div>
-               </li>
-               <li class="flex items-start gap-4">
-                 <i data-lucide="check-circle" class="text-lime mt-1 shrink-0" width="24"></i>
-                 <div>
-                   <strong class="text-white block mb-1">Architected the User Journey</strong>
-                   <span class="text-gray-400 text-base">To organize the business rules, I created detailed flowcharts covering two crucial scenarios: Onboarding (first access and importing the pre-existing portfolio from the Home Broker) and Continuous Use (main management screen).</span>
-                 </div>
-               </li>
-             </ul>
-           </div>
-        </div>
+    <section aria-labelledby="heading-contexto" class="case-section" id="contexto">
+     <span class="case-eyebrow">
+      02
+     </span>
+     <h2 id="heading-contexto">
+      Role and context
+     </h2>
+     <dl class="case-facts">
+      <div>
+       <dt>
+        Company
+       </dt>
+       <dd>
+        Nelogica
+       </dd>
       </div>
+      <div>
+       <dt>
+        Role
+       </dt>
+       <dd>
+        Product Designer · UX/UI
+       </dd>
+      </div>
+      <div>
+       <dt>
+        Collaboration
+       </dt>
+       <dd>
+        UX leadership and the Tech Lead, with recurring scope and feasibility discussions.
+       </dd>
+      </div>
+      <div>
+       <dt>
+        Constraint
+       </dt>
+       <dd>
+        B2B compliance policies prevented direct access to end users.
+       </dd>
+      </div>
+     </dl>
     </section>
-
-    <!-- 03. SOLUÇÃO -->
-    <section id="solucao" class="py-24 px-6 md:px-12 bg-lime text-black">
-      <div class="max-w-6xl mx-auto">
-        
-        <!-- Título Mobile (Visível apenas em telas menores) -->
-        <div class="block md:hidden mb-8">
-          <span class="text-black/60 font-mono text-sm font-bold mb-2 block">03 / SOLUTION</span>
-          <h2 class="text-4xl font-black uppercase tracking-tight">The New Experience</h2>
+    <section aria-labelledby="heading-cenario" class="case-section" id="cenario">
+     <span class="case-eyebrow">
+      03
+     </span>
+     <h2 id="heading-cenario">
+      The challenge
+     </h2>
+     <div class="case-prose">
+      <p>
+       The trading platform was offered to financial institutions through a B2B model. Discussions with UX leadership and the Tech Lead highlighted the needs of investors moving from trading to tracking long-term goals.
+      </p>
+      <p>
+       Without native rebalancing, portfolio management depended on spreadsheets or external services. The challenge was to incorporate this capability while accounting for the platform’s complexity and limited access to users.
+      </p>
+     </div>
+     <div class="case-comparison">
+      <h3>
+       Before and proposal
+      </h3>
+      <div aria-label="Comparison between the old process and the new experience" class="ba-compare" role="group">
+       <div class="ba-compare__frame">
+        <img width="1600" height="900" alt="Portfolio rebalancing screen isolated from the main trading screen" class="ba-compare__after" decoding="async" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&amp;ssl=1"/>
+        <div class="ba-compare__before-wrap">
+         <img alt="Old Process 1" class="ba-compare__before" decoding="async" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png"/>
         </div>
-
-        <div class="flex flex-col-reverse items-stretch md:grid md:grid-cols-12 gap-12 lg:gap-16 md:items-center">
-          <div class="min-w-0 w-full md:col-span-5">
-            
-            <!-- Título Desktop (Visível apenas em telas médias e maiores) -->
-            <div class="hidden md:block">
-              <span class="text-black/60 font-mono text-sm font-bold mb-2 block">03 / SOLUTION</span>
-              <h2 class="text-5xl font-black uppercase tracking-tight mb-8">The New Experience</h2>
-            </div>
-            
-            <div class="relative w-full max-w-full overflow-hidden" id="solucao-carousel-container">
-              <!-- Carousel Track -->
-              <div class="flex transition-transform duration-500 ease-in-out" id="solucao-carousel-track">
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Cognitive Load Protection</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">The Home Broker's main trading screen already had a very high information density. To avoid overwhelming (or confusing) the user, I designed the Rebalancing feature in a visually isolated and clean environment, 100% focused on chart analysis and goals.</span>
-                </div>
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">"Invest Balance" Smart Feature</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">In partnership with the Tech Lead, we designed a feature where the user inputs an available amount (e.g., R$ 1,000). The interface automatically calculates and suggests how to distribute this balance among assets to keep the portfolio perfectly aligned with the investor's goal.</span>
-                </div>
-                
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Mobile-First Approach</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">Since tracking wealth is a daily habit, I designed the entire interface prioritizing the mobile experience, ensuring clear chart visualization and easy inclusion/exclusion of assets in the account.</span>
-                </div>
-
-                <div class="w-full shrink-0 border-l-0 md:border-l-2 border-black/30 pl-0 md:pl-5 pr-0 md:pr-8 flex flex-col justify-center">
-                  <span class="block text-xl md:text-2xl font-black mb-2 leading-tight">Visual Feedback and Flexibility</span>
-                  <span class="text-black/80 font-medium text-base md:text-lg">Implementation of easy-to-read charts that compare the "Current Portfolio" with the "Investment Goal," along with allowing the user to disable specific assets from being accounted for in the rebalancing.</span>
-                </div>
-                
-              </div>
-              
-              <!-- Navigation Controls -->
-              <div class="flex items-center gap-4 mt-8">
-                <button id="solucao-prev" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
-                  <i data-lucide="arrow-left" width="18"></i>
-                </button>
-                <div class="flex gap-2" id="solucao-dots">
-                  <div class="w-2 h-2 rounded-full bg-black"></div>
-                  <div class="w-2 h-2 rounded-full bg-black/20"></div>
-                  <div class="w-2 h-2 rounded-full bg-black/20"></div>
-                  <div class="w-2 h-2 rounded-full bg-black/20"></div>
-                </div>
-                <button id="solucao-next" class="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:bg-black hover:text-lime transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-black">
-                  <i data-lucide="arrow-right" width="18"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- MOCKUP VISUAL DA SOLUÇÃO (TELA GRANDE) -->
-          <div class="relative w-full md:col-span-7">
-             <div class="relative w-full bg-black/5 rounded-2xl shadow-2xl border border-black/10 overflow-hidden">
-                <img id="solucao-image" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&ssl=1" alt="Portfolio rebalancing screen isolated from the main trading screen" loading="lazy" class="w-full h-auto object-cover transition-all duration-300 zoomable-image cursor-pointer">
-                <div class="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white/80 pointer-events-none">
-                  <i data-lucide="maximize-2" width="16" height="16"></i>
-                </div>
-             </div>
-          </div>
+        <input aria-label="Comparison position" class="ba-compare__range" max="100" min="0" step="0.5" type="range" value="50"/>
+        <div aria-hidden="true" class="ba-compare__handle">
+         <span class="ba-compare__grip">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18">
+           <path d="m9 6-6 6 6 6">
+           </path>
+           <path d="m15 6 6 6-6 6">
+           </path>
+          </svg>
+         </span>
         </div>
+        <span aria-hidden="true" class="ba-compare__tag ba-compare__tag--before">
+         Before
+        </span>
+        <span aria-hidden="true" class="ba-compare__tag ba-compare__tag--after">
+         After
+        </span>
+       </div>
+       <p class="ba-compare__hint">
+        <svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14">
+         <path d="M8 3 4 7l4 4">
+         </path>
+         <path d="M4 7h16">
+         </path>
+         <path d="m16 21 4-4-4-4">
+         </path>
+         <path d="M20 17H4">
+         </path>
+        </svg>
+        Drag the line to compare. On a keyboard, use the arrow keys.
+       </p>
+       <div aria-label="Show another old screen" class="ba-compare__thumbs" role="group">
+        <button aria-label="Old Process 1" class="ba-compare__thumb is-active" data-alt="Old Process 1" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png" type="button">
+         <img alt="" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-1.png"/>
+        </button>
+        <button aria-label="Old Process 2" class="ba-compare__thumb" data-alt="Old Process 2" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-2.png" type="button">
+         <img alt="" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-2.png"/>
+        </button>
+        <button aria-label="Old Process 3" class="ba-compare__thumb" data-alt="Old Process 3" data-src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-3.png" type="button">
+         <img alt="" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/bench-3.png"/>
+        </button>
+       </div>
       </div>
+     </div>
     </section>
-
-    <!-- 04. VALOR GERADO -->
-    <section id="valor-gerado" class="py-24 px-6 md:px-12 border-b border-white/5 relative overflow-hidden">
-      <!-- Glow Background -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-lime/5 blur-[120px] rounded-full pointer-events-none"></div>
-      
-      <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-          <span class="text-lime font-mono text-sm font-bold mb-2 block">04 / VALUE GENERATED</span>
-          <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">Business Impact</h2>
+    <section aria-labelledby="heading-estrategia" class="case-section" id="estrategia">
+     <span class="case-eyebrow">
+      04
+     </span>
+     <h2 id="heading-estrategia">
+      Design decisions
+     </h2>
+     <div class="case-decisions">
+      <article class="case-decision">
+       <h3>
+        Adapt discovery to access constraints
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Why this decision
+         </dt>
+         <dd>
+          Compliance policies limited direct research with investors.
+         </dd>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          <!-- Card 1: Retenção Estratégica -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
-                <i data-lucide="trending-up" width="24"></i>
-              </div>
-              <div class="mb-4">
-                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Strategic Retention</span>
-                <div class="text-2xl md:text-3xl font-black uppercase leading-tight tracking-tight text-white">
-                  End of<br/><span class="text-lime">Churn</span>
-                </div>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed pt-6 border-t border-white/5 mt-4">
-              Users no longer need to leave their bank or brokerage ecosystem to manage their own money. We delivered the missing piece to retain long-term investors on the platform.
-            </p>
-          </div>
-
-          <!-- Card 2: Fortalecimento do Produto B2B -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
-                <i data-lucide="briefcase" width="24"></i>
-              </div>
-              <div class="mb-4">
-                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">B2B Strengthening</span>
-                <div class="text-2xl md:text-3xl font-black uppercase leading-tight tracking-tight text-white">
-                  Major<br/><span class="text-lime">Partnerships</span>
-                </div>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed pt-6 border-t border-white/5 mt-4">
-              Delivering this feature exponentially increased the perceived value of the software Nelogica offers to major partners, generating an immediate competitive advantage for institutions like Nubank and C6 Bank.
-            </p>
-          </div>
-
-          <!-- Card 3: Eficiência de Lançamento -->
-          <div class="bg-black/50 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-lime/50 transition-all hover:-translate-y-2 group flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center text-lime mb-6 group-hover:bg-lime group-hover:text-black transition-colors">
-                <i data-lucide="check-circle" width="24"></i>
-              </div>
-              <div class="mb-4">
-                <span class="text-muted text-[10px] font-bold uppercase tracking-widest block mb-1">Agile Validation</span>
-                <div class="text-2xl md:text-3xl font-black uppercase leading-tight tracking-tight text-white">
-                  High<br/><span class="text-lime">Adherence</span>
-                </div>
-              </div>
-            </div>
-            <p class="text-sm text-gray-400 leading-relaxed pt-6 border-t border-white/5 mt-4">
-              The strategy of slicing the project into weekly deliverables and validations (alongside developers) ensured the final product was launched with high quality and total adherence to code constraints.
-            </p>
-          </div>
-
+        <div>
+         <dt>
+          How I applied it
+         </dt>
+         <dd>
+          I analyzed spreadsheets, StatusInvest and SmarttInvest, organized usage scenarios and aligned requirements with UX and engineering. This supported solution definition without replacing user testing.
+         </dd>
         </div>
-      </div>
+       </dl>
+      </article>
+      <article class="case-decision">
+       <h3>
+        Separate portfolio management from trading
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Why this decision
+         </dt>
+         <dd>
+          The trading screen already contained dense information and many actions.
+         </dd>
+        </div>
+        <div>
+         <dt>
+          How I applied it
+         </dt>
+         <dd>
+          I designed a dedicated rebalancing space with charts comparing current allocation and investment goals.
+         </dd>
+        </div>
+       </dl>
+      </article>
+      <article class="case-decision">
+       <h3>
+        Address first use and ongoing management
+       </h3>
+       <dl>
+        <div>
+         <dt>
+          Why this decision
+         </dt>
+         <dd>
+          The experience needed to cover both initial access and recurring tasks.
+         </dd>
+        </div>
+        <div>
+         <dt>
+          How I applied it
+         </dt>
+         <dd>
+          I mapped onboarding, existing portfolio import and ongoing management. Together with the technical lead, I designed the “Invest Balance” feature.
+         </dd>
+        </div>
+       </dl>
+      </article>
+     </div>
     </section>
-
-    <!-- 05. APRENDIZADOS -->
-    <section id="aprendizados" class="py-24 px-6 md:px-12 border-b border-white/5 bg-white/[0.02]">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-12">
-           <div class="w-full md:w-1/3">
-             <span class="text-lime font-mono text-sm font-bold mb-2 block">05 / TAKEAWAYS</span>
-             <h2 class="text-3xl font-bold uppercase tracking-tight">Project Lessons</h2>
-           </div>
-           <div class="w-full md:w-2/3 space-y-6">
-             <!-- Card 1 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">01 / </span>STRATEGIC DESIGN AND RETENTION
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 Strategic design goes beyond creating new interfaces: it is about mapping and solving the business pains that mitigate user churn to third-party platforms.
-               </p>
-             </div>
-
-             <!-- Card 2 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">02 / </span>TECHNICAL AND UX SYNCHRONIZATION
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 Weekly alignments and continuous technical validations prevented rework and ensured that engineering deadlines were met without losing quality.
-               </p>
-             </div>
-
-             <!-- Card 3 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-lime/40">
-               <h3 class="text-lg font-bold uppercase tracking-wider text-white mb-2">
-                 <span class="text-lime">03 / </span>INDIRECT DISCOVERY (B2B)
-               </h3>
-               <p class="text-gray-400 text-sm leading-relaxed">
-                 The lack of user contact (due to B2B compliance) taught us to use alternative methods like in-depth competitive benchmarking and empirical investor scenarios.
-               </p>
-             </div>
-           </div>
-        </div>
-      </div>
+    <section aria-labelledby="heading-solucao" class="case-section" id="solucao">
+     <span class="case-eyebrow">
+      05
+     </span>
+     <h2 id="heading-solucao">
+      The solution
+     </h2>
+     <figure class="case-figure">
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="Enlarge image: Portfolio rebalancing screen isolated from the main trading screen" class="case-image-trigger" data-case-image="0" href="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&amp;ssl=1">
+       <img alt="Portfolio rebalancing screen isolated from the main trading screen" decoding="async" height="900" loading="lazy" src="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&amp;ssl=1" width="1600"/>
+      </a>
+      <figcaption>
+       <span data-image-caption="">
+        A dedicated portfolio management space compares current allocation with investment goals.
+       </span>
+       <br/>
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="0" href="https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&amp;ssl=1">
+        Enlarge image
+        <span aria-hidden="true">
+         ⤢
+        </span>
+       </a>
+      </figcaption>
+     </figure>
+     <figure class="case-figure">
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="Enlarge image: Screen showing the Invest Balance feature with automatic distribution suggestions" class="case-image-trigger" data-case-image="1" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/tela1.png">
+       <img alt="Screen showing the Invest Balance feature with automatic distribution suggestions" decoding="async" height="900" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/tela1.png" width="1600"/>
+      </a>
+      <figcaption>
+       <span data-image-caption="">
+        “Invest Balance” suggests how to distribute an entered amount according to portfolio targets.
+       </span>
+       <br/>
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="1" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/tela1.png">
+        Enlarge image
+        <span aria-hidden="true">
+         ⤢
+        </span>
+       </a>
+      </figcaption>
+     </figure>
+     <figure class="case-figure">
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="Enlarge image: Mobile-optimized portfolio rebalancing screen" class="case-image-trigger" data-case-image="2" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/homebroker-rebalanceamento-mobile.png">
+       <img alt="Mobile-optimized portfolio rebalancing screen" decoding="async" height="900" loading="lazy" src="https://marcodsvinicius.com/wp-content/uploads/2026/05/homebroker-rebalanceamento-mobile.png" width="1600"/>
+      </a>
+      <figcaption>
+       <span data-image-caption="">
+        The experience adapted for portfolio tracking on mobile devices.
+       </span>
+       <br/>
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="2" href="https://marcodsvinicius.com/wp-content/uploads/2026/05/homebroker-rebalanceamento-mobile.png">
+        Enlarge image
+        <span aria-hidden="true">
+         ⤢
+        </span>
+       </a>
+      </figcaption>
+     </figure>
     </section>
-
-    <!-- NAVEGAÇÃO ENTRE CASES -->
-    <section class="py-16 px-6 md:px-12 border-b border-white/5">
-      <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <a href="Case-Design-System.html" class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all">
-          <i data-lucide="arrow-left" class="text-muted group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" width="20" height="20"></i>
-          <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Previous Case</span>
-            <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Design System</span>
-          </div>
-        </a>
-        <a href="Case-Tour-Guiado.html" class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right">
-          <div>
-            <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Next Case</span>
-            <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">Guided Tour</span>
-          </div>
-          <i data-lucide="arrow-right" class="text-muted group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" width="20" height="20"></i>
-        </a>
-      </div>
+    <section aria-labelledby="heading-valor-gerado" class="case-section" id="valor-gerado">
+     <span class="case-eyebrow">
+      06
+     </span>
+     <h2 id="heading-valor-gerado">
+      Deliverables and evidence
+     </h2>
+     <div class="case-evidence">
+      <article>
+       <h3>
+        Defined flows
+       </h3>
+       <p>
+        The solution covers first access, portfolio import and ongoing management.
+       </p>
+      </article>
+      <article>
+       <h3>
+        A capability within the product
+       </h3>
+       <p>
+        The design brings portfolio tracking and adjustment planning into the trading platform.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Technical alignment
+       </h3>
+       <p>
+        Scope decisions were discussed with UX leadership and the Tech Lead throughout the project.
+       </p>
+      </article>
+     </div>
+     <aside class="case-note">
+      <p>
+       Retention was a project objective. The available material does not include measurements that attribute reduced churn to this feature; technical reviews are also distinct from usability testing.
+      </p>
+     </aside>
     </section>
+    <section aria-labelledby="heading-aprendizados" class="case-section" id="aprendizados">
+     <span class="case-eyebrow">
+      07
+     </span>
+     <h2 id="heading-aprendizados">
+      Lessons learned
+     </h2>
+     <div class="case-lessons">
+      <article>
+       <h3>
+        Research under constraints
+       </h3>
+       <p>
+        Benchmarking and usage scenarios helped structure the proposal within limits on user access.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Feasibility during design
+       </h3>
+       <p>
+        Engineering collaboration informed feature definition and business rules.
+       </p>
+      </article>
+      <article>
+       <h3>
+        Space for different tasks
+       </h3>
+       <p>
+        Portfolio management received its own experience within a platform also built for trading.
+       </p>
+      </article>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+ <section class="py-16 px-6 md:px-12 border-b border-white/5">
+  <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+   <a class="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all" href="Case-Design-System.html">
+    <i class="text-muted group-hover:text-lime group-hover:-translate-x-1 transition-all shrink-0" data-lucide="arrow-left" height="20" width="20">
+    </i>
+    <div>
+     <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">
+      Previous Case
+     </span>
+     <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">
+      Design System
+     </span>
+    </div>
+   </a>
+   <a class="group flex items-center justify-end gap-4 p-6 rounded-2xl border border-white/10 hover:border-lime/40 bg-white/[0.02] transition-all text-right" href="Case-Tour-Guiado.html">
+    <div>
+     <span class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">
+      Next Case
+     </span>
+     <span class="font-montserrat font-bold text-white group-hover:text-lime transition-colors">
+      Guided Tour
+     </span>
+    </div>
+    <i class="text-muted group-hover:text-lime group-hover:translate-x-1 transition-all shrink-0" data-lucide="arrow-right" height="20" width="20">
+    </i>
+   </a>
+  </div>
+ </section>
+ <footer class="py-24 px-6 md:px-12 border-t border-white/5 bg-gradient-to-t from-white/5 to-transparent text-center">
+  <div class="max-w-2xl mx-auto">
+   <h2 class="text-3xl font-bold uppercase mb-6">
+    Liked this project?
+   </h2>
+   <p class="text-gray-400 mb-8">
+    I'm available for new challenges and collaborations. Let's build incredible experiences together.
+   </p>
+   <div class="flex flex-col sm:flex-row-reverse justify-center gap-4 w-full max-w-2xl mx-auto">
+    <a class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm bg-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center" href="mailto:contato@marcodsvinicius.com">
+     Get in Touch
+    </a>
+    <a class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm border border-white/20 hover:border-lime hover:text-lime font-bold uppercase tracking-widest transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center gap-2" href="./">
+     <i class="w-4 h-4" data-lucide="arrow-left">
+     </i>
+     Back to Projects
+    </a>
+   </div>
+  </div>
+ </footer>
+ <footer class="w-full relative z-10 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto w-full border-t border-white/5">
+   <p class="portfolio-credit">
+     <span>Design and interaction by <strong>Marco Vinicius</strong></span>
+     <span class="portfolio-credit-divider" aria-hidden="true">·</span>
+     <span>Code via <strong>Claude Code</strong></span>
+    </p>
+  </div>
+ </footer>
+</main>
 
-    <!-- 06. NEXT STEPS / FOOTER -->
-    <footer class="py-24 px-6 md:px-12 border-t border-white/5 bg-gradient-to-t from-white/5 to-transparent text-center">
-      <div class="max-w-2xl mx-auto">
-        <h2 class="text-3xl font-bold uppercase mb-6">Liked this project?</h2>
-        <p class="text-gray-400 mb-8">
-          I'm available for new challenges and collaborations. Let's build incredible experiences together.
-        </p>
-        <div class="flex flex-col sm:flex-row-reverse justify-center gap-4 w-full max-w-2xl mx-auto">
-          <a href="mailto:contato@marcodsvinicius.com" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm bg-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center">
-            Get in Touch
-          </a>
-          <a href="./" class="w-full sm:w-auto px-8 py-4 sm:px-6 sm:py-3 sm:text-sm border border-white/20 hover:border-lime hover:text-lime font-bold uppercase tracking-widest transition-colors rounded-sm text-center whitespace-nowrap flex items-center justify-center gap-2">
-            <i data-lucide="arrow-left" class="w-4 h-4"></i>
-            Back to Projects
-          </a>
-        </div>
-      </div>
-    </footer>
-    
-    <!-- RODAPÉ FINAL -->
-    <footer class="w-full relative z-10 px-6 md:px-12">
-      <div class="max-w-7xl mx-auto w-full border-t border-white/5">
-        <div class="py-8 flex justify-start items-center text-sm text-gray-400 font-mono">
-          <span>Design and Interaction by Marco Vinicius, code via Claude Code.</span>
-        </div>
-      </div>
-    </footer>
-
-  </main>
 
 </div>
 
 <!-- Modal de Imagem -->
-<div id="image-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300 p-4">
-  <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-lime transition-colors z-50">
-    <i data-lucide="x" width="32" height="32"></i>
-  </button>
-  <img id="modal-image" src="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300" alt="Enlarged image">
-</div>
+<dialog class="case-viewer" id="case-image-viewer" aria-labelledby="case-viewer-title" data-zoom-label="Enlarge" data-fit-label="Fit to screen">
+ <div class="case-viewer-panel">
+  <header class="case-viewer-toolbar">
+   <div><h2 id="case-viewer-title">Solution images</h2><p id="case-viewer-count" aria-live="polite"></p></div>
+   <div class="case-viewer-tools">
+    <button type="button" class="case-viewer-zoom" data-viewer-zoom aria-pressed="false">Enlarge</button>
+    <button type="button" class="case-viewer-icon" data-viewer-close aria-label="Close images" autofocus><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+   </div>
+  </header>
+  <div class="case-viewer-stage"><img id="case-viewer-image" alt=""/></div>
+  <footer class="case-viewer-footer">
+   <div><p id="case-viewer-caption"></p><p class="case-viewer-zoom-hint" hidden>Drag or scroll to explore the details.</p></div>
+   <nav class="case-viewer-navigation" aria-label="Image navigation">
+    <button type="button" class="case-viewer-icon" data-viewer-prev aria-label="Previous image"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+    <button type="button" class="case-viewer-icon" data-viewer-next aria-label="Next image"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+   </nav>
+  </footer>
+ </div>
+</dialog>
 
-<script type="application/json" id="solucao-data">{"images": ["https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&ssl=1", "https://marcodsvinicius.com/wp-content/uploads/2026/05/tela1.png", "https://marcodsvinicius.com/wp-content/uploads/2026/05/homebroker-rebalanceamento-mobile.png", "https://i0.wp.com/marcodsvinicius.com/wp-content/uploads/2024/04/img-3-rebalanceamento.png?fit=1920%2C1080&ssl=1"], "alts": ["Portfolio rebalancing screen isolated from the main trading screen", "Screen showing the Invest Balance feature with automatic distribution suggestions", "Mobile-optimized portfolio rebalancing screen", "Chart comparing current portfolio with investment goal"]}</script>
 
   <!-- Botão Flutuante Voltar ao Topo -->
   <button id="back-to-top" type="button" class="back-to-top" aria-label="Back to top">
