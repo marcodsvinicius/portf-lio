@@ -84,3 +84,10 @@ Não foram criadas falas de usuários, métricas, experiências ou certificaçõ
 
 - Formação ganhou dois cards para a pós em UX Design and Beyond (PUCRS, 2025–2026) e a Licenciatura em Computação (IFRJ, 2019–2025). A pós está marcada como concluída, conforme confirmação do Marco. Os cursos complementares permanecem disponíveis na expansão.
 - O canvas colaborativo foi aplicado ao contato da home PT/EN, com informações e links preservados e estilos compartilhados com a página de proposta.
+
+
+## Transição entre hero e empresas
+
+- Retirada a borda entre o hero e a faixa de empresas, junto das linhas decorativas antes e depois do título.
+- “Já atuei em” e os nomes das empresas agora ocupam um painel sem borda, com fundo oliva suave e alinhamento com o conteúdo do hero e dos projetos.
+- Título à esquerda em telas largas e acima dos nomes no celular/tablet, preservando todas as empresas e os links para a trajetória.
