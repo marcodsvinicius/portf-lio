@@ -1,6 +1,6 @@
 # Portfólio — Marco Vinicius
 
-Site estático (HTML + Tailwind CSS compilado) do portfólio publicado em [marcodsvinicius.com](https://marcodsvinicius.com).
+Site estático (HTML + Tailwind CSS compilado) do portfólio publicado no [GitHub Pages](https://marcodsvinicius.github.io/portf-lio/). A v2 foi promovida à versão principal na branch `main`; o domínio `marcodsvinicius.com` permanece independente até a configuração de domínio.
 
 ## Estrutura
 
