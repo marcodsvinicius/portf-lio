@@ -32,7 +32,7 @@ Nenhuma fala de usuário, percentual, data, amostra de pesquisa ou alternativa d
 
 ## Rebalanceamento de Carteira
 
-**Base utilizada:** restrição de pesquisa direta por compliance, benchmarking de planilhas/StatusInvest/SmarttInvest, colaboração com liderança de UX e Tech Lead, onboarding/importação, ambiente de gestão separado do trade, Investir Saldo e mobile.
+**Base utilizada:** produto B2B white label, sem acesso direto aos usuários finais, benchmarking de planilhas/StatusInvest/SmarttInvest, colaboração com liderança de UX e Tech Lead, onboarding/importação, ambiente de gestão separado do trade, Investir Saldo e mobile.
 
 **Material já exibido:** comparação existente; telas de gestão da carteira, Investir Saldo e mobile. A imagem repetida no carrossel anterior aparece uma única vez na nova galeria.
 
