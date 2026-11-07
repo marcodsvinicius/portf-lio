@@ -3,7 +3,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-  <meta content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+  <meta content="default-src 'self'; script-src 'self' https://*.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com https://*.clarity.ms https://c.bing.com; connect-src 'self' https://*.clarity.ms https://c.bing.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
   <meta content="strict-origin-when-cross-origin" name="referrer"/>
   <title>
    Marco Vinicius | Product Designer Sênior · AI First · UX/UI
@@ -38,6 +38,7 @@
   </script>
   <link href="assets/css/contact-proposal.css?v=e7f2d4bd" rel="stylesheet"/>
  <link rel="canonical" href="https://marcodsvinicius.github.io/portf-lio/"/>
+ <script defer src="assets/js/analytics.js?v=1a7b09a7"></script>
 </head>
  <body class="selection:bg-lime selection:text-black min-h-screen relative home-v2">
   <div aria-hidden="true" class="v2-ambient">
@@ -1448,7 +1449,7 @@
      <p class="text-gray-400 text-sm leading-relaxed mb-8">
       Somente pessoas autorizadas podem visualizar, digite a senha para acessar.
      </p>
-     <form id="hub-gate-form" novalidate="">
+     <form data-clarity-mask="true" id="hub-gate-form" novalidate="">
       <label class="sr-only" for="hub-gate-password">
        Senha de acesso
       </label>

@@ -25,8 +25,8 @@ design.md                  Design system "Cyberpunk Glass & Neon Lime"
 ```
 
 Toda página carrega `tailwind.css` → `site.css` → Lucide → `site.js` (defer) → `home.js` ou `case.js` (defer).
-Não há script de terceiros em tempo de execução: tudo é servido do próprio domínio, e cada página declara uma
-Content Security Policy que bloqueia scripts inline e de outras origens.
+Os scripts de interface são servidos localmente. O Microsoft Clarity é a integração externa de análise de navegação;
+a Content Security Policy permite seus recursos e mantém scripts inline bloqueados.
 As classes de cor usam os tokens `brand` (`#B7E500`), `lime` (`#CCFF00`), `ink` e `surface` em vez de valores arbitrários.
 
 ## Editando
@@ -101,3 +101,10 @@ npm run serve
 
 O repositório pode ser publicado direto no GitHub Pages ou clonado pela integração Git da Hostinger para dentro de `public_html`.
 As imagens dos cases, a foto e o PDF do currículo ainda são carregados de `marcodsvinicius.com/wp-content/...`; para o site ficar 100% independente do WordPress, esses arquivos precisam ser copiados para `assets/img/` e os links atualizados.
+
+## Microsoft Clarity
+
+O carregador fica em `assets/js/analytics.js`, com o projeto `za2y0un6sp`. Ele carrega o Clarity apenas
+em `marcodsvinicius.com` e `www.marcodsvinicius.com`, fora de `/preview/`, para separar visitas reais de testes.
+As homes e os cases em português e inglês carregam o arquivo. Os formulários de acesso têm mascaramento
+explícito (`data-clarity-mask`). A CSP está declarada tanto nas páginas quanto no `.htaccess` da Hostinger.
