@@ -126,3 +126,10 @@ Nenhuma fala de usuário, percentual, data, amostra de pesquisa ou alternativa d
 - Incluídos os tempos aproximados informados pelo Marco: antes, cerca de 10 minutos para percorrer a seção completa da ferramenta; agora, tutoriais de 2–3 minutos focados em um tópico. Os escopos ficam explícitos, sem calcular uma redução percentual ou apresentar isso como tempo de aprendizado medido em teste.
 - Benefícios destacados: escolha direta do assunto, facilidade de revisão durante o uso e menos atrito para iniciar ou retomar um tutorial. A tela de conclusão mantém a sugestão de continuidade em outras trilhas.
 - Não foram criadas taxas de engajamento, abandono ou falas de usuários. O relato de facilidade para revisitar o conteúdo foi fornecido pelo Marco nesta revisão.
+
+
+## Feedback no Rebalanceamento de Carteira
+
+- Retenção permanece apresentada como objetivo do projeto.
+- Conforme esclarecimento do Marco, as limitações de acesso aos usuários finais impediram testes de usabilidade; a proposta recebeu feedbacks positivos de clientes, Tech Leads e da gerência de UX Design da empresa.
+- A nota pública foi reescrita com esse contexto, sem atribuir uma taxa de retenção ou redução de evasão ao projeto e sem criar depoimentos ou resultados de testes.
