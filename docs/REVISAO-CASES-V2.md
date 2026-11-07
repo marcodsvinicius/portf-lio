@@ -133,3 +133,14 @@ Nenhuma fala de usuário, percentual, data, amostra de pesquisa ou alternativa d
 - Retenção permanece apresentada como objetivo do projeto.
 - Conforme esclarecimento do Marco, as limitações de acesso aos usuários finais impediram testes de usabilidade; a proposta recebeu feedbacks positivos de clientes, Tech Leads e da gerência de UX Design da empresa.
 - A nota pública foi reescrita com esse contexto, sem atribuir uma taxa de retenção ou redução de evasão ao projeto e sem criar depoimentos ou resultados de testes.
+
+## Design System — revisão a partir do manual HB Crypto
+
+- Fonte fornecida pelo Marco: https://marcodsvinicius.notion.site/HB-Crypto-a1971a27d02e4400bf39fbbdfe78ed75
+- Revisados o manual inicial e os conteúdos expansíveis de Fundação, Marca, Componentes Base, Componentes Complexos e Prospect. O link introdutório sobre o que é um Design System retornou página indisponível; arquivos Figma incorporados não foram auditados.
+- Estudo de cores movido para a decisão sobre paleta, identificado como exploração. Foto de reunião movida para documentação/alinhamento. Capa passa a mostrar o manual. Seção “A solução em uso” passa a “O sistema documentado”.
+- Destacados: separação Fundação/Marca no white label, estados dos botões e foco de teclado, cores semânticas de compra/venda, componentes complexos como ferramentas de mercado e fluxo de personalização para prospecção e handoff.
+- Ganhos apresentados como capacidades demonstráveis pelos artefatos. Sem porcentagens, velocidade medida, adoção ou conformidade de acessibilidade inventadas. A antiga nota pública genérica foi retirada; mensuração de velocidade e adoção continua pendente editorialmente.
+- Manual informa o cargo histórico “Assistente UX Design III”, enquanto o case usa “Product Designer · UX/UI” como atuação. Confirmar a nomenclatura histórica com Marco antes de alterar o cargo; a colaboração com a liderança de UX permanece explícita.
+- Fontes e cores de marca são personalizáveis conforme contrato; não apresentar como liberdade irrestrita. Manual contém regras específicas sobre família tipográfica e neutros.
+- Atualização equivalente em português e inglês, com ampliação das três imagens na própria página preservada.
