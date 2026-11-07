@@ -68,3 +68,11 @@
  .home-v2 .collab-cursor { animation: none; }
  .home-v2 .collab-selection { transition: none; }
 }
+
+/* Shared icon column and text rhythm for contact availability and local time. */
+.home-v2 #contact-status { display: grid; gap: 8px; padding-top: 8px; color: #a9afb5; font: 400 12px/20px 'Plus Jakarta Sans', sans-serif; }
+.home-v2 .contact-meta-row { display: grid; grid-template-columns: 20px minmax(0,1fr); column-gap: 10px; align-items: start; }
+.home-v2 .contact-meta-icon { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; color: #ccff00; }
+.home-v2 .contact-meta-icon svg { width: 16px; height: 16px; flex: none; }
+.home-v2 .contact-meta-text { min-width: 0; }
+.home-v2 .contact-meta-time { display: inline-block; white-space: nowrap; font-variant-numeric: tabular-nums; }
