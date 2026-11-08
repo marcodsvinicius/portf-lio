@@ -74,10 +74,14 @@
     range.addEventListener('pointerdown', function () { box.classList.add('is-dragging'); });
     ['pointerup', 'pointercancel', 'blur'].forEach(function (ev) { range.addEventListener(ev, function () { box.classList.remove('is-dragging'); }); });
     thumbs.forEach(function (t) {
+      t.setAttribute('aria-pressed', t.classList.contains('is-active') ? 'true' : 'false');
       t.addEventListener('click', function () {
         if (!before) return;
         before.src = t.dataset.src; before.alt = t.dataset.alt || before.alt;
-        thumbs.forEach(function (o) { o.classList.toggle('is-active', o === t); });
+        thumbs.forEach(function (o) {
+          o.classList.toggle('is-active', o === t);
+          o.setAttribute('aria-pressed', o === t ? 'true' : 'false');
+        });
       });
     });
     sync();

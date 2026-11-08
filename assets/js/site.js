@@ -6,6 +6,8 @@
 (function () {
   'use strict';
 
+  document.documentElement.classList.remove('no-js');
+
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var prefersReducedMotion = function () { return reduceMotion.matches; };
   window.MV = window.MV || {};

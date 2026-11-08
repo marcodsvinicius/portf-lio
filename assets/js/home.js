@@ -847,7 +847,11 @@
         e.preventDefault();
         close(false);
         var target = document.querySelector(a.getAttribute('href'));
-        if (target) setTimeout(function () { target.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' }); }, 30);
+        if (target) setTimeout(function () {
+          if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+          target.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' });
+        }, 30);
       });
     });
     /* Resultados levam ao case: fecha antes para a volta não reabrir travada */
@@ -863,7 +867,7 @@
           var f = focusables();
           if (!f.length) return;
           var first = f[0], last = f[f.length - 1];
-          var inside = dialog.contains(document.activeElement);
+          var inside = f.indexOf(document.activeElement) !== -1;
           if (e.shiftKey && (document.activeElement === first || !inside)) { e.preventDefault(); last.focus(); }
           else if (!e.shiftKey && (document.activeElement === last || !inside)) { e.preventDefault(); first.focus(); }
         }

@@ -15,3 +15,11 @@ A Hostinger ainda entrega páginas antigas em algumas respostas de cache. É nec
 ## Verificação
 
 Navegação PT/EN, menu em mobile/landscape/desktop, resumo, galeria, falhas de armazenamento/clipboard/criptografia, foco e rolagem foram testados em navegador. LinkedIn e Medium bloqueiam verificadores automáticos; isso não comprova link quebrado. Certificados no Drive/Coursera e GitHub responderam normalmente.
+
+## Nova rodada de QA
+
+As 10 páginas passaram na verificação de imagens, links locais e largura em 320, 768 e 1440px. A análise automatizada axe-core não encontrou violações nas regras WCAG 2 A/AA e 2.1 AA testadas. Testes PT/EN verificaram falhas de armazenamento, criptografia e cópia de e-mail, acesso ao Hub, galeria e resumo.
+
+Foram corrigidos: Shift+Tab escapando do resumo a partir do título; foco após “Ver cases”; estado acessível da miniatura do comparador; visibilidade do conteúdo com JavaScript desativado. Os testes de regressão desses comportamentos passaram em português e inglês.
+
+A verificação do domínio confirmou que os endereços / e /en/ ainda podem retornar a página WordPress antiga pelo cache da hospedagem, enquanto /index.html e /en/index.html entregam a versão atual. A limpeza do cache da Hostinger/CDN continua dependente do hPanel.
