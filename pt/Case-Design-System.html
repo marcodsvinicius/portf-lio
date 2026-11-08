@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com https://*.clarity.ms https://c.bing.com; connect-src 'self' https://*.clarity.ms https://c.bing.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Design System Nelogica | Marco Vinicius</title>
-  <meta name="description" content="Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de gestão de criptoativos.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://marcodsvinicius.com/pt/Case-Design-System.html">
-  <meta property="og:title" content="Design System Nelogica | Marco Vinicius">
-  <meta property="og:description" content="Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de gestão de criptoativos.">
-  <meta property="og:image" content="https://marcodsvinicius.com/assets/img/1760040640522.jpg">
-  <link rel="alternate" hreflang="pt-BR" href="https://marcodsvinicius.com/pt/Case-Design-System.html">
-  <link rel="alternate" hreflang="en" href="https://marcodsvinicius.com/en/Case-Design-System.html">
-
-  <link rel="preload" href="../assets/fonts/montserrat-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/fonts.css?v=0d0953f3">
-
-  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
-
-  <link rel="stylesheet" href="../assets/css/tailwind.css?v=43ad828e">
-  <link rel="stylesheet" href="../assets/css/site.css?v=e2decbe8">
-  <script src="../assets/js/vendor/lucide.min.js?v=5029514f"></script>
-  <script src="../assets/js/site.js?v=147a2017" defer></script>
-  <script src="../assets/js/case.js?v=3ee99776" defer></script>
-
-  <!-- Estilos específicos deste case -->
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="default-src 'self'; script-src 'self' https://*.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://marcodsvinicius.com https://i0.wp.com https://*.clarity.ms https://c.bing.com; connect-src 'self' https://*.clarity.ms https://c.bing.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
+<title>Design System Nelogica para criptoativos | Marco Vinicius</title>
+<meta content="Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de gestão de criptoativos." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://marcodsvinicius.com/pt/Case-Design-System.html" property="og:url"/>
+<meta content="Design System Nelogica para criptoativos | Marco Vinicius" property="og:title"/>
+<meta content="Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de gestão de criptoativos." property="og:description"/>
+<meta content="https://marcodsvinicius.com/assets/img/hbcrypto-doc.png" property="og:image"/>
+<link href="https://marcodsvinicius.com/pt/Case-Design-System.html" hreflang="pt-BR" rel="alternate"/>
+<link href="https://marcodsvinicius.com/en/Case-Design-System.html" hreflang="en" rel="alternate"/>
+<link as="font" crossorigin="" href="../assets/fonts/montserrat-latin-800-normal.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../assets/fonts/plus-jakarta-sans-latin-400-normal.woff2" rel="preload" type="font/woff2"/>
+<link href="../assets/css/fonts.css?v=0d0953f3" rel="stylesheet"/>
+<link href="../assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/css/tailwind.css?v=43ad828e" rel="stylesheet"/>
+<link href="../assets/css/site.css?v=e2decbe8" rel="stylesheet"/>
+<script defer="" src="../assets/js/vendor/lucide.min.js?v=5029514f"></script>
+<script defer="" src="../assets/js/site.js?v=147a2017"></script>
+<script defer="" src="../assets/js/case.js?v=3ee99776"></script>
+<!-- Estilos específicos deste case -->
+<style>
   /* Hero Green Glow Circle */
   .bg-hero-glow {
     position: relative;
@@ -48,11 +44,89 @@
     z-index: -1;
   }
   </style>
-  <link rel="stylesheet" href="../assets/css/case-v2.css?v=34f13bfb">
-<link rel="stylesheet" href="../assets/css/case-design-system.css?v=19c87a9a"/>
-<link rel="canonical" href="https://marcodsvinicius.com/pt/Case-Design-System.html"/>
- <script defer src="../assets/js/analytics.js?v=1a7b09a7"></script>
-</head>
+<link href="../assets/css/case-v2.css?v=34f13bfb" rel="stylesheet"/>
+<link href="../assets/css/case-design-system.css?v=19c87a9a" rel="stylesheet"/>
+<link href="https://marcodsvinicius.com/pt/Case-Design-System.html" rel="canonical"/>
+<script defer="" src="../assets/js/analytics.js?v=1a7b09a7"></script>
+<meta content="pt_BR" property="og:locale"/><meta content="Marco Vinicius | Product Design" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Design System Nelogica para criptoativos | Marco Vinicius" name="twitter:title"/><meta content="Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de gestão de criptoativos." name="twitter:description"/><meta content="768" property="og:image:width"/><meta content="487" property="og:image:height"/><meta content="Documentação do Design System organizada no Notion" property="og:image:alt"/><meta content="image/png" property="og:image:type"/><meta content="https://marcodsvinicius.com/assets/img/hbcrypto-doc.png" name="twitter:image"/><meta content="Documentação do Design System organizada no Notion" name="twitter:image:alt"/><link href="https://marcodsvinicius.com/pt/Case-Design-System.html" hreflang="x-default" rel="alternate"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://marcodsvinicius.com/#website",
+      "url": "https://marcodsvinicius.com/",
+      "name": "Marco Vinicius | Product Design",
+      "inLanguage": [
+        "pt-BR",
+        "en-US"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://marcodsvinicius.com/#marco-vinicius",
+      "name": "Marco Vinicius",
+      "url": "https://marcodsvinicius.com/",
+      "image": "https://marcodsvinicius.com/assets/img/1760040640522.jpg",
+      "jobTitle": "Senior Product Designer",
+      "sameAs": [
+        "https://www.linkedin.com/in/marcodsvinicius/",
+        "https://github.com/marcodsvinicius",
+        "https://medium.com/@marcodsvinicius"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://marcodsvinicius.com/pt/Case-Design-System.html#webpage",
+      "url": "https://marcodsvinicius.com/pt/Case-Design-System.html",
+      "name": "Design System Nelogica para criptoativos | Marco Vinicius",
+      "description": "Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de gestão de criptoativos.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://marcodsvinicius.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://marcodsvinicius.com/pt/Case-Design-System.html#case-study"
+      },
+      "breadcrumb": {
+        "@id": "https://marcodsvinicius.com/pt/Case-Design-System.html#breadcrumbs"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://marcodsvinicius.com/pt/Case-Design-System.html#case-study",
+      "url": "https://marcodsvinicius.com/pt/Case-Design-System.html",
+      "name": "Uma base compartilhada para interfaces consistentes",
+      "description": "Estruturação de componentes, tokens e documentação para conectar o trabalho de design e desenvolvimento de um produto de gestão de criptoativos.",
+      "inLanguage": "pt-BR",
+      "image": "https://marcodsvinicius.com/assets/img/hbcrypto-doc.png",
+      "author": {
+        "@id": "https://marcodsvinicius.com/#marco-vinicius"
+      },
+      "genre": "UX/UI case study",
+      "mainEntityOfPage": {
+        "@id": "https://marcodsvinicius.com/pt/Case-Design-System.html#webpage"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://marcodsvinicius.com/pt/Case-Design-System.html#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Portfólio",
+          "item": "https://marcodsvinicius.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Design System Nelogica",
+          "item": "https://marcodsvinicius.com/pt/Case-Design-System.html"
+        }
+      ]
+    }
+  ]
+}</script></head>
 <body class="font-montserrat case-v2">
   <a href="#case-content" class="skip-link">Pular para o conteúdo</a>
 <div class="case-shell min-h-screen relative selection:bg-lime selection:text-black">
