@@ -161,7 +161,12 @@
   <p class="case-intro">
    Research and design for an experience that helps users track investments and plan portfolio adjustments within the platform.
   </p>
-  <figure class="case-note"><p>Image temporarily unavailable.</p><figcaption>A dedicated portfolio management space compares current allocation with investment goals.</figcaption></figure>
+  <figure class="case-cover">
+   <img width="1600" height="900" alt="Portfolio rebalancing screen isolated from the main trading screen" decoding="async" fetchpriority="high" src="../assets/img/img-3-rebalanceamento.png"/>
+   <figcaption>
+    A dedicated portfolio management space compares current allocation with investment goals.
+   </figcaption>
+  </figure>
  </div>
 </header>
 
@@ -318,7 +323,60 @@
        Without native rebalancing, portfolio management depended on spreadsheets or external services. The challenge was to incorporate this capability while accounting for the platform’s complexity and limited access to users.
       </p>
      </div>
-     <p class="case-note">Visual comparison temporarily unavailable.</p>
+     <div class="case-comparison">
+      <h3>
+       Original interface and proposed design
+      </h3>
+      <div aria-label="Comparison between the old process and the new experience" class="ba-compare" role="group">
+       <div class="ba-compare__frame">
+        <img width="1600" height="900" alt="Portfolio rebalancing screen isolated from the main trading screen" class="ba-compare__after" decoding="async" loading="lazy" src="../assets/img/img-3-rebalanceamento.png"/>
+        <div class="ba-compare__before-wrap">
+         <img alt="Original screen 1" class="ba-compare__before" decoding="async" loading="lazy" src="../assets/img/bench-1.jpg"/>
+        </div>
+        <input aria-label="Comparison position" class="ba-compare__range" max="100" min="0" step="0.5" type="range" value="50"/>
+        <div aria-hidden="true" class="ba-compare__handle">
+         <span class="ba-compare__grip">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18">
+           <path d="m9 6-6 6 6 6">
+           </path>
+           <path d="m15 6 6 6-6 6">
+           </path>
+          </svg>
+         </span>
+        </div>
+        <span aria-hidden="true" class="ba-compare__tag ba-compare__tag--before">
+         Before
+        </span>
+        <span aria-hidden="true" class="ba-compare__tag ba-compare__tag--after">
+         After
+        </span>
+       </div>
+       <p class="ba-compare__hint">
+        <svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14">
+         <path d="M8 3 4 7l4 4">
+         </path>
+         <path d="M4 7h16">
+         </path>
+         <path d="m16 21 4-4-4-4">
+         </path>
+         <path d="M20 17H4">
+         </path>
+        </svg>
+        Drag the divider to compare, or use the arrow keys.
+       </p>
+       <div aria-label="Choose an original screen" class="ba-compare__thumbs" role="group">
+        <button aria-label="Original screen 1" class="ba-compare__thumb is-active" data-alt="Original screen 1" data-src="../assets/img/bench-1.jpg" type="button">
+         <img alt="" loading="lazy" src="../assets/img/bench-1.jpg"/>
+        </button>
+        <button aria-label="Original screen 2" class="ba-compare__thumb" data-alt="Original screen 2" data-src="../assets/img/bench-2.png" type="button">
+         <img alt="" loading="lazy" src="../assets/img/bench-2.png"/>
+        </button>
+        <button aria-label="Original screen 3" class="ba-compare__thumb" data-alt="Original screen 3" data-src="../assets/img/bench-3.jpg" type="button">
+         <img alt="" loading="lazy" src="../assets/img/bench-3.jpg"/>
+        </button>
+       </div>
+      </div>
+     </div>
     </section>
     <section aria-labelledby="heading-estrategia" class="case-section" id="estrategia">
      <span class="case-eyebrow">
@@ -406,17 +464,16 @@
      <h2 id="heading-solucao">
       The solution
      </h2>
-     <figure class="case-note"><p>Image temporarily unavailable.</p><figcaption>A dedicated portfolio management space compares current allocation with investment goals.</figcaption></figure>
      <figure class="case-figure">
-      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="View larger image: Invest available funds feature with suggested portfolio allocations" class="case-image-trigger" data-case-image="0" href="../assets/img/tela1.jpg">
-       <img alt="Invest available funds feature with suggested portfolio allocations" decoding="async" height="900" loading="lazy" src="../assets/img/tela1.jpg" width="1600"/>
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="View larger image: Portfolio rebalancing screen isolated from the main trading screen" class="case-image-trigger" data-case-image="0" href="../assets/img/img-3-rebalanceamento.png">
+       <img alt="Portfolio rebalancing screen isolated from the main trading screen" decoding="async" height="900" loading="lazy" src="../assets/img/img-3-rebalanceamento.png" width="1600"/>
       </a>
       <figcaption>
        <span data-image-caption="">
-        “Invest available funds” suggests how to distribute an entered amount according to portfolio targets.
+        A dedicated portfolio management space compares current allocation with investment goals.
        </span>
        <br/>
-       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="0" href="../assets/img/tela1.jpg">
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="0" href="../assets/img/img-3-rebalanceamento.png">
         View larger image
         <span aria-hidden="true">
          ⤢
@@ -425,7 +482,24 @@
       </figcaption>
      </figure>
      <figure class="case-figure">
-      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="View larger image: Mobile-optimized portfolio rebalancing screen" class="case-image-trigger" data-case-image="1" href="../assets/img/homebroker-rebalanceamento-mobile.png">
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="View larger image: Invest available funds feature with suggested portfolio allocations" class="case-image-trigger" data-case-image="1" href="../assets/img/tela1.jpg">
+       <img alt="Invest available funds feature with suggested portfolio allocations" decoding="async" height="900" loading="lazy" src="../assets/img/tela1.jpg" width="1600"/>
+      </a>
+      <figcaption>
+       <span data-image-caption="">
+        “Invest available funds” suggests how to distribute an entered amount according to portfolio targets.
+       </span>
+       <br/>
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="1" href="../assets/img/tela1.jpg">
+        View larger image
+        <span aria-hidden="true">
+         ⤢
+        </span>
+       </a>
+      </figcaption>
+     </figure>
+     <figure class="case-figure">
+      <a aria-controls="case-image-viewer" aria-haspopup="dialog" aria-label="View larger image: Mobile-optimized portfolio rebalancing screen" class="case-image-trigger" data-case-image="2" href="../assets/img/homebroker-rebalanceamento-mobile.png">
        <img alt="Mobile-optimized portfolio rebalancing screen" decoding="async" height="900" loading="lazy" src="../assets/img/homebroker-rebalanceamento-mobile.png" width="1600"/>
       </a>
       <figcaption>
@@ -433,7 +507,7 @@
         Rethought the experience with a mobile-first approach to make it easier to track a portfolio on the go.
        </span>
        <br/>
-       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="1" href="../assets/img/homebroker-rebalanceamento-mobile.png">
+       <a aria-controls="case-image-viewer" aria-haspopup="dialog" class="case-image-open" data-case-image="2" href="../assets/img/homebroker-rebalanceamento-mobile.png">
         View larger image
         <span aria-hidden="true">
          ⤢

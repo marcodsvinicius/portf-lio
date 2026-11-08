@@ -323,7 +323,57 @@
        Na análise da interface, identifiquei excesso de etapas e blocos longos de texto. A leitura acontecia no topo da tela, enquanto o controle para avançar ficava no rodapé. Essa separação exigia alternar a atenção entre duas regiões.
       </p>
      </div>
-     <p class="case-note">Comparação visual temporariamente indisponível.</p>
+     <div class="case-comparison">
+      <h3>
+       Antes e proposta
+      </h3>
+      <div aria-label="Comparação entre o processo antigo e a nova experiência" class="ba-compare" role="group">
+       <div class="ba-compare__frame">
+        <img width="1600" height="900" alt="Modal do tour guiado com texto e controles de navegação reunidos" class="ba-compare__after" decoding="async" loading="lazy" src="../assets/img/tour05.jpg"/>
+        <div class="ba-compare__before-wrap">
+         <img alt="Processo Antigo 1" class="ba-compare__before" decoding="async" loading="lazy" src="../assets/img/tour-1.png"/>
+        </div>
+        <input aria-label="Posição da comparação" class="ba-compare__range" max="100" min="0" step="0.5" type="range" value="50"/>
+        <div aria-hidden="true" class="ba-compare__handle">
+         <span class="ba-compare__grip">
+          <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18">
+           <path d="m9 6-6 6 6 6">
+           </path>
+           <path d="m15 6 6 6-6 6">
+           </path>
+          </svg>
+         </span>
+        </div>
+        <span aria-hidden="true" class="ba-compare__tag ba-compare__tag--before">
+         Antes
+        </span>
+        <span aria-hidden="true" class="ba-compare__tag ba-compare__tag--after">
+         Depois
+        </span>
+       </div>
+       <p class="ba-compare__hint">
+        <svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14">
+         <path d="M8 3 4 7l4 4">
+         </path>
+         <path d="M4 7h16">
+         </path>
+         <path d="m16 21 4-4-4-4">
+         </path>
+         <path d="M20 17H4">
+         </path>
+        </svg>
+        Arraste a linha para comparar. No teclado, use as setas.
+       </p>
+       <div aria-label="Ver outra tela antiga" class="ba-compare__thumbs" role="group">
+        <button aria-label="Processo Antigo 1" class="ba-compare__thumb is-active" data-alt="Processo Antigo 1" data-src="../assets/img/tour-1.png" type="button">
+         <img alt="" loading="lazy" src="../assets/img/tour-1.png"/>
+        </button>
+        <button aria-label="Processo Antigo 2" class="ba-compare__thumb" data-alt="Processo Antigo 2" data-src="../assets/img/tour-2.png" type="button">
+         <img alt="" loading="lazy" src="../assets/img/tour-2.png"/>
+        </button>
+       </div>
+      </div>
+     </div>
     </section>
     <section aria-labelledby="heading-estrategia" class="case-section" id="estrategia">
      <span class="case-eyebrow">

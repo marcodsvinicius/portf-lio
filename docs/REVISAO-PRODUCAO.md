@@ -2,19 +2,11 @@
 
 Foram corrigidos o menu em telas baixas, restauração de foco, rolagem após redimensionamento, tratamento de falhas de armazenamento/criptografia no acesso, acessibilidade de senha e feedback de cópia de e-mail.
 
-13 arquivos preservados localmente: 12 imagens e o currículo. Links internos e âncoras revisados; URLs canônicas/sitemap apontam ao domínio oficial. As quatro páginas antigas de case na raiz redirecionam para as atuais.
+20 arquivos preservados localmente: 19 imagens e o currículo. Links internos e âncoras revisados; URLs canônicas/sitemap apontam ao domínio oficial. As quatro páginas antigas de case na raiz redirecionam para as atuais.
 
-## Imagens pendentes de backup
+## Imagens restauradas do backup
 
-Os arquivos abaixo não foram encontrados na origem, nas variantes públicas do cache de imagens ou no histórico Git. As áreas afetadas exibem um aviso de indisponibilidade, sem botão para arquivo inexistente. As capas da home usam imagens recuperadas do mesmo projeto.
-
-- img-3-rebalanceamento.png
-- study-colors.png
-- bench-2.png
-- gmuds-hub.png
-- lista-de-obras-hub.png
-- tour-1.png
-- tour-2.png
+As sete imagens pendentes foram recuperadas do backup All-in-One WP Migration fornecido pelo proprietário e salvas em `assets/img/`. As imagens, os comparadores e as galerias originais foram restaurados nas páginas em português e inglês. Não há avisos temporários de indisponibilidade. Todos os 20 arquivos de mídia usados pelo site estão versionados localmente, incluindo o currículo. O backup completo e seu conteúdo privado não integram o repositório.
 
 ## Hospedagem
 
