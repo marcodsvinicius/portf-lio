@@ -216,19 +216,38 @@
     if (!gateEl) return;
     var labelBusy = gateEl.dataset.labelBusy || 'Verificando...';
     var labelOk = gateEl.dataset.labelOk || 'Acesso liberado';
+    var english = (document.documentElement.lang || '').slice(0, 2) === 'en';
+    var labelError = english ? 'Could not verify the password. Please try again.' : 'Não foi possível verificar a senha. Tente novamente.';
+    function hasAccess() {
+      try { if (localStorage.getItem(GATE_KEY) === '1') return true; } catch (e) {}
+      try { return sessionStorage.getItem(GATE_KEY) === '1'; } catch (e) { return false; }
+    }
+    function rememberAccess() {
+      try { localStorage.setItem(GATE_KEY, '1'); return; } catch (e) {}
+      try { sessionStorage.setItem(GATE_KEY, '1'); } catch (e) {}
+    }
 
     function sha256Hex(text) {
-      return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(function (buf) {
+      return Promise.resolve().then(function () {
+        return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      }).then(function (buf) {
         return Array.prototype.map.call(new Uint8Array(buf), function (b) { return b.toString(16).padStart(2, '0'); }).join('');
       });
     }
-    function unlock() {
-      if (pageContent) { pageContent.classList.remove('is-locked'); pageContent.removeAttribute('aria-hidden'); }
+    function unlock(moveFocus) {
+      if (pageContent) { pageContent.classList.remove('is-locked'); pageContent.removeAttribute('aria-hidden'); pageContent.inert = false; }
       gateEl.classList.add('is-hidden');
       document.body.style.overflow = '';
-      setTimeout(function () { gateEl.style.display = 'none'; }, 400);
+      setTimeout(function () {
+        gateEl.style.display = 'none';
+        if (moveFocus && pageContent) {
+          var heading = pageContent.querySelector('h1');
+          if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
+        }
+      }, 400);
     }
-    if (localStorage.getItem(GATE_KEY) === '1') { unlock(); return; }
+    if (hasAccess()) { unlock(false); return; }
+    if (pageContent) pageContent.inert = true;
 
     document.body.style.overflow = 'hidden';
     var input = document.getElementById('gate-password');
@@ -239,12 +258,28 @@
     var submitLabel = document.getElementById('gate-submit-label');
     var card = gateEl.querySelector('.gate-card');
     var labelIdle = submitLabel ? submitLabel.textContent : '';
+    var labelInvalid = errorMsg ? errorMsg.textContent.trim() : '';
+    function fail(message) {
+      submitBtn.disabled = false; submitLabel.textContent = labelIdle;
+      if (errorMsg) { errorMsg.textContent = message; errorMsg.classList.remove('hidden'); }
+      input.focus();
+    }
+    gateEl.addEventListener('keydown', function (event) {
+      if (event.key !== 'Tab') return;
+      var items = Array.prototype.filter.call(gateEl.querySelectorAll('button, input, [href], [tabindex]:not([tabindex="-1"])'), function (el) { return !el.disabled && el.offsetParent !== null; });
+      if (!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
     setTimeout(function () { if (input) input.focus(); }, 300);
 
     if (toggleBtn && input) {
       toggleBtn.addEventListener('click', function () {
         var showing = input.type === 'text';
         input.type = showing ? 'password' : 'text';
+        toggleBtn.setAttribute('aria-label', english ? (showing ? 'Show password' : 'Hide password') : (showing ? 'Mostrar senha' : 'Ocultar senha'));
+        toggleBtn.setAttribute('aria-pressed', String(!showing));
         toggleBtn.innerHTML = '<i data-lucide="' + (showing ? 'eye' : 'eye-off') + '" width="18" height="18"></i>';
         if (window.lucide) window.lucide.createIcons();
         input.focus();
@@ -254,22 +289,22 @@
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        if (submitBtn.disabled) return;
         var value = (input.value || '').trim();
         if (!value) { input.focus(); return; }
         submitBtn.disabled = true; submitLabel.textContent = labelBusy;
         sha256Hex(value).then(function (hash) {
           if (hash === GATE_HASH) {
-            localStorage.setItem(GATE_KEY, '1');
+            rememberAccess();
             submitLabel.textContent = labelOk;
             if (errorMsg) errorMsg.classList.add('hidden');
-            setTimeout(unlock, 350);
+            setTimeout(function () { unlock(true); }, 350);
           } else {
-            submitBtn.disabled = false; submitLabel.textContent = labelIdle;
-            if (errorMsg) errorMsg.classList.remove('hidden');
-            input.value = ''; input.focus();
+            input.value = '';
+            fail(labelInvalid);
             if (card) { card.classList.remove('gate-shake'); void card.offsetWidth; card.classList.add('gate-shake'); }
           }
-        });
+        }).catch(function () { fail(labelError); });
       });
     }
   })();

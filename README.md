@@ -1,6 +1,6 @@
 # Portfólio — Marco Vinicius
 
-Site estático (HTML + Tailwind CSS compilado) do portfólio publicado no [GitHub Pages](https://marcodsvinicius.github.io/portf-lio/). A v2 foi promovida à versão principal na branch `main`; o domínio `marcodsvinicius.com` permanece independente até a configuração de domínio.
+Site estático (HTML + Tailwind CSS compilado) do portfólio publicado em [marcodsvinicius.com](https://marcodsvinicius.com/), pela Hostinger conectada à branch `main`. O GitHub Pages mantém uma publicação adicional.
 
 ## Estrutura
 
@@ -100,7 +100,7 @@ npm run serve
 ## Publicação
 
 O repositório pode ser publicado direto no GitHub Pages ou clonado pela integração Git da Hostinger para dentro de `public_html`.
-As imagens dos cases, a foto e o PDF do currículo ainda são carregados de `marcodsvinicius.com/wp-content/...`; para o site ficar 100% independente do WordPress, esses arquivos precisam ser copiados para `assets/img/` e os links atualizados.
+As imagens recuperadas são versionadas em `assets/img/` e o currículo em `assets/docs/`. Consulte `docs/REVISAO-PRODUCAO.md` para o resultado da revisão e eventuais arquivos ainda pendentes de restauração.
 
 ## Microsoft Clarity
 

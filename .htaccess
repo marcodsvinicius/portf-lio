@@ -44,6 +44,8 @@ DirectoryIndex index.html
   RewriteRule ^ https://marcodsvinicius.com%{REQUEST_URI} [L,R=301]
   # Normaliza a home em inglês antes de qualquer rota legada.
   RewriteRule ^en$ /en/ [L,R=301]
+  # Compatibilidade com os cases antigos publicados na raiz
+  RewriteRule ^(Case-(?:Design-System|Rebalanceamento-Carteira|Hub-de-Obras|Tour-Guiado)\.html)$ /pt/$1 [L,R=301]
   # Compatibilidade com os endereços antigos do WordPress
   RewriteRule ^pt/?$ / [L,R=301]
   RewriteRule ^ds-3-0/?$ /pt/Case-Design-System.html [L,R=301]

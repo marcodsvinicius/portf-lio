@@ -632,9 +632,14 @@
     function fallbackCopy(text) {
       var ta = document.createElement('textarea');
       ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); } catch (e) {}
-      document.body.removeChild(ta);
+      var focused = document.activeElement;
+      var container = focused && focused.closest('dialog, [role="dialog"]');
+      (container || document.body).appendChild(ta); ta.select();
+      var copied = false;
+      try { copied = document.execCommand('copy'); } catch (e) {}
+      ta.remove();
+      if (focused && focused.focus) focused.focus();
+      if (!copied) throw new Error('Clipboard unavailable');
     }
     btns.forEach(function (btn) {
       var label = btn.querySelector('.copy-email__text');
@@ -643,7 +648,10 @@
       var iconHTML = icon ? icon.innerHTML : '';
       var timer;
       btn.addEventListener('click', function () {
-        var p = (navigator.clipboard && navigator.clipboard.writeText) ? navigator.clipboard.writeText(email) : Promise.reject();
+        var p = Promise.resolve().then(function () {
+          if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
+          return navigator.clipboard.writeText(email);
+        });
         p.catch(function () { fallbackCopy(email); }).then(function () {
           btn.classList.add('is-copied');
           if (label) label.textContent = btn.dataset.copied;
@@ -654,6 +662,14 @@
             if (label) label.textContent = btn.dataset.label || email;
             if (icon) icon.innerHTML = iconHTML;
           }, 2000);
+        }).catch(function () {
+          clearTimeout(timer);
+          btn.classList.remove('is-copied');
+          if (icon) icon.innerHTML = iconHTML;
+          if (label) label.textContent = lang === 'en' ? 'Could not copy' : 'Não foi possível copiar';
+          timer = setTimeout(function () {
+            if (label) label.textContent = btn.dataset.label || email;
+          }, 3000);
         });
       });
     });
@@ -1046,9 +1062,35 @@
     var labelBusy = modal.dataset.labelBusy || 'Verificando...';
     var labelOk = modal.dataset.labelOk || 'Acesso liberado';
     var lastFocus = null;
+    var requestId = 0;
+    var closeTimer;
+    var labelInvalid = errorMsg ? errorMsg.textContent.trim() : '';
+    var labelError = lang === 'en' ? 'Could not verify the password. Please try again.' : 'Não foi possível verificar a senha. Tente novamente.';
 
+    function hasAccess() {
+      try { if (localStorage.getItem(GATE_KEY) === '1') return true; } catch (e) {}
+      try { return sessionStorage.getItem(GATE_KEY) === '1'; } catch (e) { return false; }
+    }
+    function rememberAccess() {
+      try { localStorage.setItem(GATE_KEY, '1'); return; } catch (e) {}
+      try { sessionStorage.setItem(GATE_KEY, '1'); } catch (e) {}
+    }
+    function setPasswordVisible(visible) {
+      input.type = visible ? 'text' : 'password';
+      if (!toggleBtn) return;
+      toggleBtn.setAttribute('aria-label', lang === 'en' ? (visible ? 'Hide password' : 'Show password') : (visible ? 'Ocultar senha' : 'Mostrar senha'));
+      toggleBtn.setAttribute('aria-pressed', String(visible));
+      toggleBtn.innerHTML = '<i data-lucide="' + (visible ? 'eye-off' : 'eye') + '" width="18" height="18"></i>';
+      if (window.lucide) window.lucide.createIcons();
+    }
+    function fail(message) {
+      submitBtn.disabled = false;
+      submitLabel.textContent = labelIdle;
+      if (errorMsg) { errorMsg.textContent = message; errorMsg.classList.remove('hidden'); }
+      input.focus();
+    }
     function sha256Hex(text) {
-      return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(function (buf) {
+      return Promise.resolve().then(function () { return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)); }).then(function (buf) {
         return Array.prototype.map.call(new Uint8Array(buf), function (b) { return b.toString(16).padStart(2, '0'); }).join('');
       });
     }
@@ -1058,6 +1100,7 @@
       });
     }
     function openModal() {
+      clearTimeout(closeTimer);
       lastFocus = document.activeElement;
       modal.classList.remove('hidden');
       modal.classList.add('flex');
@@ -1065,16 +1108,17 @@
       modal.classList.remove('opacity-0');
       if (card) card.classList.remove('scale-95');
       document.body.style.overflow = 'hidden';
-      setTimeout(function () { if (input) input.focus(); }, 200);
+      setTimeout(function () { if (input && isOpen()) input.focus(); }, 200);
     }
     function closeModal() {
+      requestId++;
       modal.classList.add('opacity-0');
       if (card) card.classList.add('scale-95');
       document.body.style.overflow = '';
-      setTimeout(function () {
+      closeTimer = setTimeout(function () {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
-        if (input) input.value = '';
+        if (input) { input.value = ''; setPasswordVisible(false); }
         if (errorMsg) errorMsg.classList.add('hidden');
         if (submitBtn) submitBtn.disabled = false;
         if (submitLabel) submitLabel.textContent = labelIdle;
@@ -1084,7 +1128,7 @@
     function isOpen() { return !modal.classList.contains('hidden'); }
 
     trigger.addEventListener('click', function (e) {
-      if (localStorage.getItem(GATE_KEY) === '1') return;
+      if (hasAccess()) return;
       e.preventDefault();
       e.stopImmediatePropagation();
       openModal();
@@ -1107,10 +1151,7 @@
 
     if (toggleBtn && input) {
       toggleBtn.addEventListener('click', function () {
-        var showing = input.type === 'text';
-        input.type = showing ? 'password' : 'text';
-        toggleBtn.innerHTML = '<i data-lucide="' + (showing ? 'eye' : 'eye-off') + '" width="18" height="18"></i>';
-        if (window.lucide) window.lucide.createIcons();
+        setPasswordVisible(input.type !== 'text');
         input.focus();
       });
     }
@@ -1119,23 +1160,27 @@
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        if (submitBtn.disabled) return;
+        var currentRequest = ++requestId;
         var value = (input.value || '').trim();
         if (!value) { input.focus(); return; }
         submitBtn.disabled = true;
         submitLabel.textContent = labelBusy;
         sha256Hex(value).then(function (hash) {
+          if (currentRequest !== requestId || !isOpen()) return;
           if (hash === GATE_HASH) {
-            localStorage.setItem(GATE_KEY, '1');
+            rememberAccess();
             submitLabel.textContent = labelOk;
-            setTimeout(function () { window.location.href = destination; }, 400);
+            setTimeout(function () {
+              if (currentRequest === requestId && isOpen()) window.location.href = destination;
+            }, 400);
           } else {
-            submitBtn.disabled = false;
-            submitLabel.textContent = labelIdle;
-            if (errorMsg) errorMsg.classList.remove('hidden');
             input.value = '';
-            input.focus();
+            fail(labelInvalid);
             if (card) { card.classList.remove('gate-shake'); void card.offsetWidth; card.classList.add('gate-shake'); }
           }
+        }).catch(function () {
+          if (currentRequest === requestId && isOpen()) fail(labelError);
         });
       });
     }

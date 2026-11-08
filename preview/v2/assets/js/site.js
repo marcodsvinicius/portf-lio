@@ -19,9 +19,14 @@
   var menuBtn = document.getElementById('mobile-menu-btn');
   var drawer = document.getElementById('mobile-menu-drawer');
   var backdrop = document.getElementById('mobile-menu-backdrop');
+  var menuOpen = false, menuSavedOverflow = '';
 
   function setMenu(open) {
     if (!menuBtn || !drawer || !backdrop) return;
+    if (open && !menuOpen) menuSavedOverflow = document.body.style.overflow;
+    if (!open && drawer.contains(document.activeElement)) menuBtn.focus({ preventScroll: true });
+    var wasOpen = menuOpen;
+    menuOpen = open;
     drawer.classList.toggle('opacity-100', open);
     drawer.classList.toggle('opacity-0', !open);
     drawer.classList.toggle('pointer-events-auto', open);
@@ -34,9 +39,13 @@
     menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     menuBtn.innerHTML = '<i data-lucide="' + (open ? 'x' : 'menu') + '" class="w-6 h-6 text-white transition-transform duration-300"></i>';
     icons();
-    document.body.style.overflow = (open && window.innerWidth < 768) ? 'hidden' : '';
+    if (open) document.body.style.overflow = window.innerWidth < 768 ? 'hidden' : menuSavedOverflow;
+    else if (wasOpen) document.body.style.overflow = menuSavedOverflow;
   }
   window.MV.closeMenu = function () { setMenu(false); };
+  window.addEventListener('resize', function () {
+    if (menuOpen) document.body.style.overflow = window.innerWidth < 768 ? 'hidden' : menuSavedOverflow;
+  });
 
   if (menuBtn) {
     menuBtn.addEventListener('click', function () {
