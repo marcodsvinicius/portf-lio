@@ -171,7 +171,7 @@
 .home-v2 #skills .v2-lead { max-width: 32em; }
 .home-v2 #skills .v2-skills { display: block; counter-reset: competency; }
 .home-v2 #skills .v2-skill { position: relative; counter-increment: competency; padding: 30px 20px 30px 70px; border: 0; border-top: 1px solid #ffffff24; border-radius: 0; background: transparent; box-shadow: none; transition: background .2s ease; }
-.home-v2 #skills .v2-skill:last-child { border-bottom: 1px solid #ffffff24; }
+.home-v2 #skills .v2-skill:last-child { border-bottom: 0; }
 .home-v2 #skills .v2-skill::before { content: counter(competency, decimal-leading-zero); position: absolute; top: 33px; left: 20px; color: var(--v2-accent, #c4f000); font: 500 13px/1.5 'Plus Jakarta Sans',sans-serif; }
 .home-v2 #skills .v2-skill h3 { font-size: clamp(20px,1.6vw,24px); margin-bottom: 12px; }
 .home-v2 #skills .v2-skill .v2-inline { margin-top: 0; padding-top: 16px; min-height: 44px; align-self: flex-start; }
